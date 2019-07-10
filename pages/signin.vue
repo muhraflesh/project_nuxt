@@ -18,7 +18,6 @@
                                         placeholder="Username"
                                         v-model="username"
                                         required>
-                                        </input>
                                     </div>
                                     <div class="field">
                                         <input 
@@ -84,16 +83,18 @@
                         password: this.password
 
                     })
-                    await this.$auth.loginWith('local', {
-                        data: {
-                            email:this.email,
-                            password: this.password
-                        },
-                    })
+                  
 
                     this.$router.push('/')
                 } catch (e) {
-                    this.error = e.response.data.message
+                    this.pesan = e.response.data.error.statusCode ;
+                    if (this.pesan === 500) {
+                    this.pesan = 'Server Error, Check Your Connection.'
+                    } else if (this.pesan === 401) {
+                    this.pesan = 'Invalid Email / Password.'
+                    } else if (this.pesan === 400) {
+                    this.pesan = 'Success!'
+                    }
                 }
             }
         }

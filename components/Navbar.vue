@@ -16,7 +16,7 @@
                             My Account
                         </a>
                         <div class="navbar-dropdown">
-                            <nuxt-link class="navbar-item to="/>My Profile</nuxt-link>
+                            <nuxt-link class="navbar-item" to="/">My Profile</nuxt-link>
                             <hr class="navbar-divider">
                             <a class="navbar-item"> Logout</a>
                         </div>

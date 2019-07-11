@@ -44,7 +44,11 @@
                                                 <input type="checkbox">
                                                 I agree to the <a href="#">Terms of Use & Privacy Policy</a>
                                             </label>
-                                            <br><br>
+                                            <br>
+                                            <label class="checkbox">
+                                                
+                                              Already have an account? <a href="/login">Login</a>
+                                            </label><br>
                                         </div>
                                     </div>
                                     <div class="field is-grouped">

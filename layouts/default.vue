@@ -1,11 +1,11 @@
 <template>
   <div>
-<<<<<<< HEAD
+
 	<nuxt />
-=======
+
     <Navbar/>
     <nuxt />
->>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
+
   </div>
 </template>
 

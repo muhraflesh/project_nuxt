@@ -1,12 +1,12 @@
 <template>
     <section class="section">
             <div class="container">  
-<<<<<<< HEAD
+
 <div class="columns is-centered is-mobile">
-=======
+
                 
                     <div class="columns is-centered is-mobile">
->>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
+
                             <div class="column is-5 box has-background-light">
                                 <div class="field ">
                                     <p class="is-size-3 has-text-weight-bold has-text-primary">Sign Up</p>
@@ -14,16 +14,12 @@
                                     <br>
                                 </div>
                                 <div class="is-divider"></div>
-<<<<<<< HEAD
+
 
                                 <Notification :message="pesan" v-if="pesan"/>
 
-                                
-<form method="post" @submit.prevent="register">
-=======
-                                <Notification :message="pesan" v-if="pesan"/>
                                 <form method="post" @submit.prevent="register">
->>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
+
                                     <div class="field">
                                         <input 
                                         class="input" 
@@ -54,15 +50,14 @@
                                                 <input type="checkbox">
                                                 I agree to the <a href="#">Terms of Use & Privacy Policy</a>
                                             </label>
-<<<<<<< HEAD
+
                                             <br>
                                             <label class="checkbox">
                                                 
                                               Already have an account? <a href="/login">Login</a>
                                             </label><br>
-=======
+
                                             <br><br>
->>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
                                         </div>
                                     </div>
                                     <div class="field is-grouped">
@@ -76,6 +71,7 @@
                                 </form>
                             </div>
                         </div>
+</div>
     </div>
     </section>
 </template>
@@ -91,15 +87,12 @@
                 username:'',
                 email:'',
                 password:'',
-<<<<<<< HEAD
+
 
                 pesan: null
 
                 
 
-=======
-                pesan: null
->>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
             }
         },
 

@@ -1,37 +1,22 @@
 <template>
-<<<<<<< HEAD
   
   
     <div class="container">
       
-      <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-4">John Smith</p>
-        <p class="subtitle is-6">@johnsmith</p>
-      </div>
-    </div>
+      <p class="is-family-secondary  has-text-link is-size-1-desktop">
+        Solusi 247
+      </p>
 
-    <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-    </div>
-  </div>
-</div>
+      <Logo_index/>
+
+      <div class="links">
+        <a
+          href="/signin"
+          class="button--green">Register</a>
+        <a
+          href="/login"
+          class="button--grey">Login</a>
+      </div>
 
       
     </div>
@@ -42,36 +27,12 @@
   export default { 
     components: {
       Logo_index,
-=======
-  <section class="section">
-  
-    <div class="container">
-      
-      <figure class="image is-128x60">
-        <img src="Alam.jpg" class="image is-128x60">
-      </figure>
-
-      <nuxt-link to="/login">
-      Login
-      </nuxt-link>
-
-      
-    </div>
-  </section>
-</template>
-<script>
-  import Navbar from '../components/Navbar'
-  export default { 
-    components: {
-      Navbar,
->>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
     },
     
   }
 </script>
 <style>
   
-<<<<<<< HEAD
   .circle{
 	border-radius: 50%;
 	margin: 0.15em;
@@ -100,7 +61,5 @@
   align-items: center;
   text-align: center;
   }
-=======
->>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
 </style>
 

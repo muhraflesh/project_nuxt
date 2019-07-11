@@ -1,5 +1,5 @@
 # coba_bulma
-pasaja
+cobacobalagiiiii
 > My riveting Nuxt.js project
 
 ## Build Setup

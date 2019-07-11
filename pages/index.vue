@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   
   
     <div class="container">
@@ -41,12 +42,36 @@
   export default { 
     components: {
       Logo_index,
+=======
+  <section class="section">
+  
+    <div class="container">
+      
+      <figure class="image is-128x60">
+        <img src="Alam.jpg" class="image is-128x60">
+      </figure>
+
+      <nuxt-link to="/login">
+      Login
+      </nuxt-link>
+
+      
+    </div>
+  </section>
+</template>
+<script>
+  import Navbar from '../components/Navbar'
+  export default { 
+    components: {
+      Navbar,
+>>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
     },
     
   }
 </script>
 <style>
   
+<<<<<<< HEAD
   .circle{
 	border-radius: 50%;
 	margin: 0.15em;
@@ -75,5 +100,7 @@
   align-items: center;
   text-align: center;
   }
+=======
+>>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
 </style>
 

@@ -12,11 +12,16 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
+<<<<<<< HEAD
 
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'},
 
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+=======
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'},
+>>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
     ],
   },
   
@@ -46,7 +51,11 @@ export default {
     '@nuxtjs/auth'
   ],
   axios: {
+<<<<<<< HEAD
     baseURL: 'http://192.168.3.134:3000/api/user'
+=======
+    baseURL: 'http://192.168.3.134:3000/api/users'
+>>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
   },
   auth: {
     strategies: {

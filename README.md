@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 WKWKWKWKW
+=======
+# coba_bulma
+pasaja
+> My riveting Nuxt.js project
+
+>>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
 ## Build Setup
 
 ``` bash

@@ -2,7 +2,11 @@
   "name": "coba_bulma",
   "version": "1.0.0",
   "description": "My riveting Nuxt.js project",
+<<<<<<< HEAD
   "author": "raflesh",
+=======
+  "author": "salma",
+>>>>>>> 45079c7b5ebeaca7495590dfe4307c0b2f16bc99
   "private": true,
   "config": {
     "nuxt": {

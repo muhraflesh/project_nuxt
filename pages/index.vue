@@ -1,25 +1,13 @@
 <template>
-  
+  <section>
   
     <div class="container">
       
-      <p class="is-family-secondary  has-text-link is-size-1-desktop">
-        Solusi 247
-      </p>
 
       <Logo_index/>
 
-      <div class="links">
-        <a
-          href="/signin"
-          class="button--green">Register</a>
-        <a
-          href="/login"
-          class="button--grey">Login</a>
-      </div>
-
-      
     </div>
+   </section>
  
 </template>
 <script>

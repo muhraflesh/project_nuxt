@@ -1,8 +1,10 @@
 <template>
-    <nav class="navbar is-light">
+    <nav class="navbar is-dark">
         <div class="container">
             <div class="navbar-brand">
-                <nuxt-link class="navbar-item" to="/">Weebboo</nuxt-link>
+                <a class="navbar-item" href="#">
+                <img src="solusi.png" class="logonavbar">
+                </a>
                 <button class="button navbar-burger">
                     <span></span>
                     <span></span>
@@ -28,3 +30,9 @@
         </div>
     </nav>
 </template>
+<style>
+.logonavbar{
+    width: 170px;
+    height: 70%;
+}
+</style>

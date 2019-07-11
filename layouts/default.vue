@@ -1,6 +1,9 @@
 <template>
   <div>
+<<<<<<< HEAD
     <Navbar/>
+=======
+>>>>>>> 141d684f200cb95825fe28f1b6f0f8a03a90a492
     <nuxt />
   </div>
 </template>

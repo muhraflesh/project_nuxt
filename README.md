@@ -1,7 +1,4 @@
-# coba_bulma
-
-> My riveting Nuxt.js project
-
+WKWKWKWKW
 ## Build Setup
 
 ``` bash

@@ -2,13 +2,13 @@
   "name": "coba_bulma",
   "version": "1.0.0",
   "description": "My riveting Nuxt.js project",
-  "author": "salma",
+  "author": "raflesh",
   "private": true,
   "config": {
-     "nuxt": {
-	 "host":"192.168.20.5",
-	 "port":"3000"
-	}
+    "nuxt": {
+      "host": "192.168.20.5",
+      "port": "3000"
+    }
   },
   "scripts": {
     "dev": "nuxt",

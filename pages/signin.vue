@@ -1,8 +1,7 @@
 <template>
     <section class="section">
             <div class="container">  
-                
-                    <div class="columns is-centered is-mobile">
+<div class="columns is-centered is-mobile">
                             <div class="column is-5 box has-background-light">
                                 <div class="field ">
                                     <p class="is-size-3 has-text-weight-bold has-text-primary">Sign Up</p>
@@ -10,8 +9,11 @@
                                     <br>
                                 </div>
                                 <div class="is-divider"></div>
+
                                 <Notification :message="pesan" v-if="pesan"/>
-                                <form method="post" @submit.prevent="register">
+
+                                
+<form method="post" @submit.prevent="register">
                                     <div class="field">
                                         <input 
                                         class="input" 
@@ -71,7 +73,11 @@
                 username:'',
                 email:'',
                 password:'',
+
                 pesan: null
+
+                
+
             }
         },
 

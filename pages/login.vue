@@ -1,25 +1,29 @@
 <template>
-  <div>
+ 
     
-  <div class="container has-margin-top-100 justify-center">
+  <div class="container has-margin-top-50 justify-center is-mobile">
         <div class="columns is-centered ">
             <div class="column hero has-background-primary is-5 has-text-white">
               <p class="is-size-2 has-text-centered"><br>
                 Hello!
               <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br>
               <div class="control is-centered" style="padding-left:35%; padding-right:20%; padding-bottom:20%"> 
-                  <button class="button has-background-white is-medium" style="border-radius:30px" id="ShowModal">
+                  <button class="button has-background-white is-medium is-hovered is-centered is-rounded">
                      Lorem Ipsum </button>
                 </div>
             </div>
             <div class="column">
               <div class="columns is-centered">
                 <div class="column">
-                    <div class="is-size-1 has-text-primary has-text-centered has-text-weight-bold"> 
-                        <font>WEBBBOOOO!!</font>
-                        <br><br><br>
+                    <div class="has-text-primary has-text-centered"> 
+                        <a href="#" class="image is-10x4">
+                        <img src="solusi.png" >
+                        </a>
+                        <br>
                       </div>
-                      <Notification :message="error" v-if="error" />
+                      <div class="field">
+                      <Notification :message="pesan" v-if="pesan" />
+                      </div>
                     <form method="post" @submit.prevent="login" style="padding-left: 25%; padding-right:25%">
                         <div class="field">
                             <p class="control has-icons-left">
@@ -57,7 +61,7 @@
                     </form>
                     <div class="has-text-centered" style="margin-top: 30px">
                           <p> Don't have an account?
-                            <nuxt-link to="/signin"> Register   </nuxt-link>
+                            <nuxt-link to="/register"> Register   </nuxt-link>
                             <nuxt-link to="/forgotpass"> Forgot Password </nuxt-link>
                           </p>
                           <p>or Sign in with social network</p>
@@ -77,19 +81,8 @@
             </div>
     </div>
 
-    <div class="modal" id="welc">
-      <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title"> Welcome! </p>
-          </header>
-          <section class="modal-card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </section>
-        </div>
-        <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-  </div>
+    
+  
 </template>
 <script>
   import Notification from '../components/Notification'
@@ -101,7 +94,7 @@
       return{
         email: '',
         password:'',
-        error: null
+        pesan: null
       }
     },
     methods: {
@@ -115,9 +108,17 @@
           })
 
           this.$router.push('/home')
-        } catch (e){
-          this.error = e.response.data.message;
+        } catch (e) {
+        this.pesan = e.response.data.error.statusCode ;
+        if (this.pesan === 500) {
+          this.pesan = 'Server Error, Check Your Connection.'
+        } else if (this.pesan === 401) {
+          this.pesan = 'Invalid Email / Password.'
+        } else if (this.pesan === 400) {
+          this.pesan = 'Success!';
+          
         }
+      }
       }
     }
   }

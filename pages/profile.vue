@@ -1,47 +1,148 @@
 <template>
-    <section class="section">
-       <div class="columns">
-           <div class="column">
-               <div class="card">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                        <div class="media-left">
-                            <figure class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                            </figure>
-                        </div>
-                        <div class="media-content">
-                            <p class="title is-4">John Smith</p>
-                            <p class="subtitle is-6">@johnsmith</p>
-                        </div>
-                        </div>
+    <section class="section main-content columns is-fullheight">
+                <div class="column is-3 is-narrow-mobile is-fullheight is-hidden-mobile">
+                <figure class="image is-4by4">
+                        <img src="atomixuser.png" alt="Placeholder image" class="user">
+                </figure>
+                <ul class="menu-list">
+                <li>
+                    <a href="#" class="has-text-centered">
+                     Muh Raflesh
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="has-background-primary">
+                    <span class="icon"><i class="fa fa-user"></i></span> Biodata
+                    </a>
 
-                        <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                        </div>
-                    </div>
-                    </div>
-           </div>
-           <div class="column">
+                    <ul>
+                    <li>
+                        <a href="#">
+                        <span class="icon is-small"><i class="fa fa-envelope"></i></span> muhraflesh@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <span class="icon is-small"><i class="fa fa-phone"></i></span> 086543218798
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <span class="icon is-small"><i class="fa fa-home"></i></span> Jogjakarta
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <span class="icon is-small"><i class="fa fa-mars-stroke"></i></span> Male
+                        </a>
+                    </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="has-background-primary">
+                    <span class="icon"><i class="fa fa-tasks"></i></span> Departement
+                    </a>
+
+                    <ul>
+                    <li>
+                        <a href="#">
+                        <span class="icon is-small"><i class="fa fa-link"></i></span> Link1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <span class="icon is-small"><i class="fa fa-link"></i></span> Link2
+                        </a>
+                    </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="has-background-primary">
+                    <span class="icon"><i class="fa fa-cog"></i></span>Setting
+                    </a>
+
+                    <ul>
+                    <li>
+                        <a href="#">
+                        <span class="icon is-small"><i class="fa fa-sign-out"></i></span> Logout
+                        </a>
+                    </li>
+                    
+                    </ul>
+                </li>
+                </ul>
+            </div>
+           
+           <div class="column is-4">
                
-               <p class="notification is-success">Mantab Cen</p>
+               <div class="card">
+                   <header class="card-header has-background-info">
+                    <p class="card-header-title ">
+                    Data Presensi
+                    </p>
+                    <a href="#" class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                    </a>
+                </header>
+                    <div class="card-content">
+                        <p class="subtitle">
+                        Jeff Atwood
+                        </p>
+                    </div>
+                <footer class="card-footer">
+                    <p class="card-footer-item">
+                    <span>
+                        <a href="/statistik">View More</a>
+                    </span>
+                    </p>
+                    <p class="card-footer-item">
+                    <span>
+                        <a href="#">Edit</a>
+                    </span>
+                    </p>
+                </footer>
+                </div>
            </div>
-           <div class="column">
-               
-               <p class="notification is-danger">Mantab Cen</p>
+           <div class="column is-5">
+               <div class="card">
+                <header class="card-header has-background-warning">
+                    <p class="card-header-title ">
+                    Task
+                    </p>
+                    <a href="#" class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                    </a>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                    <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <a href="#" class="card-footer-item">View More</a>
+                    <a href="#" class="card-footer-item">Finished</a>
+                    <a href="#" class="card-footer-item">Delete</a>
+                </footer>
+                </div>
            </div>
        </div>
     </section>
 </template>
+
+<style>
+.user{
+    height: 100%;
+    width: 100%
+}
+</style>
+
 <script>
 export default {
    

@@ -13,8 +13,9 @@
                             <p>Don't Worry. Resetting your password is easy. </p>
                             <p>Tell us your registered email address below here!</p>
                             <br>
+                            <Notification :message="pesan" v-if="pesan"/>
                         </div>
-                        <form>
+                        <form method="post" @submit.prevent="register">
                             <div class="field">
                                     <input
                                     class="input has-text-centered"
@@ -25,7 +26,7 @@
                             <div class="field">
                                 <div class="control">
                                     <button class="button has-background-primary is-fullwidth has-text-white" to="#">
-                                        Lorem Ipsum
+                                        Send
                                     </button>
                                 </div>
                             </div>
@@ -40,3 +41,46 @@
   justify-content: center;
 }
 </style>
+
+<script>
+export default {
+        components: {
+            Notification,
+        },
+        data(){
+            return {
+                email:'',
+                password:'',
+                pesan: null
+
+                
+
+            }
+        },
+
+        methods: {
+            async register(){
+                try{
+                    await this.$axios.post('',{
+                        username: this.username,
+                        email: this.email,
+                        password: this.password
+
+                    })
+                  
+
+                    this.$router.push('/')
+                } catch (e) {
+                    this.pesan = e.response.data.error.statusCode ;
+                    if (this.pesan === 500) {
+                    this.pesan = 'Server Error, Check Your Connection.'
+                    } else if (this.pesan === 401) {
+                    this.pesan = 'Invalid Email / Password.'
+                    } else if (this.pesan === 400) {
+                    this.pesan = 'Success!'
+                    }
+                }
+            }
+        }
+    }
+</script>

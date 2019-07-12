@@ -1,32 +1,24 @@
 <template>
-    <nav class="navbar is-dark">
-        <div class="container">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="#">
-                <img src="solusi.png" class="logonavbar">
-                </a>
-                <button class="button navbar-burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            <div class="navbar-menu">
+    <nav class="navbar is-mobile is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+            <img src="solusi.png" alt="Bulma: Free, open source, & modern CSS framework based on Flexbox" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger is-dark" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navbarMenuHeroA">
                 <div class="navbar-end">
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            My Account
-                        </a>
-                        <div class="navbar-dropdown">
-                            <nuxt-link class="navbar-item" to="/">My Profile</nuxt-link>
-                            <hr class="navbar-divider">
-                            <a class="navbar-item"> Logout</a>
-                        </div>
-                    </div>
-                    <nuxt-link class="navbar-item" to="/signin">Register</nuxt-link>
-                    <nuxt-link class="navbar-item" to="/login"></nuxt-link>
+                    <nuxt-link class="navbar-item" to="/home">Home</nuxt-link>
+                    <nuxt-link class="navbar-item" to="/profile">My Profile</nuxt-link>
+                    <nuxt-link class="navbar-item" to="/register">Register</nuxt-link>
+                    <nuxt-link class="navbar-item" to="/login">Login</nuxt-link>
+                    <nuxt-link class="navbar-item" to="/"></nuxt-link>
                 </div>
-            </div>
         </div>
     </nav>
 </template>

@@ -2,10 +2,8 @@
   "name": "coba_bulma",
   "version": "1.0.0",
   "description": "My riveting Nuxt.js project",
-
   "author": "raflesh",
-
- "private": true,
+  "private": true,
   "config": {
     "nuxt": {
       "host": "192.168.20.5",
@@ -24,7 +22,8 @@
     "@nuxtjs/bulma": "^1.2.1",
     "@nuxtjs/font-awesome": "^1.0.4",
     "bulma-helpers": "^0.3.8",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-carousel": "^0.18.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"

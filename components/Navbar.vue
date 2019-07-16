@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar is-mobile is-dark" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-mobile is-dark " role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="#">
             <img src="solusi.png" alt="Bulma: Free, open source, & modern CSS framework based on Flexbox" width="112" height="28">

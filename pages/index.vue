@@ -1,26 +1,53 @@
 <template>
-  <section class="hero is-medium is-light is-bold is-medium">
+  <section>
   
     <div class="container">
-      
-
-      <Logo_index/>
+      <div>
+        <br/>
+        <h1 class="has-text-weight-bold has-text-primary is-size-3 title"> </h1>
+      </div>
+      <carousel :per-page="1"
+                :autoplay="true"
+                :loop="true"
+                :pagination-padding="5"
+                :autoplay-timeout="4000"
+                :pagination-active-color=blue>
+        <slide>
+          <img src="247_1.jpg" />
+        </slide>
+        <slide>
+          <img src="247_2.jpg" />
+        </slide>
+        <slide>
+          <img src="247_3.jpg" />
+        </slide>
+        <slide>
+          <img src="247_4.jpg" />
+        </slide>
+        <slide>
+          <img src="solusi.png" />
+        </slide>
+      </carousel>
 
     </div>
    </section>
  
 </template>
 <script>
-  import Logo_index from '../components/Logo_index'
+  import { Carousel, Slide } from '~/node_modules/vue-carousel';
   export default { 
     components: {
-      Logo_index,
+      Carousel,
+      Slide
     },
     
   }
 </script>
 <style>
-  
+  .title{
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
   .circle{
 	border-radius: 50%;
 	margin: 0.15em;
@@ -48,6 +75,15 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  }
+  .VueCarousel-slide {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #fff;
+  box-sizing: border-box;
+  height: 500px;
   }
 </style>
 

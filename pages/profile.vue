@@ -88,7 +88,7 @@
                 </header>
                     <div class="card-content">
                         <p class="subtitle">
-                        Jeff Atwood
+                        (Presensi Karyawan)
                         </p>
                     </div>
                 <footer class="card-footer">
@@ -126,7 +126,7 @@
                     </div>
                 </div>
                 <footer class="card-footer">
-                    <a href="#" class="card-footer-item">View More</a>
+                    <a href="/task" class="card-footer-item">View More</a>
                     <a href="#" class="card-footer-item">Finished</a>
                     <a href="#" class="card-footer-item">Delete</a>
                 </footer>

@@ -10,7 +10,7 @@
                 :autoplay="true"
                 :loop="true"
                 :pagination-padding="5"
-                :autoplay-timeout="4000"
+                :autoplay-timeout="2500"
                 :pagination-active-color=blue>
         <slide>
           <img src="247_1.jpg" />
@@ -39,6 +39,16 @@
     components: {
       Carousel,
       Slide
+    },
+
+    data() {
+      return {
+      
+      }
+    },
+  
+    methods: {
+    
     },
     
   }

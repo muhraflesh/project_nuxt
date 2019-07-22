@@ -13,7 +13,7 @@
         </div>
         <div class="navbar-menu" id="navbarMenuHeroA">
                 <div class="navbar-end">
-                    <nuxt-link class="navbar-item" to="/home">Home</nuxt-link>
+                    <nuxt-link class="navbar-item" to="/">Home</nuxt-link>
                     <nuxt-link class="navbar-item" to="/profile">My Profile</nuxt-link>
                     <nuxt-link class="navbar-item" to="/register">Register</nuxt-link>
                     <nuxt-link class="navbar-item" to="/login">Login</nuxt-link>

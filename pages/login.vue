@@ -85,8 +85,10 @@
   
 </template>
 <script>
+const Cookie = process.client ? require('js-cookie') : undefined
   import Notification from '../components/Notification'
   export default { 
+    middleware: 'notAuthenticated',
     components: {
       Notification,
     },
@@ -99,26 +101,29 @@
     },
     methods: {
       async login(){
-        try {
-          await this.$auth.loginWith('local', {
-            data: {
+        
+          await this.$axios.post("https://192.168.0.253:3000/api/user/login", {
+           
               email: this.email,
               password: this.password
-            }
+            
           })
 
-          this.$router.push('/home')
-        } catch (e) {
-        this.pesan = e.response.data.error.statusCode ;
-        if (this.pesan === 500) {
-          this.pesan = 'Server Error, Check Your Connection.'
-        } else if (this.pesan === 401) {
-          this.pesan = 'Invalid Email / Password.'
-        } else if (this.pesan === 400) {
-          this.pesan = 'Success!';
-          
+
+        .then (response => {
+            console.log(response.id);
+          })
+        let token = {
+          accessToken: 'response.id'
         }
-      }
+        
+        this.$store.commit('setToken', token)
+         
+        Cookie.set('token', token) 
+
+        this.$router.push('/profile')   
+        
+        
       }
     }
   }

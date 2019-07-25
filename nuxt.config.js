@@ -47,10 +47,10 @@ export default {
     '@nuxtjs/auth'
   ],
   axios: {
-    baseURL: 'http://192.168.179.49:3000/api/user'
+    baseURL: 'http://192.168.3.91.49:3000/api/user'
   },
   auth: {
-    strategies: {
+    /*strategies: {
       local: {
         endpoints: {
           login: {
@@ -64,7 +64,7 @@ export default {
           logout:false,
         },
       },
-    }
+    } */
   },
   /*
   ** Build configuration

@@ -199,6 +199,11 @@
 
     },
 
+    data() {
+      return{
+        username: '',  
+      }
+    },
     methods: {
         showModal(){
           document.getElementById('modalAsk').classList.add('is-active'); 
@@ -206,6 +211,7 @@
         closeModal(){
             document.getElementById('modalAsk').classList.remove('is-active'); 
         },
+       
     },
     
   }

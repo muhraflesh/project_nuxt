@@ -7,7 +7,7 @@
                 <ul class="menu-list">
                 <li>
                     <a href="#" class="has-text-centered">
-                     Muh Raflesh
+                     Raflesh
                     </a>
                 </li>
                 <li>
@@ -63,7 +63,7 @@
 
                     <ul>
                     <li>
-                        <a href="#">
+                        <a href="#" @click="logout">
                         <span class="icon is-small"><i class="fa fa-sign-out"></i></span> Logout
                         </a>
                     </li>
@@ -144,7 +144,20 @@
 </style>
 
 <script>
+const Cookie = process.client ? require('js-cookie') : undefined
+
+
 export default {
+    middleware: 'authenticated',
+
+    methods: {
+        
+        logout () {
+            Cookie.remove('token')
+            this.$store.commit('setToken', null)
+            this.$router.push('/')
+        }
+    }
    
 }
 </script>

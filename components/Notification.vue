@@ -1,5 +1,5 @@
 <template>
-    <div class="notification is-grey">
+    <div class="notification is-danger">
         {{ message }}
     </div>
 </template>

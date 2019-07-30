@@ -19,6 +19,10 @@ export default {
 
     ],
   },
+
+  env: {
+    githubToken: '42cdf9fd55abf41d24f34c0f8a4d9ada5f9e9b93'
+  },
   
   /*
   ** Customize the progress-bar color
@@ -84,3 +88,6 @@ export default {
     }
   }
 }
+
+
+

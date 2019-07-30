@@ -1,6 +1,4 @@
-<template>
- 
-    
+<template>  
   <div class="container has-margin-top-50 justify-center is-mobile">
         <div class="columns is-centered ">
             <div class="column hero has-background-primary is-5 has-text-white">
@@ -53,7 +51,7 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <button type="submit" class="button has-background-primary is-fullwidth has-text-white">
+                                <button type="login" class="button has-background-primary is-fullwidth has-text-white">
                                   Log In
                                 </button>
                               </div>

@@ -94,7 +94,7 @@
                 <footer class="card-footer">
                     <p class="card-footer-item">
                     <span>
-                        <a href="/statistik">View More</a>
+                        <a href="/presensi">View More</a>
                     </span>
                     </p>
                     <p class="card-footer-item">

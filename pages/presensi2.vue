@@ -31,25 +31,20 @@
                 </p>
               </div>
           <form method="post" @submit.prevent="presensi" class="is-centered" style="padding-left: 20% ;padding-top: 10%">
-          <div class="field is-horizontal">
-            <div class="field-label is-normal is-fullwidth">
-              <label class="label"> Tanggal Mulai </label>
-            </div>
-            <div class="field-body" style="padding-left: 5%">
-              <input ref="cal1" type="date" class="input">
-          </div>
-          </div>
-          <div class="field is-horizontal">
+          <div class="field">
             <div class="field-label is-normal">
-              <label class="label"> Tanggal Selesai </label>
+              <label class="label has-text-left"> Tanggal Mulai s/d Tanggal Selesai</label>
             </div>
-            <div class="field-body" style="padding-left: 5%">
-              <input ref="cal2" type="date" class="input">
-            </div>
+            <div class="field-body is-fullwidth">
+                <div>
+                  <button ref="trigger" type="date" data-is-range="true"  class="btn-block full-width-btn">
+                  </button>
+                </div> 
           </div>
-          <div class="field is-horizontal">
+          </div>
+          <div class="field">
               <div class="field-label is-normal">
-                <label class="label">Keterangan</label>
+                <label class="label has-text-left">Keterangan</label>
               </div>
               <div class="field-body">
                 <p class="control form-textbox">
@@ -79,37 +74,33 @@
 <script>
 import bulmaCalendar from '~/node_modules/bulma-calendar/dist/js/bulma-calendar.min.js'
 
-export default {
+export default{
   data: () => ({
-    date1: new Date(),
-    date2: new Date(),
+    date: new Date(),
   }),
   mounted() {
-    let calendar1 = new bulmaCalendar(this.$refs.cal1, {
-      startDate: this.date1,
+    const calendar = new bulmaCalendar(this.$refs.trigger, {
+      startDate: this.date,
     })
-    calendar1.on('date:selected', e => (this.date1 = e.start || null))
-    let calendar2 = new bulmaCalendar(this.$refs.cal2, {
-      startDate: this.date2,
-    })
-    calendar2.on('date:selected', e => (this.date2 = e.start || null))
+    calendar.on('date:selected', e => (this.date = e.start || null))
   },
   computed: {
-    niceDate1() {
-      if (this.date1) {
-        return this.date1.toLocaleDateString()
-      }},
-    niceDate2() {
-      if (this.date2) {
-        return this.date2.toLocaleDateString()
+    niceDate() {
+      if (this.date) {
+        return this.date.toLocaleDateString()
       }
     }
   }
-}
+};
 </script>
 
 <style>
 .form-textbox {
 min-width : 80% ;
+}
+
+
+.full-width-btn {
+width: 100%;
 }
 </style>

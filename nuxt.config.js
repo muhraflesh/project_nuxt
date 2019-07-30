@@ -18,6 +18,10 @@ export default {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'},
     ],
   },
+
+  env: {
+    githubToken: '42cdf9fd55abf41d24f34c0f8a4d9ada5f9e9b93'
+  },
   
   /*
   ** Customize the progress-bar color
@@ -34,7 +38,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    
+    'plugins/axios.js'
   ],
   /*
   ** Nuxt.js modules
@@ -47,7 +51,7 @@ export default {
     '@nuxtjs/auth',
   ],
   axios: {
-    baseURL: 'http://192.168.3.91.49:3000/api/user'
+    baseURL: 'http://192.168.3.110:3000/api/user'
   },
   auth: {
     /*strategies: {
@@ -84,3 +88,6 @@ export default {
     }
   }
 }
+
+
+

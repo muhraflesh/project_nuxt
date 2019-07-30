@@ -95,13 +95,17 @@
                     <p class="card-footer-item">
                     <span>
                         <a href="/presensi">View More</a>
+<<<<<<< HEAD
                     </span>
                     </p>
                     <p class="card-footer-item">
                     <span>
                         <a href="#">Edit</a>
+=======
+>>>>>>> 8ad3a92d03626850fd64c0a4696117da09f37351
                     </span>
                     </p>
+                    
                 </footer>
                 </div>
            </div>
@@ -109,7 +113,7 @@
                <div class="card">
                 <header class="card-header has-background-warning">
                     <p class="card-header-title ">
-                    Task
+                    Divisi
                     </p>
                     <a href="#" class="card-header-icon" aria-label="more options">
                     <span class="icon">
@@ -126,9 +130,8 @@
                     </div>
                 </div>
                 <footer class="card-footer">
-                    <a href="/task" class="card-footer-item">View More</a>
-                    <a href="#" class="card-footer-item">Finished</a>
-                    <a href="#" class="card-footer-item">Delete</a>
+                    <a href="/divisi" class="card-footer-item">View More</a>
+                    
                 </footer>
                 </div>
            </div>

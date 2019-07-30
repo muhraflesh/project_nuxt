@@ -94,13 +94,13 @@ const Cookie = process.client ? require('js-cookie') : undefined
       return{
         email: '',
         password:'',
-        pesan: null
+        pesan: null,
       }
     },
     methods: {
       async login(){
-        
-          await this.$axios.post("https://192.168.0.253:3000/api/user/login", {
+        try{
+          await this.$axios.post("https://192.168.3.166:3000/api/user/login", {
            
               email: this.email,
               password: this.password
@@ -116,10 +116,23 @@ const Cookie = process.client ? require('js-cookie') : undefined
         }
         
         this.$store.commit('setToken', token)
+        this.$store.commit('auth', token)
          
         Cookie.set('token', token) 
 
-        this.$router.push('/profile')   
+        this.$router.push('/profile')
+        }
+        
+        catch (e) {
+        this.pesan = e.response.data.error.statusCode ;
+        if (this.pesan === 500) {
+          this.pesan = 'Server Error, Check Your Connection.'
+        } else if (this.pesan === 401) {
+          this.pesan = 'Invalid Email / Password.'
+        } else if (this.pesan === 400) {
+          this.pesan = 'Success!'
+        }
+      }
         
         
       }

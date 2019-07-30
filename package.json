@@ -21,15 +21,24 @@
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/bulma": "^1.2.1",
     "@nuxtjs/font-awesome": "^1.0.4",
+<<<<<<< HEAD
+    "bulma-calendar": "^6.0.7",
+=======
     "axios": "^0.19.0",
+>>>>>>> 8ad3a92d03626850fd64c0a4696117da09f37351
     "bulma-helpers": "^0.3.8",
     "chart.js": "^2.7.1",
     "cookieparser": "^0.1.0",
     "js-cookie": "^2.2.0",
     "moment": "^2.18.1",
     "nuxt": "^2.0.0",
+<<<<<<< HEAD
+    "sass": "^1.22.7",
+    "vue-carousel": "^0.18.0"
+=======
     "vue-carousel": "^0.18.0",
     "vue-chartjs": "^3.1.0"
+>>>>>>> 8ad3a92d03626850fd64c0a4696117da09f37351
   },
   "devDependencies": {
     "nodemon": "^1.18.9"

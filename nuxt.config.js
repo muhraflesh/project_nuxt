@@ -16,7 +16,6 @@ export default {
 
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'},
-
     ],
   },
 
@@ -32,7 +31,8 @@ export default {
   ** Global CSS
   */
   css: [
-    'bulma-helpers/css/bulma-helpers.min.css'
+    'bulma-helpers/css/bulma-helpers.min.css',
+    'bulma-calendar/dist/css/bulma-calendar.min.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -48,7 +48,7 @@ export default {
     '@nuxtjs/bulma',
     '@nuxtjs/font-awesome',
     '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
   ],
   axios: {
     baseURL: 'http://192.168.3.110:3000/api/user'

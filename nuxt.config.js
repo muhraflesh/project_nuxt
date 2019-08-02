@@ -19,6 +19,10 @@ export default {
 
     ],
   },
+
+  env: {
+    accessToken: '$store.state.token'
+  },
   
   /*
   ** Customize the progress-bar color

@@ -109,7 +109,6 @@ const Cookie = process.client ? require('js-cookie') : undefined
             
           })
 
-
         .then (response => {
             console.log(response.id);
           })

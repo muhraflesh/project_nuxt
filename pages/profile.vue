@@ -95,14 +95,6 @@
                     <p class="card-footer-item">
                     <span>
                         <a href="/presensi">View More</a>
-<<<<<<< HEAD
-                    </span>
-                    </p>
-                    <p class="card-footer-item">
-                    <span>
-                        <a href="#">Edit</a>
-=======
->>>>>>> 8ad3a92d03626850fd64c0a4696117da09f37351
                     </span>
                     </p>
                     

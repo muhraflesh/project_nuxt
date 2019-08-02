@@ -77,15 +77,15 @@
                
                <div class="card">
                    <header class="card-header has-background-info">
-                    <p class="card-header-title ">
-                    Data Presensi
-                    </p>
-                    <a href="#" class="card-header-icon" aria-label="more options">
-                    <span class="icon">
-                        <i class="fas fa-angle-down" aria-hidden="true"></i>
-                    </span>
-                    </a>
-                </header>
+                        <p class="card-header-title ">
+                        Data Presensi
+                        </p>
+                        <a href="/presensi" class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fa fa-calendar" ></i>
+                        </span>
+                        </a>
+                    </header>
                     <div class="card-content">
                         <p class="subtitle">
                         (Presensi Karyawan)
@@ -115,9 +115,9 @@
                     <p class="card-header-title ">
                     Divisi
                     </p>
-                    <a href="#" class="card-header-icon" aria-label="more options">
+                    <a href="/divisi" class="card-header-icon" aria-label="more options">
                     <span class="icon">
-                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        <i class="fa fa-group is-black"></i>
                     </span>
                     </a>
                 </header>
@@ -134,6 +134,7 @@
                     
                 </footer>
                 </div>
+                <button @click="token">cek</button>
            </div>
        </div>
     </section>
@@ -151,10 +152,12 @@ const Cookie = process.client ? require('js-cookie') : undefined
 
 
 export default {
-    middleware: 'authenticated',
+   
 
     methods: {
-        
+        token ({store}){
+            console.log (store.state.token)
+        },
         logout () {
             Cookie.remove('token')
             this.$store.commit('setToken', null)

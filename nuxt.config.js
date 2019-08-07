@@ -38,7 +38,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    'plugins/axios.js'
+
   ],
   /*
   ** Nuxt.js modules
@@ -68,7 +68,7 @@ export default {
           logout:false,
         },
       },
-    } 
+    }
   },
   /*
   ** Build configuration

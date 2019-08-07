@@ -97,7 +97,6 @@
                         <a href="/presensi">View More</a>
                     </span>
                     </p>
-
                 </footer>
                 </div>
            </div>

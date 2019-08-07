@@ -38,7 +38,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    'plugins/axios.js'
+
   ],
   /*
   ** Nuxt.js modules
@@ -54,7 +54,7 @@ export default {
     baseURL: 'http://192.168.3.110:3000/api/user'
   },
   auth: {
-    /*strategies: {
+    strategies: {
       local: {
         endpoints: {
           login: {
@@ -68,7 +68,7 @@ export default {
           logout:false,
         },
       },
-    } */
+    }
   },
   /*
   ** Build configuration

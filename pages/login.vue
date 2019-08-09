@@ -87,7 +87,6 @@ const Cookie = process.client ? require('js-cookie') : undefined
 
   import Notification from '../components/Notification'
   export default { 
-    middleware: 'notAuthenticated',
     components: {
       Notification,
     },

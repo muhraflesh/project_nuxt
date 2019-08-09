@@ -100,33 +100,25 @@ const Cookie = process.client ? require('js-cookie') : undefined
     },
     methods: {
       async login(){
-
         try{
           await this.$axios.post("https://192.168.3.146:3000/api/user/login", {
-           
-
               email: this.email,
               password: this.password
-           
           })
-
         let auth = {
           accessToken: 'response.id'
         }
-          
-
-        
         this.$store.commit('setAuth', auth)
 
          
         Cookie.set('auth', auth) 
 
         this.$router.push('/profile')
-        }, 1000)
-        
-      
-        
-        
+        }
+
+        catch (e) {
+        this.pesan = e.response.data.error.statusCode ;
+        }
       }
     }
   }

@@ -56,7 +56,7 @@ export default {
 
   },
   auth: {
-    /*strategies: {
+    strategies: {
       local: {
         endpoints: {
           login: {
@@ -70,7 +70,7 @@ export default {
           logout:false,
         },
       },
-
+    }
   },
 
   /*

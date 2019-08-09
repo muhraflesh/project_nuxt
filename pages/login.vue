@@ -100,7 +100,7 @@ const Cookie = process.client ? require('js-cookie') : undefined
     methods: {
       async login(){
         try{
-          await this.$auth.loginWith("local", {
+          await this.$axios.post("https://192.168.3.146:3000/api/user/login", {
            
               email: this.email,
               password: this.password
@@ -110,14 +110,14 @@ const Cookie = process.client ? require('js-cookie') : undefined
         .then (response => {
             console.log(response.id);
           })
-        let token = {
+        let auth = {
           accessToken: 'response.id'
         }
         
-        this.$store.commit('setToken', token)
-        this.$store.commit('auth', token)
+        this.$store.commit('setAuth', auth)
+        this.$store.commit('auth', auth)
          
-        Cookie.set('token', token) 
+        Cookie.set('auth', auth) 
 
         this.$router.push('/profile')
         }

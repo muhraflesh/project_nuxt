@@ -15,8 +15,8 @@
                 <div class="navbar-end">
                     <nuxt-link class="navbar-item" to="/">Home</nuxt-link>
                     <nuxt-link class="navbar-item" to="/profile">Profile</nuxt-link>
-                    <nuxt-link v-if="!$store.state.token" class="navbar-item" to="/login">Login</nuxt-link>
-                    <a v-if="$store.state.token" class="navbar-item" @click="logout">Logout</a>
+                    <nuxt-link v-if="!$store.state.auth" class="navbar-item" to="/login">Login</nuxt-link>
+                    <a v-if="$store.state.auth" class="navbar-item" @click="logout">Logout</a>
                     <nuxt-link class="navbar-item" to="/"></nuxt-link>
                 </div>
         </div>
@@ -34,8 +34,8 @@ const Cookie = process.client ? require('js-cookie') : undefined
 export default {
   methods: {
     logout () {
-      Cookie.remove('token')
-      this.$store.commit('setToken', null)
+      Cookie.remove('auth')
+      this.$store.commit('setAuth', null)
       this.$router.push('/')
     }
   }

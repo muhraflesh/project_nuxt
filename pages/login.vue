@@ -84,6 +84,7 @@
 </template>
 <script>
 const Cookie = process.client ? require('js-cookie') : undefined
+
   import Notification from '../components/Notification'
   export default { 
     middleware: 'notAuthenticated',
@@ -99,39 +100,28 @@ const Cookie = process.client ? require('js-cookie') : undefined
     },
     methods: {
       async login(){
-        try{
-          await this.$auth.loginWith("local", {
-           
+        setTimeout(() => { 
+          this.$axios.post('https://192.168.3.106:3000/api/user/login', {
+       
               email: this.email,
               password: this.password
-            
+           
           })
-
-        .then (response => {
-            console.log(response.id);
-          })
-        let token = {
-          accessToken: 'response.id'
+        const auth = {
+          accessToken: 'someStringGotFromApiServiceWithAjax'
         }
+          
+
         
-        this.$store.commit('setToken', token)
-        this.$store.commit('auth', token)
+        this.$store.commit('setAuth', auth)
+        
          
-        Cookie.set('token', token) 
+        Cookie.set('auth', auth) 
 
         this.$router.push('/profile')
-        }
+        }, 1000)
         
-        catch (e) {
-        this.pesan = e.response.data.error.statusCode ;
-        if (this.pesan === 500) {
-          this.pesan = 'Server Error, Check Your Connection.'
-        } else if (this.pesan === 401) {
-          this.pesan = 'Invalid Email / Password.'
-        } else if (this.pesan === 400) {
-          this.pesan = 'Success!'
-        }
-      }
+      
         
         
       }

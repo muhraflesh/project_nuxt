@@ -18,7 +18,7 @@
   </template>
   <style>
   .hero-body::before {
-  background-image: url(../static/247_4.jpg);
+  background-image: url(../static/comp.jpg);
   background-size: cover;
   content: "";
   display: block;

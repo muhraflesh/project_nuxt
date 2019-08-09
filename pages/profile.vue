@@ -97,7 +97,6 @@
                         <a href="/presensi">View More</a>
                     </span>
                     </p>
-                    
                 </footer>
                 </div>
            </div>
@@ -145,6 +144,8 @@ const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
    middleware: "authenticated",
+
+
 
     methods: {
         auth ({store}){

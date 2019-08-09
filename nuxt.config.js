@@ -68,7 +68,7 @@ export default {
           logout:false,
         },
       },
-    } */
+
   },
   /*
   ** Build configuration

@@ -20,6 +20,7 @@ export default {
   },
 
   env: {
+    
     githubToken: '42cdf9fd55abf41d24f34c0f8a4d9ada5f9e9b93'
   },
   
@@ -51,7 +52,8 @@ export default {
     '@nuxtjs/auth',
   ],
   axios: {
-    baseURL: 'http://192.168.3.146:3000/api/user'
+    baseURL: 'https://192.168.3.110:3000/api/user'
+
   },
   auth: {
     /*strategies: {
@@ -70,6 +72,7 @@ export default {
       },
 
   },
+
   /*
   ** Build configuration
   */

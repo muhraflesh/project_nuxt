@@ -23,7 +23,7 @@ export const mutations = {
 
 export const getters = {
   loggedIn (state) {
-    return Boolean(state.user && state.token)
+    return Boolean(state.user && state.auth)
   }
 }
 

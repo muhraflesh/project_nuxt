@@ -125,9 +125,9 @@
                     
                 </footer>
                 </div>
-                <button @click="token">cek</button>
+                
            </div>
-       </div>
+       
     </section>
 </template>
 
@@ -143,15 +143,17 @@ const Cookie = process.client ? require('js-cookie') : undefined
 
 
 export default {
-   middleware: 'authenticated',
+   middleware: "authenticated",
+
+
 
     methods: {
-        token ({store}){
-            console.log (store.state.token)
+        auth ({store}){
+            console.log (store.state.auth)
         },
         logout () {
-            Cookie.remove('token')
-            this.$store.commit('setToken', null)
+            Cookie.remove('auth')
+            this.$store.commit('setAuth', null)
             this.$router.push('/')
         }
     }

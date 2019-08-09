@@ -100,21 +100,24 @@ const Cookie = process.client ? require('js-cookie') : undefined
     },
     methods: {
       async login(){
-        setTimeout(() => { 
-          this.$axios.post('https://192.168.3.106:3000/api/user/login', {
-       
+
+        try{
+          await this.$axios.post("https://192.168.3.146:3000/api/user/login", {
+           
+
               email: this.email,
               password: this.password
            
           })
-        const auth = {
-          accessToken: 'someStringGotFromApiServiceWithAjax'
+
+        let auth = {
+          accessToken: 'response.id'
         }
           
 
         
         this.$store.commit('setAuth', auth)
-        
+
          
         Cookie.set('auth', auth) 
 

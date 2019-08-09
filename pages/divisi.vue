@@ -1,22 +1,13 @@
 <template>
-    <section class="abu">
-        <div class="columns container abu" style="padding-top:40px">
-            <div class="column card is-centered is-3 has-background-light kiri atas">
-                   <header class="card-header has-background-primary">
-                    <p class="card-header-title ">
-                    FRONTEND
-                    </p>
-                </header>
-                    <div class="card-content has-background-light has-text-left">
-                        <p><b>Ketua</b><br>Muhammad Rafli S</p><br>
-                         <p><b>Anggota</b></p>
-                        <p>Dewi Ambarwati <br> Salma Faiqah A</p>
-                    </div>
-            </div>
-
-               
-            <div class="column is-centered is-9 abu kanan kiri2">
-                <div class="row abu">
+ <section class="section main-content columns is-fullheight">
+  
+    <Sidebar/>
+    <div class="column is-10 is-centered abu kanan kiri2">
+      <div class="bar-chart top2">
+        <BarChart :data="barChartData" :options="{ maintainAspectRatio: false }" />
+      </div>
+      <div class="row abu top1">
+                
                     <div>
                     <table>
                         <tr><td><b>TASK</b></td></tr>
@@ -104,39 +95,72 @@
             
                 </div>
                 </div>
-            </div>
-        </div>
-    </section>
+    </div>
+  
+     
+ </section>
 </template>
 
+<script>
+const Cookie = process.client ? require('js-cookie') : undefined
+import axios from 'axios'
+import moment from 'moment'
+import BarChart from '~/components/bar-chart'
+import Sidebar from "../components/Sidebar"
+
+export default {
+  middleware: "authenticated",
+  components: {
+    BarChart,
+    Sidebar,
+  },
+  methods: {
+        auth ({store}){
+            console.log (store.state.auth)
+        },
+        logout () {
+            Cookie.remove('auth')
+            this.$store.commit('setAuth', null)
+            this.$router.push('/')
+        }
+    },
+
+  async asyncData ({ env }) {
+    const res = await axios.get(`https://api.github.com/repos/nuxt/nuxt.js/stats/commit_activity?access_token=${env.githubToken}`)
+    return {
+      barChartData: {
+        labels: res.data.map(stat => moment(stat.week * 1000).format('GGGG[-W]WW')),
+        datasets: [
+          {
+            label: 'Nuxt.js Commit Activity',
+            backgroundColor: '#41b883',
+            data: res.data.map(stat => stat.total)
+          }
+        ]
+      }
+    }
+  },
+}
+</script>
+
+
 <style>
-.kiri{
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    height: 650px;
-    padding-left: 50px;
+.form-textbox {
+min-width : 80% ;
+}
 
+.bar-chart {
+  position: fixed;
+  left: 10%;
+  top: 0%;
+  width: 80%;
+  height: 50%;
 }
-.kanan{
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    height: 650px;
-    width: 100px;
+.top1{
+  padding-top:
+}
+.top2{
+  position: relative;
+}
 
-}
-.abu{
-    background-color: #e8e8e8;
-}
-.merah {
-    color: red;
-}
-.atas {
-        width: 200px;
-}
-.kiri2{
-    padding-left: 50px;
-}
 </style>
-

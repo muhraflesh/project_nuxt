@@ -7,12 +7,12 @@
                 <ul class="menu-list">
                 <li>
                     <a href="#" class="has-text-centered">
-                     Raflesh
+                    <h1><b>MENU</b></h1>
                     </a>
                 </li>
                 <li>
-                    <a href="/project" class="has-background-primary">
-                    <span class="icon"><i class="fa fa-user"></i></span> Project 1
+                    <a href="/profile" class="has-background-primary">
+                    <span class="icon"><i class="fa fa-user"></i></span> Profile
                     </a>
 
                     <ul>
@@ -39,8 +39,8 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="has-background-primary">
-                    <span class="icon"><i class="fa fa-tasks"></i></span> Project 2
+                    <a href="/presensi" class="has-background-primary">
+                    <span class="icon"><i class="fa fa-tasks"></i></span> Presensi
                     </a>
 
                     <ul>
@@ -57,14 +57,42 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="has-background-primary">
-                    <span class="icon"><i class="fa fa-cog"></i></span>Project 3
+                    <a href="/divisi" class="has-background-primary">
+                    <span class="icon"><i class="fa fa-cog"></i></span>Divisi
                     </a>
 
                     <ul>
                     <li>
                         <a href="#" @click="logout">
                         <span class="icon is-small"><i class="fa fa-sign-out"></i></span> Task 1
+                        </a>
+                    </li>
+                    
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="has-background-primary">
+                    <span class="icon"><i class="fa fa-cog"></i></span>Bon
+                    </a>
+
+                    <ul>
+                    <li>
+                        <a href="#" @click="logout">
+                        <span class="icon is-small"><i class="fa fa-sign-out"></i></span> Task 1
+                        </a>
+                    </li>
+                    
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="has-background-primary">
+                    <span class="icon"><i class="fa fa-cog"></i></span>Setting
+                    </a>
+
+                    <ul>
+                    <li>
+                        <a href="#" @click="logout">
+                        <span class="icon is-small"><i class="fa fa-sign-out"></i></span> Logout
                         </a>
                     </li>
                     

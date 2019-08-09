@@ -12,10 +12,9 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-
-
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'},
+      { rel: 'javascript', href: 'https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js'},
     ],
   },
 
@@ -49,14 +48,14 @@ export default {
     '@nuxtjs/bulma',
     '@nuxtjs/font-awesome',
     '@nuxtjs/axios',
-    '@nuxtjs/auth',
+    
   ],
   axios: {
     baseURL: 'https://192.168.3.110:3000/api/user'
 
   },
   auth: {
-    /*strategies: {
+    strategies: {
       local: {
         endpoints: {
           login: {
@@ -70,7 +69,7 @@ export default {
           logout:false,
         },
       },
-
+    }
   },
 
   /*

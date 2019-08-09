@@ -2,11 +2,48 @@
  <section class="section main-content columns is-fullheight">
   
     <Sidebar/>
-    <div class="column is-10 is-centered abu kanan kiri2">
+    <div class="column is-10 is-centered abu kanan kiri2 content">
+
+      <table>
+            <tr><td><b>STRUCTURE</b></td></tr>
+      </table>
+      <div  class="row columns" >
+        <div class="column is-1">
+          <figure class="image is-64x64">
+            <img class="is-rounded" src="user1.jpg">
+          </figure>
+        </div>
+        <div class="column is-4">
+          <tr><b>Leader</b></tr>
+          <tr>Muhammad Rafli Sh</tr>
+        </div>
+        <div class="column is-1">
+          <figure class="image is-64x64">
+            <img class="is-rounded" src="team.jpg">
+          </figure>
+        </div>
+        <div class="column is-4">
+          
+          <tr><b>Member</b></tr>
+          <tr>Salma Faiqah A</tr>
+          <tr>Dewi Ambarwati</tr>
+      
+        </div>
+     
+      </div>
+
       <div class="bar-chart top2">
+        <table>
+            <tr><td><b>CHART</b></td></tr>
+                <tr>
+                  <td style="width:25%">Today</td>
+                  <td style="width:35%">20/9/2019</td>
+                  <td style="width:25%">10.23 am</td>
+                </tr>
+        </table>
         <BarChart :data="barChartData" :options="{ maintainAspectRatio: false }" />
       </div>
-      <div class="row abu top1">
+      <div class="row abu top1 content">
                 
                     <div>
                     <table>
@@ -23,7 +60,7 @@
                             <td>
                             <p class="has-text-left">
                             Membangun home, halaman login, forgot password, profil
-                        </p>
+                            </p>
                             </td>
                             <td style="width:40%">
                             <span class="icon is-right" style="float:right;">
@@ -106,10 +143,10 @@ const Cookie = process.client ? require('js-cookie') : undefined
 import axios from 'axios'
 import moment from 'moment'
 import BarChart from '~/components/bar-chart'
-import Sidebar from "../components/Sidebar"
+import Sidebar from "../components/Sidebarpublic"
 
 export default {
-  middleware: "authenticated",
+  middleware: "",
   components: {
     BarChart,
     Sidebar,
@@ -145,19 +182,29 @@ export default {
 
 
 <style>
+.structure {
+padding-bottom : 0% ;
+padding-top : 0% ;
+}
+
 .form-textbox {
 min-width : 80% ;
 }
 
+.content {
+left: 5%;
+}
+
 .bar-chart {
   position: fixed;
-  left: 10%;
+  left: 0%;
   top: 0%;
   width: 80%;
   height: 50%;
 }
 .top1{
-  padding-top:
+  padding-top: ;
+  left: 5%;
 }
 .top2{
   position: relative;

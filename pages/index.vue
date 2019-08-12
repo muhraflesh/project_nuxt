@@ -4,7 +4,7 @@
       <div class="container has-text-centered">
         <div class="column is-5" style="padding-top: 10%">
           <div class="image">
-            <img src="../static/247.png" alt="Logo"><br>
+            <img src="hitam247.png" alt="Logo"><br>
           </div>
           <div>
             <p class="title is-size-5 has-text-left">

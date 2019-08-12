@@ -1,84 +1,17 @@
 <template>
     <section class="section main-content columns is-fullheight">
-                <div class="column is-3 is-narrow-mobile is-fullheight is-hidden-mobile">
-                <figure class="image is-4by4">
-                        <img src="atomixuser.png" alt="Placeholder image" class="user">
-                </figure>
-                <ul class="menu-list">
-                <li>
-                    <a href="#" class="has-text-centered">
-                     Raflesh
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="has-background-primary">
-                    <span class="icon"><i class="fa fa-user"></i></span> Biodata
-                    </a>
-
-                    <ul>
-                    <li>
-                        <a href="#">
-                        <span class="icon is-small"><i class="fa fa-envelope"></i></span> muhraflesh@gmail.com
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <span class="icon is-small"><i class="fa fa-phone"></i></span> 086543218798
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <span class="icon is-small"><i class="fa fa-home"></i></span> Jogjakarta
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <span class="icon is-small"><i class="fa fa-mars-stroke"></i></span> Male
-                        </a>
-                    </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="has-background-primary">
-                    <span class="icon"><i class="fa fa-tasks"></i></span> Departement
-                    </a>
-
-                    <ul>
-                    <li>
-                        <a href="#">
-                        <span class="icon is-small"><i class="fa fa-link"></i></span> Link1
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <span class="icon is-small"><i class="fa fa-link"></i></span> Link2
-                        </a>
-                    </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="has-background-primary">
-                    <span class="icon"><i class="fa fa-cog"></i></span>Setting
-                    </a>
-
-                    <ul>
-                    <li>
-                        <a href="#" @click="logout">
-                        <span class="icon is-small"><i class="fa fa-sign-out"></i></span> Logout
-                        </a>
-                    </li>
-                    
-                    </ul>
-                </li>
-                </ul>
-            </div>
-           
-           <div class="column is-4">
-               
+        <Sidebar/>
+           <div class="column is-10">
+                <table>
+                        <tr class="subtitle"><td><b>Hai!</b></td></tr>
+                        <tr class="subtitle"><td>Raflesh</td></tr>
+                </table>
+                <br/>
+                
                <div class="card">
                    <header class="card-header has-background-info">
                         <p class="card-header-title ">
-                        Data Presensi
+                        Your Profile
                         </p>
                         <a href="/presensi" class="card-header-icon" aria-label="more options">
                         <span class="icon">
@@ -88,7 +21,7 @@
                     </header>
                     <div class="card-content">
                         <p class="subtitle">
-                        (Presensi Karyawan)
+                        (Profile)
                         </p>
                     </div>
                 <footer class="card-footer">
@@ -100,33 +33,7 @@
                 </footer>
                 </div>
            </div>
-           <div class="column is-5">
-               <div class="card">
-                <header class="card-header has-background-warning">
-                    <p class="card-header-title ">
-                    Divisi
-                    </p>
-                    <a href="/divisi" class="card-header-icon" aria-label="more options">
-                    <span class="icon">
-                        <i class="fa fa-group is-black"></i>
-                    </span>
-                    </a>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                    <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                    <br>
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <a href="/divisi" class="card-footer-item">View More</a>
-                    
-                </footer>
-                </div>
-                
-           </div>
+
        
     </section>
 </template>
@@ -140,13 +47,12 @@
 
 <script>
 const Cookie = process.client ? require('js-cookie') : undefined
-
+import Sidebar from "../components/Sidebarpublic"
 
 export default {
-   middleware: "authenticated",
-
-
-
+    components: {
+    Sidebar,
+    },
     methods: {
         auth ({store}){
             console.log (store.state.auth)

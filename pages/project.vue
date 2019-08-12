@@ -22,7 +22,7 @@ const Cookie = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebar"
 
 export default {
-    middleware: "authenticated",
+    
     components: {
       Sidebar,
     },

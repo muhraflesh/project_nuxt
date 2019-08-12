@@ -86,7 +86,7 @@ import moment from 'moment'
 import BarChart from '~/components/bar-chart'
 
 export default {
-  middleware : 'authenticated',
+  middleware : '',
 
   components: {
     BarChart

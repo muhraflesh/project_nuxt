@@ -2,10 +2,18 @@
     <section class="section main-content columns is-fullheight">
         <Sidebar/>
            <div class="column is-10">
-                <table>
-                        <tr class="subtitle"><td><b>Hai!</b></td></tr>
-                        <tr class="subtitle"><td>Raflesh</td></tr>
-                </table>
+                <section class="hero is-info welcome is-small">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">
+                                Hello, Raflesh.
+                            </h1>
+                            <h2 class="subtitle">
+                                I hope you are having a great day!
+                            </h2>
+                        </div>
+                    </div>
+                </section>
                 <br/>
                 
                <div class="card">

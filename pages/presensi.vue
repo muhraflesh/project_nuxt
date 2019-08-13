@@ -142,7 +142,9 @@ import BarChart from '~/components/bar-chart'
 import Sidebar from "../components/Sidebarpublic"
 
 export default {
+
   middleware: "",
+
   components: {
     BarChart,
     Sidebar,
@@ -166,7 +168,7 @@ export default {
         datasets: [
           {
             label: 'Nuxt.js Commit Activity',
-            backgroundColor: '#41b883',
+            backgroundColor: '#1E90FF',
             data: res.data.map(stat => stat.total)
           }
         ]
@@ -208,6 +210,7 @@ left: 5%;
 .top2{
   position: relative;
 }
+
 .lev{
   padding-left: 70%;
 }
@@ -254,4 +257,5 @@ left: 5%;
   z-index: 1;
   color: #4f5b66;
 }
+
 </style>

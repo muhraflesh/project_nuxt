@@ -87,7 +87,6 @@ const Cookies = process.client ? require('js-cookie') : undefined
 
   import Notification from '../components/Notification'
   export default { 
-    middleware: 'notAuthenticated',
     components: {
       Notification,
     },
@@ -102,19 +101,12 @@ const Cookies = process.client ? require('js-cookie') : undefined
       async login(){
         try{
           await this.$axios.post("https://192.168.3.106:3000/api/user/login", {
-           
-
               email: this.email,
               password: this.password
-           
           })
-
         let auth = {
           accessToken: 'response.id'
         }
-          
-
-        
         this.$store.commit('setAuth', auth)
 
          
@@ -122,13 +114,10 @@ const Cookies = process.client ? require('js-cookie') : undefined
 
         this.$router.push('/profile')
         }
-        catch (e){
-          
+
+        catch (e) {
+        this.pesan = e.response.data.error.statusCode ;
         }
-        
-      
-        
-        
       }
     }
   }

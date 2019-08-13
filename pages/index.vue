@@ -1,99 +1,46 @@
 <template>
-  <section>
-  
-    <div class="container">
-      <div>
-        <br/>
-        <h1 class="has-text-weight-bold has-text-primary is-size-3 title"> </h1>
+  <div>
+    <div class="hero-body flex-center is-mobile">
+      <div class="container has-text-centered">
+        <div class="column is-5" style="padding-top: 10%">
+          <div class="image">
+            <img src="hitam247.png" alt="Logo"><br>
+          </div>
+          <div>
+            <p class="title is-size-5 has-text-left">
+            SOLUSI247 is an ICT company established in 2000 focusing on large scale data processing applying RDBMS and massive parallel flat file processing.
+            </p><br>
+          </div>
+          <div class="has-text-centered" >
+            <a href="/login" class="button is-medium is-pulled-left is-rounded is-link is-outlined" style="padding-left:60px; padding-right: 60px">
+              LOGIN
+            </a>
+            </a>
+          </div>
+        </div>
       </div>
-      <carousel :per-page="1"
-                :autoplay="true"
-                :loop="true"
-                :pagination-padding="5"
-                :autoplay-timeout="2500"
-                :pagination-active-color=blue>
-        <slide>
-          <img src="247_1.jpg" />
-        </slide>
-        <slide>
-          <img src="247_2.jpg" />
-        </slide>
-        <slide>
-          <img src="247_3.jpg" />
-        </slide>
-        <slide>
-          <img src="247_4.jpg" />
-        </slide>
-        <slide>
-          <img src="solusi.png" />
-        </slide>
-      </carousel>
-
     </div>
-   </section>
- 
-</template>
-<script>
-  import { Carousel, Slide } from '~/node_modules/vue-carousel';
-  export default { 
-    components: {
-      Carousel,
-      Slide
-    },
+  </div>
+  </template>
 
-    data() {
-      return {
-      
-      }
-    },
+  <style>
+  .hero-body::before {
+  background-image: url(../static/comp.jpg);
+  background-size: cover;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  }
   
-    methods: {
-    
-    },
-    
+  .button {
+  font-weight: 500;
+  box-shadow: 0 8px 6px rgba(50,50,93,.11);
   }
-</script>
-<style>
-  .title{
-    padding-top: 2px;
-    padding-bottom: 2px;
-  }
-  .circle{
-	border-radius: 50%;
-	margin: 0.15em;
-	font-size: 1.5em;
-	}
-  .fa-facebook{
-  background: #3B5998;
-	color: #FFFFFF;
-  padding: 0.05em;
-  }
-  .fa-google{
-  color: #FFFFFF;
-  background: #dd4b39;
-  padding: 0.05em 0.05em;
-  }
-  .fa-twitter{
-  background: #4099FF;
-	color: #FFFFFF;
-  padding: 0.05em;
-  }
-  .links {
-  padding-top: 15px;
-  }
-  .container{
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  }
-  .VueCarousel-slide {
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 1px solid #fff;
-  box-sizing: border-box;
-  height: 500px;
-  }
-</style>
-
+  </style>
+  
+  

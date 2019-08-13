@@ -2,10 +2,23 @@
  <section class="section main-content columns is-fullheight">
   
     <Sidebar/>
-    <div class="column is-10 is-centered abu kanan kiri2 content">
-
+    <div class="column is-10 is-centered abu kanan kiri2">
+     
+                <section class="hero is-info welcome is-small">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">
+                                Hello, Raflesh.
+                            </h1>
+                            <h2 class="subtitle">
+                                I hope you are having a great day!
+                            </h2>
+                        </div>
+                    </div>
+                </section>
+                <br/>
       <table>
-            <tr><td><b>STRUCTURE</b></td></tr>
+            <tr><td><b>LEADERSHIP</b></td></tr>
       </table>
       <div  class="row columns" >
         <div class="column is-1">
@@ -47,7 +60,7 @@
                 
                     <div>
                     <table>
-                        <tr><td><b>TASK</b></td></tr>
+                        <tr><td><b><a href="/project">TASK</a></b></td></tr>
                         <tr>
                             <td style="width:25%"><b>Today</b></td>
                             <td style="width:35%"><b>20/9/2019</b></td>
@@ -170,7 +183,7 @@ export default {
         datasets: [
           {
             label: 'Nuxt.js Commit Activity',
-            backgroundColor: '#41b883',
+            backgroundColor: '#1E90FF',
             data: res.data.map(stat => stat.total)
           }
         ]
@@ -200,7 +213,7 @@ left: 5%;
   left: 0%;
   top: 0%;
   width: 80%;
-  height: 50%;
+  height: 37%;
 }
 .top1{
   padding-top: ;

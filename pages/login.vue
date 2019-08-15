@@ -19,7 +19,7 @@
                   <form method="post" @submit.prevent="login" style="padding-left: 25%">
                     <div class="field">
                       <p class="control has-icons-left has-icons-right">
-                        <input class="input is-medium"
+                        <input class="input"
                          type="email" 
                          placeholder="Email" 
                          v-model="email"
@@ -31,7 +31,7 @@
                     </div>
                     <div class="field">
                       <p class="control has-icons-left has-icons-right">
-                        <input class="input is-medium" 
+                        <input class="input" 
                         type="password" 
                         placeholder="Password" 
                         v-model="password" required>
@@ -41,11 +41,11 @@
                       </p>
                     </div>
                     <div class="field is-grouped is-grouped-centered">
-                      <p class="control">
-                        <a class="login-btn">
+                      <div class="control">
+                        <button class="button login-btn is-primary is-fullwidth">
                           Login
-                        </a>
-                      </p>
+                        </button>
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -74,7 +74,7 @@ const Cookies = process.client ? require('js-cookie') : undefined
     methods: {
       async login(){
         try{
-          await this.$axios.post("https://192.168.3.106:3000/api/user/login", {
+          await this.$axios.post("https://192.168.3.140:3000/api/user/login", {
               email: this.email,
               password: this.password
           })
@@ -147,7 +147,7 @@ const Cookies = process.client ? require('js-cookie') : undefined
 }
 
 .login-form-wrapper .field-box .login-btn{
-  background: #6472A5;color: #ffffff;border-radius: 18px;padding: 0.6em 3em;
+  background: #6472A5;color: #ffffff;border-radius: 18px;padding: 0em 3em;
 }
 </style>
 

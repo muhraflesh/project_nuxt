@@ -42,5 +42,18 @@ export const actions = {
   }
 }
 
+export const createStore = () => {
+  return new Vuex.Store({
+    state: {
+      article: {}
+    },
+    mutations: {
+      setArticle (state, data) {
+        state.article = data
+      }
+    }
+  })
+}
+
 
 

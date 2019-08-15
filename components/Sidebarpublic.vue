@@ -17,7 +17,7 @@
           <ul class="menu-list">
             <li><a href="/profile"><span class="icon is-small"><i class="fa fa-user"></i></span> Profile</a></li>
             <li>
-                <a href="/presensi"><span class="icon is-small"><i class="fa fa-tasks"></i></span> Presensi</a>
+                <a href="/presensi"><span class="icon is-small"><i class="fa fa-calendar"></i></span> Presensi</a>
                 <ul>
                 <li><a href="/presensi">Cuti</a></li>
                 <li><a href="/presensi">Log</a></li>
@@ -32,7 +32,7 @@
                 <li><a href="/project">Project</a></li>
                 </ul>
             </li>
-            <li><a href="/bon"><span class="icon is-small"><i class="fa fa-bar-chart"></i></span> Bon Barang</a></li>
+            <li><a href="/bon"><span class="icon is-small"><i class="fa fa-suitcase"></i></span> Bon Barang</a></li>
 
             <li>
               <a class=""><i class="fa fa-cog"></i> Settings</a>
@@ -42,14 +42,7 @@
               </ul>
             </li>
           </ul>
-          <p class="menu-label">
-            Live On
-          </p>
-          <ul class="menu-list">
-            <li><a><span class="icon is-small"><i class="fa fa-bug"></i></span> Additional Pages</a></li>
-            <li><a><span class="icon is-small"><i class="fa fa-windows"></i></span> Extras</a></li>
-            <li><a><span class="icon is-small"><i class="fa fa-laptop"></i></span> Landing Page</a></li>
-          </ul>
+          
         </nav>
       </aside>
            

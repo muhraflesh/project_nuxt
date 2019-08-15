@@ -1,38 +1,85 @@
 <template>
+<section>
   <div>
-    <div class="hero-body flex-center is-mobile">
-      <div class="container has-text-centered">
-        <div class="column is-5" style="padding-top: 10%">
+    
+    <div class="hero background background-img is-large" style="background-image: url('kota.jpg')">
+  <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
           <div class="image">
-            <img src="hitam247.png" alt="Logo"><br>
+            <img src="putih247.png" alt="Logo"><br>
           </div>
-          <div>
-            <p class="title is-size-5 has-text-left">
-            SOLUSI247 is an ICT company established in 2000 focusing on large scale data processing applying RDBMS and massive parallel flat file processing.
-            </p><br>
-          </div>
-          <div class="has-text-centered" >
-            <a href="/login" class="button is-medium is-pulled-left is-rounded is-link is-outlined" style="padding-left:60px; padding-right: 60px">
+          <h2 class="subtitle has-text-light">
+            
+          </h2>
+          <nuxt-link to="/login">
+            <button class="button is-medium is-rounded is-light is-outlined" style="padding-left:60px; padding-right: 60px">
               LOGIN
-            </a>
-            </a>
-          </div>
+            </button>
+          </nuxt-link>
         </div>
       </div>
     </div>
+    <br/>
+    <br/>
+    
+    <div class="container">
+      <div class="card-columns">
+        <div class="card" v-for="item in posts" v-bind:key="item.key" @click="openDetail(item)">
+          <img class="card-img-top" :src="item.urlToImage" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text"><small class="text-muted">{{ item.author }} - {{ item.source.name }}</small></p>
+            <h5 class="card-title subtitle has-text-weight-semibold"><nuxt-link :to="item.url">{{ item.title }}</nuxt-link></h5>
+            <p class="card-text"><small class="text-muted">{{ item.publishedAt }}</small></p>
+          </div>
+        </div>        
+      </div>
+    </div>
+
   </div>
+  </div>
+  </section>
   </template>
 
+  <script>
+  import axios from 'axios'
+export default {
+  data () {
+    return {
+      allPost: [],
+      posts: []
+    }
+  },
+  mounted () {
+    axios('https://newsapi.org/v2/top-headlines?country=id&category=technology&apiKey=2d776f39c12a4ad1b4039016395b8b3c', {
+      crossDomain: true
+    }).then( ({ data }) => {
+      this.allPost = data.articles
+      data.articles.map((item, key) => {
+        if (item.description !== null && this.posts.length < 9) {
+          this.posts.push(item)
+        }
+      })
+    })
+  }  
+}
+  </script>
+
   <style>
-  .hero-body::before {
-  background-image: url(../static/comp.jpg);
-  background-size: cover;
+  .image {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  .background::before {
+  
   content: "";
   display: block;
-  position: absolute;
+
   top: 0;
   left: 0;
-  width: 100%;
+  width: 1920px;
   height: 100%;
   opacity: 0.5;
   }
@@ -41,6 +88,52 @@
   font-weight: 500;
   box-shadow: 0 8px 6px rgba(50,50,93,.11);
   }
+
+  .navbar {
+  background-color: white;
+  box-shadow: 0px -9px 20px #000000;
+
+  .nav {
+    &-item {
+      padding: 0 .5rem;
+    }
+    &-link {
+      padding: 1rem;
+      color: #888888;
+    }
+  }
+}
+
+.content {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.sidebar {
+  border: 1px solid #EFEFEF;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.footer {
+  border-top: 1px solid #EFEFEF;
+  padding: 10px;
+  text-align: center;
+  color: #ABABAB;
+}
+
+  @media (min-width: 768px) {  
+  .card-columns {column-count: 3;}
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+ .card-columns {column-count: 3;}
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+   .card-columns {column-count: 3;} 
+}
   </style>
   
   

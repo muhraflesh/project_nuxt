@@ -3,26 +3,20 @@
   
     <Sidebar/>
     <div class="column is-10 is-centered abu kanan kiri2">
-     
-                <section class="hero is-info welcome is-small">
-                    <div class="hero-body">
-                        <div class="container">
-                            <h1 class="title">
-                                Hello, Raflesh.
-                            </h1>
-                            <h2 class="subtitle">
-                                I hope you are having a great day!
-                            </h2>
-                        </div>
-                    </div>
-                </section>
-                <br/>
+     <nav class="breadcrumb" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a href="/">Solusi</a></li>
+                        <li class="is-active"><a href="#" aria-current="page">Divisi</a></li>
+                    </ul>
+     </nav>
+     <Hello/>
+     <br/>
       <table>
             <tr><td><b>LEADERSHIP</b></td></tr>
       </table>
       <div  class="row columns" >
         <div class="column is-1">
-          <figure class="image is-64x64">
+          <figure class="image is-86x86">
             <img class="is-rounded" src="user1.jpg">
           </figure>
         </div>
@@ -31,7 +25,7 @@
           <tr>Muhammad Rafli Sh</tr>
         </div>
         <div class="column is-1">
-          <figure class="image is-64x64">
+          <figure class="image is-86x86">
             <img class="is-rounded" src="team.jpg">
           </figure>
         </div>
@@ -67,84 +61,137 @@
                             <td style="width:25%"><b>10.23 am</b></td>
                         </tr>
                     </table>
-                    
-                    <div class="card">
-                        <div class="card-content">
-                            <td>
-                            <p class="has-text-left">
-                            Membangun home, halaman login, forgot password, profil
-                            </p>
-                            </td>
-                            <td style="width:40%">
-                            <span class="icon is-right" style="float:right;">
-                                <i class="fa fa-exclamation-circle merah" aria-hidden="true">
-                                </i>
-                            </span>
-                            </td>
-                        
+                    </div>
+      </div>
+
+      <div class="columns">
+                    <div class="column is-6">
+                        <div class="card events-card">
+                            <header class="card-header has-background-warning">
+                                <p class="card-header-title">
+                                    Akan Dikerjakan
+                                </p>
+                                <a href="#" class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                                </a>
+                            </header>
+                            <div class="card-table">
+                                <div class="content">
+                                    <table class="table is-fullwidth is-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>Lorum ipsum dolem aire</td>
+                                                <td><a class="button is-small is-primary" href="#">Action</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <footer class="card-footer">
+                                <a href="#" class="card-footer-item">View All</a>
+                            </footer>
                         </div>
                     </div>
-                </div>
-                </div>
-                <div class="row abu">
-                    <div class="">
-                   <td><b>What's Next ?</b></td>
-                <div class="card">
-                    <div class="card-content">
-                    <td style="width:50%">
-                        <span class="icon" style="color:#40e0d0">
-                                <i class="fa fa-edit" aria-hidden="true">
-                                </i>
-                        </span>
-                        Mengautentikasi halaman yang telah dibuat
-                    </td>
-                    <td style="width:10%"><time datetime="2016-1-1">22/07/2019</time></td>
-                    <td style="width:10%"><time datetime="2016-1-1">11:09 PM</time></td>
-                    </div>
-                    <div class="card-content">
-                    <td style="width:50%">
-                        <span class="icon" style="color:#40e0d0">
-                                <i class="fa fa-edit" aria-hidden="true">
-                                </i>
-                        </span>
-                        Membuat halaman web responsive</td>
-                    <td style="width:10%"><time datetime="2016-1-1">22/07/2019</time></td>
-                    <td style="width:10%"><time datetime="2016-1-1">11:09 PM</time></td>
-                    </div>
-                    <div class="card-content">
-                    <td style="width:50%">
-                        <span class="icon" style="color:#40e0d0">
-                                <i class="fa fa-edit" aria-hidden="true">
-                                </i>
-                        </span>
-                        Menginstall nuxt js</td>
-                    <td style="width:10%"><time datetime="2016-1-1">22/07/2019</time></td>
-                    <td style="width:10%"><time datetime="2016-1-1">11:09 PM</time></td>
-                    </div>
-                    <div class="card-content">
-                    <td style="width:50%">
-                        <span class="icon" style="color:#40e0d0">
-                                <i class="fa fa-edit" aria-hidden="true">
-                                </i>
-                        </span>
-                        Menyempurnakan tampilan web</td>
-                    <td style="width:10%"><time datetime="2016-1-1">22/07/2019</time></td>
-                    <td style="width:10%"><time datetime="2016-1-1">11:09 PM</time></td>
-                    </div>
-                    <div class="card-content">
-                    <td style="width:50%">
-                        <span class="icon" style="color:#40e0d0">
-                                <i class="fa fa-edit" aria-hidden="true">
-                                </i>
-                        </span>
-                        Menerapkan git secara keseluruhan</td>
-                    <td style="width:10%"><time datetime="2016-1-1">22/07/2019</time></td>
-                    <td style="width:10%"><time datetime="2016-1-1">11:09 PM</time></td>
-                    </div>
-                </div>
+                    <div class="column is-6">
+                        <div class="card">
+                            <header class="card-header has-background-danger">
+                                <p class="card-header-title">
+                                    Dikejar Dateline
+                                </p>
+                                <a href="#" class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input is-large" type="text" placeholder="">
+                                        <span class="icon is-medium is-left">
+                                            <i class="fa fa-search"></i>
+                                        </span>
+                                        <span class="icon is-medium is-right">
+                                            <i class="fa fa-check"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="card">
+                            <header class="card-header has-background-success">
+                                <p class="card-header-title">
+                                    Done
+                                </p>
+                                <a href="#" class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input is-large" type="text" placeholder="">
+                                        <span class="icon is-medium is-left">
+                                            <i class="fa fa-search"></i>
+                                        </span>
+                                        <span class="icon is-medium is-right">
+                                            <i class="fa fa-check"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+        </div>
             
-                </div>
-                </div>
+        </div>
+      </div>
     </div>
   
      
@@ -157,12 +204,14 @@ import axios from 'axios'
 import moment from 'moment'
 import BarChart from '~/components/bar-chart'
 import Sidebar from "../components/Sidebarpublic"
+import Hello from "../components/Hello"
 
 export default {
   middleware: "",
   components: {
     BarChart,
     Sidebar,
+    Hello,
   },
   methods: {
         auth ({store}){

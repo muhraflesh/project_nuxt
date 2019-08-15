@@ -2,7 +2,16 @@
  <section class="section main-content columns is-fullheight">
   
     <Sidebar/>
-    <div class="column is-10 is-centered kanan kiri2 content">
+    <div class="column is-10 is-centered kanan kiri2">
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a href="/">Solusi</a></li>
+                        <li class="is-active"><a href="#" aria-current="page">Presensi</a></li>
+                    </ul>
+                </nav>
+      <Hello/>
+      <br/>
+
       <div class="row top1 content">
                 
                     <div>
@@ -140,6 +149,7 @@ import axios from 'axios'
 import moment from 'moment'
 import BarChart from '~/components/bar-chart'
 import Sidebar from "../components/Sidebarpublic"
+import Hello from "../components/Hello"
 
 export default {
 
@@ -148,6 +158,7 @@ export default {
   components: {
     BarChart,
     Sidebar,
+    Hello,
   },
   methods: {
         auth ({store}){

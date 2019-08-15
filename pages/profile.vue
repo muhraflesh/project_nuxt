@@ -2,18 +2,13 @@
     <section class="section main-content columns is-fullheight">
         <Sidebar/>
            <div class="column is-10">
-                <section class="hero is-info welcome is-small">
-                    <div class="hero-body">
-                        <div class="container">
-                            <h1 class="title">
-                                Hello, {{ nama }} .
-                            </h1>
-                            <h2 class="subtitle">
-                                I hope you are having a great day!
-                            </h2>
-                        </div>
-                    </div>
-                </section>
+               <nav class="breadcrumb" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a href="/">Solusi</a></li>
+                        <li class="is-active"><a href="#" aria-current="page">Profile</a></li>
+                    </ul>
+                </nav>
+                <Hello/>
                 <br/>
                 
                <div class="card">
@@ -56,10 +51,12 @@
 <script>
 const Cookie = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
+import Hello from "../components/Hello"
 
 export default {
     components: {
     Sidebar,
+    Hello,
     },
     data() {
       return{

@@ -6,7 +6,7 @@
                     <div class="hero-body">
                         <div class="container">
                             <h1 class="title">
-                                Hello, Raflesh.
+                                Hello, {{ nama }} .
                             </h1>
                             <h2 class="subtitle">
                                 I hope you are having a great day!
@@ -61,7 +61,16 @@ export default {
     components: {
     Sidebar,
     },
+    data() {
+      return{
+        nama: '',
+      }
+    },
     methods: {
+        async asyncData ({ name }) {
+            let { data } = await axios.get(`https://my-api/posts/${name.id}`)
+            return { nama: data.name }
+        },
         auth ({store}){
             console.log (store.state.auth)
         },

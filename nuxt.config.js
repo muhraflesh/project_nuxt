@@ -16,6 +16,7 @@ export default {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'},
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/fontawesome.css'},
       { rel: 'javascript', href: 'https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js'},
+      { rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.min.css' },
     ],
   },
 
@@ -33,7 +34,8 @@ export default {
   */
   css: [
     'bulma-helpers/css/bulma-helpers.min.css',
-    'bulma-calendar/dist/css/bulma-calendar.min.css'
+    'bulma-calendar/dist/css/bulma-calendar.min.css',
+  
   ],
   /*
   ** Plugins to load before mounting the App

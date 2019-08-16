@@ -4,10 +4,10 @@
     <Sidebar/>
     <div class="column is-10 is-centered abu kanan kiri2">
      <nav class="breadcrumb" aria-label="breadcrumbs">
-                    <ul>
-                        <li><a href="/">Solusi</a></li>
-                        <li class="is-active"><a href="#" aria-current="page">Divisi</a></li>
-                    </ul>
+        <ul>
+            <li><a href="/">Solusi</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Divisi</a></li>
+        </ul>
      </nav>
      <Hello/>
      <br/>

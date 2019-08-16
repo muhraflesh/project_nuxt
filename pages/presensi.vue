@@ -225,14 +225,14 @@ left: 5%;
 .lev{
   padding-left: 70%;
 }
-.container-1{
+.container-1{ 
   width: 300px;
   vertical-align: middle;
   white-space: nowrap;
   position: relative;
   padding-left: 30%;
 }
-.container-1 input#search{
+.container-1 input#search{ 
   width: 200px;
   height: 40px;
   background: #f0f0f0f0;

@@ -52,22 +52,12 @@
 const Cookie = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
-
 export default {
     components: {
     Sidebar,
     Hello,
     },
-    data() {
-      return{
-        nama: '',
-      }
-    },
     methods: {
-        async asyncData ({ name }) {
-            let { data } = await axios.get(`https://my-api/posts/${name.id}`)
-            return { nama: data.name }
-        },
         auth ({store}){
             console.log (store.state.auth)
         },

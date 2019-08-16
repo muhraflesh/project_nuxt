@@ -262,7 +262,7 @@ left: 5%;
   left: 0%;
   top: 0%;
   width: 80%;
-  height: 37%;
+  height: 32%;
 }
 .top1{
   padding-top: ;

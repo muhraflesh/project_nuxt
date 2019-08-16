@@ -11,6 +11,8 @@
                 <Hello/>
                 <br/>
                 
+            <div class="columns">
+                <div class="column is-6">
                <div class="card">
                    <header class="card-header has-background-info">
                         <p class="card-header-title ">
@@ -35,6 +37,37 @@
                     </p>
                 </footer>
                 </div>
+                </div>
+
+                <div class="column is-6">
+               <div class="card">
+                   <header class="card-header has-background-info">
+                        <p class="card-header-title ">
+                        Your Profile
+                        </p>
+                        <a href="/presensi" class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fa fa-calendar" ></i>
+                        </span>
+                        </a>
+                    </header>
+                    <div class="card-content">
+                        <p class="subtitle">
+                        (Profile)
+                        </p>
+                    </div>
+                <footer class="card-footer">
+                    <p class="card-footer-item">
+                    <span>
+                        <a href="/presensi">View More</a>
+                    </span>
+                    </p>
+                </footer>
+                </div>
+                </div>
+
+            </div>
+
            </div>
 
        
@@ -54,10 +87,13 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 
 export default {
+    middleware : '',
+
     components: {
     Sidebar,
     Hello,
     },
+
     methods: {
         auth ({store}){
             console.log (store.state.auth)

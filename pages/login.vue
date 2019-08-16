@@ -5,12 +5,14 @@
         <div class="columns login-page">
           <div class="column is-5 login-sidebar is-hidden-mobile">
             <div class="login-gradient-background">
-              <h1>Login</h1>
+              <div class="image" style="padding-top: 40%">
+                <img src="putih247.png" alt="Logo"><br>
+              </div>
             </div>
           </div>
           <div class="column is-7 login-form-wrapper">
               <div class="column is-12 field-box is-centered">
-                <div class="column is-9 has-text-centered is-offside-1" style="padding-top: 20%">
+                <div class="column is-9 has-text-centered" style="padding-top: 20%">
                   <h1 class="login-heading" style="padding-left: 25%">Login Your Account</h1>
                   <p class="login-subheading" style="padding-left: 25%">Enter your username and password to log in</p> <br>
                   <div class="field">
@@ -148,6 +150,11 @@ const Cookies = process.client ? require('js-cookie') : undefined
 
 .login-form-wrapper .field-box .login-btn{
   background: #6472A5;color: #ffffff;border-radius: 18px;padding: 0em 3em;
+}
+
+.image{
+  height: 350px;
+  width: 350px
 }
 </style>
 

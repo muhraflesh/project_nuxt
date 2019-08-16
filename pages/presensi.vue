@@ -2,120 +2,78 @@
  <section class="section main-content columns is-fullheight">
   
     <Sidebar/>
-    <div class="column is-10 is-centered kanan kiri2">
+    <div class="column is-10 is-centered">
       <nav class="breadcrumb" aria-label="breadcrumbs">
-                    <ul>
-                        <li><a href="/">Solusi</a></li>
-                        <li class="is-active"><a href="#" aria-current="page">Presensi</a></li>
-                    </ul>
-                </nav>
+        <ul>
+          <li><a href="/">Solusi</a></li>
+          <li class="is-active"><a href="#" aria-current="page">Presensi</a></li>
+        </ul>
+      </nav>
       <Hello/>
       <br/>
-
-      <div class="row top1 content">
-                
-                    <div>
-                    <table>
-                        <tr>
-                            <td style="width:20%"><b>Wifi.man:)</b></td>
-                            <td style="width:60%"></td>
-                            <td style="width:10%">
-                                <div class="container-1">
-                                    <span class="icon"><i class="fa fa-search"></i></span>
-                                    <input type="search" id="search" placeholder="Search..." />
-                                </div>
-                            </td>
-                            <td style="width:10%">
-                              <div class="navbar-item has-dropdown is-hoverable">
-                                  <a class="navbar-link">
-                                    <i class="fa fa-user"></i>
-                                  </a>
-
-                                  <div class="navbar-dropdown">
-                                    <a class="navbar-item">
-                                      By Tags
-                                    </a>
-                                    <a class="navbar-item">
-                                      By Category
-                                    </a>
-                                    <hr class="navbar-divider">
-                                    <a class="navbar-item">
-                                      By Date
-                                    </a>
-                                  </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr><td>presensi</td></tr>
-                    </table>
-                    <div class="columns is-10">
-                      <div class="column is-5">
-               
-               <div class="card has-text-centered">
-                   <header class="card-header">
-                    <p class="card-header-title ">
-                    Data Presensi
-                    </p>
-                   
-                </header>
-                    <ul>
-                      Monday, 22/07/2019<br>
-                      Time
-                    </ul>
-                    <div class="field">
-                      <div class="buttons is-centered" style="margin: 50px">
+                    <div class="columns">
+                <div class="column is-6">
+               <div class="card">
+                   <header class="card-header has-background-info">
+                        <p class="card-header-title ">
+                        Your Profile
+                        </p>
+                        <a href="/presensi" class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fa fa-calendar" ></i>
+                        </span>
+                        </a>
+                    </header>
+                    <div class="buttons is-centered" style="margin: 50px">
                         <a type="checkin" class="button is-info has-text-white" style="padding-left: 30px; padding-right: 30px">
                           Check In </a>
                         <a type="checkout" class="button is-danger has-text-white" style="padding-left: 25px; padding-right: 25px">
                           Check Out </a>
                       </div>
-                    </div>
-                
                 </div>
-           </div>
-           <div class="column is-5">
-               <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title ">
-                    pengajuan Cuti
-                    </p>
-                </header>
+                </div>
 
-                <form method="post" @submit.prevent="presensi" class="is-centered" style="padding-left: 5% ;padding-top: 3%">
-                  <div class="field">
-                      <tr>
-                        <td><label class="label"> Start Date</label></td>
-                        <td></td>
-                        <td><label class="label"> Date End </label></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td style="width:2%"><input ref="cal1" type="date" class="input"> </td>
-                        <td style="width:5%"></td>
-                        <td style="width:2%"><input ref="cal2" type="date" class="input"> </td>
-                      </tr>
-                      <tr><label class="label">Reason</label></tr>
-                      <tr><p class="control">
-                          <input type="text">
+                <div class="column is-6">
+                <div class="card">
+                   <header class="card-header has-background-info">
+                        <p class="card-header-title ">
+                        Your Profile
                         </p>
-                      </tr>
-                      <div class="field">
-                    <div class="control lev" style="margin-left:5%">
-                      <button type="submit" class="button is-info has-text-white">
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                  </div>
-                  </form>
+                        <a href="/presensi" class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fa fa-calendar" ></i>
+                        </span>
+                        </a>
+                    </header>
+
+                    <div  class="row columns" >
+                        <div class="column is-6 doughnut-chart">
+                          <DoughnutChart :data="doughnutChartData" :options="{ legend: { display: false }, maintainAspectRatio: false }" />
+                  
+                        </div>
+                        <div class="column is-3" style="padding-top:150px">
+                          <tr><b>Sisa Cuti</b></tr>
+                          <tr>3/15</tr>
+                        </div>
+
+                        <div class="column is-3" style="padding-top:150px">
+                          <tr><button class="is-info button">Ambil Cuti</button></tr>
+                        </div>
+                      
+                      </div>
+            
+                <footer class="card-footer">
+                    <p class="card-footer-item">
+                    <span>
+                        <a href="/presensi">View More</a>
+                    </span>
+                    </p>
+                </footer>
                 </div>
-           
-                    
-                    </div>
+
                 </div>
-                </div>
-                    </div>
-                    
+
+            </div>
                 <div class="row">
                     <table>
                       <tr>
@@ -131,7 +89,7 @@
                         </td>
                       </tr>
                       <tr>
-                        <td style="width:20%"><b>No</b></td>
+                        <td style="width:50%"><b>No</b></td>
                         <td class="has-text-centered" style="width:25%"><b>Date</b></td>
                         <td class="has-text-centered" style="width:25%"><b>Description</b></td>
                       </tr>
@@ -150,6 +108,16 @@ import moment from 'moment'
 import BarChart from '~/components/bar-chart'
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
+import DoughnutChart from '~/components/doughnut-chart'
+
+function getRandomColor () {
+  const letters = '0123456789ABCDEF'
+  let color = '#'
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)]
+  }
+  return color
+}
 
 export default {
 
@@ -159,6 +127,7 @@ export default {
     BarChart,
     Sidebar,
     Hello,
+    DoughnutChart,
   },
   methods: {
         auth ({store}){
@@ -172,15 +141,15 @@ export default {
     },
 
   async asyncData ({ env }) {
-    const res = await axios.get(`https://api.github.com/repos/nuxt/nuxt.js/stats/commit_activity?access_token=${env.githubToken}`)
+    const res = await axios.get(`https://api.github.com/repos/nuxt/nuxt.js/stats/contributors?access_token=${env.githubToken}`)
     return {
-      barChartData: {
-        labels: res.data.map(stat => moment(stat.week * 1000).format('GGGG[-W]WW')),
+      doughnutChartData: {
+        labels: res.data.map(stat => stat.author.login),
         datasets: [
           {
-            label: 'Nuxt.js Commit Activity',
-            backgroundColor: '#1E90FF',
-            data: res.data.map(stat => stat.total)
+            label: 'Nuxt.js Contributors',
+            backgroundColor: res.data.map(getRandomColor),
+            data: res.data.map(() => 1)
           }
         ]
       }
@@ -188,6 +157,7 @@ export default {
   },
 }
 </script>
+
 
 
 <style>
@@ -203,14 +173,6 @@ min-width : 80% ;
 .content {
 left: 5%;
 }
-
-.bar-chart {
-  position: fixed;
-  left: 0%;
-  top: 0%;
-  width: 80%;
-  height: 45%;
-}
 .top1{
   padding-top:0%;
   left: 5%;
@@ -225,14 +187,14 @@ left: 5%;
 .lev{
   padding-left: 70%;
 }
-.container-1{
+.container-1{ 
   width: 300px;
   vertical-align: middle;
   white-space: nowrap;
   position: relative;
   padding-left: 30%;
 }
-.container-1 input#search{
+.container-1 input#search{ 
   width: 200px;
   height: 40px;
   background: #f0f0f0f0;
@@ -267,6 +229,17 @@ left: 5%;
   margin-top: 10px;
   z-index: 1;
   color: #4f5b66;
+}
+
+.doughnut-chart {
+  position: relative;
+  left: 3%;
+  width: 100px;
+  height: 350px;
+
+}
+.buton{
+  background-color: aqua;
 }
 
 </style>

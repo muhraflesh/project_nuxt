@@ -10,30 +10,33 @@
                 </nav>
                 <Hello/>
                 <br/>
-                
-               <div class="card">
-                   <header class="card-header has-background-info">
-                        <p class="card-header-title ">
-                        Your Profile
-                        </p>
-                        <a href="/presensi" class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                            <i class="fa fa-calendar" ></i>
-                        </span>
-                        </a>
-                    </header>
-                    <div class="card-content">
-                        <p class="subtitle">
-                        (Profile)
-                        </p>
-                    </div>
-                <footer class="card-footer">
-                    <p class="card-footer-item">
-                    <span>
-                        <a href="/presensi">View More</a>
-                    </span>
-                    </p>
-                </footer>
+               <div class="columns box">
+                   <div class="column is-3">
+                        <tr>
+                            <figure class="image is-128x128">
+                            <img class="is-rounded" src="~assets/images/iqbaal.jpg">
+                            </figure>
+                        </tr>
+                        <tr class="has-text-centered"><b>John Smith</b></tr>
+                        <tr class="has-text-centered">Hello!!</tr>
+                   </div>
+                   <div class="column is-7">
+                       <table class="table is-fullwidth ">
+                           <tr>
+                                   <td> <b>Email</b>  <br>Johnsmith00@gmail.com</td>
+                                   <td> <b>Division</b> <br>Frontend</td>
+                           </tr>
+                           <tr>
+                                   <td> <b>Home Phone</b>  <br>0219184081</td>
+                                   <td> <b>Gender</b> <br>Laki-Laki</td>
+                           </tr>
+                           <tr>
+                                   <td> <b>Cell Phone</b>  <br>0891278872847</td>
+                                   <td> <b>Address</b> <br>Kota Baru, Yogyakarta</td>
+                           </tr>
+                           
+                       </table>
+                   </div>
                 </div>
            </div>
 

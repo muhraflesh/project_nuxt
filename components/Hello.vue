@@ -1,5 +1,5 @@
 <template>
-<section class="hero is-info welcome is-small">
+<section class="hero is-info welcome is-small card">
                     <div class="hero-body">
                         <div class="container">
                             <h1 class="title">

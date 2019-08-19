@@ -10,7 +10,39 @@
                 </nav>
                 <Hello/>
                 <br/>
-                
+
+               <div class="columns box">
+                   <div class="column is-3">
+                        <tr>
+                            <figure class="image is-128x128">
+                            <img class="is-rounded" src="~assets/images/iqbaal.jpg">
+                            </figure>
+                        </tr>
+                        <tr class="has-text-centered"><b>John Smith</b></tr>
+                        <tr class="has-text-centered">Hello!!</tr>
+                   </div>
+                   <div class="column is-7">
+                       <table class="table is-fullwidth ">
+                           <tr>
+                                   <td> <b>Email</b>  <br>Johnsmith00@gmail.com</td>
+                                   <td> <b>Division</b> <br>Frontend</td>
+                           </tr>
+                           <tr>
+                                   <td> <b>Home Phone</b>  <br>0219184081</td>
+                                   <td> <b>Gender</b> <br>Laki-Laki</td>
+                           </tr>
+                           <tr>
+                                   <td> <b>Cell Phone</b>  <br>0891278872847</td>
+                                   <td> <b>Address</b> <br>Kota Baru, Yogyakarta</td>
+                           </tr>
+                           
+                       </table>
+                   </div>
+
+                </div>
+                </div>
+
+                <div class="column is-6">
                <div class="card">
                    <header class="card-header has-background-info">
                         <p class="card-header-title ">
@@ -35,6 +67,10 @@
                     </p>
                 </footer>
                 </div>
+                </div>
+
+            </div>
+
            </div>
 
        
@@ -53,10 +89,13 @@ const Cookie = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 export default {
+    middleware : '',
+
     components: {
     Sidebar,
     Hello,
     },
+
     methods: {
         auth ({store}){
             console.log (store.state.auth)

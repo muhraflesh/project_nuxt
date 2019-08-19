@@ -31,24 +31,36 @@
           </div>
         </div>        
       </div>
+      <button class="button is-fullwidth is-info btn-more has-text-white" @click="loadMore">Load More</button>
     </div>
-
+  <br/>
+  
   </div>
+  
   </div>
   </section>
   </template>
 
   <script>
   import axios from 'axios'
-export default {
+  export default {
+  methods: {
+    loadMore () {
+      this.posts = []
+      this.current += 9
+      this.allPost.map((item, key) => item.description !== null && this.posts.length < this.current ? this.posts.push(item) : '')
+    },
+  },
+
   data () {
     return {
       allPost: [],
-      posts: []
+      posts: [],
+      current: 9,
     }
   },
   mounted () {
-    axios('https://newsapi.org/v2/top-headlines?country=id&category=technology&apiKey=2d776f39c12a4ad1b4039016395b8b3c', {
+    axios('https://newsapi.org/v2/top-headlines?country=id&apiKey=2d776f39c12a4ad1b4039016395b8b3c', {
       crossDomain: true
     }).then( ({ data }) => {
       this.allPost = data.articles

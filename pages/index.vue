@@ -6,12 +6,9 @@
   <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
-          <div class="image">
-            <img src="putih247.png" alt="Logo"><br>
+          <div class="img">
+            <img src="putih247.png"><br>
           </div>
-          <h2 class="subtitle has-text-light">
-            
-          </h2>
           <nuxt-link to="/login">
             <button class="button is-medium is-rounded is-light is-outlined" style="padding-left:60px; padding-right: 60px">
               LOGIN
@@ -66,12 +63,14 @@ export default {
   </script>
 
   <style>
-  .image {
-  width: 500px;
+  .img {
   margin-left: auto;
   margin-right: auto;
-  }
+  margin-bottom: 5%;
+  width: 500px
 
+  }  
+  
   .background::before {
   
   content: "";

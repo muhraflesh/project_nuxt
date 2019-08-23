@@ -1,3 +1,4 @@
+
 <template>
     <aside class="column is-2 aside">
         <figure class="image is-4by4">
@@ -43,8 +44,8 @@
             <li>
               <a class=""><i class="fa fa-cog"></i> Settings</a>
               <ul>
-                <li><a>Logout</a></li>
-              
+                <li><a v-if="$store.state.auth">Logout</a></li>
+                <li><a v-if="!$store.state.auth">Login</a></li>
               </ul>
             </li>
           </ul>

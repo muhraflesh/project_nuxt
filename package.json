@@ -17,14 +17,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/auth": "^4.8.1",
+    "@nuxtjs/auth": "^5.5.4",
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/bulma": "^1.2.1",
     "@nuxtjs/font-awesome": "^1.0.4",
     "axios": "^0.19.0",
     "bulma-calendar": "^6.0.7",
     "bulma-helpers": "^0.3.8",
-    "chart.js": "^2.7.1",
+    "chart.js": "^2.8.0",
     "cookieparser": "^0.1.0",
     "js-cookie": "^2.2.1",
     "moment": "^2.18.1",
@@ -32,7 +32,8 @@
     "sass": "^1.22.7",
     "vue-carousel": "^0.18.0",
     "vue-chartjs": "^3.1.0",
-    "vuejs-datepicker": "^1.6.2"
+    "vuejs-datepicker": "^1.6.2",
+    "vuex-persist": "^2.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"

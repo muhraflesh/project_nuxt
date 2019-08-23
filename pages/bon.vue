@@ -9,42 +9,65 @@
                         <li class="is-active"><a href="#" aria-current="page">Bon Barang</a></li>
                     </ul>
                 </nav>
-                <br>
                 <Hello/>
                 <br>
 
                 <div class="columns is-10">
                     <div class="column is-6">
                         <div class="card">
+                          <div class="card-header">
+                            <div class="card-header-title">
+                              Form Peminjaman Barang
+                            </div>
+                          </div>
                             <div class="card-content"> 
-                                <form method="post" @submit.prevent="presensi" >
-                                    <div class="field">
-                                      <tr>
-                                          <th>Start Date</th>
-                                          <td style="width:2%"><input ref="cal1" type="date" class="input" placeholder="Start Date"> </td>
-                                          <td style="width:5%"></td>
-                                          <th>End Date</th>
-                                          <td style="width:2%"><input ref="cal2" type="date" class="input" placeholder="End Date"> </td>
-                                      </tr> <br>
-                                    </div>
+                                <form method="post" @submit.prevent="bon" class="is-mobile">
                                     <div class="field is-horizontal">
-                                      <div class="field is-narrow" style="padding-right: 25%">
+                                      <div class="field-label">
+                                          <label>Start Date</label>
+                                      </div>
+                                      <div class="field-body">
+                                        <div class="control">
+                                          <input ref="cal1" type="date" class="input">
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="field is-horizontal">
+                                      <div class="field-label">
+                                          <label>End Date</label>
+                                      </div>
+                                      <div class="field-body">
+                                        <div class="control">
+                                          <input ref="cal2" type="date" class="input">
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="field is-horizontal">
+                                      <div class="field-label">
+                                          <label>Barang</label>
+                                      </div>
+                                      <div class="field-body">
                                       <div class="control " >
                                         <div class="select">
                                           <select>
-                                            <option>Barang</option>
-                                            <option>A</option>
-                                            <option>B</option>
-                                            <option>C</option>
+                                            <option>Laptop</option>
+                                            <option>Proyektor</option>
+                                            <option>Router</option>
                                         </select>
                                         </div>
                                       </div>
                                       </div>
-                                      <div class="field" >
-                                      <div class="control " >
+                                    </div>
+                                    <div class="field is-horizontal">
+                                      <div class="field-label">
+                                        <label>Jumlah</label>
+                                      </div>
+                                      <div class="field-body" >
+                                      <div class="control" >
                                         <div class="select">
                                           <select>
-                                            <option>Jumlah</option>
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -53,10 +76,15 @@
                                       </div>
                                       </div>
                                     </div>
-                                    <div class="field">
-                                      <p class="control">
+                                    <div class="field is-horizontal">
+                                      <div class="field-label">
+                                        <label>Keterangan</label>
+                                      </div>
+                                      <div class="field-body">
+                                      <div class="control is-fullwidth">
                                         <textarea class="textarea" placeholder="Keterangan"></textarea>
-                                      </p>
+                                      </div>
+                                      </div>
                                     </div>
                                     <div class="field">
                                       <div class="control">
@@ -73,7 +101,7 @@
                     <div class="column is-6">
                         <div class="card">
                             <div class="card-content">
-                              <BarChart :data="barChartData" :options="{ maintainAspectRatio: false }" />
+                              <Chart/>
                             </div>
                           </div>
                     </div>
@@ -81,15 +109,15 @@
                 <br>
 
                 <div class="column">
-                <div class="row">
+                <div class="row content">
                   <table>
                     <tr>
-                        <td class="is-fullwidth" style="width:20%"><b>History</b></td>
+                        <td class="is-fullwidth"><b>History</b></td>
                     </tr>
                   </table>
                   <hr>
                 </div>
-                <div class="row">
+                <div class="row" style="margin-bottom: 10px">
                   <table>
                       <tr>
                           <td><b>Show</b></td>
@@ -103,7 +131,7 @@
                         </tr>
                   </table>
                 </div>
-                <div class="row" style="padding-top: 5px">
+                <div class="row">
                     <div class="card">
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped">
@@ -112,8 +140,8 @@
                         <th><abbr title="No">No</abbr></th>
                         <th><abbr title="Name">Nama</abbr></th>
                         <th><abbr title="Divisi">Divisi Project</abbr></th>
-                        <th><abbr title="Start">Start</abbr></th>
-                        <th><abbr title="End">End</abbr></th>
+                        <th><abbr title="Start">Start Date</abbr></th>
+                        <th><abbr title="End">End Date</abbr></th>
                         <th><abbr title="Barang">Barang</abbr></th>
                         <th><abbr title="Jumlah">Jumlah</abbr></th>
                         <th><abbr title="Desc">Description</abbr></th>
@@ -141,14 +169,14 @@
                         <td>Lorem Ipsum</td>
                       </tr>
                       <tr>
-                        <th>1</th>
+                        <th>3</th>
                         <td>Ahmad Baid</td>
                         <td>Back End</td>
                         <td>05/08/19</td>
                         <td>13/08/19</td>
-                        <td>Laptop</td>
+                        <td>Keyboard</td>
                         <td>1</td>
-                        <td>ROG GX502</td>
+                        <td>Lorem Ipsum</td>
                       </tr>
                     </tbody>
                   </tabel>
@@ -170,18 +198,15 @@
 const Cookie = process.client ? require('js-cookie') : undefined
 import axios from 'axios'
 import moment from 'moment'
-import BarChart from '~/components/bar-chart'
-import Sidebar from "../components/Sidebarpublic"
-import DatePicker from 'vuejs-datepicker'
+import Sidebar from '../components/Sidebarpublic'
 import Hello from '../components/Hello'
+import Chart from '../components/Chart.vue'
 
 export default {
-    name: 'app',
     components: {
       Sidebar,
-      DatePicker,
-      BarChart,
-      Hello
+      Hello,
+      Chart
     },
     methods: {
         auth ({store}){
@@ -193,21 +218,6 @@ export default {
             this.$router.push('/')
         }
     },
-    async asyncData ({ env }) {
-    const res = await axios.get(`https://api.github.com/repos/nuxt/nuxt.js/stats/commit_activity?access_token=${env.githubToken}`)
-    return {
-      barChartData: {
-        labels: res.data.map(stat => moment(stat.week * 1000).format('GGGG[-W]WW')),
-        datasets: [
-          {
-            label: 'Nuxt.js Commit Activity',
-            backgroundColor: '#1E90FF',
-            data: res.data.map(stat => stat.total)
-          }
-        ]
-      }
-    }
-  },
 }
 </script>
 
@@ -256,7 +266,10 @@ export default {
   color: #4f5b66;
 }
 
-.table {
-  width: 100%
+.input {
+  width: 300px
+}
+.textarea {
+  width: 300px
 }
 </style>

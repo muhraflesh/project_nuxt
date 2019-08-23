@@ -16,7 +16,7 @@ export default {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'},
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/fontawesome.css'},
       { rel: 'javascript', href: 'https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js'},
-      { rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.min.css' },
+     // { rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.min.css' },
     ],
   },
 
@@ -41,7 +41,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    //'~/plugins/axios'
+    '~/plugins/axios',
+    '~/plugins/vuex-persist',
   ],
   /*
   ** Nuxt.js modules
@@ -57,7 +58,7 @@ export default {
     baseURL: 'https://192.168.3.110:3000/api/user'
 
   },
-  auth: {
+  /* auth: {
     strategies: {
       local: {
         endpoints: {
@@ -73,7 +74,7 @@ export default {
         },
       },
     }
-  },
+  }, *\
 
   /*
   ** Build configuration

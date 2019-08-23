@@ -60,10 +60,11 @@
 
 </template>
 <script>
-const Cookies = process.client ? require('js-cookie') : undefined
+const Cookie = process.client ? require('js-cookie') : undefined
 
   import Notification from '../components/Notification'
   export default { 
+    middleware: 'notAuthenticated',
     components: {
       Notification,
     },
@@ -76,18 +77,16 @@ const Cookies = process.client ? require('js-cookie') : undefined
     methods: {
       async login(){
         try{
-          await this.$axios.post("https://192.168.3.106:3000/api/user/login", {
+          const {data} = await this.$axios.post("https://192.168.3.124:3000/api/user/login", {
               email: this.email,
               password: this.password
           })
-        let auth = {
-          accessToken: 'response.id'
-        }
+
+        const auth = data.id
+        console.log(auth)
+
         this.$store.commit('setAuth', auth)
-
-         
-        Cookies.set('auth', auth) 
-
+        Cookie.set('auth', auth) 
         this.$router.push('/profile')
         }
 

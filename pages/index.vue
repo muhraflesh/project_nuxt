@@ -1,14 +1,14 @@
-<template>
+as<template>
 <section>
   <div>
     
-    <div class="hero background background-img is-medium" style="background-image: url('kota.jpg')">
+    <div class="hero background background-img is-large" style="background-image: url('kota.jpg')">
   <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
-          <figure class="image">
-            <img src="putih247.png">
-          </figure>
+          <div class="img">
+            <img src="putih247.png"><br>
+          </div>
           <nuxt-link to="/login">
             <button class="button is-medium is-rounded is-light is-outlined" style="padding-left:60px; padding-right: 60px">
               LOGIN
@@ -22,11 +22,11 @@
     
     <div class="container">
       <div class="card-columns">
-        <div class="card" v-for="item in posts" v-bind:key="item.key" @click="openDetail(item)">
+        <div class="card is-shady" v-for="item in posts" v-bind:key="item.key" @click="openDetail(item)">
           <img class="card-img-top" :src="item.urlToImage" alt="Card image cap">
           <div class="card-body">
             <p class="card-text"><small class="text-muted">{{ item.author }} - {{ item.source.name }}</small></p>
-            <h5 class="card-title subtitle has-text-weight-semibold"><nuxt-link :to="item.url">{{ item.title }}</nuxt-link></h5>
+            <h5 class="card-title subtitle has-text-weight-semibold"><a :href="item.url">{{ item.title }}</a></h5>
             <p class="card-text"><small class="text-muted">{{ item.publishedAt }}</small></p>
           </div>
         </div>        
@@ -75,13 +75,13 @@
   </script>
 
   <style>
-  .image {
-  width: 500px;
+  .img {
   margin-left: auto;
   margin-right: auto;
-  padding-top: 10%;
-  }
-
+  margin-bottom: 5%;
+  width: 500px
+  }  
+  
   .background::before {
   
   content: "";

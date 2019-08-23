@@ -109,15 +109,15 @@
                 <br>
 
                 <div class="column">
-                <div class="row">
+                <div class="row content">
                   <table>
                     <tr>
-                        <td class="is-fullwidth" style="width:20%"><b>History</b></td>
+                        <td class="is-fullwidth"><b>History</b></td>
                     </tr>
                   </table>
                   <hr>
                 </div>
-                <div class="row">
+                <div class="row" style="margin-bottom: 10px">
                   <table>
                       <tr>
                           <td><b>Show</b></td>
@@ -131,7 +131,7 @@
                         </tr>
                   </table>
                 </div>
-                <div class="row" style="padding-top: 5px">
+                <div class="row">
                     <div class="card">
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped">
@@ -140,8 +140,8 @@
                         <th><abbr title="No">No</abbr></th>
                         <th><abbr title="Name">Nama</abbr></th>
                         <th><abbr title="Divisi">Divisi Project</abbr></th>
-                        <th><abbr title="Start">Start</abbr></th>
-                        <th><abbr title="End">End</abbr></th>
+                        <th><abbr title="Start">Start Date</abbr></th>
+                        <th><abbr title="End">End Date</abbr></th>
                         <th><abbr title="Barang">Barang</abbr></th>
                         <th><abbr title="Jumlah">Jumlah</abbr></th>
                         <th><abbr title="Desc">Description</abbr></th>

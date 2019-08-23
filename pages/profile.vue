@@ -11,7 +11,8 @@
                 <Hello/>
                 <br/>
 
-               <div class="columns box">
+               <div class="column box">
+                <div class="columns">
                    <div class="column is-3">
                         <tr>
                             <figure class="image is-128x128">
@@ -40,6 +41,7 @@
                    </div>
 
                 </div>
+               </div>
                 </div>
 
                 <div class="column is-6">

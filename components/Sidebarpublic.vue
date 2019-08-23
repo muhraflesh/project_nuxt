@@ -37,8 +37,8 @@
             <li>
               <a class=""><i class="fa fa-cog"></i> Settings</a>
               <ul>
-                <li><a>Logout</a></li>
-              
+                <li><a v-if="$store.state.auth">Logout</a></li>
+                <li><a v-if="!$store.state.auth">Login</a></li>
               </ul>
             </li>
           </ul>

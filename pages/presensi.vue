@@ -16,7 +16,7 @@
                <div class="card">
                    <header class="card-header has-background-info">
                         <p class="card-header-title ">
-                        Your Profile
+                        Presensi
                         </p>
                         <a href="/presensi" class="card-header-icon" aria-label="more options">
                         <span class="icon">
@@ -37,7 +37,7 @@
                 <div class="card">
                    <header class="card-header has-background-info">
                         <p class="card-header-title ">
-                        Your Profile
+                        Cuti
                         </p>
                         <a href="/presensi" class="card-header-icon" aria-label="more options">
                         <span class="icon">
@@ -47,28 +47,241 @@
                     </header>
 
                     <div  class="row columns" >
-                        <div class="column is-6 doughnut-chart">
+                        <div class="column is-8">
+                          <div class="doughnut-chart">
                           <DoughnutChart :data="doughnutChartData" :options="{ legend: { display: false }, maintainAspectRatio: false }" />
-                  
+                          </div>
                         </div>
-                        <div class="column is-3" style="padding-top:150px">
+                        
+                        
+                        <div class="column is-3 is-centered" style="padding-top:150px">
+                          <div class="row">
                           <tr><b>Sisa Cuti</b></tr>
                           <tr>3/15</tr>
+                          </div>
+                          <br/>
+                          <div class="row">
+                          <tr><button class="is-info button" @click="showmodal">Ambil Cuti</button></tr>
+                          </div>
                         </div>
 
-                        <div class="column is-3" style="padding-top:150px">
-                          <tr><button class="is-info button">Ambil Cuti</button></tr>
+                        <!-- MODAL -->
+                        <div class="modal" id="modal-cuti">
+                          <div class="modal-background" @click="closemodal"></div>
+                          <div class="modal-card modcard">
+                            <header class="modal-card-head">
+                              <p class="modal-card-title">Pengajuan Cuti</p>
+                              <button class="delete" aria-label="close" @click="closemodal"></button>
+                            </header>
+                            <section class="modal-card-body">
+                              <!-- MODAL CONTENT-->
+                              <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="label">Jumlah Hari</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <input class="input" type="number" placeholder="">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                              <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="label">Tanggal</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <p class="control is-expanded has-icons-left">
+                                        <input class="input" type="text">
+                                        <span class="icon is-small is-left">
+                                          <i class="fas fa-calendar"></i>
+                                        </span>
+                                      </p>
+                                    </div>
+                                    <div class="field-label is-normal">
+                                    <label class="label">Sampai</label>
+                                    </div>
+                                    <div class="field">
+                                      <p class="control is-expanded has-icons-left has-icons-right">
+                                        <input class="input" type="text">
+                                        <span class="icon is-small is-left">
+                                          <i class="fas fa-calendar"></i>
+                                        </span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="label">Keperluan Cuti</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <textarea class="textarea is-danger" placeholder="Explain your reason"></textarea>
+                                      </div>
+                                      <p class="help is-danger">
+                                        This field is required
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="label">Project Progress</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="">Perkejaan Selesai</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <input class="input" type="text" placeholder="">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class=""></label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <input class="input" type="text" placeholder="">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="">On Progress</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <input class="input" type="text" placeholder="">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class=""></label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <input class="input" type="text" placeholder="">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="label">Handover Document</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="label">Project 1</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="">Nama</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field is-narrow">
+                                      <div class="control">
+                                        <div class="select is-fullwidth">
+                                          <select>
+                                            <option>Paksi</option>
+                                            <option>Baid</option>
+                                            <option>Salma</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="">Pekerjaan yg Diberikan</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <input class="input" type="text" placeholder="">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class=""></label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <input class="input" type="text" placeholder="">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div> 
+
+                                <div class="field is-horizontal">
+                                  <div class="field-label">
+                                    <!-- Left empty for spacing -->
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <button class="button is-primary">
+                                          Submit
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <footer class="modal-card-foot">
+                            </footer>
+                          </div>
                         </div>
-                      
-                      </div>
+                    </div>
             
-                <footer class="card-footer">
-                    <p class="card-footer-item">
-                    <span>
-                        <a href="/presensi">View More</a>
-                    </span>
-                    </p>
-                </footer>
+                
                 </div>
 
                 </div>
@@ -95,8 +308,12 @@
                       </tr>
                     </table>
                 </div>
+
+          
+
     </div>
-  
+
+    
      
  </section>
 </template>
@@ -121,7 +338,7 @@ function getRandomColor () {
 
 export default {
 
-  middleware: "",
+  middleware: "authenticated",
 
   components: {
     BarChart,
@@ -130,6 +347,12 @@ export default {
     DoughnutChart,
   },
   methods: {
+        showmodal() {
+          document.getElementById('modal-cuti').classList.add('is-active');
+        },
+        closemodal() {
+          document.getElementById('modal-cuti').classList.remove('is-active');
+        },
         auth ({store}){
             console.log (store.state.auth)
         },
@@ -233,13 +456,17 @@ left: 5%;
 
 .doughnut-chart {
   position: relative;
-  left: 3%;
-  width: 100px;
-  height: 350px;
+  left: 40px;
+  width: 300px;
+  height: 380px;
 
 }
 .buton{
   background-color: aqua;
+}
+
+.modcard{
+  width: 75%;
 }
 
 </style>

@@ -135,6 +135,7 @@ const Cookie = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 export default {
+    middleware : 'authenticated',
     middleware : '',
     components: {
     Sidebar,

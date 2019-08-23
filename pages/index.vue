@@ -22,11 +22,11 @@
     
     <div class="container">
       <div class="card-columns">
-        <div class="card" v-for="item in posts" v-bind:key="item.key" @click="openDetail(item)">
+        <div class="card is-shady" v-for="item in posts" v-bind:key="item.key" @click="openDetail(item)">
           <img class="card-img-top" :src="item.urlToImage" alt="Card image cap">
           <div class="card-body">
             <p class="card-text"><small class="text-muted">{{ item.author }} - {{ item.source.name }}</small></p>
-            <h5 class="card-title subtitle has-text-weight-semibold"><nuxt-link :to="item.url">{{ item.title }}</nuxt-link></h5>
+            <h5 class="card-title subtitle has-text-weight-semibold"><a :href="item.url">{{ item.title }}</a></h5>
             <p class="card-text"><small class="text-muted">{{ item.publishedAt }}</small></p>
           </div>
         </div>        

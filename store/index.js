@@ -1,8 +1,11 @@
-import Vuex from "vuex";
-import Cookie from 'cookie'
-import Cookies from 'js-cookie'
+import Vue from 'vue'
+import Vuex from 'vuex'
+import VuexPersistence from 'vuex-persist'
+import Cookie from 'js-cookie'
 
 const cookieparser = process.server ? require('cookieparser') : undefined
+
+Vue.use(Vuex)
 
 export const state = () => {
   return {

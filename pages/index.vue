@@ -2,7 +2,7 @@
 <section>
   <div>
     
-    <div class="hero background background-img is-large" style="background-image: url('kota.jpg')">
+    <div class="hero background background-img is-medium" style="background-image: url('kota.jpg')">
   <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
@@ -34,8 +34,6 @@
       <button class="button is-fullwidth is-info btn-more has-text-white" @click="loadMore">Load More</button>
     </div>
   <br/>
-  
-  </div>
   
   </div>
   </section>
@@ -80,7 +78,6 @@
   margin-right: auto;
   margin-bottom: 5%;
   width: 500px
-
   }  
   
   .background::before {
@@ -94,38 +91,10 @@
   height: 100%;
   opacity: 0.5;
   }
-  
   .button {
   font-weight: 500;
   box-shadow: 0 8px 6px rgba(50,50,93,.11);
   }
-
-  .navbar {
-  background-color: white;
-  box-shadow: 0px -9px 20px #000000;
-
-  .nav {
-    &-item {
-      padding: 0 .5rem;
-    }
-    &-link {
-      padding: 1rem;
-      color: #888888;
-    }
-  }
-}
-
-.content {
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
-
-.sidebar {
-  border: 1px solid #EFEFEF;
-  padding: 20px;
-  font-size: 14px;
-}
-
 .footer {
   border-top: 1px solid #EFEFEF;
   padding: 10px;

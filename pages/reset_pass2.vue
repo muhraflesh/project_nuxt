@@ -7,17 +7,39 @@
             <div class="column is-12 field-box is-centered">
                 <div class="has-text-centered form" style="padding-top: 20%">
                     <h1 class="reset-heading">Reset Your Password</h1>
-                    <p class="reset-subheading" >Please Enter Your Email Address</p> <br> 
-                <form method="post" @submit.prevent="reset-email">
-                    <div class="field" style="margin-bottom: 3em">
+                    <p class="reset-subheading" >Please Fill The Form to Reset Your Password</p> <br> 
+                <form method="post" @submit.prevent="reset">
+                    <div class="field">
                     <p class="control has-icons-left has-icons-right">
                         <input class="input"
-                         type="email" 
-                         placeholder="Email" 
-                         v-model="email"
+                         type="password" 
+                         placeholder="New Password" 
+                         v-model="new_pass"
                          required>
                         <span class="icon is-left">
-                          <i class="fa fa-envelope"></i>
+                          <i class="fa fa-lock"></i>
+                        </span>
+                    </p>
+                    </div>
+                    <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" 
+                        type="password" 
+                        placeholder="Confirm Password" 
+                        v-model="confr_pass" required>
+                        <span class="icon is-left">
+                          <i class="fa fa-lock"></i>
+                        </span>
+                    </p>
+                    </div>
+                    <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" 
+                        type="text" 
+                        placeholder="Token" 
+                        v-model="token" required>
+                        <span class="icon is-left">
+                          <i class="fa fa-key"></i>
                         </span>
                     </p>
                     </div>
@@ -27,7 +49,7 @@
                           Reset Password
                         </button>
                     </div>
-                      <nuxt-link to="/">
+                      <nuxt-link to="/reset_pass">
                         <button class="cancel-btn">
                         Cancel
                         </button>
@@ -100,7 +122,7 @@ margin-right: auto;
   font-size: 1.95em;
 }
 .reset-form-wrapper .field-box .reset-subheading{
-  margin-bottom: 5em;font-size: 1em;color: #787877;
+ font-size: 1em;color: #787877;
 }
 
 .reset-form-wrapper .field-box .reset-btn{

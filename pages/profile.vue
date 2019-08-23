@@ -5,75 +5,118 @@
                <nav class="breadcrumb" aria-label="breadcrumbs">
                     <ul>
                         <li><a href="/">Solusi</a></li>
-                        <li class="is-active"><a href="#" aria-current="page">Profile</a></li>
+                        <li class="is-active"><a href="#" aria-current="page">Data Profile</a></li>
                     </ul>
                 </nav>
                 <Hello/>
-                <br/>
+                <br>
 
-               <div class="columns box">
-                   <div class="column is-3">
-                        <tr>
-                            <figure class="image is-128x128">
-                            <img class="is-rounded" src="~assets/images/iqbaal.jpg">
-                            </figure>
-                        </tr>
-                        <tr class="has-text-centered"><b>John Smith</b></tr>
-                        <tr class="has-text-centered">Hello!!</tr>
-                   </div>
-                   <div class="column is-7">
-                       <table class="table is-fullwidth ">
-                           <tr>
-                                   <td> <b>Email</b>  <br>Johnsmith00@gmail.com</td>
-                                   <td> <b>Division</b> <br>Frontend</td>
-                           </tr>
-                           <tr>
-                                   <td> <b>Home Phone</b>  <br>0219184081</td>
-                                   <td> <b>Gender</b> <br>Laki-Laki</td>
-                           </tr>
-                           <tr>
-                                   <td> <b>Cell Phone</b>  <br>0891278872847</td>
-                                   <td> <b>Address</b> <br>Kota Baru, Yogyakarta</td>
-                           </tr>
-                           
-                       </table>
-                   </div>
-
-                </div>
-                </div>
-
-                <div class="column is-6">
-               <div class="card">
-                   <header class="card-header has-background-info">
-                        <p class="card-header-title ">
-                        Your Profile
-                        </p>
-                        <a href="/presensi" class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                            <i class="fa fa-calendar" ></i>
-                        </span>
-                        </a>
-                    </header>
+                <div>
+                    <div class="card ">
                     <div class="card-content">
-                        <p class="subtitle">
-                        (Profile)
-                        </p>
-                    </div>
-                <footer class="card-footer">
-                    <p class="card-footer-item">
-                    <span>
-                        <a href="/presensi">View More</a>
-                    </span>
-                    </p>
-                </footer>
+                    <tabel class="table is-fullwidth is-striped ">
+                      <tr>
+                        <td style="width:20%" class="has-text-centered">
+                                <div class="image is-1by1  " style="">
+                                    <img class="is-rounded " src="~assets/images/iqbaal.jpg">
+                                </div><br>
+                            <p class="subtitle"><b>John Smith</b> <br> Hello!!</p>
+                        </td>
+                        <td style="width:45%">
+                            <tr>
+                                <td width="150px"><b>Sex</b></td>
+                                <td width="200px">Male</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>Blood Type</b></td>
+                                <td width="200px">A</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>Email</b></td>
+                                <td width="200px">kutilang55@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>KK</b></td>
+                                <td width="200px">Copy</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>KTP</b></td>
+                                <td width="200px">Copy</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>Religion</b></td>
+                                <td width="200px">Islam</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>KTP Address</b></td>
+                                <td width="200px">Baciro, Gondokusuman,Yogyakarta</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>Residential Address</b></td>
+                                <td width="200px">Baciro, Gondokusuman,Yogyakarta</td>
+                            </tr>
+                            <tr>
+                                <td width="150px" rowspan="2"><b>KTP Number</b></td>
+                                <td width="200px">3223687314</td>
+                                <tr>
+                                    <td>21 JUli 2025</td>
+                            </tr>
+                            <tr>
+                                <td width="150px" rowspan="3"><b>Educational Background</b></td>
+                                <td width="200px">D3</td>
+                                <tr>
+                                    <td>Teknik Informasi</td>
+                                    <tr>
+                                        <td>UGM</td>
+                            </tr>
+                        </td>
+
+
+                        <td style="width:35%">
+                            <tr>
+                                <td width="150px" rowspan="3"><b>Certificate</b></td>
+                                <td width="200px">UGM</td>
+                                <tr>
+                                    <td>21 Juli 2016</td>
+                                    <tr>
+                                        <td>D3</td>
+                            </tr>
+                            <tr>
+                                <td width="150px" rowspan="2"><b>Date Of Birth</b></td>
+                                <td width="200px">Surabaya</td>
+                                <tr>
+                                    <td>28 Desember 1999</td>
+                            </tr>
+                            <tr>
+                                <td width="150px" rowspan="2"><b>Phone Number</b></td>
+                                <td width="200px">021983124</td>
+                                <tr>
+                                    <td>087721641712</td>
+                            </tr>
+                            <tr>
+                                <td width="150px" rowspan="2"><b>NPWP</b></td>
+                                <td width="200px"><i class="fa fa-check"></i></td>
+                                <tr>
+                                    <td>9182761094861</td>
+                            </tr>
+                            <tr>
+                                <td width="150px" rowspan="4"><b>Bank Account</b></td>
+                                <td width="200px">john</td>
+                                <tr>
+                                    <td>BNI</td>
+                                    <tr>
+                                        <td>324567823</td>
+                                        <tr>
+                                            <td>Yogyakarta</td>
+                            </tr>
+                            
+                        </td>
+                        </tr>
+                  </tabel>
+                  </div>
+                  </div>
+                  </div>
                 </div>
-                </div>
-
-            </div>
-
-           </div>
-
-       
     </section>
 </template>
 
@@ -81,6 +124,9 @@
 .user{
     height: 100%;
     width: 100%
+}
+.is-horizontal-center {
+  justify-content: center;
 }
 </style>
 
@@ -90,12 +136,11 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 export default {
     middleware : 'authenticated',
-
+    middleware : '',
     components: {
     Sidebar,
     Hello,
     },
-
     methods: {
         auth ({store}){
             console.log (store.state.auth)

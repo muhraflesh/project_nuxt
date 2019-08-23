@@ -11,8 +11,7 @@
                 <Hello/>
                 <br/>
 
-               <div class="column box">
-                <div class="columns">
+               <div class="columns box">
                    <div class="column is-3">
                         <tr>
                             <figure class="image is-128x128">
@@ -41,7 +40,6 @@
                    </div>
 
                 </div>
-               </div>
                 </div>
 
                 <div class="column is-6">
@@ -92,12 +90,10 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 export default {
     middleware : '',
-
     components: {
     Sidebar,
     Hello,
     },
-
     methods: {
         auth ({store}){
             console.log (store.state.auth)

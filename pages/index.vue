@@ -30,9 +30,11 @@ as<template>
             <p class="card-text"><small class="text-muted">{{ item.publishedAt }}</small></p>
           </div>
         </div>        
+      </div> <br>
+      <div style="padding-left:30%">
+        <button class="button btn-more is-rounded" @click="loadMore">Load More</i></button>
       </div>
-      <button class="button is-fullwidth is-info btn-more has-text-white" @click="loadMore">Load More</button>
-    </div>
+      </div>
   <br/>
   
   </div>
@@ -95,6 +97,9 @@ as<template>
   font-weight: 500;
   box-shadow: 0 8px 6px rgba(50,50,93,.11);
   }
+  .button.is-rounded {
+    padding-left: 10em;
+    padding-right: 10em;}
 .footer {
   border-top: 1px solid #EFEFEF;
   padding: 10px;

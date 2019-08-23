@@ -90,12 +90,10 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 export default {
     middleware : '',
-
     components: {
     Sidebar,
     Hello,
     },
-
     methods: {
         auth ({store}){
             console.log (store.state.auth)

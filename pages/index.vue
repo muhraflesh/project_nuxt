@@ -2,16 +2,13 @@
 <section>
   <div>
     
-    <div class="hero background background-img is-large" style="background-image: url('kota.jpg')">
+    <div class="hero background background-img is-medium" style="background-image: url('kota.jpg')">
   <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
-          <div class="image">
-            <img src="putih247.png" alt="Logo"><br>
-          </div>
-          <h2 class="subtitle has-text-light">
-            
-          </h2>
+          <figure class="image">
+            <img src="putih247.png">
+          </figure>
           <nuxt-link to="/login">
             <button class="button is-medium is-rounded is-light is-outlined" style="padding-left:60px; padding-right: 60px">
               LOGIN
@@ -37,8 +34,6 @@
       <button class="button is-fullwidth is-info btn-more has-text-white" @click="loadMore">Load More</button>
     </div>
   <br/>
-  
-  </div>
   
   </div>
   </section>
@@ -82,6 +77,7 @@
   width: 500px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 10%;
   }
 
   .background::before {
@@ -95,38 +91,10 @@
   height: 100%;
   opacity: 0.5;
   }
-  
   .button {
   font-weight: 500;
   box-shadow: 0 8px 6px rgba(50,50,93,.11);
   }
-
-  .navbar {
-  background-color: white;
-  box-shadow: 0px -9px 20px #000000;
-
-  .nav {
-    &-item {
-      padding: 0 .5rem;
-    }
-    &-link {
-      padding: 1rem;
-      color: #888888;
-    }
-  }
-}
-
-.content {
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
-
-.sidebar {
-  border: 1px solid #EFEFEF;
-  padding: 20px;
-  font-size: 14px;
-}
-
 .footer {
   border-top: 1px solid #EFEFEF;
   padding: 10px;

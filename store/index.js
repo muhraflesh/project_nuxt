@@ -1,8 +1,11 @@
-import Vuex from "vuex";
-import Cookie from 'cookie'
-import Cookies from 'js-cookie'
+import Vue from 'vue'
+import Vuex from 'vuex'
+import VuexPersistence from 'vuex-persist'
+import Cookie from 'js-cookie'
 
 const cookieparser = process.server ? require('cookieparser') : undefined
+
+Vue.use(Vuex)
 
 export const state = () => {
   return {
@@ -40,6 +43,19 @@ export const actions = {
     }
     commit('setAuth', auth)
   }
+}
+
+export const createStore = () => {
+  return new Vuex.Store({
+    state: {
+      article: {}
+    },
+    mutations: {
+      setArticle (state, data) {
+        state.article = data
+      }
+    }
+  })
 }
 
 

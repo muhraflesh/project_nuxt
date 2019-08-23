@@ -1,8 +1,8 @@
-<template>
+as<template>
 <section>
   <div>
     
-    <div class="hero background background-img is-medium" style="background-image: url('kota.jpg')">
+    <div class="hero background background-img is-large" style="background-image: url('kota.jpg')">
   <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">

@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import VuexPersistence from 'vuex-persist'
 import Cookie from 'js-cookie'
 
 const cookieparser = process.server ? require('cookieparser') : undefined

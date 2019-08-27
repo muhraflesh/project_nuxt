@@ -17,8 +17,8 @@
                     <tabel class="table is-fullwidth is-striped ">
                       <tr>
                         <td style="width:20%" class="has-text-centered">
-                                <div class="image is-1by1  " style="">
-                                    <img class="is-rounded " src="~assets/images/iqbaal.jpg">
+                                <div style="width: 200px">
+                                    <img class="is-rounded" src="~assets/images/iqbaal.jpg">
                                 </div><br>
                             <p class="subtitle"><b>John Smith</b> <br> Hello!!</p>
                         </td>
@@ -128,6 +128,9 @@
 .is-horizontal-center {
   justify-content: center;
 }
+.is-rounded{
+    border-radius: 50%
+}
 </style>
 
 <script>
@@ -136,7 +139,6 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 export default {
     middleware : 'authenticated',
-    middleware : '',
     components: {
     Sidebar,
     Hello,

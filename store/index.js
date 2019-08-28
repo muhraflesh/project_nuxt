@@ -1,33 +1,21 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Cookie from 'js-cookie'
+import Cookies from 'js-cookie'
+import VuexPersistence from 'vuex-persist'
 
 const cookieparser = process.server ? require('cookieparser') : undefined
+
+const vuexCookie = new VuexPersistence({
+})
 
 Vue.use(Vuex)
 
 export const state = () => {
   return {
     auth: null,
-    user: null,
+    article : {}
   }
-}
-
-
-export const mutations = {
-  setAuth (state, auth) {
-    state.auth = auth 
-  },
-  setUser (state, user) {
-    state.user = user
-  },
-}
-
-export const getters = {
-  loggedIn (state) {
-    return Boolean(state.user && state.auth)
-  }
-}
+} 
 
 export const actions = {
   nuxtServerInit ({ commit }, { req }) {
@@ -44,18 +32,22 @@ export const actions = {
   }
 }
 
-export const createStore = () => {
-  return new Vuex.Store({
-    state: {
-      article: {}
-    },
-    mutations: {
-      setArticle (state, data) {
-        state.article = data
-      }
-    }
-  })
+export const mutations = {
+  
+  setAuth (state, auth) {
+    state.auth = auth 
+  },
+  setArticle (state, data) {
+    state.article = data
+  }
 }
+
+export const plugins = [
+  vuexCookie.plugin
+]
+
+
+
 
 
 

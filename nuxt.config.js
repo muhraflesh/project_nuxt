@@ -42,7 +42,7 @@ export default {
   */
   plugins: [
     '~/plugins/axios',
-    '~/plugins/vuex-persist',
+    //'~/plugins/vuex-persist',
   ],
   /*
   ** Nuxt.js modules

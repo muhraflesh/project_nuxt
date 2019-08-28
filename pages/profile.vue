@@ -17,9 +17,11 @@
                     <tabel class="table is-fullwidth is-striped ">
                       <tr>
                         <td style="width:20%" class="has-text-centered">
-                                <div style="width: 200px">
-                                    <img class="is-rounded" src="~assets/images/iqbaal.jpg">
-                                </div><br>
+
+                                <div class="image is-1by1  " style="">
+                                    <img class="is-rounded " @click="cek" src="~assets/images/iqbaal.jpg">
+                                </div>
+
                             <p class="subtitle"><b>John Smith</b> <br> Hello!!</p>
                         </td>
                         <td style="width:45%">
@@ -144,6 +146,9 @@ export default {
     Hello,
     },
     methods: {
+        cek(){
+            console.log(this.$store.state.auth)
+        },
         auth ({store}){
             console.log (store.state.auth)
         },

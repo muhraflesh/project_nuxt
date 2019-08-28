@@ -192,14 +192,14 @@
             
         </div>
       </div>
-    </div>
+    
   
      
  </section>
 </template>
 
 <script>
-const Cookie = process.client ? require('js-cookie') : undefined
+const Cookies = process.client ? require('js-cookie') : undefined
 import axios from 'axios'
 import moment from 'moment'
 import BarChart from '~/components/bar-chart'
@@ -207,7 +207,7 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 
 export default {
-  middleware: "",
+  middleware: "authenticated",
   components: {
     BarChart,
     Sidebar,
@@ -218,7 +218,7 @@ export default {
             console.log (store.state.auth)
         },
         logout () {
-            Cookie.remove('auth')
+            Cookies.remove('auth')
             this.$store.commit('setAuth', null)
             this.$router.push('/')
         }
@@ -265,7 +265,6 @@ left: 5%;
   height: 32%;
 }
 .top1{
-  padding-top: ;
   left: 5%;
 }
 .top2{

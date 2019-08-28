@@ -337,9 +337,7 @@ function getRandomColor () {
 }
 
 export default {
-
-  middleware: "authenticated",
-
+  middleware: 'authenticated',
   components: {
     BarChart,
     Sidebar,

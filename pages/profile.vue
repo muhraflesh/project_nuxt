@@ -17,11 +17,9 @@
                     <tabel class="table is-fullwidth is-striped ">
                       <tr>
                         <td style="width:20%" class="has-text-centered">
-
-                                <div class="image is-1by1  " style="">
-                                    <img class="is-rounded " @click="cek" src="~assets/images/iqbaal.jpg">
-                                </div>
-
+                                <figure  style="width: 200px">
+                                    <img class="is-rounded" src="~assets/images/iqbaal.jpg">
+                                </figure><br>
                             <p class="subtitle"><b>John Smith</b> <br> Hello!!</p>
                         </td>
                         <td style="width:45%">
@@ -85,7 +83,7 @@
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="2"><b>Date Of Birth</b></td>
-                                <td width="200px">Surabaya</td>
+<td width="200px">Surabaya</td>
                                 <tr>
                                     <td>28 Desember 1999</td>
                             </tr>
@@ -146,9 +144,6 @@ export default {
     Hello,
     },
     methods: {
-        cek(){
-            console.log(this.$store.state.auth)
-        },
         auth ({store}){
             console.log (store.state.auth)
         },

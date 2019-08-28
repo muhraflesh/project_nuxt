@@ -9,11 +9,10 @@ as<template>
           <div class="img">
             <img src="putih247.png"><br>
           </div>
-          <nuxt-link to="/login">
             <button class="button is-medium is-rounded is-light is-outlined" style="padding-left:60px; padding-right: 60px">
-              LOGIN
+              <a v-if="!$store.state.auth" href="/login" class="has-text-white">LOGIN</a>
+              <a v-if="$store.state.auth" href="/profile" class="has-text-white">PROFILE</a>
             </button>
-          </nuxt-link>
         </div>
       </div>
     </div>
@@ -32,7 +31,7 @@ as<template>
         </div>        
       </div> <br>
       <div style="padding-left:30%">
-        <button class="button btn-more is-rounded" @click="loadMore">Load More</i></button>
+        <button class="button btn-more is-rounded" @click="loadMore">Load More</button>
       </div>
       </div>
   <br/>

@@ -2,7 +2,7 @@
 
 <template>
     <aside class="column is-2 aside">
-        <figure >
+        <figure>
             <img src="hitam247.png" alt="Solusi 247" class="user">
         </figure>
                 <br/>
@@ -45,7 +45,7 @@
             <li>
               <a class=""><i class="fa fa-cog"></i> Settings</a>
               <ul>
-                <li><a v-if="$store.state.auth" @click="logout">Logout</a></li>
+                <li><a v-if="$store.state.auth">Logout</a></li>
                 <li><a v-if="!$store.state.auth">Login</a></li>
               </ul>
             </li>
@@ -57,14 +57,12 @@
 </template>
 
 <script>
-const Cookies = process.client ? require('js-cookie') : undefined
-
 export default {
   middleware: "",
   
   methods: {
         logout () {
-            Cookies.remove('auth')
+            Cookie.remove('auth')
             this.$store.commit('setAuth', null)
             this.$router.push('/')
         }

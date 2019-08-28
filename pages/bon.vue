@@ -21,7 +21,7 @@
                             </div>
                           </div>
                             <div class="card-content"> 
-                                <form method="post" @submit.prevent="bon" class="is-mobile">
+                                <form method="post" @submit.prevent="bon">
                                     <div class="field is-horizontal">
                                       <div class="field-label">
                                           <label>Start Date</label>
@@ -55,6 +55,7 @@
                                             <option>Laptop</option>
                                             <option>Proyektor</option>
                                             <option>Router</option>
+                                            <option>Mouses</option>
                                         </select>
                                         </div>
                                       </div>
@@ -81,14 +82,14 @@
                                         <label>Keterangan</label>
                                       </div>
                                       <div class="field-body">
-                                      <div class="control is-fullwidth">
-                                        <textarea class="textarea" placeholder="Keterangan"></textarea>
+                                      <div class="control">
+                                        <textarea class="textarea is-fullwidth" placeholder="Keterangan"></textarea>
                                       </div>
                                       </div>
                                     </div>
-                                    <div class="field">
-                                      <div class="control">
-                                      <button class="button is-primary is-pulled-right">
+                                    <div class="field buttons is-right">
+                                      <div class="control buttons is-right">
+                                      <button class="button is-primary" style="padding-left: 5%;padding-right: 5%">
                                         Submit
                                       </button>
                                       </div>
@@ -222,54 +223,7 @@ export default {
 </script>
 
 <style>
-.container-1{ 
-  width: 300px;
-  vertical-align: middle;
-  white-space: nowrap;
-  position: relative;
-  padding-left: 30%;
-}
-.container-1 input#search{ 
-  width: 200px;
-  height: 40px;
-  background: #f0f0f0f0;
-  border: none;
-  font-size: 10pt;
-  float: left;
-  color: #63717f;
-  padding-left: 45px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-.container-1 input#search::-webkit-input-placeholder {
-   color: #65737e;
-}
- 
-.container-1 input#search:-moz-placeholder { /* Firefox 18- */
-   color: #65737e;  
-}
- 
-.container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
-   color: #65737e;  
-}
- 
-.container-1 input#search:-ms-input-placeholder {  
-   color: #65737e;  
-}
-.container-1 .icon{
-  position: absolute;
-  top: 20%;
-  margin-left: 17px;
-  margin-top: 10px;
-  z-index: 1;
-  color: #4f5b66;
-}
-
-.input {
-  width: 300px
-}
-.textarea {
-  width: 300px
+.control{
+  width: 80%
 }
 </style>

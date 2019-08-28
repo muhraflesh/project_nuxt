@@ -3,7 +3,6 @@ import Vuex from 'vuex'
 import Cookies from 'js-cookie'
 import VuexPersistence from 'vuex-persist'
 import createPersistedState from 'vuex-persistedstate'
-
 const cookieparser = process.server ? require('cookieparser') : undefined
 
 const vuexCookie = new VuexPersistence({

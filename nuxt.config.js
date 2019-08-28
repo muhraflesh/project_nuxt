@@ -43,6 +43,7 @@ export default {
   */
   plugins: [
     '~/plugins/axios',
+    //'~/plugins/vuex-persist',
     //'~/plugins/persisted.js'
   ],
   /*

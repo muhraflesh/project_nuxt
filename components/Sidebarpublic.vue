@@ -62,7 +62,7 @@ export default {
   
   methods: {
         logout () {
-            Cookie.remove('auth')
+            Cookies.remove('auth')
             this.$store.commit('setAuth', null)
             this.$router.push('/')
         }

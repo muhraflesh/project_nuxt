@@ -57,6 +57,8 @@
 </template>
 
 <script>
+const Cookies = process.client ? require('js-cookie') : undefined
+
 export default {
   middleware: "",
   

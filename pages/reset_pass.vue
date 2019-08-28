@@ -8,7 +8,7 @@
                 <div class="has-text-centered form" style="padding-top: 20%">
                     <h1 class="reset-heading">Reset Your Password</h1>
                     <p class="reset-subheading" >Please Enter Your Email Address</p> <br> 
-                <form method="post" @submit.prevent="reset-email">
+                <form method="post" @submit.prevent="reset_email">
                     <div class="field" style="margin-bottom: 3em">
                     <p class="control has-icons-left has-icons-right">
                         <input class="input"
@@ -49,26 +49,46 @@ const Cookie = process.client ? require('js-cookie') : undefined
   export default { 
     data() {
       return{
-        new_pass:'',
-        confr_pass:'',
-        token:''
+        email:'',
       }
     },
     methods: {
-      async reset(){
+      async reset_email(){
         try{
-            if (this.first_pass != this.sec_pass) {
-                this.pesan = "Your Password is not match"
+            const {data} = await this.$axios.post("https://192.168.3.124:3000/api/user/resetpass", {
+            email: this.email
+            })
+            const auth = data.id
+            console.log(auth)
+
+            this.$store.commit('setAuth', auth)
+            Cookie.set('auth', auth) 
+            this.$router.push('/reset_pass2')
             }
-            await this.$axios.post('https://192.168.3.166:3000/api/user/reset-password?access_token=' + env.accessToken ,{
-                newPassword: this.first_pass,         
-            }) 
-        } catch (e) {       
-      }
+            catch (e) {       
+            }
       }
     }
   }
 </script>
+
+try{
+  const {data} = await this.$axios.post("https://192.168.3.124:3000/api/user/login", {
+      email: this.email,
+      password: this.password
+  })
+
+const auth = data.id
+console.log(auth)
+
+this.$store.commit('setAuth', auth)
+Cookie.set('auth', auth) 
+this.$router.push('/profile')
+}
+
+catch (e) {
+this.pesan = e.response.data.error.statusCode ;
+}
 
 <style>
 .form{

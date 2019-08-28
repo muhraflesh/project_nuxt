@@ -1,19 +1,18 @@
-<template>
+as<template>
 <section>
   <div>
     
-    <div class="hero background background-img is-medium" style="background-image: url('kota.jpg')">
+    <div class="hero background background-img is-large" style="background-image: url('kota.jpg')">
   <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
           <div class="img">
             <img src="putih247.png"><br>
           </div>
-          <nuxt-link to="/login">
             <button class="button is-medium is-rounded is-light is-outlined" style="padding-left:60px; padding-right: 60px">
-              LOGIN
+              <a v-if="!$store.state.auth" href="/login" class="has-text-white">LOGIN</a>
+              <a v-if="$store.state.auth" href="/profile" class="has-text-white">PROFILE</a>
             </button>
-          </nuxt-link>
         </div>
       </div>
     </div>
@@ -30,9 +29,11 @@
             <p class="card-text"><small class="text-muted">{{ item.publishedAt }}</small></p>
           </div>
         </div>        
+      </div> <br>
+      <div style="padding-left:30%">
+        <button class="button btn-more is-rounded" @click="loadMore">Load More</button>
       </div>
-      <button class="button is-fullwidth is-info btn-more has-text-white" @click="loadMore">Load More</button>
-    </div>
+      </div>
   <br/>
   
   </div>
@@ -95,6 +96,9 @@
   font-weight: 500;
   box-shadow: 0 8px 6px rgba(50,50,93,.11);
   }
+  .button.is-rounded {
+    padding-left: 10em;
+    padding-right: 10em;}
 .footer {
   border-top: 1px solid #EFEFEF;
   padding: 10px;

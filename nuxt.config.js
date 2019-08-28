@@ -1,4 +1,5 @@
 
+
 export default {
   mode: 'spa',
   /*
@@ -43,6 +44,7 @@ export default {
   plugins: [
     '~/plugins/axios',
     //'~/plugins/vuex-persist',
+    //'~/plugins/persisted.js'
   ],
   /*
   ** Nuxt.js modules
@@ -55,7 +57,7 @@ export default {
     
   ],
   axios: {
-    baseURL: 'https://192.168.3.110:3000/api/user'
+    baseURL: 'https://192.168.43.121:3000/api/user'
 
   },
   /* auth: {

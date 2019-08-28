@@ -1,7 +1,8 @@
 
+
 <template>
     <aside class="column is-2 aside">
-        <figure class="image is-4by4">
+        <figure>
             <img src="hitam247.png" alt="Solusi 247" class="user">
         </figure>
                 <br/>
@@ -56,12 +57,14 @@
 </template>
 
 <script>
+const Cookies = process.client ? require('js-cookie') : undefined
+
 export default {
   middleware: "",
   
   methods: {
         logout () {
-            Cookie.remove('auth')
+            Cookies.remove('auth')
             this.$store.commit('setAuth', null)
             this.$router.push('/')
         }

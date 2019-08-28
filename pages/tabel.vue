@@ -11,14 +11,14 @@
                     <Hello/>
                     <br/>
     
-                   <div class="column box">
+                   <div class="card">
+                    <div class="card-content">
                     <div class="columns">
-                       <div class="column is-2">
-                            <p class="is-centered"><figure class="image is-128x128">
+                       <div class="column is-2 has-text-centered">
+                            <figure class="image">
                             <img class="is-rounded" src="~assets/images/iqbaal.jpg">
-                            </figure></p>
-                            <p class="has-text-centered"><b>John Smith</b></p>
-                            <p class="has-text-centered">Hello!!</p>
+                            </figure><br>
+                            <p class="subtitle"><b>John Smith</b> <br> Hello!! </p>
                        </div>
                        <div class="column">
                         <div class="columns ">
@@ -63,13 +63,13 @@
                                 <li>
                                     <p>
                                     <span>KTP Address</span>
-                                    <p>Baciro, Gondokusuman, Yogyakarta City</p>
+                                    <td>Baciro, Gondokusuman, Yogyakarta City</td>
                                     </p>
                                 </li>
                                 <li>
                                     <p>
                                     <span>Residental Address</span>
-                                    Baciro, Gondokusuman, Yogyakarta City
+                                    <td>Baciro, Gondokusuman, Yogyakarta City</td>
                                     </p>
                                 </li>
                                 <li>
@@ -120,35 +120,8 @@
                        </div>
     
                     </div>
+                    </div>
                    </div>
-                    </div>
-    
-                    <div class="column is-6">
-                   <div class="card">
-                       <header class="card-header has-background-info">
-                            <p class="card-header-title ">
-                            Your Profile
-                            </p>
-                            <a href="/presensi" class="card-header-icon" aria-label="more options">
-                            <span class="icon">
-                                <i class="fa fa-calendar" ></i>
-                            </span>
-                            </a>
-                        </header>
-                        <div class="card-content">
-                            <p class="subtitle">
-                            (Profile)
-                            </p>
-                        </div>
-                    <footer class="card-footer">
-                        <p class="card-footer-item">
-                        <span>
-                            <a href="/presensi">View More</a>
-                        </span>
-                        </p>
-                    </footer>
-                    </div>
-                    </div>
     
                 </div>
     
@@ -198,7 +171,7 @@
 	letter-spacing: 0px;
 }
 .about-me .personal-info {
-	padding: 25px;
+	padding: 5px;
 	display: inline-block;
 	width: 100%;
 }
@@ -207,7 +180,7 @@
 	float: left;
 }
 .about-me .personal-info li span {
-	width: 50%;
+	width: 45%;
 	float: left;
 	font-weight: bold;
 }

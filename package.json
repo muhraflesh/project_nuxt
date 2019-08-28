@@ -6,7 +6,7 @@
   "private": true,
   "config": {
     "nuxt": {
-      "host": "192.168.3.126",
+      "host": "192.168.20.5",
       "port": "3000"
     }
   },
@@ -17,7 +17,6 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/auth": "^5.5.4",
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/bulma": "^1.2.1",
     "@nuxtjs/font-awesome": "^1.0.4",
@@ -30,11 +29,9 @@
     "moment": "^2.18.1",
     "nuxt": "^2.0.0",
     "sass": "^1.22.7",
-    "vue-carousel": "^0.18.0",
     "vue-chartjs": "^3.1.0",
     "vuejs-datepicker": "^1.6.2",
     "vuex-persist": "^2.0.1"
-
   },
   "devDependencies": {
     "nodemon": "^1.18.9"

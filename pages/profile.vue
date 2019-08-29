@@ -139,10 +139,12 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 export default {
     middleware : 'authenticated',
+
     components: {
-    Sidebar,
-    Hello,
+        Sidebar,
+        Hello,
     },
+    
     methods: {
         cek(){
             console.log(this.$store.state.auth)

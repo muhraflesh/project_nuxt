@@ -33,7 +33,6 @@ export const actions = {
 }
 
 export const mutations = {
-  
   setAuth (state, auth) {
     state.auth = auth 
   },

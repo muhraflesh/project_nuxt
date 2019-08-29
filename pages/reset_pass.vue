@@ -45,50 +45,36 @@
 
 <script>
 const Cookie = process.client ? require('js-cookie') : undefined
+  import Notification from '../components/Notification'
 
   export default { 
+    components: {
+      Notification,
+    },
     data() {
       return{
         email:'',
       }
     },
+    
     methods: {
       async reset_email(){
         try{
-            const {data} = await this.$axios.post("https://192.168.3.124:3000/api/user/resetpass", {
-            email: this.email
+          var self = this
+            const {data} = await this.$axios.post(`https://192.168.3.147:3000/api/user/reset`, {
+             email: this.email
             })
-            const auth = data.id
-            console.log(auth)
-
-            this.$store.commit('setAuth', auth)
-            Cookie.set('auth', auth) 
-            this.$router.push('/reset_pass2')
+            if (data.code != 200){
+              this.pesan = "Invalid Email Address"
             }
+            self.$router.push('/reset_pass2')
+          }
             catch (e) {       
-            }
+          }
       }
     }
   }
 </script>
-
-try{
-  const {data} = await this.$axios.post("https://192.168.3.124:3000/api/user/login", {
-      email: this.email,
-      password: this.password
-  })
-
-const auth = data.id
-console.log(auth)
-
-this.$store.commit('setAuth', auth)
-Cookie.set('auth', auth) 
-this.$router.push('/profile')
-}
-
-catch (e) {
-this.pesan = e.response.data.error.statusCode ;
-}
 
 <style>
 .form{

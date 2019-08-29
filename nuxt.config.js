@@ -57,7 +57,7 @@ export default {
     
   ],
   axios: {
-    baseURL: 'https://192.168.43.121:3000/api/user'
+    baseURL: 'https://192.168.3.147:3000/api'
 
   },
   /* auth: {

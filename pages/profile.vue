@@ -18,7 +18,7 @@
                       <tr>
                         <td style="width:20%" class="has-text-centered">
                                 <figure  style="width: 200px">
-                                    <img class="is-rounded" src="~assets/images/iqbaal.jpg">
+                                    <img @click="cek" class="is-rounded" src="~assets/images/iqbaal.jpg">
                                 </figure><br>
                             <p class="subtitle"><b>John Smith</b> <br> Hello!!</p>
                         </td>
@@ -139,11 +139,16 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 export default {
     middleware : 'authenticated',
+
     components: {
-    Sidebar,
-    Hello,
+        Sidebar,
+        Hello,
     },
+    
     methods: {
+        cek(){
+            console.log(this.$store.state.auth)
+        },
         auth ({store}){
             console.log (store.state.auth)
         },

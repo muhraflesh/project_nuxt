@@ -11,7 +11,7 @@
             General
           </p>
           <ul class="menu-list">
-            <li><a class="is-active" href="#"><span class="icon is-small"><i class="fa fa-tachometer"></i></span> Dashboard</a></li>
+            <li><a class="is-active" href="/"><span class="icon is-small"><i class="fa fa-tachometer"></i></span> Dashboard</a></li>
           </ul>
           <p class="menu-label">
             Menu
@@ -45,7 +45,7 @@
             <li>
               <a class=""><i class="fa fa-cog"></i> Settings</a>
               <ul>
-                <li><a v-if="$store.state.auth">Logout</a></li>
+                <li><a v-if="$store.state.auth" @click="logout">Logout</a></li>
                 <li><a v-if="!$store.state.auth">Login</a></li>
               </ul>
             </li>

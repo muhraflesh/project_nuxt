@@ -180,12 +180,12 @@
 </style>
 
 <script>
-const Cookie = process.client ? require('js-cookie') : undefined
+const Cookies = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebar"
 import Hello from "../components/Hello"
 
 export default {
-    
+    middleware : 'authenticated',
     components: {
       Sidebar,
       Hello,
@@ -195,7 +195,7 @@ export default {
             console.log (store.state.auth)
         },
         logout () {
-            Cookie.remove('auth')
+            Cookies.remove('auth')
             this.$store.commit('setAuth', null)
             this.$router.push('/')
         }

@@ -15,10 +15,8 @@
                 <div class="column is-9 has-text-centered" style="padding-top: 20%">
                   <h1 class="login-heading" style="padding-left: 25%">Login Your Account</h1>
                   <p class="login-subheading" style="padding-left: 25%">Enter your username and password to log in</p> <br>
-                  <div class="field">
-                    <Notification :message="pesan" v-if="pesan" />
-                  </div>
                   <form method="post" @submit.prevent="login" style="padding-left: 25%">
+                    <Notification :message="pesan" v-if="pesan" />                    
                     <div class="field">
                       <p class="control has-icons-left has-icons-right">
                         <input class="input"
@@ -71,14 +69,15 @@ const Cookies = process.client ? require('js-cookie') : undefined
     data() {
       return{
         email: '',
-        password:''
+        password:'',
+        pesan: null
       }
     },
     methods: {
       async login(){
         try{
           var self = this
-          const {data} = await this.$axios.post("https://192.168.3.167:3000/api/user/login", {
+          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/login`, {
               email: this.email,
               password: this.password
           })
@@ -93,7 +92,10 @@ const Cookies = process.client ? require('js-cookie') : undefined
         }
 
         catch (e) {
-        this.pesan = e.response.error.statusCode ;
+          this.pesan = e.response.data.error.statusCode
+          if (this.pesan = 401){
+            this.pesan="Invalid Email or Password"
+          }
         }
       }
     }

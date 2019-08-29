@@ -22,7 +22,7 @@ export default {
   },
 
   env: {
-    
+    baseURL: process.env.BASE_URL || 'https://192.168.43.159:3000/api',
     githubToken: '42cdf9fd55abf41d24f34c0f8a4d9ada5f9e9b93'
   },
   
@@ -42,7 +42,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/axios',
+    //'~/plugins/axios',
     //'~/plugins/vuex-persist',
     //'~/plugins/persisted.js'
   ],
@@ -57,8 +57,7 @@ export default {
     
   ],
   axios: {
-    baseURL: 'https://192.168.3.167:3000/api/user'
-
+    baseURL: 'https://192.168.43.159:3000/api'
   },
   /* auth: {
     strategies: {

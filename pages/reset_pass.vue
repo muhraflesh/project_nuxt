@@ -8,7 +8,9 @@
                 <div class="has-text-centered form" style="padding-top: 20%">
                     <h1 class="reset-heading">Reset Your Password</h1>
                     <p class="reset-subheading" >Please Enter Your Email Address</p> <br> 
+                
                 <form method="post" @submit.prevent="reset_email">
+                  <Notification :message="pesan" v-if="pesan" />
                     <div class="field" style="margin-bottom: 3em">
                     <p class="control has-icons-left has-icons-right">
                         <input class="input"
@@ -54,6 +56,7 @@ const Cookie = process.client ? require('js-cookie') : undefined
     data() {
       return{
         email:'',
+        pesan: null
       }
     },
     
@@ -61,10 +64,11 @@ const Cookie = process.client ? require('js-cookie') : undefined
       async reset_email(){
         try{
           var self = this
-            const {data} = await this.$axios.post(`https://192.168.3.147:3000/api/user/reset`, {
+            const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/reset`, {
              email: this.email
             })
-            if (data.code != 200){
+            this.pesan = data.code
+            if (this.pesan != 200){
               this.pesan = "Invalid Email Address"
             }
             self.$router.push('/reset_pass2')

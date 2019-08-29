@@ -18,7 +18,7 @@
                       <tr>
                         <td style="width:20%" class="has-text-centered">
                                 <figure  style="width: 200px">
-                                    <img @click="cek" class="is-rounded" src="~assets/images/iqbaal.jpg">
+                                    <img class="is-rounded" @click="cek" src="~assets/images/iqbaal.jpg">
                                 </figure><br>
                             <p class="subtitle"><b>John Smith</b> <br> Hello!!</p>
                         </td>

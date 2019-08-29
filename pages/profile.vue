@@ -17,7 +17,7 @@
                     <tabel class="table is-fullwidth is-striped ">
                       <tr>
                         <td style="width:20%" class="has-text-centered">
-                                <div class="image is-1by1  " style="">
+                                <div class="is-1by1 " style="">
                                     <img class="is-rounded " @click="cek" src="~assets/images/iqbaal.jpg">
                                 </div><br>
                             <p class="subtitle"><b>John Smith</b> <br> Hello!!</p>

@@ -12,6 +12,8 @@
                   Check your email to get your <strong>Token</strong>
                 </div> 
                 <form method="post" @submit.prevent="reset">
+                    <Notification :message="pesan" v-if="pesan" />
+
                     <div class="field">
                     <p class="control has-icons-left has-icons-right">
                         <input class="input"
@@ -69,14 +71,18 @@
 </template>
 
 <script>
-const Cookies = process.client ? require('js-cookie') : undefined
-
-  export default { 
+  const Cookies = process.client ? require('js-cookie') : undefined
+  import Notification from '../components/Notification'
+  export default {
+    components: {
+      Notification,
+    },
     data() {
       return{
         new_pass:'',
         confr_pass:'',
-        token:''
+        token:'',
+        pesan: null
       }
     },
     methods: {
@@ -86,7 +92,7 @@ const Cookies = process.client ? require('js-cookie') : undefined
             if (this.new_pass != this.confr_pass) {
                 this.pesan = "Your Password is not match"
             }
-            await this.$axios.post("https://192.168.3.147:3000/api/user/reset-password?access_token="+this.token ,{
+            await this.$axios.post(`${this.$axios.defaults.baseURL}/user/reset-password?access_token=`+this.token ,{
                 newPassword: this.new_pass,         
             }) 
             self.$router.push('/login')

@@ -78,7 +78,7 @@ const Cookies = process.client ? require('js-cookie') : undefined
       async login(){
         try{
           var self = this
-          const {data} = await this.$axios.post(`https://192.168.3.147:3000/api/user/login`, {
+          const {data} = await this.$axios.post("https://192.168.3.167:3000/api/user/login", {
               email: this.email,
               password: this.password
           })
@@ -93,7 +93,7 @@ const Cookies = process.client ? require('js-cookie') : undefined
         }
 
         catch (e) {
-        this.pesan = e.response.data.error.statusCode ;
+        this.pesan = e.response.error.statusCode ;
         }
       }
     }

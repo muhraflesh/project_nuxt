@@ -78,7 +78,7 @@ const Cookies = process.client ? require('js-cookie') : undefined
       async login(){
         try{
           var self = this
-          const {data} = await this.$axios.post("https://192.168.3.121:3000/api/user/login", {
+          const {data} = await this.$axios.post("https://192.168.3.167:3000/api/user/login", {
               email: this.email,
               password: this.password
           })

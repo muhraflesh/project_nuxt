@@ -1,7 +1,8 @@
 
+
 <template>
     <aside class="column is-2 aside">
-        <figure >
+        <figure>
             <img src="hitam247.png" alt="Solusi 247" class="user">
         </figure>
                 <br/>
@@ -10,7 +11,7 @@
             General
           </p>
           <ul class="menu-list">
-            <li><a class="is-active" href="#"><span class="icon is-small"><i class="fa fa-tachometer"></i></span> Dashboard</a></li>
+            <li><a class="is-active" href="/"><span class="icon is-small"><i class="fa fa-tachometer"></i></span> Dashboard</a></li>
           </ul>
           <p class="menu-label">
             Menu

@@ -204,6 +204,8 @@ import Hello from '../components/Hello'
 import Chart from '../components/Chart.vue'
 
 export default {
+    middleware : 'authenticated',
+
     components: {
       Sidebar,
       Hello,

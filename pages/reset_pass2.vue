@@ -7,7 +7,10 @@
             <div class="column is-12 field-box is-centered">
                 <div class="has-text-centered form" style="padding-top: 20%">
                     <h1 class="reset-heading">Reset Your Password</h1>
-                    <p class="reset-subheading" >Please Fill The Form to Reset Your Password</p> <br> 
+                    <p class="reset-subheading" >Please Fill The Form to Reset Your Password</p>
+                <div class="notification is-info">
+                  Check your email to get your <strong>Token</strong>
+                </div> 
                 <form method="post" @submit.prevent="reset">
                     <div class="field">
                     <p class="control has-icons-left has-icons-right">
@@ -66,7 +69,7 @@
 </template>
 
 <script>
-const Cookie = process.client ? require('js-cookie') : undefined
+const Cookies = process.client ? require('js-cookie') : undefined
 
   export default { 
     data() {
@@ -79,13 +82,16 @@ const Cookie = process.client ? require('js-cookie') : undefined
     methods: {
       async reset(){
         try{
-            if (this.first_pass != this.sec_pass) {
+          var self = this
+            if (this.new_pass != this.confr_pass) {
                 this.pesan = "Your Password is not match"
             }
-            await this.$axios.post('https://192.168.3.166:3000/api/user/reset-password?access_token=' + env.accessToken ,{
-                newPassword: this.first_pass,         
+            await this.$axios.post("https://192.168.3.147:3000/api/user/reset-password?access_token="+this.token ,{
+                newPassword: this.new_pass,         
             }) 
-        } catch (e) {       
+            self.$router.push('/login')
+        } 
+        catch (e) {       
       }
       }
     }

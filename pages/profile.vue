@@ -10,8 +10,29 @@
                 </nav>
                 <Hello/>
                 <br>
+                <section class="info-tiles">
+                    <div class="tile is-ancestor has-text-centered">
+                        <div class="tile is-parent" >
+                            <article class="tile is-child box has-background-primary" @click="pribadi = !pribadi">
+                                <p class="subtitle has-text-white has-text-weight-medium">Data Pribadi</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box has-background-primary" @click="keluarga = !keluarga">
+                                <p class="subtitle has-text-white has-text-weight-medium">Data Keluarga</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent" >
+                            <article class="tile is-child box has-background-primary" @click="perusahaan = !perusahaan">
+                                <p class="subtitle has-text-white has-text-weight-medium">Data Perusahaan</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+                <br/>
 
-                <div>
+                <!-- Data Pribadi -->
+                <div v-show="pribadi">
                     <div class="card ">
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped ">
@@ -67,10 +88,9 @@
                                 <tr>
                                     <td>Teknik Informasi</td>
                                     <tr>
-                                        <td>UGM</td>
+                                    <td>UGM</td>
                             </tr>
                         </td>
-
 
                         <td style="width:35%">
                             <tr>
@@ -83,7 +103,7 @@
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="2"><b>Date Of Birth</b></td>
-<td width="200px">Surabaya</td>
+                                <td width="200px">Surabaya</td>
                                 <tr>
                                     <td>28 Desember 1999</td>
                             </tr>
@@ -107,7 +127,7 @@
                                     <tr>
                                         <td>324567823</td>
                                         <tr>
-                                            <td>Yogyakarta</td>
+                                        <td>Yogyakarta</td>
                             </tr>
                             
                         </td>
@@ -116,6 +136,106 @@
                   </div>
                   </div>
                   </div>
+                  <br/>
+
+                  <!-- Data Keluarga -->
+                  <div v-show="keluarga">
+                    <div class="card ">
+                    <div class="card-content">
+                    <tabel class="table is-fullwidth is-striped ">
+                        <td width="50%">
+                            <tr>
+                                <td width="200px"><b>Martia Status</b></td>
+                                <td width="200px">M2</td>
+                            </tr>
+                            <tr>
+                                <td width="150px" rowspan="2"><b>Spouse</b></td>
+                                <td width="200px">Moana</td>
+                                <tr>
+                                    <td>21 Januari 1978</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>Mother's Maiden</b></td>
+                                <td width="200px">Angela</td>
+                            </tr>
+                        </td>
+                        <td width="50%">
+                            <tr>
+                                <td width="200px" rowspan="3"><b>Children</b></td>
+                                <td width="200px">Jhoana</td>
+                                <td>Jhoana</td>
+                                <tr>
+                                    <td>Female</td>
+                                    <td>Female</td>
+                                    <tr>
+                                        <td>2 Juli 20</td>
+                                        <td>2 Juli 2003</td>
+                            </tr>
+                            <tr>
+                                <td width="150px" rowspan="3"><b>Emergency Phone Number</b></td>
+                                <td width="200px">Jhoana</td>
+                                <tr>
+                                    <td>08275642397</td>
+                                    <tr>
+                                        <td>Brother</td>
+                            </tr>
+                        </td>
+                  </tabel>
+                  </div>
+                  </div>
+                  </div>
+                  <br/>
+
+                  <!-- Data Perusahaan -->
+                  <div v-show="perusahaan">
+                    <div class="card ">
+                    <div class="card-content">
+                    <tabel class="table is-fullwidth is-striped ">
+                        <td width="55%">
+                            <tr>
+                                <td width="200px"><b>NIK</b></td>
+                                <td width="200px">09876123456456</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>KOPERASI</b></td>
+                                <td width="200px">Rp300000</td>
+                            </tr>
+                            <tr>
+                                <td width="200px"><b>DPLK</b></td>
+                                <td width="200px">Rp300000</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>Joining Date</b></td>
+                                <td width="200px">10 April 2019</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>Position</b></td>
+                                <td width="200px">Marketing And Sales Office</td>
+                            </tr>
+                        </td>
+                        <td width="40%">
+                            <tr>
+                                <td width="200px"><b>Position</b></td>
+                                <td width="200px">Receptionist</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>BPJS</b></td>
+                                <td width="200px">0129223857</td>
+                            </tr>
+                            <tr>
+                                <td width="200px"><b>Health Insurance</b></td>
+                                <td width="200px">Rp300000</td>
+                            </tr>
+                            <tr>
+                                <td width="150px"><b>Employment Status</b></td>
+                                <td width="200px">K2 (Kontrak 2 tahun)</td>
+                            </tr>
+                        </td>
+                  </tabel>
+                  </div>
+                  </div>
+                  </div>
+
                 </div>
     </section>
 </template>
@@ -139,7 +259,13 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 export default {
     middleware : 'authenticated',
-
+    data() {
+      return {
+        pribadi : true,
+        keluarga : false,
+        perusahaan : false,
+      }
+    },
     components: {
         Sidebar,
         Hello,

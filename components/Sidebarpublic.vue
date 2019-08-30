@@ -18,11 +18,7 @@
           </p>
           <ul class="menu-list">
             <li><a href="/profile"><span class="icon is-small"><i class="fa fa-user"></i></span> Profile</a>
-                <ul>
-                <li><a href="/profile">Data Pribadi</a></li>
-                <li><a href="/datakel">Data Keluarga</a></li>
-                <li><a href="/dataperusahaan">Data Perusahaan</a></li>
-                </ul>
+            
             </li>
             <li>
                 <a href="/presensi"><span class="icon is-small"><i class="fa fa-calendar"></i></span> Presensi</a>

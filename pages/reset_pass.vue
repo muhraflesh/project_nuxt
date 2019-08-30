@@ -68,10 +68,11 @@ const Cookie = process.client ? require('js-cookie') : undefined
              email: this.email
             })
             this.pesan = data.code
-            if (this.pesan != 200){
-              this.pesan = "Invalid Email Address"
+            if (this.pesan = 200){
+              self.$router.push('/reset_pass2')
+              
             }
-            self.$router.push('/reset_pass2')
+            this.pesan = "Invalid Email Address"
           }
             catch (e) {       
           }

@@ -274,6 +274,7 @@ export default {
     methods: {
         cek(){
             console.log(this.$store.state.auth)
+            console.log(this.$store.state.user)
         },
         auth ({store}){
             console.log (store.state.auth)
@@ -283,7 +284,7 @@ export default {
             this.$store.commit('setAuth', null)
             this.$router.push('/')
         }
-    }
+    },
    
 }
 </script>

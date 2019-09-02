@@ -37,6 +37,7 @@
                 </ul>
             </li>
             <li><a href="/bon"><span class="icon is-small"><i class="fa fa-suitcase"></i></span> Bon Barang</a></li>
+            <li><a href="/admin"><span class="icon is-small"><i class="fa fa-admin"></i></span> Admin Panel</a></li>
 
             <li>
               <a class=""><i class="fa fa-cog"></i> Settings</a>
@@ -61,7 +62,9 @@ export default {
   methods: {
         logout () {
             Cookies.remove('auth')
+            Cookies.remove('user')
             this.$store.commit('setAuth', null)
+            this.$store.commit('setUser', null)
             this.$router.push('/')
         }
     },

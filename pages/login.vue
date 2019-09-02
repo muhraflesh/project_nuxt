@@ -83,11 +83,18 @@ const Cookies = process.client ? require('js-cookie') : undefined
           })
 
         const auth = data.id
+        const user = data.userId
         console.log(auth)
+        console.log(user)
 
         self.$store.commit('setAuth', auth)
-        window.localStorage.setItem('auth', auth);
         Cookies.set('auth', auth);
+
+        self.$store.commit('setUser', user)
+        Cookies.set('user', user);
+
+        window.localStorage.setItem('userid', user);
+        
         self.$router.push('/profile')
         }
 

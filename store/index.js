@@ -12,7 +12,8 @@ Vue.use(Vuex)
 export const state = () => {
   return {
     auth: null,
-    article : {}
+    article : {},
+    user: null,
   }
 } 
 
@@ -37,6 +38,9 @@ export const mutations = {
   },
   setArticle (state, data) {
     state.article = data
+  },
+  setUser (state, user) {
+    state.user = user
   }
 }
 

@@ -121,13 +121,6 @@
 </template>
 
 <style>
-.user{
-    height: 100%;
-    width: 100%
-}
-.is-horizontal-center {
-  justify-content: center;
-}
 .is-rounded{
     border-radius: 50%
 }
@@ -139,7 +132,7 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 export default {
     middleware : 'authenticated',
-
+    
     components: {
         Sidebar,
         Hello,

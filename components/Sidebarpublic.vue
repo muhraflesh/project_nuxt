@@ -40,9 +40,12 @@
                 <li><a href="/project">Project</a></li>
                 </ul>
             </li>
-            <li><a href="/bon"><span class="icon is-small"><i class="fa fa-suitcase"></i></span> Bon Barang</a></li>
-
             <li>
+              <a href="/bon"><span class="icon is-small"><i class="fa fa-suitcase"></i></span> Bon Barang</a>
+            </li>
+            <li>
+              <a href="/keuangan"><span class="icon is-small"><i class="fa fa-money"></i></span> Keuangan </a>
+            </li>
               <a class=""><i class="fa fa-cog"></i> Settings</a>
               <ul>
                 <li><a v-if="$store.state.auth" @click="logout">Logout</a></li>

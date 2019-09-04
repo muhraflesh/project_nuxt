@@ -4,14 +4,20 @@
            
             <div class="column is-centered is-10 abu kanan kiri2">
                  <nav class="breadcrumb" aria-label="breadcrumbs">
-                    <ul>
-                        <li><a href="../">Solusi</a></li>
-                        <li><a href="/divisi">Divisi</a></li>
-                        <li class="is-active"><a href="#" aria-current="page">Project</a></li>
-                    </ul>
+                    
+                    <td width="500px">
+                        <ul>
+                            <li><a href="../">Solusi</a></li>
+                            <li><a href="/divisi">Divisi</a></li>
+                            <li class="is-active"><a href="#" aria-current="page">Project</a></li>
+                        </ul>
+                    </td>
+                    <td width="200px"></td>
+                    <td width="600px">
+                        <Nafbar/>
+                    </td>
                 </nav>
-                <Hello/>
-                <br/>
+                <hr/>
                 <section class="info-tiles">
                     <div class="tile is-ancestor has-text-centered">
                         <div class="tile is-parent ">
@@ -183,12 +189,14 @@
 const Cookies = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebar"
 import Hello from "../components/Hello"
+import Nafbar from "../components/Nafbar"
 
 export default {
     middleware : 'authenticated',
     components: {
       Sidebar,
       Hello,
+      Nafbar,
     },
     methods: {
         auth ({store}){

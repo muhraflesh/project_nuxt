@@ -89,13 +89,14 @@
       async reset(){
         try{
           var self = this
-            if (this.new_pass != this.confr_pass) {
-                this.pesan = "Your Password is not match"
-            }
             await this.$axios.post(`${this.$axios.defaults.baseURL}/user/reset-password?access_token=`+this.token ,{
                 newPassword: this.new_pass,         
             }) 
-            self.$router.push('/login')
+            if (this.new_pass != this.confr_pass) {
+                this.pesan = "Your Password is not match"
+            } else {
+                self.$router.push('/login')
+            }
         } 
         catch (e) {       
       }

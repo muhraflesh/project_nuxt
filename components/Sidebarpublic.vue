@@ -18,11 +18,7 @@
           </p>
           <ul class="menu-list">
             <li><a href="/profile"><span class="icon is-small"><i class="fa fa-user"></i></span> Profile</a>
-                <ul>
-                <li><a href="/profile">Data Pribadi</a></li>
-                <li><a href="/datakel">Data Keluarga</a></li>
-                <li><a href="/dataperusahaan">Data Perusahaan</a></li>
-                </ul>
+            
             </li>
             <li>
                 <a href="/presensi"><span class="icon is-small"><i class="fa fa-calendar"></i></span> Presensi</a>
@@ -40,6 +36,10 @@
                 <li><a href="/project">Project</a></li>
                 </ul>
             </li>
+            
+            <li><a href="/bon"><span class="icon is-small"><i class="fa fa-suitcase"></i></span> Bon Barang</a></li>
+            <li><a href="/admin"><span class="icon is-small"><i class="fa fa-admin"></i></span> Admin Panel</a></li>
+
             <li>
               <a href="/bon"><span class="icon is-small"><i class="fa fa-suitcase"></i></span> Bon Barang</a>
             </li>
@@ -68,7 +68,9 @@ export default {
   methods: {
         logout () {
             Cookies.remove('auth')
+            Cookies.remove('user')
             this.$store.commit('setAuth', null)
+            this.$store.commit('setUser', null)
             this.$router.push('/')
         }
     },

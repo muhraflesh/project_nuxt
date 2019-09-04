@@ -16,7 +16,6 @@
                     </td>
                 </nav>
                 <hr>
-
                 <div class="columns is-10">
                     <div class="column is-6">
                         <div class="card">
@@ -210,7 +209,6 @@ import Chart from '../components/Chart.vue'
 import Nafbar from '../components/Nafbar'
 
 export default {
-    middleware : 'authenticated',
 
     components: {
       Sidebar,

@@ -3,10 +3,16 @@
         <Sidebar/>
            <div class="column is-10">
                <nav class="breadcrumb" aria-label="breadcrumbs">
-                    <ul>
-                        <li><a href="/">Solusi</a></li>
-                        <li class="is-active"><a href="#" aria-current="page">Data Profile</a></li>
-                    </ul>
+                    <td width="500px">
+                        <ul>
+                            <li><a href="/">Solusi</a></li>
+                            <li class="is-active"><a href="#" aria-current="page">Data Profile</a></li>
+                        </ul>
+                    </td>
+                    <td width="200px"></td>
+                    <td width="600px">
+                        <Navbar/>
+                    </td>
                 </nav>
                 <hr>
                 <section class="info-tiles">
@@ -40,7 +46,7 @@
                                 <div class="is-1by1 " style="">
                                     <img class="is-rounded " @click="cek" src="~assets/images/iqbaal.jpg">
                                 </div><br>
-                            <p class="subtitle"><b>John Smith</b> <br> Hello!!</p>
+                            <p class="subtitle"><b>Iqbaal Ramadan</b> <br> Hello!!</p>
                         </td>
                         <td style="width:45%">
                             <tr>
@@ -249,6 +255,7 @@
 const Cookies = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
+import Navbar from "../components/Navbar"
 export default {
     data() {
       return {
@@ -260,6 +267,7 @@ export default {
     components: {
         Sidebar,
         Hello,
+        Navbar,
     },
     
     methods: {

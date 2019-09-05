@@ -12,7 +12,7 @@
         </td>
         <td width="200px"></td>
         <td width="600px">
-             <Nafbar/>
+             <Navbar/>
          </td>
      </nav>
      <hr/>
@@ -210,7 +210,7 @@ import moment from 'moment'
 import BarChart from '~/components/bar-chart'
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
-import Nafbar from "../components/Nafbar"
+import Navbar from "../components/Navbar"
 
 export default {
   middleware: "authenticated",
@@ -218,7 +218,7 @@ export default {
     BarChart,
     Sidebar,
     Hello,
-    Nafbar,
+    Navbar,
   },
   methods: {
         auth ({store}){

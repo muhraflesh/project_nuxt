@@ -12,7 +12,7 @@
         </td>
         <td width="200px"></td>
         <td width="600px">
-            <Nafbar/>
+            <Navbar/>
         </td>
       </nav>
       <hr/>
@@ -331,7 +331,7 @@ import BarChart from '~/components/bar-chart'
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 import DoughnutChart from '~/components/doughnut-chart'
-import Nafbar from '~/components/Nafbar'
+import Navbar from '~/components/Navbar'
 
 function getRandomColor () {
   const letters = '0123456789ABCDEF'
@@ -349,7 +349,7 @@ export default {
     Sidebar,
     Hello,
     DoughnutChart,
-    Nafbar,
+    Navbar,
   },
   methods: {
         showmodal() {

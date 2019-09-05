@@ -1,43 +1,16 @@
 <template>
-    <nav class="navbar is-mobile is-dark " role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="#">
-            <img src="solusi.png" alt="Bulma: Free, open source, & modern CSS framework based on Flexbox" width="112" height="28">
-            </a>
-
-            <a role="button" class="navbar-burger is-dark" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            </a>
+    <div class="columns ">
+        <div class="column control has-icons-left"  style="padding-top: 15px;">
+            <input class="input" type="text" placeholder="">
+            <span class="icon is-left" style="padding-top:25px;">
+                <i class="fa fa-search"></i>
+            </span>
         </div>
-        <div class="navbar-menu" id="navbarMenuHeroA">
-                <div class="navbar-end">
-                    <nuxt-link class="navbar-item" to="/">Home</nuxt-link>
-                    <nuxt-link class="navbar-item" to="/profile">Profile</nuxt-link>
-                    <nuxt-link v-if="!$store.state.auth" class="navbar-item" to="/login">Login</nuxt-link>
-                    <a v-if="$store.state.auth" class="navbar-item" @click="logout">Logout</a>
-                    <nuxt-link class="navbar-item" to="/"></nuxt-link>
-                </div>
+        <div class="column is-2 is-right has-text-right">
+            <font size="5px">Iqbaale</font>
         </div>
-    </nav>
+        <div class="column is-2" style="padding-top: 6px;">
+            <img src="~assets/images/icons8-male-user-50.png" alt="">   
+        </div>
+    </div>
 </template>
-<style>
-.logonavbar{
-    width: 170px;
-    height: 70%;
-}
-</style>
-<script>
-const Cookies = process.client ? require('js-cookie') : undefined
-
-export default {
-  methods: {
-    logout () {
-      Cookies.remove('auth')
-      this.$store.commit('setAuth', null)
-      this.$router.push('/')
-    }
-  }
-}
-</script>

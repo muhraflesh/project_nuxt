@@ -257,7 +257,6 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 import Navbar from "../components/Navbar"
 export default {
-    middleware : 'authenticated',
     data() {
       return {
         pribadi : true,
@@ -279,11 +278,6 @@ export default {
         auth ({store}){
             console.log (store.state.auth)
         },
-        logout () {
-            Cookies.remove('auth')
-            this.$store.commit('setAuth', null)
-            this.$router.push('/')
-        }
     },
    
 }

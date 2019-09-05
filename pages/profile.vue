@@ -8,8 +8,7 @@
                         <li class="is-active"><a href="#" aria-current="page">Data Profile</a></li>
                     </ul>
                 </nav>
-                <Hello/>
-                <br>
+                <hr>
                 <section class="info-tiles">
                     <div class="tile is-ancestor has-text-centered">
                         <div class="tile is-parent" >
@@ -251,7 +250,6 @@ const Cookies = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 export default {
-    middleware : 'authenticated',
     data() {
       return {
         pribadi : true,
@@ -272,11 +270,6 @@ export default {
         auth ({store}){
             console.log (store.state.auth)
         },
-        logout () {
-            Cookies.remove('auth')
-            this.$store.commit('setAuth', null)
-            this.$router.push('/')
-        }
     },
    
 }

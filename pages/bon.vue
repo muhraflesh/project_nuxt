@@ -12,10 +12,11 @@
                     </td>
                     <td width="200px"></td>
                     <td width="600px">
-                        <Nafbar/>
+                        <Navbar/>
                     </td>
                 </nav>
                 <hr>
+
                 <div class="columns is-10">
                     <div class="column is-6">
                         <div class="card">
@@ -206,15 +207,16 @@ import moment from 'moment'
 import Sidebar from '../components/Sidebarpublic'
 import Hello from '../components/Hello'
 import Chart from '../components/Chart.vue'
-import Nafbar from '../components/Nafbar'
+import Navbar from '../components/Navbar'
 
 export default {
+    middleware : 'authenticated',
 
     components: {
       Sidebar,
       Hello,
       Chart,
-      Nafbar,
+      Navbar,
     },
     methods: {
         auth ({store}){

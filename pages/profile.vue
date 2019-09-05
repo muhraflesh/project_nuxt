@@ -11,7 +11,7 @@
                     </td>
                     <td width="200px"></td>
                     <td width="600px">
-                        <Nafbar/>
+                        <Navbar/>
                     </td>
                 </nav>
                 <hr>
@@ -255,7 +255,7 @@
 const Cookies = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
-import Nafbar from "../components/Nafbar"
+import Navbar from "../components/Navbar"
 export default {
     middleware : 'authenticated',
     data() {
@@ -268,7 +268,7 @@ export default {
     components: {
         Sidebar,
         Hello,
-        Nafbar,
+        Navbar,
     },
     
     methods: {

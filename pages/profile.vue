@@ -18,17 +18,17 @@
                 <section class="info-tiles">
                     <div class="tile is-ancestor has-text-centered">
                         <div class="tile is-parent" >
-                            <article id="merah" class="tile is-child box has-background-primary" @click="datapribadi" >
+                            <article id="merah" class="tile is-child box has-background-primary">
                                 <p class="subtitle has-text-white has-text-weight-medium">Data pribadi</p>
                             </article>
                         </div>
                         <div class="tile is-parent">
-                            <article id="kuning" class="tile is-child box has-background-primary" @click="datakeluarga">
+                            <article id="kuning" class="tile is-child box has-background-primary">
                                 <p class="subtitle has-text-white has-text-weight-medium">Data Keluarga</p>
                             </article>
                         </div>
                         <div class="tile is-parent" >
-                            <article id="ungu" class="tile is-child box has-background-primary" @click="dataperusahaan">
+                            <article id="ungu" class="tile is-child box has-background-primary">
                                 <p class="subtitle has-text-white has-text-weight-medium">Data Perusahaan</p>
                             </article>
                         </div>
@@ -39,7 +39,6 @@
                 <!-- Data Pribadi -->
                 <div v-show="pribadi" >
                     <div class="card ">
-                    <span @click="closepribadi" ><i class="fa fa-close"></i></span>
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped ">
                       <tr>
@@ -261,7 +260,7 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 import Navbar from "../components/Navbar"
 export default {
-    middleware : '',
+    middleware : 'authenticated',
     data() {
       return {
         pribadi : true,

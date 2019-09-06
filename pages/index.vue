@@ -44,11 +44,7 @@ as<template>
   import axios from 'axios'
   export default {
   methods: {
-    loadMore () {
-      this.posts = []
-      this.current += 9
-      this.allPost.map((item, key) => item.description !== null && this.posts.length < this.current ? this.posts.push(item) : '')
-    },
+    
   },
 
   data () {

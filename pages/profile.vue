@@ -283,27 +283,6 @@ export default {
         auth ({store}){
             console.log (store.state.auth)
         },
-        logout () {
-            Cookies.remove('auth')
-            this.$store.commit('setAuth', null)
-            this.$router.push('/')
-        },
-        datapribadi() {
-          document.getElementById('merah').classList.add('has-background-info');
-          this.pribadi = !this.pribadi;
-        },
-        closepribadi() {
-          document.getElementById('merah').classList.remove('has-background-info');
-          this.pribadi = !this.pribadi;
-        },
-        datakeluarga() {
-          document.getElementById('kuning').classList.add('has-background-danger');
-          this.keluarga = !this.keluarga;
-        },
-        dataperusahaan() {
-          document.getElementById('ungu').classList.add('has-background-info');
-          this.perusahaan = !this.perusahaan;
-        },
     },
    
 }

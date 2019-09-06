@@ -1,6 +1,6 @@
 <template>
 <section class="reset is-fullheight">
-    <div class="rest-body">
+    <div class="reset-body">
         <div class="container v-middle">
         <div class="columns reset-page is-centered is-mobile">
             <div class="column is-7 reset-form-wrapper">
@@ -8,12 +8,7 @@
                 <div class="has-text-centered form" style="padding-top: 20%">
                     <h1 class="reset-heading">Reset Your Password</h1>
                     <p class="reset-subheading" >Please Fill The Form to Reset Your Password</p>
-                <div class="notification is-info">
-                  Check your email to get your <strong>Token</strong>
-                </div> 
                 <form method="post" @submit.prevent="reset">
-                    <Notification :message="pesan" v-if="pesan" />
-
                     <div class="field">
                     <p class="control has-icons-left has-icons-right">
                         <input class="input"
@@ -47,6 +42,7 @@
                           <i class="fa fa-key"></i>
                         </span>
                     </p>
+                    <p class="has-text-grey is-6 has-text-left is-size-6"> *Check your email to get your Token </p>
                     </div>
                     <div class="field is-grouped is-grouped-centered is-mobile">
                       <div class="control">

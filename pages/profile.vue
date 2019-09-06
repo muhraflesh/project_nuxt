@@ -46,11 +46,6 @@
                                 <div class="is-1by1 " style="">
                                     <img class="is-rounded " @click="cek" src="~assets/images/iqbaal.jpg">
                                 </div><br>
-<<<<<<< HEAD
-                            <p class="subtitle"><b>Raflesh</b> <br> Hello!!</p>
-=======
-                            <p class="subtitle"><b>Iqbaal Ramadan</b> <br> Hello!!</p>
->>>>>>> origin
                         </td>
                         <td style="width:45%">
                             <tr>
@@ -285,14 +280,7 @@ export default {
         cek(){
             console.log(this.$store.state.auth)
             console.log(this.$store.state.user)
-<<<<<<< HEAD
-        }
-=======
         },
-        auth ({store}){
-            console.log (store.state.auth)
-        },
->>>>>>> origin
     },
     mounted () {
     

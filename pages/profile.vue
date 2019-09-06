@@ -3,26 +3,32 @@
         <Sidebar/>
            <div class="column is-10">
                <nav class="breadcrumb" aria-label="breadcrumbs">
-                    <ul>
-                        <li><a href="/">Solusi</a></li>
-                        <li class="is-active"><a href="#" aria-current="page">Data Profile</a></li>
-                    </ul>
+                    <td width="500px">
+                        <ul>
+                            <li><a href="/">Solusi</a></li>
+                            <li class="is-active"><a href="#" aria-current="page">Data Profile</a></li>
+                        </ul>
+                    </td>
+                    <td width="200px"></td>
+                    <td width="600px">
+                        <Navbar/>
+                    </td>
                 </nav>
                 <hr>
                 <section class="info-tiles">
                     <div class="tile is-ancestor has-text-centered">
                         <div class="tile is-parent" >
-                            <article class="tile is-child box has-background-primary" @click="pribadi = !pribadi">
-                                <p class="subtitle has-text-white has-text-weight-medium">Data Pribadi</p>
+                            <article id="merah" class="tile is-child box has-background-primary" @click="datapribadi" >
+                                <p class="subtitle has-text-white has-text-weight-medium">Data pribadi</p>
                             </article>
                         </div>
                         <div class="tile is-parent">
-                            <article class="tile is-child box has-background-primary" @click="keluarga = !keluarga">
+                            <article id="kuning" class="tile is-child box has-background-primary" @click="datakeluarga">
                                 <p class="subtitle has-text-white has-text-weight-medium">Data Keluarga</p>
                             </article>
                         </div>
                         <div class="tile is-parent" >
-                            <article class="tile is-child box has-background-primary" @click="perusahaan = !perusahaan">
+                            <article id="ungu" class="tile is-child box has-background-primary" @click="dataperusahaan">
                                 <p class="subtitle has-text-white has-text-weight-medium">Data Perusahaan</p>
                             </article>
                         </div>
@@ -31,8 +37,9 @@
                 <br/>
 
                 <!-- Data Pribadi -->
-                <div v-show="pribadi">
+                <div v-show="pribadi" >
                     <div class="card ">
+                    <span @click="closepribadi" ><i class="fa fa-close"></i></span>
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped ">
                       <tr>
@@ -40,7 +47,7 @@
                                 <div class="is-1by1 " style="">
                                     <img class="is-rounded " @click="cek" src="~assets/images/iqbaal.jpg">
                                 </div><br>
-                            <p class="subtitle"><b>John Smith</b> <br> Hello!!</p>
+                            <p class="subtitle"><b>Iqbaal Ramadan</b> <br> Hello!!</p>
                         </td>
                         <td style="width:45%">
                             <tr>
@@ -243,13 +250,18 @@
 .is-rounded{
     border-radius: 50%
 }
+.kuningq { 
+    background-color: brown;
+}
 </style>
 
 <script>
 const Cookies = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
+import Navbar from "../components/Navbar"
 export default {
+    middleware : '',
     data() {
       return {
         pribadi : true,
@@ -260,6 +272,7 @@ export default {
     components: {
         Sidebar,
         Hello,
+        Navbar,
     },
     
     methods: {

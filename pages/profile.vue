@@ -18,17 +18,17 @@
                 <section class="info-tiles">
                     <div class="tile is-ancestor has-text-centered">
                         <div class="tile is-parent" >
-                            <article class="tile is-child box has-background-primary" @click="pribadi = !pribadi">
-                                <p class="subtitle has-text-white has-text-weight-medium">Data Pribadi</p>
+                            <article id="merah" class="tile is-child box has-background-primary" @click="datapribadi" >
+                                <p class="subtitle has-text-white has-text-weight-medium">Data pribadi</p>
                             </article>
                         </div>
                         <div class="tile is-parent">
-                            <article class="tile is-child box has-background-primary" @click="keluarga = !keluarga">
+                            <article id="kuning" class="tile is-child box has-background-primary" @click="datakeluarga">
                                 <p class="subtitle has-text-white has-text-weight-medium">Data Keluarga</p>
                             </article>
                         </div>
                         <div class="tile is-parent" >
-                            <article class="tile is-child box has-background-primary" @click="perusahaan = !perusahaan">
+                            <article id="ungu" class="tile is-child box has-background-primary" @click="dataperusahaan">
                                 <p class="subtitle has-text-white has-text-weight-medium">Data Perusahaan</p>
                             </article>
                         </div>
@@ -37,8 +37,9 @@
                 <br/>
 
                 <!-- Data Pribadi -->
-                <div v-show="pribadi">
+                <div v-show="pribadi" >
                     <div class="card ">
+                    <span @click="closepribadi" ><i class="fa fa-close"></i></span>
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped ">
                       <tr>
@@ -249,6 +250,9 @@
 .is-rounded{
     border-radius: 50%
 }
+.kuningq { 
+    background-color: brown;
+}
 </style>
 
 <script>
@@ -257,7 +261,7 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 import Navbar from "../components/Navbar"
 export default {
-    middleware : 'authenticated',
+    middleware : '',
     data() {
       return {
         pribadi : true,
@@ -283,7 +287,23 @@ export default {
             Cookies.remove('auth')
             this.$store.commit('setAuth', null)
             this.$router.push('/')
-        }
+        },
+        datapribadi() {
+          document.getElementById('merah').classList.add('has-background-info');
+          this.pribadi = !this.pribadi;
+        },
+        closepribadi() {
+          document.getElementById('merah').classList.remove('has-background-info');
+          this.pribadi = !this.pribadi;
+        },
+        datakeluarga() {
+          document.getElementById('kuning').classList.add('has-background-danger');
+          this.keluarga = !this.keluarga;
+        },
+        dataperusahaan() {
+          document.getElementById('ungu').classList.add('has-background-info');
+          this.perusahaan = !this.perusahaan;
+        },
     },
    
 }

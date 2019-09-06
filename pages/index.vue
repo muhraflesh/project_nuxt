@@ -78,10 +78,8 @@ as<template>
   }  
   
   .background::before {
-  
   content: "";
   display: block;
-
   top: 0;
   left: 0;
   width: 1920px;

@@ -4,13 +4,18 @@
     <Sidebar/>
     <div class="column is-10 is-centered abu kanan kiri2">
      <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/">Solusi</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Divisi</a></li>
-        </ul>
+        <td width="500px">
+            <ul>
+                <li><a href="/">Solusi</a></li>
+                <li class="is-active"><a href="#" aria-current="page">Divisi</a></li>
+            </ul>
+        </td>
+        <td width="200px"></td>
+        <td width="600px">
+             <Navbar/>
+         </td>
      </nav>
-     <Hello/>
-     <br/>
+     <hr/>
       <table>
             <tr><td><b>LEADERSHIP</b></td></tr>
       </table>
@@ -205,6 +210,7 @@ import moment from 'moment'
 import BarChart from '~/components/bar-chart'
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
+import Navbar from "../components/Navbar"
 
 export default {
   middleware: "authenticated",
@@ -212,6 +218,7 @@ export default {
     BarChart,
     Sidebar,
     Hello,
+    Navbar,
   },
   methods: {
         auth ({store}){

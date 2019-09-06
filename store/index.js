@@ -41,6 +41,9 @@ export const mutations = {
   },
   setUser (state, user) {
     state.user = user
+  },
+  setData (state, datauser) {
+    state.data = datauser
   }
 }
 

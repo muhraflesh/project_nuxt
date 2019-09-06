@@ -40,13 +40,17 @@
                 <div v-show="pribadi" >
                     <div class="card ">
                     <div class="card-content">
-                    <tabel class="table is-fullwidth is-striped ">
+                    <tabel class="table is-fullwidth is-striped">
                       <tr>
                         <td style="width:20%" class="has-text-centered">
                                 <div class="is-1by1 " style="">
                                     <img class="is-rounded " @click="cek" src="~assets/images/iqbaal.jpg">
                                 </div><br>
+<<<<<<< HEAD
+                            <p class="subtitle"><b>Raflesh</b> <br> Hello!!</p>
+=======
                             <p class="subtitle"><b>Iqbaal Ramadan</b> <br> Hello!!</p>
+>>>>>>> origin
                         </td>
                         <td style="width:45%">
                             <tr>
@@ -59,7 +63,7 @@
                             </tr>
                             <tr>
                                 <td width="150px"><b>Email</b></td>
-                                <td width="200px">kutilang55@gmail.com</td>
+                                <td width="200px">{{this.$store.state.data.email_address}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>KK</b></td>
@@ -241,6 +245,7 @@
                   </div>
                   </div>
 
+                  <!-- Modal Isi Profile -->
                 </div>
     </section>
 </template>
@@ -255,6 +260,7 @@
 </style>
 
 <script>
+import axios from 'axios'
 const Cookies = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
@@ -266,6 +272,7 @@ export default {
         pribadi : true,
         keluarga : false,
         perusahaan : false,
+        posts: [],
       }
     },
     components: {
@@ -278,11 +285,28 @@ export default {
         cek(){
             console.log(this.$store.state.auth)
             console.log(this.$store.state.user)
+<<<<<<< HEAD
+        }
+=======
         },
         auth ({store}){
             console.log (store.state.auth)
         },
+>>>>>>> origin
     },
-   
+    mounted () {
+    
+    axios.get(`${this.$axios.defaults.baseURL}/user/${this.$store.state.user}/profiles?access_token=`+this.$store.state.auth)
+    .then(resp => {
+        const datauser = resp.data
+        this.$store.commit('setData', datauser)
+        Cookies.set('datauser', datauser);
+
+        console.log(this.$store.state.data);
+    })
+    
+    
+    
+    } 
 }
 </script>

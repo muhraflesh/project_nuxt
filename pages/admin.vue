@@ -323,11 +323,6 @@ export default {
         catch (e) {
         }
         },
-        logout () {
-            Cookies.remove('auth')
-            this.$store.commit('setAuth', null)
-            this.$router.push('/')
-        }
     }
    
 }

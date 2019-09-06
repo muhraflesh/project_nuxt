@@ -64,8 +64,10 @@ export default {
         logout () {
             Cookies.remove('auth')
             Cookies.remove('user')
+            Cookies.remove('datauser')
             this.$store.commit('setAuth', null)
             this.$store.commit('setUser', null)
+            this.$store.commit('setData', null)
             this.$router.push('/')
         }
     },

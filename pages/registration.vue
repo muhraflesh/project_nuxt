@@ -1,228 +1,508 @@
 <template>
-<section class="registration is-fullheight">
+<section class="registration" style="background-color: #f7f7f7">
     <div class="container v-middle">
-    <div class="columns page is-centered is-mobile">
-        <div class="column is-10 form-wrapper">
+    <div class="columns page is-centered">
+        <div class="column is-10 card" style="margin-top: 5%;margin-bottom:5%">
             <h1 class="heading"> Registration Form</h1>
 
-            <div class="tabs is-boxed">
-              <ul>
-                <li v-bind:class="{ 'is-active': tabsel == 'pribadi' }" @click="tabsel = 'pribadi'"><a>Data Pribadi</a></li>
-                <li v-bind:class="{ 'is-active': tabsel == 'keluarga' }" @click="tabsel = 'keluarga'"><a>Data Keluarga</a></li>
-                <li v-bind:class="{ 'is-active': tabsel == 'Perusahaan' }" @click="tabsel = 'perusahaan'"><a>Data Perusahaan</a></li>
-              </ul>
+            <div class="tabs">
+                <a v-bind:class="[ activetab === 1 ? 'active' : '' ]" @click="activetab=1">Data Pribadi</a>
+                <a v-bind:class="[ activetab === 2 ? 'active' : '' ]" @click="activetab=2">Data Keluarga</a>
+                <a v-bind:class="[ activetab === 3 ? 'active' : '' ]" @click="activetab=3">Data Perusahaan</a>
             </div>
             
             <!-- Tab panes -->
+            <form method="post">
             <div class="content">
-              <div v-show="tabsel == 'pribadi'">
-                <div class="field">
-                  <label class="label"> Name </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="Name">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label"> Gender </label>
-                  <div class="control">
-                    <label class="radio">
-                      <input type="radio" name="gender">
-                      Male
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="gender">
-                      Female
-                    </label>
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label"> Blood Type </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="Blood Type">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label"> Email </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="email"
-                    placeholder="Email">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label">Kartu Keluarga Number</label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="KK Number">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label">Kartu Tanda Penduduk Number</label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="KTP Number">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label"> Religion </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="Religion">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label"> Kartu Tanda Penduduk Address </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="KTP Address">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label"> Residental Address </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="Residental Address">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label"> Kartu Tanda Penduduk Number </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="KTP Number">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label"> Educational Background </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="Educational Background">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label"> Certificate  </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="Certificate ">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label"> Date Of Birth </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="City"> <br>
-                    <input ref="cal1" type="date" class="input">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label"> Phone Number </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="Phone Number ">
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label"> NPWP  </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="NPWP ">
-                  </div>
-                </div>
-                <div class="field"> 
-                  <label class="label"> Bank Account  </label>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="Accoung Name">
-                  </div>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="Account Number">
-                  </div>
-                  <div class="control">
-                    <input 
-                    class="input"
-                    type="text"
-                    placeholder="Bank Name">
-                  </div>
-                </div>
-                <a class="pagination-next">Next</a>
-              </div>
-
-              <div v-show="tabsel == 'keluarga'">
-                <form action="#" method="get">
-                  <table style="border: 0;">
+              <div v-if="activetab === 1">
+              <table>
                     <tr>
-                      <td> Martia Status </td>
+                      <td>Name :</td>
                       <td>
-                        <input type="radio" name="martia-status">S
-                        <input type="radio" name="martia-status">M0
-                        <input type="radio" name="martia-status">M1
-                        <input type="radio" name="martia-status">M2
-                        <input type="radio" name="martia-status">M3
-                        <input type="radio" name="martia-status">M4
-                        <input type="radio" name="martia-status">M5
+                        <input 
+                        class="input"
+                        type="text"
+                        v-model="nama">
                       </td>
                     </tr>
                     <tr>
-                      <td> Spouse </td>
+                      <td>Sex :</td>
+                      <td>
+                        <div class="select">
+                          <select v-model="jenisKelamin">
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Date Of Birth</td>
+                      <td>
+                      <tr>
+                        <td>Place :</td>
+                        <td>
+                          <input
+                          class="input"
+                          type="text"
+                          v-model="tempatLahir">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Date :</td>
+                        <td><input ref="cal1" type="date" class="input" v-model="tanggalLahir"></td>
+                      </tr>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Blood Type :</td>
+                      <td>
+                        <div class="select">
+                        <select v-model="golDarah">
+                          <option value="1">A</option>
+                          <option value="2">B</option>
+                          <option value="3">AB</option>
+                          <option value="4">O</option>
+                        </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Religion :</td>
+                      <td>
+                        <div class="select">
+                        <select v-model="agama">
+                          <option value="1">Islam</option>
+                          <option value="2">Kristen</option>
+                          <option value="3">Katolik</option>
+                          <option value="4">Buddha</option>
+                          <option value="5">Hindu</option>
+                        </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Phone Number :</td>
+                      <td>
+                      <tr>
+                        <td>Home :</td>
+                        <td>
+                          <input 
+                          class="input"
+                          type="text"
+                          v-model="nomorTelpRumah">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Mobile Phone :</td>
+                        <td>
+                          <input 
+                          class="input"
+                          type="text"
+                          v-model="nomorHP">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Other :</td>
+                        <td>
+                          <input 
+                          class="input"
+                          type="text"
+                          v-model="nomorTelpLain">
+                        </td>
+                      </tr>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Email :</td>
+                      <td>
+                        <input 
+                        class="input"
+                        type="email"
+                        v-model="email">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Residential Address :</td>
+                      <td>
+                        <input 
+                        class="input"
+                        type="text"
+                        v-model="alamatRmh">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Bank Account :</td>
+                      <td>
+                        <tr>
+                      <td>Name :</td>
+                      <td>
+                        <input 
+                        class="input"
+                        type="text"
+                        v-model="namaBankAcc">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Bank :</td>
+                      <td>
+                        <input 
+                        class="input"
+                        type="text"
+                        v-model="namaBank">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Account Number :</td>
+                      <td>
+                        <input 
+                        class="input"
+                        type="text"
+                        v-model="nomerBankAcc">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Branch :</td>
+                      <td>
+                        <input 
+                        class="input"
+                        type="text"
+                        v-model="branchBank">
+                      </td>
+                    </tr>
+                    </td>
+                    </tr>
+                    <tr>
+                      <td>KTP :</td>
+                      <td>
+                        <div class="select">
+                          <select v-model="KTP">
+                            <option value="1">COPY</option>
+                            <option value="2">NONE</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>KTP Number :</td>
+                      <td>
+                        <input
+                        class="input"
+                        type="text"
+                        v-model="nomorKTP">
+                      </td>
+                    </tr>
+                    <tr>
+                    <td>KTP Valid Trough :</td>
+                    <td>
+                      <input ref="cal1" type="date" class="input" v-model="validKTP">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>KTP Address :</td>
+                    <td>
+                      <input
+                      class="input"
+                      type="text"
+                      v-model="alamatKTP">
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>KK :</td>
+                      <td>
+                        <div class="select">
+                          <select v-model="KK">
+                            <option value="1">COPY</option>
+                            <option value="2">NONE</option>
+                          </select>
+                        </div>
+                      </td>
+                  </tr>
+                    <tr>
+                      <td>Educational Background :</td>
+                      <td>
+                        <tr>
+                        <td>Degree :</td>
+                        <td>
+                          <div class="select">
+                          <select v-model="gelar">
+                            <option value="1">SMU</option>
+                            <option value="2">D1</option>
+                            <option value="3">D2</option>
+                            <option value="4">D3</option>
+                            <option value="5">S1</option>
+                            <option value="6">S2</option>
+                            <option value="7">S3</option>
+                            <option value="8">Others</option>
+                          </select></div>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>Major :</td>
+                        <td>
+                          <div class="select">
+                          <select v-model="jurusan">
+                            <option value="1">Teknik Informatika</option>
+                            <option value="2">Management Informatika</option>
+                            <option value="3">Teknik KOmputer dan Jaringan</option>
+                            <option value="4">Others</option>
+                          </select></div>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>School / University :</td>
+                        <td>
+                          <div class="select">
+                          <select v-model="universitas">
+                            <option value="1">Universitas Indonesia</option>
+                            <option value="2">Others</option>
+                          </select></div>
+                        </td>
+                        </tr>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Certificate :</td>
+                      <td>
+                      <tr>
+                        <div class="select">
+                          <select v-model="sertifikat">
+                            <option value="1">COPY</option>
+                            <option value="2">NONE</option>
+                          </select></div>
+                      </tr>
+                      <tr>
+                        <td>Issued By :</td>
+                        <td>
+                          <div class="select">
+                          <select v-model="univSertifikat">
+                            <option value="1">Universitas Indonesia</option>
+                            <option value="2">Others</option>
+                          </select></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Date Of Issuance :</td>
+                        <td>
+                          <input ref="cal1" type="date" class="input" v-model="tglSertifikat">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Degree :</td>
+                        <td>
+                          <input
+                          class="input"
+                          type="text"
+                          v-model="gelarSertifikat">
+                        </td>
+                      </tr>
+                      </td>
+                    </tr>
+                  </table>
+              </div>
+
+
+              <div v-if="activetab === 2">
+              <table class="table is-borderless">
+                    <tr>
+                      <td class=" is-borderless"> Martia Status :</td>
+                      <td class=" is-borderless">
+                        <div class="select">
+                        <select v-model="status">
+                          <option value="1"> S </option>
+                          <option value="2"> M0 </option>
+                          <option value="3"> M1 </option>
+                          <option value="4"> M2 </option>
+                          <option value="5"> M3 </option>
+                          <option value="6"> M4 </option>
+                          <option value="7"> M5 </option>
+                        </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td> Spouse :</td>
                       <td>
                       <tr>
                         <td>Name</td>
                         <input 
                         class="input"
-                        type="text">
+                        type="text"
+                        v-model="namaPasangan">
                       </tr>
                       <tr>
                         <td>Date Of Birth</td>
-                        <input ref="cal1" type="date" class="input" placeholder="Date Of Birth">
+                        <input ref="cal1" type="date" class="input" v-model="lahirPasangan">
                       </tr>
                       </td>
                     </tr>
                     <tr>
-                      <td>Mother's Maiden</td>
-                      <input 
+                      <td>Mother's Maiden :</td>
+                      <td>
+                        <input 
                         class="input"
-                        type="text">
+                        type="text"
+                        v-model="namaIbu">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Children :</td>
+                      <td>
+                      <tr>
+                        <td>First Child</td>
+                        <td>
+                          <input 
+                          class="input"
+                          type="text"
+                          v-model="anakPertama">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Sex</td>
+                        <td>
+                          <div class="select">
+                          <select v-model="jenisKelaminAnak">
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                          </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Date Of Birth</td>
+                        <td>
+                          <input ref="cal1" type="date" class="input" v-model="lahirAnak">
+                        </td>
+                      </tr>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Emegency Number :</td>
+                      <td>
+                      <tr>
+                        <td>Name</td>
+                        <td>
+                          <input 
+                          class="input"
+                          type="text"
+                          v-model="namaEmergensi">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Phone Number</td>
+                        <td>
+                          <input 
+                          class="input"
+                          type="text"
+                          v-model="noEmergensi">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Relation</td>
+                        <td>
+                        <div class="select">
+                          <select v-model="relasiEmergensi">
+                            <option value="1">Mother</option>
+                            <option value="2">Father</option>
+                            <option value="3">Brother</option>
+                            <option value="4">Sister</option>
+                            <option value="5">Family</option>
+                            <option value="6">Friend</option>
+                          </select>
+                          </div>
+                        </td>
+                      </tr>
+                      </td>
                     </tr>
                   </table>
-                </form>
               </div>
-              <div v-show="tabsel == 'perusahaan'">My Videos</div>
-            
+
+
+              <div v-if="activetab === 3">
+                <table class="table is-borderless">
+                  <tr>
+                    <td>NIK :</td>
+                    <td>
+                      <input
+                      class="input"
+                      type="text"
+                      v-model="NIK">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Koperasi :</td>
+                    <td>
+                      <input
+                      class="input"
+                      type="text"
+                      v-model="koperasi">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>DPLK :</td>
+                    <td>
+                      <input
+                      class="input"
+                      type="text"
+                      v-model="DPLK">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Joining Date :</td>
+                    <td><input ref="cal1" type="date" class="input" v-model="tglJoin"></td>
+                  </tr>
+                  <tr>
+                    <td>Position :</td>
+                    <td>
+                    <div class="select">
+                      <select v-model="posisi">
+                        <option value="1">Office Boy</option>
+                        <option value="2">Driver</option>
+                        <option value="3">Messenger</option>
+                        <option value="4">Officer</option>
+                        <option value="5">Receptionist</option>
+                        <option value="6">Secretary</option>
+                        <option value="7">Others</option>
+                      </select>
+                    </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>BPJS Ketenagakerjaan:</td>
+                    <td>
+                      <input
+                      class="input"
+                      type="text"
+                      v-model="BPJS">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Health Insurance :</td>
+                    <td>
+                      <input
+                      class="input"
+                      type="text"
+                      v-model="asuransiKesehatan">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Employment Status :</td>
+                    <td>
+                      <div class="select">
+                      <select v-model="statusPekerjaan">
+                        <option value="1">Percobaan 1 Bulan </option>
+                        <option value="2">Percobaan 2 Bulan</option>
+                        <option value="3">Percobaan 3 Bulan</option>
+                      </select></div>
+                    </td>
+                  </tr>
+                </table>
+                <div class="control buttons is-right">
+                  <button class="button is-link"> Submit </button>
+                </div>
+              </div>
             </div>
-            
+            </form>
         </div>
     </div>
     </div>
@@ -234,29 +514,52 @@
 export default{
   data() {
     return{
-    tabsel: 'pic'
+      activetab: 1,
     }
 }}
 </script>
 
 <style>
-.registration{
-  min-height: 100vh;
-  background-color: #f7f7f7;
-}
 .registration .page{
-  height: 100vh;
-  display: flex;
   align-items: center;
-}
-.registration .form-wrapper{
-  background: #fff;
-  height: 90vh;
 }
 .heading{
   font-size: 1.50em;
 }
 .field-label{
   padding-left: 0;
+}
+.table .is-borderless .td{
+  border-bottom: 0;
+}
+/* Style the tabs */
+.tabs {
+  float: left;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.tabs a{
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+.tabs a:last-child { 
+  border-right: 1px solid #ccc;
+}
+
+/* Change background color of tabs on hover */
+.tabs a:hover {
+  background-color: #aaa;
+  color: #fff;
+}
+
+/* Styling for active tab */
+.tabs a.active {
+  background-color: #fff;
+  color: #484848;
+  border-bottom: 2px solid #fff;
+  cursor: default;
 }
 </style>

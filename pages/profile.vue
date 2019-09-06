@@ -18,17 +18,17 @@
                 <section class="info-tiles">
                     <div class="tile is-ancestor has-text-centered">
                         <div class="tile is-parent" >
-                            <article id="merah" class="tile is-child box has-background-primary">
+                            <article class="tile is-child box has-background-primary">
                                 <p class="subtitle has-text-white has-text-weight-medium">Data pribadi</p>
                             </article>
                         </div>
                         <div class="tile is-parent">
-                            <article id="kuning" class="tile is-child box has-background-primary">
+                            <article class="tile is-child box has-background-primary">
                                 <p class="subtitle has-text-white has-text-weight-medium">Data Keluarga</p>
                             </article>
                         </div>
                         <div class="tile is-parent" >
-                            <article id="ungu" class="tile is-child box has-background-primary">
+                            <article class="tile is-child box has-background-primary">
                                 <p class="subtitle has-text-white has-text-weight-medium">Data Perusahaan</p>
                             </article>
                         </div>

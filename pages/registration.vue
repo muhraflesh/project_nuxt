@@ -4,7 +4,6 @@
     <div class="columns page is-centered">
         <div class="column is-10 card" style="margin-top: 5%;margin-bottom:5%">
             <h1 class="heading"> Registration Form</h1>
-
             <div class="tabs">
                 <a v-bind:class="[ activetab === 1 ? 'active' : '' ]" @click="activetab=1">Data Pribadi</a>
                 <a v-bind:class="[ activetab === 2 ? 'active' : '' ]" @click="activetab=2">Data Keluarga</a>
@@ -15,7 +14,7 @@
             <form method="post">
             <div class="content">
               <div v-if="activetab === 1">
-              <table>
+              <table class=" table is-borderless">
                     <tr>
                       <td>Name :</td>
                       <td>
@@ -305,8 +304,8 @@
               <div v-if="activetab === 2">
               <table class="table is-borderless">
                     <tr>
-                      <td class=" is-borderless"> Martia Status :</td>
-                      <td class=" is-borderless">
+                      <td>Martia Status :</td>
+                      <td>
                         <div class="select">
                         <select v-model="status">
                           <option value="1"> S </option>
@@ -520,16 +519,23 @@ export default{
 </script>
 
 <style>
+.span{
+  margin-right: 20%;
+}
 .registration .page{
   align-items: center;
 }
 .heading{
-  font-size: 1.50em;
+  font-size: 1.80em;
+  margin-top:10px;
+  margin-bottom:10px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .field-label{
   padding-left: 0;
 }
-.table .is-borderless .td{
+.table.is-borderless tr,
+.table.is-borderless td {
   border-bottom: 0;
 }
 /* Style the tabs */

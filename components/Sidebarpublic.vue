@@ -46,7 +46,6 @@
                 <li><a v-if="$store.state.auth" @click="logout">Logout</a></li>
                 <li><a v-if="!$store.state.auth">Login</a></li>
               </ul>
-            </li>
           </ul>
           
         </nav>

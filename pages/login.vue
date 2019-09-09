@@ -20,7 +20,6 @@
                     <div class="field">
                       <p class="control has-icons-left has-icons-right">
                         <input class="input"
-                         type="email" 
                          placeholder="Email" 
                          v-model="email"
                          required>
@@ -59,7 +58,7 @@
 </template>
 <script>
 const Cookies = process.client ? require('js-cookie') : undefined
-
+import axios from 'axios'
   import Notification from '../components/Notification'
   export default { 
     middleware: 'notAuthenticated',
@@ -95,6 +94,16 @@ const Cookies = process.client ? require('js-cookie') : undefined
 
         window.localStorage.setItem('userid', user);
         
+        await this.$axios.get(`${this.$axios.defaults.baseURL}/user/${this.$store.state.user}/profiles?access_token=`+this.$store.state.auth)
+        .then(resp => {
+          const datauser = resp.data
+          this.$store.commit('setData', datauser)
+          Cookies.set('datauser', datauser);
+        
+          console.log(this.$store.state.data);
+        })
+    
+    
         self.$router.push('/profile')
         }
 

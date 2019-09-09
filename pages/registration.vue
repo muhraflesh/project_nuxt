@@ -4,7 +4,6 @@
     <div class="columns page is-centered">
         <div class="column is-10 card" style="margin-top: 5%;margin-bottom:5%">
             <h1 class="heading"> Registration Form</h1>
-
             <div class="tabs">
                 <a v-bind:class="[ activetab === 1 ? 'active' : '' ]" @click="activetab=1">Data Pribadi</a>
                 <a v-bind:class="[ activetab === 2 ? 'active' : '' ]" @click="activetab=2">Data Keluarga</a>
@@ -16,7 +15,7 @@
             <div class="content samew">
               <!-- Data Pribadi -->
               <div v-if="activetab === 1">
-              <table>
+              <table class=" table is-borderless">
                     <tr>
                       <td width="200px">Name :</td>
                       <td>
@@ -83,11 +82,11 @@
                       <td>
                         <div class="select">
                         <select v-model="religion">
-                          <option value="1">Islam</option>
-                          <option value="2">Kristen</option>
-                          <option value="3">Katolik</option>
-                          <option value="4">Buddha</option>
-                          <option value="5">Hindu</option>
+                          <option value="Islam">Islam</option>
+                          <option value="Kristen">Kristen</option>
+                          <option value="Katolik">Katolik</option>
+                          <option value="Buddha">Buddha</option>
+                          <option value="Hindu">Hindu</option>
                         </select>
                         </div>
                       </td>
@@ -179,8 +178,8 @@
                       <td>
                         <div class="select">
                           <select v-model="ktp">
-                            <option value="1">COPY</option>
-                            <option value="2">NONE</option>
+                            <option value="COPY">COPY</option>
+                            <option value="NONE">NONE</option>
                           </select>
                         </div>
                       </td>
@@ -214,8 +213,8 @@
                       <td>
                         <div class="select">
                           <select v-model="kk">
-                            <option value="1">COPY</option>
-                            <option value="2">NONE</option>
+                            <option value="COPY">COPY</option>
+                            <option value="NONE">NONE</option>
                           </select>
                         </div>
                       </td>
@@ -228,14 +227,14 @@
                         <td>
                           <div class="select">
                           <select v-model="degree_certificate">
-                            <option value="1">SMU</option>
-                            <option value="2">D1</option>
-                            <option value="3">D2</option>
-                            <option value="4">D3</option>
-                            <option value="5">S1</option>
-                            <option value="6">S2</option>
-                            <option value="7">S3</option>
-                            <option value="8">Others</option>
+                            <option value="SMU">SMU</option>
+                            <option value="D1">D1</option>
+                            <option value="D2">D2</option>
+                            <option value="D3">D3</option>
+                            <option value="S1">S1</option>
+                            <option value="S2">S2</option>
+                            <option value="S3">S3</option>
+                            <option value="Others">Others</option>
                           </select></div>
                         </td>
                         </tr>
@@ -244,10 +243,10 @@
                         <td>
                           <div class="select">
                           <select v-model="major">
-                            <option value="1">Teknik Informatika</option>
-                            <option value="2">Management Informatika</option>
-                            <option value="3">Teknik KOmputer dan Jaringan</option>
-                            <option value="4">Others</option>
+                            <option value="Teknik Informatika">Teknik Informatika</option>
+                            <option value="Management Informatika">Management Informatika</option>
+                            <option value="Teknik KOmputer dan Jaringan">Teknik KOmputer dan Jaringan</option>
+                            <option value="Others">Others</option>
                           </select></div>
                         </td>
                         </tr>
@@ -256,8 +255,8 @@
                         <td>
                           <div class="select">
                           <select v-model="school">
-                            <option value="1">Universitas Indonesia</option>
-                            <option value="2">Others</option>
+                            <option value="Universitas Indonesia">Universitas Indonesia</option>
+                            <option value="Others">Others</option>
                           </select></div>
                         </td>
                         </tr>
@@ -543,7 +542,7 @@ export default{
               degree_certificate: this.degree_certificate, reference: this.reference, team_project: this.team_project,
           })
 
-        self.$router.push('/profile')
+        self.$router.push('/welcome')
         }
 
         catch (e) {
@@ -558,16 +557,23 @@ export default{
 </script>
 
 <style>
+.span{
+  margin-right: 20%;
+}
 .registration .page{
   align-items: center;
 }
 .heading{
-  font-size: 1.50em;
+  font-size: 1.80em;
+  margin-top:10px;
+  margin-bottom:10px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .field-label{
   padding-left: 0;
 }
-.table .is-borderless .td{
+.table.is-borderless tr,
+.table.is-borderless td {
   border-bottom: 0;
 }
 /* Style the tabs */

@@ -7,7 +7,7 @@
             </span>
         </div>
         <div class="column is-2 is-right has-text-right">
-            <font size="5px">Iqbaale</font>
+            <font size="5px"></font>
         </div>
         <div class="column is-2" style="padding-top: 6px;">
             <img src="~assets/images/icons8-male-user-50.png" alt="">   

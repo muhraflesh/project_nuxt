@@ -12,11 +12,12 @@
             
             <!-- Tab panes -->
             <form method="post" @submit.prevent="insert_profile">
-            <div class="content">
+            <div class="content samew">
+              <!-- Data Pribadi -->
               <div v-if="activetab === 1">
               <table class=" table is-borderless">
                     <tr>
-                      <td>Name :</td>
+                      <td width="200px">Name :</td>
                       <td>
                         <input 
                         class="input"
@@ -48,7 +49,7 @@
                       <td>Date Of Birth</td>
                       <td>
                       <tr>
-                        <td>Place :</td>
+                        <td width="150px">Place :</td>
                         <td>
                           <input
                           class="input"
@@ -71,6 +72,7 @@
                           <option value="B">B</option>
                           <option value="AB">AB</option>
                           <option value="O">O</option>
+                          <option value="None">None</option>
                         </select>
                         </div>
                       </td>
@@ -93,7 +95,7 @@
                       <td>Phone Number :</td>
                       <td>
                       <tr>
-                        <td>Home :</td>
+                        <td width="150px">Home :</td>
                         <td>
                           <input 
                           class="input"
@@ -143,7 +145,7 @@
                       <td>Bank Account :</td>
                       <td>
                     <tr>
-                      <td>Bank :</td>
+                      <td width="150px">Bank :</td>
                       <td>
                         <input 
                         class="input"
@@ -292,11 +294,11 @@
                   </table>
               </div>
 
-
+              <!-- Data Keluarga -->
               <div v-if="activetab === 2">
               <table class="table is-borderless">
                     <tr>
-                      <td class=" is-borderless"> Marital Status :</td>
+                      <td width="200px" class=" is-borderless"> Marital Status :</td>
                       <td class=" is-borderless">
                         <div class="select">
                         <select v-model="marital_status">
@@ -315,7 +317,7 @@
                       <td> Spouse :</td>
                       <td>
                       <tr>
-                        <td>Name</td>
+                        <td width="150px">Name</td>
                         <input 
                         class="input"
                         type="text"
@@ -340,7 +342,7 @@
                       <td>Children :</td>
                       <td>
                       <tr>
-                        <td>First Child</td>
+                        <td width="150px">First Child</td>
                         <td>
                           <input 
                           class="input"
@@ -371,7 +373,7 @@
                       <td>Emegency Number :</td>
                       <td>
                       <tr>
-                        <td>Name</td>
+                        <td width="150px">Name</td>
                         <td>
                           <input 
                           class="input"
@@ -408,11 +410,11 @@
                   </table>
               </div>
 
-
+              <!-- Data Perusahaan -->
               <div v-if="activetab === 3">
                 <table class="table is-borderless">
                   <tr>
-                    <td>NIK :</td>
+                    <td width="200px">NIK :</td>
                     <td>
                       <input
                       class="input"
@@ -603,5 +605,8 @@ export default{
   color: #484848;
   border-bottom: 2px solid #fff;
   cursor: default;
+}
+.samew{
+  padding-left: 10px;
 }
 </style>

@@ -281,7 +281,7 @@ export default {
         cek(){
             console.log(this.$store.state.auth)
             console.log(this.$store.state.user)
-        }
+        },
     },
     mounted () {
     

@@ -144,5 +144,4 @@ margin-right: auto;
 .reset-form-wrapper .field-box .cancel-btn{
     background: #8c8c8c;color:  #ffffff;border-radius: 10px;padding: 0.5em 3em;
 }
-
 </style>

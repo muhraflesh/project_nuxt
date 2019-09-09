@@ -27,7 +27,8 @@
                 <br/>
 
                 <!-- Data Pribadi -->
-                <div v-show="pribadi" >
+                <div class="content" style="margin-top:3%">
+                <div v-if="activetab === 1" >
                     <div class="card ">
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped">
@@ -124,17 +125,16 @@
                                         <tr>
                                         <td>{{this.$store.state.data.branch}}</td>
                             </tr>
-                            
                         </td>
                         </tr>
                   </tabel>
                   </div>
                   </div>
                   </div>
-                  <br/>
-
-                  <!-- Data Keluarga -->
-                  <div v-show="keluarga">
+                  <br>
+                  
+                   <!-- Data Keluarga -->
+                  <div v-if="activetab === 2">
                     <div class="card ">
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped ">
@@ -180,9 +180,9 @@
                   </div>
                   </div>
                   <br/>
-
+                  
                   <!-- Data Perusahaan -->
-                  <div v-show="perusahaan">
+                  <div v-if="activetab === 3">
                     <div class="card ">
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped ">
@@ -230,7 +230,7 @@
                   </div>
                   </div>
                   </div>
-
+                </div>
                   <!-- Modal Isi Profile -->
                 </div>
                 <br/>

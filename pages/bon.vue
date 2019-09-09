@@ -16,7 +16,6 @@
                     </td>
                 </nav>
                 <hr>
-
                 <div class="columns is-10">
                     <div class="column is-6">
                         <div class="card">
@@ -205,30 +204,16 @@ const Cookie = process.client ? require('js-cookie') : undefined
 import axios from 'axios'
 import moment from 'moment'
 import Sidebar from '../components/Sidebarpublic'
-import Hello from '../components/Hello'
 import Chart from '../components/Chart.vue'
 import Navbar from '../components/Navbar'
 
 export default {
     middleware : 'authenticated',
-
     components: {
       Sidebar,
-      Hello,
       Chart,
       Navbar,
-    },
-    methods: {
-        auth ({store}){
-            console.log (store.state.auth)
-        },
-        logout () {
-            Cookie.remove('auth')
-            this.$store.commit('setAuth', null)
-            this.$router.push('/')
-        }
-    },
-}
+    }
 </script>
 
 <style>

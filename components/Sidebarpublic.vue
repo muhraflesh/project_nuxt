@@ -46,7 +46,6 @@
                 <li><a v-if="$store.state.auth" @click="logout">Logout</a></li>
                 <li><a v-if="!$store.state.auth">Login</a></li>
               </ul>
-            </li>
           </ul>
           
         </nav>
@@ -64,8 +63,10 @@ export default {
         logout () {
             Cookies.remove('auth')
             Cookies.remove('user')
+            Cookies.remove('datauser')
             this.$store.commit('setAuth', null)
             this.$store.commit('setUser', null)
+            this.$store.commit('setData', null)
             this.$router.push('/')
         }
     },

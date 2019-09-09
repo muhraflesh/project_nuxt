@@ -7,10 +7,49 @@
             </span>
         </div>
         <div class="column is-2 is-right has-text-right">
-            <font size="5px">Iqbaale</font>
+            <font size="5px"></font>
         </div>
-        <div class="column is-2" style="padding-top: 6px;">
-            <img src="~assets/images/icons8-male-user-50.png" alt="">   
-        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              <figure class="image is-32x32" style="margin-right:.5em;">
+                <img src="~assets/images/icons8-male-user-50.png">
+              </figure>
+              {{this.$store.state.data.name}}
+            </a>
+
+            <div class="navbar-dropdown is-right">
+                <a class="navbar-item">
+                  <span class="icon is-small">
+                    <i class="fa fa-user-o"></i>
+                  </span>
+                  &nbsp; Profile
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item" @click="logout">
+                  <span class="icon is-small">
+                    <i class="fa fa-power-off"></i>
+                  </span>
+                  &nbsp; Logout
+                </a>
+            </div>
+          </div>
     </div>
 </template>
+
+<script>
+const Cookies = process.client ? require('js-cookie') : undefined
+
+export default {
+  methods: {
+        logout () {
+            Cookies.remove('auth')
+            Cookies.remove('user')
+            Cookies.remove('datauser')
+            this.$store.commit('setAuth', null)
+            this.$store.commit('setUser', null)
+            this.$store.commit('setData', null)
+            this.$router.push('/')
+        }
+    },
+}
+</script>

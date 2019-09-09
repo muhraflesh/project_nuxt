@@ -15,259 +15,242 @@
                     </td>
                 </nav>
                 <hr>
+                
                 <section class="info-tiles">
-                    <div class="tile is-ancestor has-text-centered">
-                        <div class="tile is-parent" >
-                            <article id="merah" class="tile is-child box has-background-primary" @click="datapribadi" >
-                                <p class="subtitle has-text-white has-text-weight-medium">Data pribadi</p>
-                            </article>
+                   <div class="tabs columns">
+                        <div class="column is-4">
+                            <a v-bind:class="[ activetab === 1 ? 'active' : '' ]" class="button is-info is-focused has-text-weight-normal is-family-primary" @click="activetab=1">Data Pribadi</a>
                         </div>
-                        <div class="tile is-parent">
-                            <article id="kuning" class="tile is-child box has-background-primary" @click="datakeluarga">
-                                <p class="subtitle has-text-white has-text-weight-medium">Data Keluarga</p>
-                            </article>
+                        <div class="column is-4">
+                            <a v-bind:class="[ activetab === 2 ? 'active' : '' ]" class="button is-info is-focused has-text-weight-normal is-family-primary" @click="activetab=2">Data Keluarga</a>
                         </div>
-                        <div class="tile is-parent" >
-                            <article id="ungu" class="tile is-child box has-background-primary" @click="dataperusahaan">
-                                <p class="subtitle has-text-white has-text-weight-medium">Data Perusahaan</p>
-                            </article>
+                        <div class="column is-4">
+                            <a v-bind:class="[ activetab === 3 ? 'active' : '' ]" class="button is-info is-focused has-text-weight-normal is-family-primary" @click="activetab=3">Data Perusahaan</a>
                         </div>
                     </div>
                 </section>
                 <br/>
 
                 <!-- Data Pribadi -->
-                <div v-show="pribadi" >
+                <div class="content" style="margin-top:3%">
+                <div v-if="activetab === 1" >
                     <div class="card ">
-                    <span @click="closepribadi" ><i class="fa fa-close"></i></span>
                     <div class="card-content">
-                    <tabel class="table is-fullwidth is-striped ">
+                    <tabel class="table is-fullwidth is-striped">
                       <tr>
                         <td style="width:20%" class="has-text-centered">
                                 <div class="is-1by1 " style="">
                                     <img class="is-rounded " @click="cek" src="~assets/images/iqbaal.jpg">
                                 </div><br>
-                            <p class="subtitle"><b>Iqbaal Ramadan</b> <br> Hello!!</p>
+                            <p class="subtitle"><b>{{this.$store.state.data.name}}</b> <br> Hello!!</p>
                         </td>
                         <td style="width:45%">
                             <tr>
                                 <td width="150px"><b>Sex</b></td>
-                                <td width="200px">Male</td>
+                                <td width="200px">{{this.$store.state.data.sex}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>Blood Type</b></td>
-                                <td width="200px">A</td>
+                                <td width="200px">{{this.$store.state.data.blood_tipe}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>Email</b></td>
-                                <td width="200px">kutilang55@gmail.com</td>
+                                <td width="200px">{{this.$store.state.data.email_address}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>KK</b></td>
-                                <td width="200px">Copy</td>
+                                <td width="200px">{{this.$store.state.data.kk}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>KTP</b></td>
-                                <td width="200px">Copy</td>
+                                <td width="200px">{{this.$store.state.data.ktp}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>Religion</b></td>
-                                <td width="200px">Islam</td>
+                                <td width="200px">{{this.$store.state.data.religion}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>KTP Address</b></td>
-                                <td width="200px">Baciro, Gondokusuman,Yogyakarta</td>
+                                <td width="200px">{{this.$store.state.data.ktp_address}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>Residential Address</b></td>
-                                <td width="200px">Baciro, Gondokusuman,Yogyakarta</td>
+                                <td width="200px">{{this.$store.state.data.address}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="2"><b>KTP Number</b></td>
-                                <td width="200px">3223687314</td>
+                                <td width="200px">{{this.$store.state.data.ktp_number}}</td>
                                 <tr>
-                                    <td>21 JUli 2025</td>
+                                    <td>{{this.$store.state.data.ktp_number}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="3"><b>Educational Background</b></td>
-                                <td width="200px">D3</td>
+                                <td width="200px">{{this.$store.state.data.school}}</td>
                                 <tr>
-                                    <td>Teknik Informasi</td>
+                                    <td>{{this.$store.state.data.major}}</td>
                                     <tr>
-                                    <td>UGM</td>
+                                    <td>{{this.$store.state.data.degree_certificate}}</td>
                             </tr>
                         </td>
 
                         <td style="width:35%">
                             <tr>
                                 <td width="150px" rowspan="3"><b>Certificate</b></td>
-                                <td width="200px">UGM</td>
+                                <td width="200px">{{this.$store.state.data.certificate}}</td>
                                 <tr>
-                                    <td>21 Juli 2016</td>
+                                    <td>{{this.$store.state.data.issued_by}}</td>
                                     <tr>
-                                        <td>D3</td>
+                                        <td>{{this.$store.state.data.date_issuance}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="2"><b>Date Of Birth</b></td>
-                                <td width="200px">Surabaya</td>
+                                <td width="200px">{{this.$store.state.data.dob_place}}</td>
                                 <tr>
-                                    <td>28 Desember 1999</td>
+                                    <td>{{this.$store.state.data.dob}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="2"><b>Phone Number</b></td>
-                                <td width="200px">021983124</td>
+                                <td width="200px">{{this.$store.state.data.mobile_phone}}</td>
                                 <tr>
-                                    <td>087721641712</td>
+                                    <td>{{this.$store.state.data.other_phone}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="2"><b>NPWP</b></td>
                                 <td width="200px"><i class="fa fa-check"></i></td>
                                 <tr>
-                                    <td>9182761094861</td>
+                                    <td>{{this.$store.state.data.npwp}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="4"><b>Bank Account</b></td>
-                                <td width="200px">john</td>
+                                <td width="200px"></td>
                                 <tr>
-                                    <td>BNI</td>
+                                    <td>{{this.$store.state.data.bank}}</td>
                                     <tr>
-                                        <td>324567823</td>
+                                        <td>{{this.$store.state.data.account_number}}</td>
                                         <tr>
-                                        <td>Yogyakarta</td>
+                                        <td>{{this.$store.state.data.branch}}</td>
                             </tr>
-                            
                         </td>
                         </tr>
                   </tabel>
                   </div>
                   </div>
-                  </div>
-                  <br/>
-
-                  <!-- Data Keluarga -->
-                  <div v-show="keluarga">
+                </div>
+                  
+                   <!-- Data Keluarga -->
+                  <div v-if="activetab === 2">
                     <div class="card ">
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped ">
                         <td width="50%">
                             <tr>
-                                <td width="200px"><b>Martia Status</b></td>
-                                <td width="200px">M2</td>
+                                <td width="200px"><b>Marital Status</b></td>
+                                <td width="200px">{{this.$store.state.data.marital_status}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="2"><b>Spouse</b></td>
-                                <td width="200px">Moana</td>
+                                <td width="200px">{{this.$store.state.data.spouse_name}}</td>
                                 <tr>
-                                    <td>21 Januari 1978</td>
+                                    <td>{{this.$store.state.data.spouse_dob}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>Mother's Maiden</b></td>
-                                <td width="200px">Angela</td>
+                                <td width="200px">{{this.$store.state.data.mother_maiden}}</td>
                             </tr>
                         </td>
                         <td width="50%">
                             <tr>
                                 <td width="200px" rowspan="3"><b>Children</b></td>
-                                <td width="200px">Jhoana</td>
-                                <td>Jhoana</td>
+                                <td width="200px">{{this.$store.state.data.child_name1}}</td>
+                                <td>{{this.$store.state.data.child_name1}}</td>
                                 <tr>
-                                    <td>Female</td>
-                                    <td>Female</td>
+                                    <td>{{this.$store.state.data.child_sex1}}</td>
+                                    <td>{{this.$store.state.data.child_sex1}}</td>
                                     <tr>
-                                        <td>2 Juli 20</td>
-                                        <td>2 Juli 2003</td>
+                                        <td>{{this.$store.state.data.child_dob1}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="3"><b>Emergency Phone Number</b></td>
-                                <td width="200px">Jhoana</td>
+                                <td width="200px"></td>
                                 <tr>
-                                    <td>08275642397</td>
+                                    <td>{{this.$store.state.data.emergency_number}}</td>
                                     <tr>
-                                        <td>Brother</td>
+                                        <td>{{this.$store.state.data.relation_emergency}}</td>
                             </tr>
                         </td>
                   </tabel>
                   </div>
                   </div>
                   </div>
-                  <br/>
-
+                  
                   <!-- Data Perusahaan -->
-                  <div v-show="perusahaan">
+                  <div v-if="activetab === 3">
                     <div class="card ">
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped ">
                         <td width="55%">
                             <tr>
                                 <td width="200px"><b>NIK</b></td>
-                                <td width="200px">09876123456456</td>
+                                <td width="200px">{{this.$store.state.data.nik}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>KOPERASI</b></td>
-                                <td width="200px">Rp300000</td>
+                                <td width="200px">{{this.$store.state.data.koperasi}}</td>
                             </tr>
                             <tr>
                                 <td width="200px"><b>DPLK</b></td>
-                                <td width="200px">Rp300000</td>
+                                <td width="200px">{{this.$store.state.data.DPLK}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>Joining Date</b></td>
-                                <td width="200px">10 April 2019</td>
+                                <td width="200px">{{this.$store.state.data.joining_date}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>Position</b></td>
-                                <td width="200px">Marketing And Sales Office</td>
+                                <td width="200px">{{this.$store.state.data.emp_position}}</td>
                             </tr>
                         </td>
                         <td width="40%">
                             <tr>
                                 <td width="200px"><b>Position</b></td>
-                                <td width="200px">Receptionist</td>
+                                <td width="200px">{{this.$store.state.data.emp_position}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>BPJS</b></td>
-                                <td width="200px">0129223857</td>
+                                <td width="200px">{{this.$store.state.data.BPJS}}</td>
                             </tr>
                             <tr>
                                 <td width="200px"><b>Health Insurance</b></td>
-                                <td width="200px">Rp300000</td>
+                                <td width="200px">{{this.$store.state.data.health_insurance}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>Employment Status</b></td>
-                                <td width="200px">K2 (Kontrak 2 tahun)</td>
+                                <td width="200px">{{this.$store.state.data.employee_status}}</td>
                             </tr>
                         </td>
                   </tabel>
                   </div>
                   </div>
                   </div>
-
                 </div>
+                </div>
+                <br/>
+                <br/>
     </section>
 </template>
 
-<style>
-.is-rounded{
-    border-radius: 50%
-}
-.kuningq { 
-    background-color: brown;
-}
-</style>
-
 <script>
+import axios from 'axios'
 const Cookies = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 import Navbar from "../components/Navbar"
 export default {
-    middleware : '',
+    middleware : 'profile',
     data() {
-      return {
-        pribadi : true,
-        keluarga : false,
-        perusahaan : false,
-      }
+    return{
+      activetab: 1,
+    }
     },
     components: {
         Sidebar,
@@ -280,10 +263,48 @@ export default {
             console.log(this.$store.state.auth)
             console.log(this.$store.state.user)
         },
-        auth ({store}){
-            console.log (store.state.auth)
-        },
     },
-   
+
+    mounted() {
+        
+    }
+    
 }
 </script>
+
+<style>
+.is-rounded{
+    border-radius: 50%
+}
+/* Style the tabs */
+.tabs {
+  float: left;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.tabs a{
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: 1px solid #ccc;
+  background-color: #434640;
+  font-weight: bold;
+  color: #fff;
+}
+.tabs a:last-child { 
+  border-right: 1px solid #ccc;
+}
+
+/* Change background color of tabs on hover */
+.tabs a:hover {
+  background-color:#2db14a;
+  color: #fff;
+}
+
+/* Styling for active tab */
+.tabs a.active {
+  background-color: rgb(204, 34, 48);
+  color: #b91876;
+  border-bottom: 2px solid #fff;
+  cursor: default;
+}
+</style>

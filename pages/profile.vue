@@ -17,11 +17,16 @@
                 <hr>
                 
                 <section class="info-tiles">
-                   <div class="tabs">
-                        <a v-bind:class="[ activetab === 1 ? 'active' : '' ]" @click="activetab=1">Data Pribadi</a>
-                        <a v-bind:class="[ activetab === 2 ? 'active' : '' ]" @click="activetab=2">Data Keluarga</a>
-                        <a v-bind:class="[ activetab === 3 ? 'active' : '' ]" @click="activetab=3">Data Perusahaan</a>
-
+                   <div class="tabs columns">
+                        <div class="column is-4">
+                            <a v-bind:class="[ activetab === 1 ? 'active' : '' ]" class="button is-info is-focused has-text-weight-normal is-family-primary" @click="activetab=1">Data Pribadi</a>
+                        </div>
+                        <div class="column is-4">
+                            <a v-bind:class="[ activetab === 2 ? 'active' : '' ]" class="button is-info is-focused has-text-weight-normal is-family-primary" @click="activetab=2">Data Keluarga</a>
+                        </div>
+                        <div class="column is-4">
+                            <a v-bind:class="[ activetab === 3 ? 'active' : '' ]" class="button is-info is-focused has-text-weight-normal is-family-primary" @click="activetab=3">Data Perusahaan</a>
+                        </div>
                     </div>
                 </section>
                 <br/>
@@ -54,11 +59,11 @@
                             </tr>
                             <tr>
                                 <td width="150px"><b>KK</b></td>
-                                <td width="200px"></td>
+                                <td width="200px">{{this.$store.state.data.kk}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>KTP</b></td>
-                                <td width="200px"></td>
+                                <td width="200px">{{this.$store.state.data.ktp}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>Religion</b></td>
@@ -66,36 +71,36 @@
                             </tr>
                             <tr>
                                 <td width="150px"><b>KTP Address</b></td>
-                                <td width="200px"></td>
+                                <td width="200px">{{this.$store.state.data.ktp_address}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>Residential Address</b></td>
-                                <td width="200px"></td>
+                                <td width="200px">{{this.$store.state.data.address}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="2"><b>KTP Number</b></td>
-                                <td width="200px"></td>
+                                <td width="200px">{{this.$store.state.data.ktp_number}}</td>
                                 <tr>
-                                    <td></td>
+                                    <td>{{this.$store.state.data.ktp_number}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="3"><b>Educational Background</b></td>
-                                <td width="200px"></td>
+                                <td width="200px">{{this.$store.state.data.school}}</td>
                                 <tr>
-                                    <td></td>
+                                    <td>{{this.$store.state.data.major}}</td>
                                     <tr>
-                                    <td></td>
+                                    <td>{{this.$store.state.data.degree_certificate}}</td>
                             </tr>
                         </td>
 
                         <td style="width:35%">
                             <tr>
                                 <td width="150px" rowspan="3"><b>Certificate</b></td>
-                                <td width="200px"></td>
+                                <td width="200px">{{this.$store.state.data.certificate}}</td>
                                 <tr>
-                                    <td></td>
+                                    <td>{{this.$store.state.data.issued_by}}</td>
                                     <tr>
-                                        <td></td>
+                                        <td>{{this.$store.state.data.date_issuance}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="2"><b>Date Of Birth</b></td>
@@ -105,7 +110,7 @@
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="2"><b>Phone Number</b></td>
-                                <td width="200px"></td>
+                                <td width="200px">{{this.$store.state.data.mobile_phone}}</td>
                                 <tr>
                                     <td>{{this.$store.state.data.other_phone}}</td>
                             </tr>
@@ -113,7 +118,7 @@
                                 <td width="150px" rowspan="2"><b>NPWP</b></td>
                                 <td width="200px"><i class="fa fa-check"></i></td>
                                 <tr>
-                                    <td></td>
+                                    <td>{{this.$store.state.data.npwp}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="4"><b>Bank Account</b></td>
@@ -130,8 +135,7 @@
                   </tabel>
                   </div>
                   </div>
-                  </div>
-                  <br>
+                </div>
                   
                    <!-- Data Keluarga -->
                   <div v-if="activetab === 2">
@@ -157,14 +161,13 @@
                         <td width="50%">
                             <tr>
                                 <td width="200px" rowspan="3"><b>Children</b></td>
-                                <td width="200px"></td>
-                                <td></td>
+                                <td width="200px">{{this.$store.state.data.child_name1}}</td>
+                                <td>{{this.$store.state.data.child_name1}}</td>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{this.$store.state.data.child_sex1}}</td>
+                                    <td>{{this.$store.state.data.child_sex1}}</td>
                                     <tr>
-                                        <td></td>
-                                        <td></td>
+                                        <td>{{this.$store.state.data.child_dob1}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="3"><b>Emergency Phone Number</b></td>
@@ -179,7 +182,6 @@
                   </div>
                   </div>
                   </div>
-                  <br/>
                   
                   <!-- Data Perusahaan -->
                   <div v-if="activetab === 3">
@@ -231,13 +233,44 @@
                   </div>
                   </div>
                 </div>
-                  <!-- Modal Isi Profile -->
                 </div>
                 <br/>
                 <br/>
-            </div>
     </section>
 </template>
+
+<script>
+import axios from 'axios'
+const Cookies = process.client ? require('js-cookie') : undefined
+import Sidebar from "../components/Sidebarpublic"
+import Hello from "../components/Hello"
+import Navbar from "../components/Navbar"
+export default {
+    middleware : 'profile',
+    data() {
+    return{
+      activetab: 1,
+    }
+    },
+    components: {
+        Sidebar,
+        Hello,
+        Navbar,
+    },
+    
+    methods: {
+        cek(){
+            console.log(this.$store.state.auth)
+            console.log(this.$store.state.user)
+        },
+    },
+
+    mounted() {
+        
+    }
+    
+}
+</script>
 
 <style>
 .is-rounded{
@@ -263,57 +296,15 @@
 
 /* Change background color of tabs on hover */
 .tabs a:hover {
-  background-color:#5a5a5a;
+  background-color:#2db14a;
   color: #fff;
 }
 
 /* Styling for active tab */
 .tabs a.active {
-  background-color: rgb(190, 190, 178);
-  color: #0f0e0e;
+  background-color: rgb(204, 34, 48);
+  color: #b91876;
   border-bottom: 2px solid #fff;
   cursor: default;
 }
 </style>
-
-<script>
-import axios from 'axios'
-const Cookies = process.client ? require('js-cookie') : undefined
-import Sidebar from "../components/Sidebarpublic"
-import Hello from "../components/Hello"
-import Navbar from "../components/Navbar"
-export default {
-    middleware : '',
-    data() {
-    return{
-      activetab: 1,
-    }
-    },
-    components: {
-        Sidebar,
-        Hello,
-        Navbar,
-    },
-    
-    methods: {
-        cek(){
-            console.log(this.$store.state.auth)
-            console.log(this.$store.state.user)
-        },
-    },
-    mounted () {
-    
-    axios.get(`${this.$axios.defaults.baseURL}/user/${this.$store.state.user}/profiles?access_token=`+this.$store.state.auth)
-    .then(resp => {
-        const datauser = resp.data
-        this.$store.commit('setData', datauser)
-        Cookies.set('datauser', datauser);
-
-        console.log(this.$store.state.data);
-    })
-    
-    
-    
-    } 
-}
-</script>

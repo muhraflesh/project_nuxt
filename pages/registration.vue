@@ -12,7 +12,7 @@
             </div>
             
             <!-- Tab panes -->
-            <form method="post">
+            <form method="post" @submit.prevent="insert_profile">
             <div class="content">
               <div v-if="activetab === 1">
               <table>
@@ -22,16 +22,25 @@
                         <input 
                         class="input"
                         type="text"
-                        v-model="nama">
+                        v-model="name">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Code Name :</td>
+                      <td>
+                        <input 
+                        class="input"
+                        type="text"
+                        v-model="code_name">
                       </td>
                     </tr>
                     <tr>
                       <td>Sex :</td>
                       <td>
                         <div class="select">
-                          <select v-model="jenisKelamin">
-                            <option value="1">Male</option>
-                            <option value="2">Female</option>
+                          <select v-model="sex">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                           </select>
                         </div>
                       </td>
@@ -45,12 +54,12 @@
                           <input
                           class="input"
                           type="text"
-                          v-model="tempatLahir">
+                          v-model="dob_place">
                         </td>
                       </tr>
                       <tr>
                         <td>Date :</td>
-                        <td><input ref="cal1" type="date" class="input" v-model="tanggalLahir"></td>
+                        <td><input type="text" class="input" v-model="dob"></td>
                       </tr>
                       </td>
                     </tr>
@@ -58,11 +67,11 @@
                       <td>Blood Type :</td>
                       <td>
                         <div class="select">
-                        <select v-model="golDarah">
-                          <option value="1">A</option>
-                          <option value="2">B</option>
-                          <option value="3">AB</option>
-                          <option value="4">O</option>
+                        <select v-model="blood_tipe">
+                          <option value="A">A</option>
+                          <option value="B">B</option>
+                          <option value="AB">AB</option>
+                          <option value="O">O</option>
                         </select>
                         </div>
                       </td>
@@ -71,7 +80,7 @@
                       <td>Religion :</td>
                       <td>
                         <div class="select">
-                        <select v-model="agama">
+                        <select v-model="religion">
                           <option value="1">Islam</option>
                           <option value="2">Kristen</option>
                           <option value="3">Katolik</option>
@@ -90,7 +99,7 @@
                           <input 
                           class="input"
                           type="text"
-                          v-model="nomorTelpRumah">
+                          v-model="home_phone">
                         </td>
                       </tr>
                       <tr>
@@ -99,7 +108,7 @@
                           <input 
                           class="input"
                           type="text"
-                          v-model="nomorHP">
+                          v-model="mobile_phone">
                         </td>
                       </tr>
                       <tr>
@@ -108,7 +117,7 @@
                           <input 
                           class="input"
                           type="text"
-                          v-model="nomorTelpLain">
+                          v-model="other_phone">
                         </td>
                       </tr>
                       </td>
@@ -119,7 +128,7 @@
                         <input 
                         class="input"
                         type="email"
-                        v-model="email">
+                        v-model="email_address">
                       </td>
                     </tr>
                     <tr>
@@ -128,28 +137,19 @@
                         <input 
                         class="input"
                         type="text"
-                        v-model="alamatRmh">
+                        v-model="address">
                       </td>
                     </tr>
                     <tr>
                       <td>Bank Account :</td>
                       <td>
-                        <tr>
-                      <td>Name :</td>
-                      <td>
-                        <input 
-                        class="input"
-                        type="text"
-                        v-model="namaBankAcc">
-                      </td>
-                    </tr>
                     <tr>
                       <td>Bank :</td>
                       <td>
                         <input 
                         class="input"
                         type="text"
-                        v-model="namaBank">
+                        v-model="bank">
                       </td>
                     </tr>
                     <tr>
@@ -158,7 +158,7 @@
                         <input 
                         class="input"
                         type="text"
-                        v-model="nomerBankAcc">
+                        v-model="account_number">
                       </td>
                     </tr>
                     <tr>
@@ -167,7 +167,7 @@
                         <input 
                         class="input"
                         type="text"
-                        v-model="branchBank">
+                        v-model="branch">
                       </td>
                     </tr>
                     </td>
@@ -176,7 +176,7 @@
                       <td>KTP :</td>
                       <td>
                         <div class="select">
-                          <select v-model="KTP">
+                          <select v-model="ktp">
                             <option value="1">COPY</option>
                             <option value="2">NONE</option>
                           </select>
@@ -189,13 +189,13 @@
                         <input
                         class="input"
                         type="text"
-                        v-model="nomorKTP">
+                        v-model="ktp_number">
                       </td>
                     </tr>
                     <tr>
                     <td>KTP Valid Trough :</td>
                     <td>
-                      <input ref="cal1" type="date" class="input" v-model="validKTP">
+                      <input class="input" v-model="valid_through">
                     </td>
                   </tr>
                   <tr>
@@ -204,14 +204,14 @@
                       <input
                       class="input"
                       type="text"
-                      v-model="alamatKTP">
+                      v-model="ktp_address">
                     </td>
                   </tr>
                   <tr>
                       <td>KK :</td>
                       <td>
                         <div class="select">
-                          <select v-model="KK">
+                          <select v-model="kk">
                             <option value="1">COPY</option>
                             <option value="2">NONE</option>
                           </select>
@@ -225,7 +225,7 @@
                         <td>Degree :</td>
                         <td>
                           <div class="select">
-                          <select v-model="gelar">
+                          <select v-model="degree_certificate">
                             <option value="1">SMU</option>
                             <option value="2">D1</option>
                             <option value="3">D2</option>
@@ -241,7 +241,7 @@
                         <td>Major :</td>
                         <td>
                           <div class="select">
-                          <select v-model="jurusan">
+                          <select v-model="major">
                             <option value="1">Teknik Informatika</option>
                             <option value="2">Management Informatika</option>
                             <option value="3">Teknik KOmputer dan Jaringan</option>
@@ -253,7 +253,7 @@
                         <td>School / University :</td>
                         <td>
                           <div class="select">
-                          <select v-model="universitas">
+                          <select v-model="school">
                             <option value="1">Universitas Indonesia</option>
                             <option value="2">Others</option>
                           </select></div>
@@ -266,7 +266,7 @@
                       <td>
                       <tr>
                         <div class="select">
-                          <select v-model="sertifikat">
+                          <select v-model="certificate">
                             <option value="1">COPY</option>
                             <option value="2">NONE</option>
                           </select></div>
@@ -275,7 +275,7 @@
                         <td>Issued By :</td>
                         <td>
                           <div class="select">
-                          <select v-model="univSertifikat">
+                          <select v-model="issued_by">
                             <option value="1">Universitas Indonesia</option>
                             <option value="2">Others</option>
                           </select></div>
@@ -284,18 +284,10 @@
                       <tr>
                         <td>Date Of Issuance :</td>
                         <td>
-                          <input ref="cal1" type="date" class="input" v-model="tglSertifikat">
+                          <input class="input" v-model="date_issuance">
                         </td>
                       </tr>
-                      <tr>
-                        <td>Degree :</td>
-                        <td>
-                          <input
-                          class="input"
-                          type="text"
-                          v-model="gelarSertifikat">
-                        </td>
-                      </tr>
+                      
                       </td>
                     </tr>
                   </table>
@@ -305,10 +297,10 @@
               <div v-if="activetab === 2">
               <table class="table is-borderless">
                     <tr>
-                      <td class=" is-borderless"> Martia Status :</td>
+                      <td class=" is-borderless"> Marital Status :</td>
                       <td class=" is-borderless">
                         <div class="select">
-                        <select v-model="status">
+                        <select v-model="marital_status">
                           <option value="1"> S </option>
                           <option value="2"> M0 </option>
                           <option value="3"> M1 </option>
@@ -328,11 +320,11 @@
                         <input 
                         class="input"
                         type="text"
-                        v-model="namaPasangan">
+                        v-model="spouse_name">
                       </tr>
                       <tr>
                         <td>Date Of Birth</td>
-                        <input ref="cal1" type="date" class="input" v-model="lahirPasangan">
+                        <input class="input" v-model="spouse_dob">
                       </tr>
                       </td>
                     </tr>
@@ -342,7 +334,7 @@
                         <input 
                         class="input"
                         type="text"
-                        v-model="namaIbu">
+                        v-model="mother_maiden">
                       </td>
                     </tr>
                     <tr>
@@ -354,14 +346,14 @@
                           <input 
                           class="input"
                           type="text"
-                          v-model="anakPertama">
+                          v-model="child_name1">
                         </td>
                       </tr>
                       <tr>
                         <td>Sex</td>
                         <td>
                           <div class="select">
-                          <select v-model="jenisKelaminAnak">
+                          <select v-model="child_sex1">
                             <option value="1">Male</option>
                             <option value="2">Female</option>
                           </select>
@@ -371,7 +363,7 @@
                       <tr>
                         <td>Date Of Birth</td>
                         <td>
-                          <input ref="cal1" type="date" class="input" v-model="lahirAnak">
+                          <input class="input" v-model="child_dob1">
                         </td>
                       </tr>
                       </td>
@@ -385,7 +377,7 @@
                           <input 
                           class="input"
                           type="text"
-                          v-model="namaEmergensi">
+                          v-model="emergency_name">
                         </td>
                       </tr>
                       <tr>
@@ -394,14 +386,14 @@
                           <input 
                           class="input"
                           type="text"
-                          v-model="noEmergensi">
+                          v-model="emergency_number">
                         </td>
                       </tr>
                       <tr>
                         <td>Relation</td>
                         <td>
                         <div class="select">
-                          <select v-model="relasiEmergensi">
+                          <select v-model="relation_emergency">
                             <option value="1">Mother</option>
                             <option value="2">Father</option>
                             <option value="3">Brother</option>
@@ -426,7 +418,7 @@
                       <input
                       class="input"
                       type="text"
-                      v-model="NIK">
+                      v-model="nik">
                     </td>
                   </tr>
                   <tr>
@@ -449,13 +441,13 @@
                   </tr>
                   <tr>
                     <td>Joining Date :</td>
-                    <td><input ref="cal1" type="date" class="input" v-model="tglJoin"></td>
+                    <td><input class="input" v-model="joining_date"></td>
                   </tr>
                   <tr>
                     <td>Position :</td>
                     <td>
                     <div class="select">
-                      <select v-model="posisi">
+                      <select v-model="emp_position">
                         <option value="1">Office Boy</option>
                         <option value="2">Driver</option>
                         <option value="3">Messenger</option>
@@ -482,14 +474,14 @@
                       <input
                       class="input"
                       type="text"
-                      v-model="asuransiKesehatan">
+                      v-model="health_insurance">
                     </td>
                   </tr>
                   <tr>
                     <td>Employment Status :</td>
                     <td>
                       <div class="select">
-                      <select v-model="statusPekerjaan">
+                      <select v-model="employee_status">
                         <option value="1">Percobaan 1 Bulan </option>
                         <option value="2">Percobaan 2 Bulan</option>
                         <option value="3">Percobaan 3 Bulan</option>
@@ -515,8 +507,52 @@ export default{
   data() {
     return{
       activetab: 1,
+      name: '', sex: '', dob_place: '', dob: '', blood_tipe: '', religion: '', home_phone: '', mobile_phone: '', other_phone: '',
+      email_address: '', address: '', bank: '', account_number: '', branch: '', ktp: '', ktp_number: '', valid_through: '',
+      ktp_address: '', kk: '', degree_certificate: '', school: '', major: '', certificate: '', date_issuance: '',
+      marital_status: '', spouse_name: '', spouse_dob: '', mother_maiden: '', child_name1: '',
+      child_sex1: '', child_dob1: '', emergency_name: '', emergency_number: '', relation_emergency: '',
+      nik: '', koperasi: '', DPLK: '', joining_date: '', emp_position: '', BPJS: '', health_insurance: '', employee_status: '',
+      code_name:'',
     }
-}}
+  },
+  methods: {
+      async insert_profile(){
+        try{
+          var self = this
+          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/${this.$store.state.user}/profiles?access_token=`+this.$store.state.auth, {
+              email_address: this.email_address, nik: this.nik, name: this.name,
+              code_name: this.code_name,  sex: this.sex, emp_position: this.emp_position,
+              office: this.emp_position, dob: this.dob, dob_place: this.dob_place,
+              address: this.address, home_phone: this.home_phone,
+              mobile_phone: this.mobile_phone, other_phone: this.other_phone, mother_maiden: this.mother_maiden,
+              joining_date: this.joining_date, employee_status: this.employee_status, religion: this.religion, marital_status: this.marital_status,
+              blood_tipe: this.blood_tipe, bank: this.bank, account_number: this.account_number,
+              branch: this.branch, BPJS: this.BPJS, DPLK: this.DPLK,
+              koperasi: this.koperasi, health_insurance: this.health_insurance, emergency_name: this.emergency_name,
+              emergency_number: this.emergency_number, relation_emergency: this.relation_emergency, spouse_name: this.spouse_name,
+              spouse_dob: this.spouse_dob, child_name1: this.child_name1, child_name2: this.child_name2,
+              child_name3: this.child_name3, child_sex1: this.child_sex1, child_sex2: this.child_sex2,
+              child_sex3: this.child_sex3, child_dob1: this.child_dob1, child_dob2: this.child_dob2,
+              child_dob3: this.child_dob3, ktp: this.ktp, ktp_number: this.ktp_number,
+              kk: this.kk, valid_through: this.valid_through, ktp_address: this.ktp_address,
+              npwp: this.npwp, major: this.major, school: this.school,
+              certificate: this.certificate, issued_by: this.issued_by, date_issuance: this.date_issuance,
+              degree_certificate: this.degree_certificate, reference: this.reference, team_project: this.team_project,
+          })
+
+        self.$router.push('/profile')
+        }
+
+        catch (e) {
+          this.pesan = e.response.data.error.statusCode
+          if (this.pesan = 401){
+            this.pesan="Invalid Email or Password"
+          }
+        }
+      }
+    }
+}
 </script>
 
 <style>

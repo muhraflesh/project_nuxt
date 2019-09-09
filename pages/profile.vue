@@ -235,7 +235,6 @@
                 </div>
                 <br/>
                 <br/>
-            </div>
     </section>
 </template>
 

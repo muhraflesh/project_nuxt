@@ -15,23 +15,13 @@
                     </td>
                 </nav>
                 <hr>
+                
                 <section class="info-tiles">
-                    <div class="tile is-ancestor has-text-centered">
-                        <div class="tile is-parent" >
-                            <article class="tile is-child box has-background-primary" @click="pribadi = !pribadi">
-                                <p class="subtitle has-text-white has-text-weight-medium">Data pribadi</p>
-                            </article>
-                        </div>
-                        <div class="tile is-parent">
-                            <article class="tile is-child box has-background-primary" @click="keluarga = !keluarga">
-                                <p class="subtitle has-text-white has-text-weight-medium">Data Keluarga</p>
-                            </article>
-                        </div>
-                        <div class="tile is-parent" >
-                            <article class="tile is-child box has-background-primary" @click="perusahaan = !perusahaan">
-                                <p class="subtitle has-text-white has-text-weight-medium">Data Perusahaan</p>
-                            </article>
-                        </div>
+                   <div class="tabs">
+                        <a v-bind:class="[ activetab === 1 ? 'active' : '' ]" @click="activetab=1">Data Pribadi</a>
+                        <a v-bind:class="[ activetab === 2 ? 'active' : '' ]" @click="activetab=2">Data Keluarga</a>
+                        <a v-bind:class="[ activetab === 3 ? 'active' : '' ]" @click="activetab=3">Data Perusahaan</a>
+
                     </div>
                 </section>
                 <br/>
@@ -243,6 +233,9 @@
 
                   <!-- Modal Isi Profile -->
                 </div>
+                <br/>
+                <br/>
+            </div>
     </section>
 </template>
 
@@ -250,8 +243,36 @@
 .is-rounded{
     border-radius: 50%
 }
-.kuningq { 
-    background-color: brown;
+/* Style the tabs */
+.tabs {
+  float: left;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.tabs a{
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: 1px solid #ccc;
+  background-color: #434640;
+  font-weight: bold;
+  color: #fff;
+}
+.tabs a:last-child { 
+  border-right: 1px solid #ccc;
+}
+
+/* Change background color of tabs on hover */
+.tabs a:hover {
+  background-color:#5a5a5a;
+  color: #fff;
+}
+
+/* Styling for active tab */
+.tabs a.active {
+  background-color: rgb(190, 190, 178);
+  color: #0f0e0e;
+  border-bottom: 2px solid #fff;
+  cursor: default;
 }
 </style>
 
@@ -262,14 +283,11 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 import Navbar from "../components/Navbar"
 export default {
-    middleware : 'authenticated',
+    middleware : '',
     data() {
-      return {
-        pribadi : true,
-        keluarga : false,
-        perusahaan : false,
-        posts: [],
-      }
+    return{
+      activetab: 1,
+    }
     },
     components: {
         Sidebar,

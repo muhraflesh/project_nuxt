@@ -103,7 +103,6 @@ import axios from 'axios'
           console.log(this.$store.state.data);
         })
     
-    
         self.$router.push('/profile')
         }
 

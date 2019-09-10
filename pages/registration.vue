@@ -59,7 +59,7 @@
                       </tr>
                       <tr>
                         <td>Date :</td>
-                        <td><input type="text" class="input" v-model="dob"></td>
+                        <td><input type="date" class="input" v-model="dob"></td>
                       </tr>
                       </td>
                     </tr>
@@ -268,8 +268,8 @@
                       <tr>
                         <div class="select">
                           <select v-model="certificate">
-                            <option value="1">COPY</option>
-                            <option value="2">NONE</option>
+                            <option value="COPY">COPY</option>
+                            <option value="NONE">NONE</option>
                           </select></div>
                       </tr>
                       <tr>
@@ -277,8 +277,8 @@
                         <td>
                           <div class="select">
                           <select v-model="issued_by">
-                            <option value="1">Universitas Indonesia</option>
-                            <option value="2">Others</option>
+                            <option value="Universitas Indonesia">Universitas Indonesia</option>
+                            <option value="Others">Others</option>
                           </select></div>
                         </td>
                       </tr>
@@ -302,13 +302,13 @@
                       <td class=" is-borderless">
                         <div class="select">
                         <select v-model="marital_status">
-                          <option value="1"> S </option>
-                          <option value="2"> M0 </option>
-                          <option value="3"> M1 </option>
-                          <option value="4"> M2 </option>
-                          <option value="5"> M3 </option>
-                          <option value="6"> M4 </option>
-                          <option value="7"> M5 </option>
+                          <option value="S"> S </option>
+                          <option value="M0"> M0 </option>
+                          <option value="M1"> M1 </option>
+                          <option value="M2"> M2 </option>
+                          <option value="M3"> M3 </option>
+                          <option value="M4"> M4 </option>
+                          <option value="M5"> M5 </option>
                         </select>
                         </div>
                       </td>
@@ -355,8 +355,8 @@
                         <td>
                           <div class="select">
                           <select v-model="child_sex1">
-                            <option value="1">Male</option>
-                            <option value="2">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                           </select>
                           </div>
                         </td>
@@ -395,12 +395,12 @@
                         <td>
                         <div class="select">
                           <select v-model="relation_emergency">
-                            <option value="1">Mother</option>
-                            <option value="2">Father</option>
-                            <option value="3">Brother</option>
-                            <option value="4">Sister</option>
-                            <option value="5">Family</option>
-                            <option value="6">Friend</option>
+                            <option value="Mother">Mother</option>
+                            <option value="Father">Father</option>
+                            <option value="Brother">Brother</option>
+                            <option value="Sister">Sister</option>
+                            <option value="Family">Family</option>
+                            <option value="Friend">Friend</option>
                           </select>
                           </div>
                         </td>
@@ -449,13 +449,13 @@
                     <td>
                     <div class="select">
                       <select v-model="emp_position">
-                        <option value="1">Office Boy</option>
-                        <option value="2">Driver</option>
-                        <option value="3">Messenger</option>
-                        <option value="4">Officer</option>
-                        <option value="5">Receptionist</option>
-                        <option value="6">Secretary</option>
-                        <option value="7">Others</option>
+                        <option value="Office Boy">Office Boy</option>
+                        <option value="Driver">Driver</option>
+                        <option value="Messenger">Messenger</option>
+                        <option value="Officer">Officer</option>
+                        <option value="Receptionist">Receptionist</option>
+                        <option value="Secretary">Secretary</option>
+                        <option value="Others">Others</option>
                       </select>
                     </div>
                     </td>
@@ -483,9 +483,9 @@
                     <td>
                       <div class="select">
                       <select v-model="employee_status">
-                        <option value="1">Percobaan 1 Bulan </option>
-                        <option value="2">Percobaan 2 Bulan</option>
-                        <option value="3">Percobaan 3 Bulan</option>
+                        <option value="Percobaan 1 Bulan">Percobaan 1 Bulan </option>
+                        <option value="Percobaan 2 Bulan">Percobaan 2 Bulan</option>
+                        <option value="Percobaan 3 Bulan">Percobaan 3 Bulan</option>
                       </select></div>
                     </td>
                   </tr>
@@ -496,14 +496,60 @@
               </div>
             </div>
             </form>
+
+              
+
+
         </div>
+
+        
+
     </div>
+          <div class="modal" id="modal">
+                                <div class="modal-background" ></div>
+                                <div class="modal-card modcard">
+                                    <header class="modal-card-head">
+                                    <p class="modal-card-title">WELCOME</p>
+                                    <button class="delete" aria-label="close"></button>
+                                    </header>
+                                    <section class="modal-card-body">
+                                    <!-- MODAL CONTENT-->
+                                    
+                                    <div class="field is-horizontal">
+                                        <div class="field-label is-normal">
+                                            <p class="subtitle">
+                                                WELCOME!
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="field is-horizontal">
+                                        <div class="field-label">
+                                            <!-- Left empty for spacing -->
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                
+                                                <a href="/profile">
+                                                <button class="button is-primary">
+                                                Profile
+                                                </button>
+                                                </a>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </section>
+                                    <footer class="modal-card-foot">
+                                    </footer>
+                                </div>
+                        </div>
     </div>
 </section>
 </template>
 
 <script>
-
+const Cookies = process.client ? require('js-cookie') : undefined
+import axios from 'axios'
 export default{
   data() {
     return{
@@ -514,7 +560,7 @@ export default{
       marital_status: '', spouse_name: '', spouse_dob: '', mother_maiden: '', child_name1: '',
       child_sex1: '', child_dob1: '', emergency_name: '', emergency_number: '', relation_emergency: '',
       nik: '', koperasi: '', DPLK: '', joining_date: '', emp_position: '', BPJS: '', health_insurance: '', employee_status: '',
-      code_name:'',
+      code_name:'', issued_by:''
     }
   },
   methods: {
@@ -542,7 +588,13 @@ export default{
               degree_certificate: this.degree_certificate, reference: this.reference, team_project: this.team_project,
           })
 
-        self.$router.push('/welcome')
+          const datauser = data
+          this.$store.commit('setData', datauser)
+          Cookies.set('datauser', datauser);
+        
+          console.log(this.$store.state.data);
+
+        document.getElementById('modal').classList.add('is-active');
         }
 
         catch (e) {

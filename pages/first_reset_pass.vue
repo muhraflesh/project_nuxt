@@ -72,10 +72,13 @@ const Cookie = process.client ? require('js-cookie') : undefined
               self.$router.push('/first_reset_pass2')
               
             }
-            this.pesan = "Invalid Email Address"
           }
-            catch (e) {       
+            catch (e) {
+          this.pesan = e.response.data.error.statusCode
+          if (this.pesan = 401){
+            this.pesan="Invalid Email or Password"
           }
+        }
       }
     }
   }

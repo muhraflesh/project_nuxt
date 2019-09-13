@@ -33,10 +33,16 @@
                         <input class="input" 
                         type="password" 
                         placeholder="Password" 
+                        id="password"
+                        
                         v-model="password" required>
                         <span class="icon is-medium is-left">
                           <i class="fa fa-lock"></i>
                         </span>
+                        <span class="icon is-medium is-right">
+                          <i @click="switchVisibility" class="fa fa-eye"></i>
+                        </span>
+                          
                       </p>
                     </div>
                     <div class="field is-grouped is-grouped-centered">
@@ -57,6 +63,9 @@
 
 </template>
 <script>
+
+const passwordField = document.querySelector('#password')
+
 const Cookies = process.client ? require('js-cookie') : undefined
 import axios from 'axios'
   import Notification from '../components/Notification'
@@ -69,10 +78,16 @@ import axios from 'axios'
       return{
         email: '',
         password:'',
-        pesan: null
+        pesan: null,
+        passwordFieldType: 'password',
+        
+        
       }
     },
     methods: {
+      switchVisibility() {
+     this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
+    },
       async login(){
         try{
           var self = this
@@ -80,7 +95,6 @@ import axios from 'axios'
               email: this.email,
               password: this.password
           })
-
         const auth = data.id
         const user = data.userId
         console.log(auth)
@@ -106,14 +120,14 @@ import axios from 'axios'
     
         self.$router.push('/profile')
         }
-
         catch (e) {
           this.pesan = e.response.data.error.statusCode
           if (this.pesan = 401){
             this.pesan="Invalid Email or Password"
           }
         }
-      }
+      },
+    
     }
   }
 </script>

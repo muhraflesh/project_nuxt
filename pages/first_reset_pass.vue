@@ -66,12 +66,11 @@ const Cookie = process.client ? require('js-cookie') : undefined
             const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/reset`, {
              email: this.email
             })
-
-            self.$router.push('/first_reset_pass2')
+          self.$router.push('/first_reset_pass2')
           }
           catch (e) {
           this.pesan = e.response.data.error.statusCode
-        }
+          }
       }
     }
   }

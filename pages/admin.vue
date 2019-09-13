@@ -3,12 +3,17 @@
         <Sidebar/>
            <div class="column is-10">
                <nav class="breadcrumb" aria-label="breadcrumbs">
-                    <ul>
-                        <li><a href="/">Solusi</a></li>
-                        <li class="is-active"><a href="#" aria-current="page">Admin Panel</a></li>
-                    </ul>
+                    <td width="500px">
+                        <ul>
+                            <li><a href="/">Solusi</a></li>
+                            <li class="is-active"><a href="#" aria-current="page">Admin Panel</a></li>
+                        </ul>
+                    </td>
+                    <td width="500px"></td>
+                    <td width="600px">
+                        <Navbar/>
+                    </td>
                 </nav>
-                <Hello/>
                 <br>
 
                 <!-- Button List Menu -->
@@ -264,8 +269,9 @@
 const Cookies = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
+import Navbar from "../components/Navbar"
 export default {
-    middleware : 'admin',
+    middleware : '',
     data() {
       return {
         member : true,
@@ -274,10 +280,11 @@ export default {
         username: '',
         email: '',
       }
-    },
+    }, 
     components: {
         Sidebar,
         Hello,
+        Navbar,
     },
     
     methods: {

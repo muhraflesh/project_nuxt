@@ -66,11 +66,25 @@ const Cookie = process.client ? require('js-cookie') : undefined
             const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/reset`, {
              email: this.email
             })
+<<<<<<< HEAD
 
             self.$router.push('/first_reset_pass2')
           }
           catch (e) {
           this.pesan = e.response.data.error.statusCode
+=======
+            this.pesan = data.code
+            if (this.pesan = 200){
+              self.$router.push('/first_reset_pass2')
+              
+            }
+          }
+            catch (e) {
+          this.pesan = e.response.data.error.statusCode
+          if (this.pesan = 401){
+            this.pesan="Invalid Email or Password"
+          }
+>>>>>>> origin
         }
       }
     }

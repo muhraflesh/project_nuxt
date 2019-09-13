@@ -21,18 +21,20 @@
                       <td width="200px">Name :</td>
                       <td>
                         <input 
-                        class="input"
+                        class="input is-danger"
                         type="text"
                         v-model="name">
+                        <p class="help is-danger">Is Required</p>
                       </td>
                     </tr>
                     <tr>
                       <td>Code Name :</td>
                       <td>
                         <input 
-                        class="input"
+                        class="input is-danger"
                         type="text"
                         v-model="code_name">
+                        <p class="help is-danger">Is Required</p>
                       </td>
                     </tr>
                     <tr>
@@ -331,7 +333,7 @@
                       </tr>
                       <tr>
                         <td>Date Of Birth</td>
-                        <input class="input" v-model="spouse_dob">
+                        <input type="date" class="input" v-model="spouse_dob">
                       </tr>
                       </td>
                     </tr>
@@ -370,7 +372,7 @@
                       <tr>
                         <td>Date Of Birth</td>
                         <td>
-                          <input class="input" v-model="child_dob1">
+                          <input type="date" class="input" v-model="child_dob1">
                         </td>
                       </tr>
                       </td>
@@ -451,7 +453,7 @@
                   </tr>
                   <tr>
                     <td>Joining Date :</td>
-                    <td><input class="input" v-model="joining_date"></td>
+                    <td><input type="date" class="input" v-model="joining_date"></td>
                   </tr>
                   <tr>
                     <td>Position :</td>
@@ -500,7 +502,7 @@
                   </tr>
                 </table>
                 <div class="control buttons is-right">
-                  <button class="button is-link"> Submit </button>
+                  <button class="button is-success"> Submit </button>
                 </div>
               </div>
             </div>
@@ -514,7 +516,7 @@
         
 
     </div>
-          <div class="modal is-active" id="modal">
+          <div class="modal" id="modal">
                <div class="modal-background" ></div>
                    <div class="modal-card modcard">
                                     <!-- MODAL CONTENT-->
@@ -590,7 +592,7 @@ export default{
         
           console.log(this.$store.state.data);
 
-        document.getElementById('modal').classList.add('is-active');
+          document.getElementById('modal').classList.add('is-active');
         }
 
         catch (e) {
@@ -600,7 +602,7 @@ export default{
           }
         }
       },
-      
+
     }
 }
 </script>

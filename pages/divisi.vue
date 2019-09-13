@@ -16,6 +16,8 @@
          </td>
      </nav>
      <hr/>
+
+      <!-- LEADERSHIP -->
       <table>
             <tr><td><b>LEADERSHIP</b></td></tr>
       </table>
@@ -44,6 +46,7 @@
      
       </div>
 
+      <!-- CHART -->
       <div class="bar-chart top2">
         <table>
             <tr><td><b>CHART</b></td></tr>
@@ -55,23 +58,25 @@
         </table>
         <BarChart :data="barChartData" :options="{ maintainAspectRatio: false }" />
       </div>
+    
+      <!-- TASK -->
       <div class="row abu top1 content">
-                
-                    <div>
-                    <table>
+            <div>
+                 <table>
                         <tr><td><b><a href="/project">TASK</a></b></td></tr>
                         <tr>
                             <td style="width:25%"><b>Today</b></td>
                             <td style="width:35%"><b>20/9/2019</b></td>
                             <td style="width:25%"><b>10.23 am</b></td>
                         </tr>
-                    </table>
-                    </div>
+                 </table>
+            </div>
       </div>
-
+      <!-- TASK LIST -->
       <div class="columns">
-                    <div class="column is-6">
-                        <div class="card events-card">
+           <!-- TASK KIRI -->
+           <div class="column is-6">
+                   <div class="card events-card">
                             <header class="card-header has-background-warning">
                                 <p class="card-header-title">
                                     Akan Dikerjakan
@@ -138,9 +143,10 @@
                             <footer class="card-footer">
                                 <a href="#" class="card-footer-item">View All</a>
                             </footer>
-                        </div>
                     </div>
-                    <div class="column is-6">
+           </div>
+           <!-- TASK KANAN -->
+           <div class="column is-6">
                         <div class="card">
                             <header class="card-header has-background-danger">
                                 <p class="card-header-title">
@@ -193,9 +199,9 @@
                             </div>
                         </div>
 
-        </div>
+           </div>
             
-        </div>
+      </div>
       </div>
     
   
@@ -269,7 +275,7 @@ left: 5%;
   left: 0%;
   top: 0%;
   width: 80%;
-  height: 32%;
+  height: 37%;
 }
 .top1{
   left: 5%;

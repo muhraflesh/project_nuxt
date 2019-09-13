@@ -10,6 +10,8 @@
                 </nav>
                 <Hello/>
                 <br>
+
+                <!-- Button List Menu -->
                 <section class="info-tiles">
                     <div class="tile is-ancestor has-text-left">
                         <div class="tile is-parent" >
@@ -20,46 +22,17 @@
                     </div>
                 </section>
                 <br/>
+
                 <!-- Data Pribadi -->
                 <div v-show="member">
-                    <table>
-                            <tr><td><b>FRONT END</b></td></tr><br/>
-                    </table>
-                    <div  class="row columns" >
-                        <div class="column is-1">
-                        <figure class="image is-86x86">
-                            <img class="is-rounded" src="user1.jpg">
-                        </figure>
-                        </div>
-                        <div class="column is-4">
-                        <tr><b>Leader</b></tr>
-                        <tr>Muhammad Rafli Sh</tr>
-                        </div>
-                        <div class="column is-1">
-                        <figure class="image is-86x86">
-                            <img class="is-rounded" src="team.jpg">
-                        </figure>
-                        </div>
-                        <div class="column is-4">
-                        <tr><b>Member</b></tr>
-                        <tr>Salma Faiqah A</tr>
-                        <tr>Dewi Ambarwati</tr>
-                        </div>
-                    </div>
-                    <hr/>
                     <div class="columns">
-                    <div class="column is-4">
+                    <div class="column is-8">
                             <tr>
                                 <td><b>MEMBER DETAILS</b></td>
                             </tr>
                     </div>
                     <div class="column is-4">
-                            <tr>
-                                
-                            </tr>
-                    </div>
-                    <div class="column is-4">
-                            <a class="button is-success is-outlined" @click="showmodal">Add Member</a>
+                            <a class="button is-success is-outlined" @click="showmodal">Add User</a>
                             <div class="modal" id="modal">
                                 <div class="modal-background" @click="closemodal"></div>
                                 <div class="modal-card modcard">
@@ -130,7 +103,12 @@
                                     <p>
                                     <strong>John Smith</strong> <small>@johnsmith</small> <small></small>
                                     <br>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                                    Email         : asdasda
+                                    <br>
+                                    Tempat Lahir  : oiuytr
+                                    <br>
+                                    Tanggal Lahir : asdasda
+                                    <br>
                                     </p>
                                 </div>
                                 <nav class="level is-mobile">
@@ -163,7 +141,7 @@
                         
                     
                     </div>
-                </div>
+                  </div>
                   </div>
                   <br/>
 

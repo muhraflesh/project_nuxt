@@ -10,7 +10,7 @@
             <li class="is-active"><a href="#" aria-current="page">Presensi</a></li>
           </ul>
         </td>
-        <td width="200px"></td>
+        <td width="500px"></td>
         <td width="600px">
             <Navbar/>
         </td>

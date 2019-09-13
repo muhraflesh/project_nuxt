@@ -6,17 +6,12 @@
                 <i class="fa fa-search"></i>
             </span>
         </div>
-        <div class="column is-2 is-right has-text-right">
-            <font size="5px"></font>
-        </div>
         <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               <figure class="image is-32x32" style="margin-right:.5em;">
                 <img src="~assets/images/icons8-male-user-50.png">
               </figure>
-              {{this.$store.state.data.name}}
             </a>
-
             <div class="navbar-dropdown is-right">
                 <a class="navbar-item">
                   <span class="icon is-small">
@@ -30,6 +25,13 @@
                     <i class="fa fa-power-off"></i>
                   </span>
                   &nbsp; Logout
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item" @click="setting">
+                  <span class="icon is-small">
+                    <i class="fa fa-cog"></i>
+                  </span>
+                  &nbsp; Setting
                 </a>
             </div>
           </div>

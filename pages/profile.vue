@@ -302,7 +302,7 @@ export default {
 
 /* Styling for active tab */
 .tabs a.active {
-  background-color: rgb(204, 34, 48);
+  background-color: rgb(117, 117, 117);
   color: #b91876;
   border-bottom: 2px solid #fff;
   cursor: default;

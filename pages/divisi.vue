@@ -39,8 +39,7 @@
         <div class="column is-4">
           
           <tr><b>Member</b></tr>
-          <tr>Salma Faiqah A</tr>
-          <tr>Dewi Ambarwati</tr>
+          <tr v-for="item in posts" v-bind:key="item.key">{{item.email}}</tr>
       
         </div>
      
@@ -226,15 +225,16 @@ export default {
     Hello,
     Navbar,
   },
+
+  data () {
+    return {
+      allPost: [],
+      posts: [],
+      current: 15,
+    }
+  },
+
   methods: {
-        auth ({store}){
-            console.log (store.state.auth)
-        },
-        logout () {
-            Cookies.remove('auth')
-            this.$store.commit('setAuth', null)
-            this.$router.push('/')
-        }
     },
 
   async asyncData ({ env }) {
@@ -252,6 +252,19 @@ export default {
       }
     }
   },
+
+  mounted () {
+    axios(`${this.$axios.defaults.baseURL}/team_project/${this.$store.state.team}/user?access_token=`+this.$store.state.auth, {
+      crossDomain: true
+    }).then( ({ data }) => {
+      this.allPost = data.articles
+      data.map((item, key) => {
+        if (item.email !== null && this.posts.length < 5) {
+          this.posts.push(item)
+        }
+      })
+    })
+  }  
 }
 </script>
 

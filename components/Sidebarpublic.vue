@@ -64,9 +64,11 @@ export default {
             Cookies.remove('auth')
             Cookies.remove('user')
             Cookies.remove('datauser')
+            Cookies.remove('team')
             this.$store.commit('setAuth', null)
             this.$store.commit('setUser', null)
             this.$store.commit('setData', null)
+            this.$store.commit('setTeam', null)
             this.$router.push('/')
         }
     },

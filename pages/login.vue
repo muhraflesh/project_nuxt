@@ -33,12 +33,12 @@
                         <input 
                         class="input"
                         placeholder="password"
+                        v-model="password"
                         :type="showPassword ? 'text' : 'password'" 
                         label="Password"
                         prepend-icon="mdi-lock"
                         :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-slash'"
-                        @click:append="showPassword = !showPassword">
-                        
+                        @click:append="showPassword = !showPassword" required>
                           
                       </p>
                     </div>

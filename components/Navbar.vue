@@ -15,7 +15,7 @@
             </a>
             <div class="navbar-dropdown is-right">
                <hr class="navbar-divider">
-                <a class="navbar-item" @click="setting">
+                <a class="navbar-item" href="/settings">
                   <span class="icon is-small">
                     <i class="fa fa-cog"></i>
                   </span>

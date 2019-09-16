@@ -247,7 +247,7 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 import Navbar from "../components/Navbar"
 export default {
-    middleware : '',
+    middleware : 'admin',
     data() {
       return {
         member : true,
@@ -282,7 +282,7 @@ export default {
         async adduser(){
         try{
           var self = this
-          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user?access_token=`+this.$store.state.auth, {
+          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/pengguna?access_token=`+this.$store.state.auth, {
               email: this.email,
               username: this.username
           })
@@ -293,7 +293,7 @@ export default {
     },
 
     mounted () {
-    axios(`${this.$axios.defaults.baseURL}/user`, {
+    axios(`${this.$axios.defaults.baseURL}/pengguna`, {
       crossDomain: true
     }).then( ({ data }) => {
       this.allPost = data

@@ -199,14 +199,7 @@ export default {
       Navbar,
     },
     methods: {
-        auth ({store}){
-            console.log (store.state.auth)
-        },
-        logout () {
-            Cookies.remove('auth')
-            this.$store.commit('setAuth', null)
-            this.$router.push('/')
-        }
+        
     }
    
 }

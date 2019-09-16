@@ -39,7 +39,7 @@
             
             <li><a href="/bon"><span class="icon is-small"><i class="fa fa-suitcase"></i></span> Bon Barang</a></li>
             <li><a href="/keuangan"><span class="icon is-small"><i class="fa fa-money"></i></span> Keuangan </a></li>
-            <li><a href="/admin"><span class="icon is-small"><i class=" fa fa-user-secret"></i></span> Admin Panel</a></li>
+            <li><a v-if="$store.state.admin" href="/admin"><span class="icon is-small"><i class=" fa fa-user-secret"></i></span> Admin Panel</a></li>
             
               <a class=""><i class="fa fa-cog"></i> Settings</a>
               <ul>
@@ -65,10 +65,14 @@ export default {
             Cookies.remove('user')
             Cookies.remove('datauser')
             Cookies.remove('team')
+            Cookies.remove('admin')
+            Cookies.remove('leader')
             this.$store.commit('setAuth', null)
             this.$store.commit('setUser', null)
             this.$store.commit('setData', null)
             this.$store.commit('setTeam', null)
+            this.$store.commit('setAdmin', null)
+            this.$store.commit('setLeader', null)
             this.$router.push('/')
         }
     },

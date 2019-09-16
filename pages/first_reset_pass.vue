@@ -63,7 +63,7 @@ const Cookie = process.client ? require('js-cookie') : undefined
       async reset_email(){
         try{
           var self = this
-            const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/reset`, {
+            const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/pengguna/reset`, {
              email: this.email
             })
           self.$router.push('/first_reset_pass2')

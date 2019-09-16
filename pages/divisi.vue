@@ -254,7 +254,7 @@ export default {
   },
 
   mounted () {
-    axios(`${this.$axios.defaults.baseURL}/team_project/${this.$store.state.team}/user?access_token=`+this.$store.state.auth, {
+    axios(`${this.$axios.defaults.baseURL}/tim/${this.$store.state.team}/pengguna?access_token=`+this.$store.state.auth, {
       crossDomain: true
     }).then( ({ data }) => {
       this.allPost = data.articles

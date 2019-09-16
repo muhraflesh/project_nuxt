@@ -77,15 +77,29 @@ const Cookies = process.client ? require('js-cookie') : undefined
       async login(){
         try{
           var self = this
-          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/login`, {
+          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/pengguna/login`, {
               email: this.email,
               password: this.password
           })
 
         const auth = data.id
         const user = data.userId
+        const team = data.user.team_name_id
+        const role = data.user.role
         console.log(auth)
         console.log(user)
+        console.log(team)
+        console.log(role)
+
+        if(role === "admin") {
+          var admin = role
+          self.$store.commit('setAdmin', admin)
+          Cookies.set('admin', admin);
+        } else if (role === "leader") {
+          var leader = role
+          self.$store.commit('setLeader', leader)
+          Cookies.set('leader', leader);
+        }
 
         self.$store.commit('setAuth', auth)
         Cookies.set('auth', auth);
@@ -93,7 +107,8 @@ const Cookies = process.client ? require('js-cookie') : undefined
         self.$store.commit('setUser', user)
         Cookies.set('user', user);
 
-        window.localStorage.setItem('userid', user);
+        self.$store.commit('setTeam', team)
+        Cookies.set('team', team);
         
         self.$router.push('/registration')
         }

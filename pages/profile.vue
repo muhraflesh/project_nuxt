@@ -42,20 +42,20 @@
                                 <div class="is-1by1 " style="">
                                     <img class="is-rounded " @click="cek" src="~assets/images/iqbaal.jpg">
                                 </div><br>
-                            <p class="subtitle"><b>{{this.$store.state.data.name}}</b> <br> Hello!!</p>
+                            <p class="subtitle"><b>{{this.$store.state.data.nama}}</b> <br> Hello!!</p>
                         </td>
                         <td style="width:45%">
                             <tr>
-                                <td width="150px"><b>Sex</b></td>
-                                <td width="200px">{{this.$store.state.data.sex}}</td>
+                                <td width="150px"><b>Jenis Kelamin</b></td>
+                                <td width="200px">{{this.$store.state.data.jenis_kelamin}}</td>
                             </tr>
                             <tr>
-                                <td width="150px"><b>Blood Type</b></td>
-                                <td width="200px">{{this.$store.state.data.blood_tipe}}</td>
+                                <td width="150px"><b>Golongan Darah</b></td>
+                                <td width="200px">{{this.$store.state.data.golongan_darah}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>Email</b></td>
-                                <td width="200px">{{this.$store.state.data.email_address}}</td>
+                                <td width="200px">{{this.$store.state.data.email}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>KK</b></td>
@@ -66,53 +66,53 @@
                                 <td width="200px">{{this.$store.state.data.ktp}}</td>
                             </tr>
                             <tr>
-                                <td width="150px"><b>Religion</b></td>
-                                <td width="200px">{{this.$store.state.data.religion}}</td>
+                                <td width="150px"><b>Agama</b></td>
+                                <td width="200px">{{this.$store.state.data.agama}}</td>
                             </tr>
                             <tr>
-                                <td width="150px"><b>KTP Address</b></td>
-                                <td width="200px">{{this.$store.state.data.ktp_address}}</td>
+                                <td width="150px"><b>Alamat di KTP</b></td>
+                                <td width="200px">{{this.$store.state.data.alamat_ktp}}</td>
                             </tr>
                             <tr>
-                                <td width="150px"><b>Residential Address</b></td>
-                                <td width="200px">{{this.$store.state.data.address}}</td>
+                                <td width="150px"><b>Alamat</b></td>
+                                <td width="200px">{{this.$store.state.data.alamat}}</td>
                             </tr>
                             <tr>
-                                <td width="150px" rowspan="2"><b>KTP Number</b></td>
-                                <td width="200px">{{this.$store.state.data.ktp_number}}</td>
+                                <td width="150px" rowspan="2"><b>Nomor KTP</b></td>
+                                <td width="200px">{{this.$store.state.data.no_ktp}}</td>
                                 <tr>
-                                    <td>{{this.$store.state.data.ktp_number}}</td>
+                                    <td>{{this.$store.state.data.no_ktp}}</td>
                             </tr>
                             <tr>
-                                <td width="150px" rowspan="3"><b>Educational Background</b></td>
-                                <td width="200px">{{this.$store.state.data.school}}</td>
+                                <td width="150px" rowspan="3"><b>Latar Belakang Pendidikan</b></td>
+                                <td width="200px">{{this.$store.state.data.pendidikan}}</td>
                                 <tr>
-                                    <td>{{this.$store.state.data.major}}</td>
+                                    <td>{{this.$store.state.data.jurusan}}</td>
                                     <tr>
-                                    <td>{{this.$store.state.data.degree_certificate}}</td>
+                                    <td>{{this.$store.state.data.gelar}}</td>
                             </tr>
                         </td>
 
                         <td style="width:35%">
                             <tr>
-                                <td width="150px" rowspan="3"><b>Certificate</b></td>
-                                <td width="200px">{{this.$store.state.data.certificate}}</td>
+                                <td width="150px" rowspan="3"><b>Sertifikat</b></td>
+                                <td width="200px">{{this.$store.state.data.ijazah}}</td>
                                 <tr>
-                                    <td>{{this.$store.state.data.issued_by}}</td>
+                                    <td>{{this.$store.state.data.disahkan_oleh}}</td>
                                     <tr>
-                                        <td>{{this.$store.state.data.date_issuance}}</td>
+                                        <td>{{this.$store.state.data.tanggal_pengesahan}}</td>
                             </tr>
                             <tr>
-                                <td width="150px" rowspan="2"><b>Date Of Birth</b></td>
-                                <td width="200px">{{this.$store.state.data.dob_place}}</td>
+                                <td width="150px" rowspan="2"><b>Kelahiran</b></td>
+                                <td width="200px">{{this.$store.state.data.tempat_lahir}}</td>
                                 <tr>
-                                    <td>{{this.$store.state.data.dob}}</td>
+                                    <td>{{this.$store.state.data.tgl_lahir}}</td>
                             </tr>
                             <tr>
-                                <td width="150px" rowspan="2"><b>Phone Number</b></td>
-                                <td width="200px">{{this.$store.state.data.mobile_phone}}</td>
+                                <td width="150px" rowspan="2"><b>Nomor Telepon</b></td>
+                                <td width="200px">{{this.$store.state.data.no_telepon}}</td>
                                 <tr>
-                                    <td>{{this.$store.state.data.other_phone}}</td>
+                                    <td>{{this.$store.state.data.no_telepon_lainnya}}</td>
                             </tr>
                             <tr>
                                 <td width="150px" rowspan="2"><b>NPWP</b></td>
@@ -121,14 +121,14 @@
                                     <td>{{this.$store.state.data.npwp}}</td>
                             </tr>
                             <tr>
-                                <td width="150px" rowspan="4"><b>Bank Account</b></td>
+                                <td width="150px" rowspan="4"><b>Akun Bank</b></td>
                                 <td width="200px"></td>
                                 <tr>
                                     <td>{{this.$store.state.data.bank}}</td>
                                     <tr>
-                                        <td>{{this.$store.state.data.account_number}}</td>
+                                        <td>{{this.$store.state.data.no_rekening}}</td>
                                         <tr>
-                                        <td>{{this.$store.state.data.branch}}</td>
+                                        <td>{{this.$store.state.data.cabang}}</td>
                             </tr>
                         </td>
                         </tr>
@@ -144,38 +144,38 @@
                     <tabel class="table is-fullwidth is-striped ">
                         <td width="50%">
                             <tr>
-                                <td width="200px"><b>Marital Status</b></td>
-                                <td width="200px">{{this.$store.state.data.marital_status}}</td>
+                                <td width="200px"><b>Status Perkawinan</b></td>
+                                <td width="200px">{{this.$store.state.data.status_pernikahan}}</td>
                             </tr>
                             <tr>
-                                <td width="150px" rowspan="2"><b>Spouse</b></td>
-                                <td width="200px">{{this.$store.state.data.spouse_name}}</td>
+                                <td width="150px" rowspan="2"><b>Pasangan</b></td>
+                                <td width="200px">{{this.$store.state.data.nama_pasangan}}</td>
                                 <tr>
-                                    <td>{{this.$store.state.data.spouse_dob}}</td>
+                                    <td>{{this.$store.state.data.tgl_lahir_pasangan}}</td>
                             </tr>
                             <tr>
-                                <td width="150px"><b>Mother's Maiden</b></td>
-                                <td width="200px">{{this.$store.state.data.mother_maiden}}</td>
+                                <td width="150px"><b>Ibu Kandung</b></td>
+                                <td width="200px">{{this.$store.state.data.ibu_kandung}}</td>
                             </tr>
                         </td>
                         <td width="50%">
                             <tr>
-                                <td width="200px" rowspan="3"><b>Children</b></td>
-                                <td width="200px">{{this.$store.state.data.child_name1}}</td>
-                                <td>{{this.$store.state.data.child_name1}}</td>
+                                <td width="200px" rowspan="3"><b>Anak</b></td>
+                                <td width="200px">{{this.$store.state.data.nama_anak1}}</td>
+                                <td>{{this.$store.state.data.nama_anak1}}</td>
                                 <tr>
-                                    <td>{{this.$store.state.data.child_sex1}}</td>
-                                    <td>{{this.$store.state.data.child_sex1}}</td>
+                                    <td>{{this.$store.state.data.jenis_kelamin_anak1}}</td>
+                                    <td>{{this.$store.state.data.jenis_kelamin_anak1}}</td>
                                     <tr>
-                                        <td>{{this.$store.state.data.child_dob1}}</td>
+                                        <td>{{this.$store.state.data.tgl_lahir_anak1}}</td>
                             </tr>
                             <tr>
-                                <td width="150px" rowspan="3"><b>Emergency Phone Number</b></td>
-                                <td width="200px"></td>
+                                <td width="150px" rowspan="3"><b>Nomor Telepon Darurat</b></td>
+                                <td width="200px">{{this.$store.state.data.nama_darurat}}</td>
                                 <tr>
-                                    <td>{{this.$store.state.data.emergency_number}}</td>
+                                    <td>{{this.$store.state.data.no_darurat}}</td>
                                     <tr>
-                                        <td>{{this.$store.state.data.relation_emergency}}</td>
+                                        <td>{{this.$store.state.data.relasi_darurat}}</td>
                             </tr>
                         </td>
                   </tabel>
@@ -202,18 +202,18 @@
                                 <td width="200px">{{this.$store.state.data.DPLK}}</td>
                             </tr>
                             <tr>
-                                <td width="150px"><b>Joining Date</b></td>
-                                <td width="200px">{{this.$store.state.data.joining_date}}</td>
+                                <td width="150px"><b>Tanggal Bergabung</b></td>
+                                <td width="200px">{{this.$store.state.data.tgl_masuk}}</td>
                             </tr>
                             <tr>
-                                <td width="150px"><b>Position</b></td>
-                                <td width="200px">{{this.$store.state.data.emp_position}}</td>
+                                <td width="150px"><b>Posisi</b></td>
+                                <td width="200px">{{this.$store.state.data.posisi_karyawan}}</td>
                             </tr>
                         </td>
                         <td width="40%">
                             <tr>
-                                <td width="200px"><b>Position</b></td>
-                                <td width="200px">{{this.$store.state.data.emp_position}}</td>
+                                <td width="200px"><b>Posisi</b></td>
+                                <td width="200px">{{this.$store.state.data.posisi_karyawan}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>BPJS</b></td>
@@ -221,11 +221,11 @@
                             </tr>
                             <tr>
                                 <td width="200px"><b>Health Insurance</b></td>
-                                <td width="200px">{{this.$store.state.data.health_insurance}}</td>
+                                <td width="200px">{{this.$store.state.data.asuransi_kesehatan}}</td>
                             </tr>
                             <tr>
                                 <td width="150px"><b>Employment Status</b></td>
-                                <td width="200px">{{this.$store.state.data.employee_status}}</td>
+                                <td width="200px">{{this.$store.state.data.status_karyawan}}</td>
                             </tr>
                         </td>
                   </tabel>

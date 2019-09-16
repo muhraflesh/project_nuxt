@@ -50,7 +50,7 @@ import Sidebar from "../components/Sidebarpublic"
 import Hello from "../components/Hello"
 import Navbar from "../components/Navbar"
 export default {
-    middleware : '',
+    middleware : 'authenticated',
     data() {
       return {
         member : true,

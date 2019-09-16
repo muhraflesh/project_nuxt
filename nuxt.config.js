@@ -56,7 +56,7 @@ export default {
     
   ],
   axios: {
-    baseURL: 'https://192.168.128.50:3000/api'
+    baseURL: 'https://599ae110.ngrok.io/api'
   },
   /* auth: {
     strategies: {

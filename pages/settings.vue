@@ -29,9 +29,9 @@
             
             <div class="columns">
             <div class="column is-8">
+            <form method="post" @submit.prevent="editProfile" class="control" >
             <div class="tile is-ancestor">
                 <div class="tile is-vertical is-parent">
-                    <form method="post" @submit.prevent="" class="control" >
                     <div class="tile is-child box">
                         <p class="has-text-weight-medium">Data Pribadi
                         <button class="button is-primary is-small"  @click="pribadi = !pribadi">Edit</button>
@@ -543,9 +543,12 @@
                             </table>
                         </div>
                     </div>
-                    </form>
                 </div>
             </div>
+            <div class="control">
+              <button class="button is-dark">Save Changes</button>
+            </div>
+            </form>
             </div>
 
             <div class="column is-4">
@@ -665,7 +668,7 @@ export default{
         Navbar,
     },
     methods: {
-      async edit_profile(){
+      async editProfile(){
         try{
           var self = this
           const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/${this.$store.state.user}/profiles?access_token=`+this.$store.state.auth, {

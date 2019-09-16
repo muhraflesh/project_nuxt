@@ -128,17 +128,6 @@
                   </div>
                   <br/>
 
-                  <!-- BUTTON NOTIFIKASI -->
-                  <section class="info-tiles">
-                    <div class="tile is-ancestor has-text-left">
-                        <div class="tile is-parent" >
-                            <article class="tile is-child box has-background-primary" @click="notif = !notif">
-                                <p class="subtitle has-text-white has-text-weight-medium">Notifikasi</p>
-                            </article>
-                        </div>
-                    </div>
-                  </section>
-                  <br/>
                   <!-- DATA NOTIFIKASI -->
                   <div v-show="notif">
                     <div class="card ">

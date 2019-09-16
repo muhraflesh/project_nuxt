@@ -32,7 +32,7 @@
                       <p class="control has-icons-left has-icons-right">
                         <input 
                         class="input"
-                        placeholder="password"
+                        placeholder="Password"
                         v-model="password"
                         :type="showPassword ? 'text' : 'password'" 
                         label="Password"

@@ -247,7 +247,7 @@
                                       <td>KK :</td>
                                       <td>
                                         <div class="select">
-                                          <select name="kk"v-model="kk_edit">
+                                          <select name="kk" v-model="kk_edit">
                                             <option value="COPY">COPY</option>
                                             <option value="NONE">NONE</option>
                                           </select>
@@ -261,7 +261,7 @@
                                         <td>Gelar</td>
                                         <td>
                                           <div class="select">
-                                          <select name="gelar"v-model="gelar_edit">
+                                          <select name="gelar" v-model="gelar_edit">
                                             <option value="SMU">SMU</option>
                                             <option value="D1">D1</option>
                                             <option value="D2">D2</option>

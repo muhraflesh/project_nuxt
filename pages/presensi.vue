@@ -16,11 +16,11 @@
         </td>
       </nav>
       <hr/>
-                    <div class="columns">
-                <div class="column is-6">
+          <div class="columns">
+            <div class="column is-6">
                <div class="card">
                    <header class="card-header has-background-info">
-                        <p class="card-header-title ">
+                        <p class="card-header-title has-text-light">
                         Presensi
                         </p>
                         <a href="/presensi" class="card-header-icon" aria-label="more options">
@@ -36,12 +36,12 @@
                           Check Out </a>
                       </div>
                 </div>
-                </div>
+            </div>
 
-                <div class="column is-6">
+            <div class="column is-6">
                 <div class="card">
                    <header class="card-header has-background-info">
-                        <p class="card-header-title ">
+                        <p class="card-header-title has-text-light">
                         Cuti
                         </p>
                         <a href="/presensi" class="card-header-icon" aria-label="more options">
@@ -57,8 +57,7 @@
                           <DoughnutChart :data="doughnutChartData" :options="{ legend: { display: false }, maintainAspectRatio: false }" />
                           </div>
                         </div>
-                        
-                        
+
                         <div class="column is-3 is-centered" style="padding-top:150px">
                           <div class="row">
                           <tr><b>Sisa Cuti</b></tr>
@@ -285,38 +284,12 @@
                           </div>
                         </div>
                     </div>
-            
-                
                 </div>
 
-                </div>
-
-            </div>
-                <div class="row">
-                    <table>
-                      <tr>
-                        <td><b>Show</b></td>
-                        <td>
-                            <div class="">
-                              <select class="abu" >
-                                <option class="abu">All</option>
-                                <option class="abu">Today</option>
-                                <option class="abu">Yesterday</option>
-                              </select>
-                            </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="width:50%"><b>No</b></td>
-                        <td class="has-text-centered" style="width:25%"><b>Date</b></td>
-                        <td class="has-text-centered" style="width:25%"><b>Description</b></td>
-                      </tr>
-                    </table>
-                </div>
-
-          
+           </div>
 
     </div>
+  </div>
 
     
      

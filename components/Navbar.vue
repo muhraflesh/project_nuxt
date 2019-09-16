@@ -11,6 +11,7 @@
               <figure class="image is-32x32" style="margin-right:.5em;">
                 <img src="~assets/images/icons8-male-user-50.png">
               </figure>
+              {{this.$store.state.data.name}}
             </a>
             <div class="navbar-dropdown is-right">
                 <a class="navbar-item">

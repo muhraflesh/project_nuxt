@@ -84,21 +84,33 @@ import axios from 'axios'
     },
     methods: {
       switchVisibility() {
-     this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
-    },
+        this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
+      },
       async login(){
         try{
           var self = this
-          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/login?include=user`, {
+          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/pengguna/login?include=user`, {
               email: this.email,
               password: this.password
           })
         const auth = data.id
         const user = data.userId
         const team = data.user.team_name_id
+        const role = data.user.role
         console.log(auth)
         console.log(user)
         console.log(team)
+        console.log(role)
+
+        if(role === "admin") {
+          var admin = role
+          self.$store.commit('setAdmin', admin)
+          Cookies.set('admin', admin);
+        } else if (role === "leader") {
+          var leader = role
+          self.$store.commit('setLeader', leader)
+          Cookies.set('leader', leader);
+        }
 
         self.$store.commit('setAuth', auth)
         Cookies.set('auth', auth);
@@ -108,10 +120,8 @@ import axios from 'axios'
 
         self.$store.commit('setTeam', team)
         Cookies.set('team', team);
-
-        window.localStorage.setItem('userid', user);
         
-        await this.$axios.get(`${this.$axios.defaults.baseURL}/user/${this.$store.state.user}/profiles?access_token=`+this.$store.state.auth)
+        await this.$axios.get(`${this.$axios.defaults.baseURL}/pengguna/${this.$store.state.user}/profil?access_token=`+this.$store.state.auth)
         .then(resp => {
           const datauser = resp.data
           this.$store.commit('setData', datauser)

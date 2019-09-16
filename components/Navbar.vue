@@ -11,6 +11,7 @@
               <figure class="image is-32x32" style="margin-right:.5em;">
                 <img src="~assets/images/icons8-male-user-50.png">
               </figure>
+              {{this.$store.state.data.nama}}
             </a>
             <div class="navbar-dropdown is-right">
                <hr class="navbar-divider">
@@ -42,10 +43,14 @@ export default {
             Cookies.remove('user')
             Cookies.remove('datauser')
             Cookies.remove('team')
+            Cookies.remove('admin')
+            Cookies.remove('leader')
             this.$store.commit('setAuth', null)
             this.$store.commit('setUser', null)
             this.$store.commit('setData', null)
             this.$store.commit('setTeam', null)
+            this.$store.commit('setAdmin', null)
+            this.$store.commit('setLeader', null)
             this.$router.push('/')
         }
     },

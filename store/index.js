@@ -47,7 +47,13 @@ export const mutations = {
   },
   setTeam (state, team) {
     state.team = team
-  }
+  },
+  setAdmin (state, admin) {
+    state.admin = admin
+  },
+  setLeader (state, leader) {
+    state.leader = leader
+  },
 }
 
 export const plugins = [

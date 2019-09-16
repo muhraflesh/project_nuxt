@@ -244,7 +244,6 @@
 const Cookies = process.client ? require('js-cookie') : undefined
 import axios from 'axios'
 import Sidebar from "../components/Sidebarpublic"
-import Hello from "../components/Hello"
 import Navbar from "../components/Navbar"
 export default {
     middleware : '',
@@ -263,8 +262,7 @@ export default {
     }, 
     components: {
         Sidebar,
-        Hello,
-        Navbar,
+        Navbar
     },
     
     methods: {

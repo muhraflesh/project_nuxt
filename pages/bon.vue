@@ -16,7 +16,7 @@
                     </td>
                 </nav>
                 <hr>
-                <div class="columns is-10">
+                <div class="columns">
                     <div class="column is-6">
                         <div class="card">
                           <div class="card-header">
@@ -120,7 +120,6 @@
                         <td class="is-fullwidth"><b>History</b></td>
                     </tr>
                   </table>
-                  <hr>
                 </div>
                 <div class="row" style="margin-bottom: 10px">
                   <table>
@@ -188,12 +187,8 @@
                   </div>
                   </div>
                   </div>
-                
-                
               </div>
             </div>
-        
-       
     </section>
 </template>
 

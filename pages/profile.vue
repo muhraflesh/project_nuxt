@@ -9,7 +9,7 @@
                             <li class="is-active"><a href="#" aria-current="page">Data Profile</a></li>
                         </ul>
                     </td>
-                    <td width="500px"></td>
+                    <td width="500\px"></td>
                     <td width="600px">
                         <Navbar/>
                     </td>

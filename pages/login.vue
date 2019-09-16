@@ -30,18 +30,15 @@
                     </div>
                     <div class="field">
                       <p class="control has-icons-left has-icons-right">
-                        <input class="input" 
-                        type="password" 
-                        placeholder="Password" 
-                        id="password"
+                        <input 
+                        class="input"
+                        placeholder="password"
+                        :type="showPassword ? 'text' : 'password'" 
+                        label="Password"
+                        prepend-icon="mdi-lock"
+                        :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-slash'"
+                        @click:append="showPassword = !showPassword">
                         
-                        v-model="password" required>
-                        <span class="icon is-medium is-left">
-                          <i class="fa fa-lock"></i>
-                        </span>
-                        <span class="icon is-medium is-right">
-                          <i @click="switchVisibility" class="fa fa-eye"></i>
-                        </span>
                           
                       </p>
                     </div>
@@ -80,6 +77,7 @@ import axios from 'axios'
         password:'',
         pesan: null,
         passwordFieldType: 'password',
+        showPassword: false,
         
         
       }

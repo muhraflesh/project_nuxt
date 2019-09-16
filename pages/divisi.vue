@@ -2,7 +2,7 @@
  <section class="section main-content columns is-fullheight">
   
     <Sidebar/>
-    <div class="column is-10 is-centered abu kanan kiri2">
+    <div class="column is-10 is-centered">
      <nav class="breadcrumb" aria-label="breadcrumbs">
         <td width="500px">
             <ul>
@@ -218,7 +218,7 @@ import Hello from "../components/Hello"
 import Navbar from "../components/Navbar"
 
 export default {
-  middleware: "authenticated",
+    middleware : 'authenticated',
   components: {
     BarChart,
     Sidebar,

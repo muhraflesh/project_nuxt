@@ -9,7 +9,7 @@
                             <li class="is-active"><a href="#" aria-current="page">Data Profile</a></li>
                         </ul>
                     </td>
-                    <td width="500px"></td>
+                    <td width="500\px"></td>
                     <td width="600px">
                         <Navbar/>
                     </td>
@@ -39,7 +39,7 @@
                     <tabel class="table is-fullwidth is-striped">
                       <tr>
                         <td style="width:20%" class="has-text-centered">
-                                <div class="is-1by1 " style="">
+                                <div class="is-1by1 ">
                                     <img class="is-rounded " @click="cek" src="~assets/images/iqbaal.jpg">
                                 </div><br>
                             <p class="subtitle"><b>{{this.$store.state.data.nama}}</b> <br> Hello!!</p>
@@ -243,7 +243,6 @@
 import axios from 'axios'
 const Cookies = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
-import Hello from "../components/Hello"
 import Navbar from "../components/Navbar"
 export default {
     middleware : 'profile',
@@ -254,7 +253,6 @@ export default {
     },
     components: {
         Sidebar,
-        Hello,
         Navbar,
     },
     

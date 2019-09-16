@@ -18,59 +18,59 @@
               <div v-if="activetab === 1">
               <table class=" table is-borderless">
                     <tr>
-                      <td width="200px">Name :</td>
+                      <td width="200px">Nama :</td>
                       <td>
                         <input 
                         class="input is-danger"
                         type="text"
-                        v-model="name">
+                        v-model="nama">
                         <p class="help is-danger">Is Required</p>
                       </td>
                     </tr>
                     <tr>
-                      <td>Code Name :</td>
+                      <td>Inisial :</td>
                       <td>
                         <input 
                         class="input is-danger"
                         type="text"
-                        v-model="code_name">
+                        v-model="inisial">
                         <p class="help is-danger">Is Required</p>
                       </td>
                     </tr>
                     <tr>
-                      <td>Sex :</td>
+                      <td>Jenis Kelamin :</td>
                       <td>
                         <div class="select">
-                          <select v-model="sex">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                          <select v-model="jenis_kelamin">
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
                           </select>
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <td>Date Of Birth</td>
+                      <td>Tempat, Tanggal Lahir</td>
                       <td>
                       <tr>
-                        <td width="150px">Place :</td>
+                        <td width="150px">Tempat Lahir :</td>
                         <td>
                           <input
                           class="input"
                           type="text"
-                          v-model="dob_place">
+                          v-model="tempat_lahir">
                         </td>
                       </tr>
                       <tr>
-                        <td>Date :</td>
-                        <td><input type="date" class="input" v-model="dob"></td>
+                        <td>Tanggal Lahir :</td>
+                        <td><input type="date" class="input" v-model="tgl_lahir"></td>
                       </tr>
                       </td>
                     </tr>
                     <tr>
-                      <td>Blood Type :</td>
+                      <td>Golongan Darah :</td>
                       <td>
                         <div class="select">
-                        <select v-model="blood_tipe">
+                        <select v-model="golongan_darah">
                           <option value="A">A</option>
                           <option value="B">B</option>
                           <option value="AB">AB</option>
@@ -81,10 +81,10 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>Religion :</td>
+                      <td>Agama :</td>
                       <td>
                         <div class="select">
-                        <select v-model="religion">
+                        <select v-model="agama">
                           <option value="Islam">Islam</option>
                           <option value="Kristen">Kristen</option>
                           <option value="Katolik">Katolik</option>
@@ -95,33 +95,33 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>Phone Number :</td>
+                      <td>Nomor Telepon :</td>
                       <td>
                       <tr>
-                        <td width="150px">Home :</td>
+                        <td width="150px">Rumah :</td>
                         <td>
                           <input 
                           class="input"
                           type="text"
-                          v-model="home_phone">
+                          v-model="telepon_rumah">
                         </td>
                       </tr>
                       <tr>
-                        <td>Mobile Phone :</td>
+                        <td>Handphone :</td>
                         <td>
                           <input 
                           class="input"
                           type="text"
-                          v-model="mobile_phone">
+                          v-model="no_telepon">
                         </td>
                       </tr>
                       <tr>
-                        <td>Other :</td>
+                        <td>Lainnya :</td>
                         <td>
                           <input 
                           class="input"
                           type="text"
-                          v-model="other_phone">
+                          v-model="no_telepon_lainnya">
                         </td>
                       </tr>
                       </td>
@@ -132,20 +132,20 @@
                         <input 
                         class="input"
                         type="email"
-                        v-model="email_address">
+                        v-model="email">
                       </td>
                     </tr>
                     <tr>
-                      <td>Residential Address :</td>
+                      <td>Alamat :</td>
                       <td>
                         <input 
                         class="input"
                         type="text"
-                        v-model="address">
+                        v-model="alamat">
                       </td>
                     </tr>
                     <tr>
-                      <td>Bank Account :</td>
+                      <td>Akun Bank :</td>
                       <td>
                     <tr>
                       <td width="150px">Bank :</td>
@@ -157,21 +157,21 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>Account Number :</td>
+                      <td>Nomor Rekening :</td>
                       <td>
                         <input 
                         class="input"
                         type="text"
-                        v-model="account_number">
+                        v-model="no_rekening">
                       </td>
                     </tr>
                     <tr>
-                      <td>Branch :</td>
+                      <td>Cabang :</td>
                       <td>
                         <input 
                         class="input"
                         type="text"
-                        v-model="branch">
+                        v-model="cabang">
                       </td>
                     </tr>
                     </td>
@@ -188,27 +188,27 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>KTP Number :</td>
+                      <td>Nomor KTP :</td>
                       <td>
                         <input
                         class="input"
                         type="text"
-                        v-model="ktp_number">
+                        v-model="nomor_ktp">
                       </td>
                     </tr>
                     <tr>
-                    <td>KTP Valid Trough :</td>
+                    <td>Masa Berlaku KTP :</td>
                     <td>
-                      <input class="input" v-model="valid_through">
+                      <input class="input" v-model="masa_berlaku">
                     </td>
                   </tr>
                   <tr>
-                    <td>KTP Address :</td>
+                    <td>Alamat KTP :</td>
                     <td>
                       <input
                       class="input"
                       type="text"
-                      v-model="ktp_address">
+                      v-model="alamat_ktp">
                     </td>
                   </tr>
                   <tr>
@@ -223,13 +223,13 @@
                       </td>
                   </tr>
                     <tr>
-                      <td>Educational Background :</td>
+                      <td>Pendidikan :</td>
                       <td>
                         <tr>
-                        <td>Degree :</td>
+                        <td>Gelar :</td>
                         <td>
                           <div class="select">
-                          <select v-model="degree_certificate">
+                          <select v-model="gelar">
                             <option value="SMU">SMU</option>
                             <option value="D1">D1</option>
                             <option value="D2">D2</option>
@@ -242,10 +242,10 @@
                         </td>
                         </tr>
                         <tr>
-                        <td>Major :</td>
+                        <td>Jurusan :</td>
                         <td>
                           <div class="select">
-                          <select v-model="major">
+                          <select v-model="jurusan">
                             <option value="Teknik Informatika">Teknik Informatika</option>
                             <option value="Management Informatika">Management Informatika</option>
                             <option value="Teknik KOmputer dan Jaringan">Teknik KOmputer dan Jaringan</option>
@@ -254,10 +254,10 @@
                         </td>
                         </tr>
                         <tr>
-                        <td>School / University :</td>
+                        <td>Pendidikan :</td>
                         <td>
                           <div class="select">
-                          <select v-model="school">
+                          <select v-model="pendidikan">
                             <option value="Universitas Indonesia">Universitas Indonesia</option>
                             <option value="Others">Others</option>
                           </select></div>
@@ -266,29 +266,29 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>Certificate :</td>
+                      <td>Ijazah :</td>
                       <td>
                       <tr>
                         <div class="select">
-                          <select v-model="certificate">
+                          <select v-model="ijazah">
                             <option value="COPY">COPY</option>
                             <option value="NONE">NONE</option>
                           </select></div>
                       </tr>
                       <tr>
-                        <td>Issued By :</td>
+                        <td>Disahkan Oleh :</td>
                         <td>
                           <div class="select">
-                          <select v-model="issued_by">
+                          <select v-model="disahkan_oleh">
                             <option value="Universitas Indonesia">Universitas Indonesia</option>
                             <option value="Others">Others</option>
                           </select></div>
                         </td>
                       </tr>
                       <tr>
-                        <td>Date Of Issuance :</td>
+                        <td>Tanggal Pengesahan  :</td>
                         <td>
-                          <input class="input" v-model="date_issuance">
+                          <input class="input" v-model="tanggal_pengesahan">
                         </td>
                       </tr>
                       
@@ -306,10 +306,10 @@
               <div v-if="activetab === 2">
               <table class="table is-borderless">
                     <tr>
-                      <td width="200px" class=" is-borderless"> Marital Status :</td>
+                      <td width="200px" class=" is-borderless"> Status Pernikahan :</td>
                       <td class=" is-borderless">
                         <div class="select">
-                        <select v-model="marital_status">
+                        <select v-model="status_pernikahan">
                           <option value="S"> S </option>
                           <option value="M0"> M0 </option>
                           <option value="M1"> M1 </option>
@@ -322,47 +322,47 @@
                       </td>
                     </tr>
                     <tr>
-                      <td> Spouse :</td>
+                      <td> Pasangan :</td>
                       <td>
                       <tr>
-                        <td width="150px">Name</td>
+                        <td width="150px">nama</td>
                         <input 
                         class="input"
                         type="text"
-                        v-model="spouse_name">
+                        v-model="nama_pasangan">
                       </tr>
                       <tr>
-                        <td>Date Of Birth</td>
-                        <input type="date" class="input" v-model="spouse_dob">
+                        <td>Tanggal Lahir</td>
+                        <input type="date" class="input" v-model="tgl_lahir_pasangan">
                       </tr>
                       </td>
                     </tr>
                     <tr>
-                      <td>Mother's Maiden :</td>
+                      <td>Ibu Kandung :</td>
                       <td>
                         <input 
                         class="input"
                         type="text"
-                        v-model="mother_maiden">
+                        v-model="ibu_kandung">
                       </td>
                     </tr>
                     <tr>
-                      <td>Children :</td>
+                      <td>Anak :</td>
                       <td>
                       <tr>
-                        <td width="150px">First Child</td>
+                        <td width="150px">Nama Anak Pertama</td>
                         <td>
                           <input 
                           class="input"
                           type="text"
-                          v-model="child_name1">
+                          v-model="nama_anak1">
                         </td>
                       </tr>
                       <tr>
-                        <td>Sex</td>
+                        <td>Jenis Kelamin</td>
                         <td>
                           <div class="select">
-                          <select v-model="child_sex1">
+                          <select v-model="jenis_kelamin_anak1">
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                           </select>
@@ -370,39 +370,39 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>Date Of Birth</td>
+                        <td>Tanggal Lahir</td>
                         <td>
-                          <input type="date" class="input" v-model="child_dob1">
+                          <input type="date" class="input" v-model="tgl_lahir_anak1">
                         </td>
                       </tr>
                       </td>
                     </tr>
                     <tr>
-                      <td>Emegency Number :</td>
+                      <td>Nomor Darurat :</td>
                       <td>
                       <tr>
-                        <td width="150px">Name</td>
+                        <td width="150px">nama</td>
                         <td>
                           <input 
                           class="input"
                           type="text"
-                          v-model="emergency_name">
+                          v-model="nama_darurat">
                         </td>
                       </tr>
                       <tr>
-                        <td>Phone Number</td>
+                        <td>Nomor Darurat</td>
                         <td>
                           <input 
                           class="input"
                           type="text"
-                          v-model="emergency_number">
+                          v-model="no_darurat">
                         </td>
                       </tr>
                       <tr>
-                        <td>Relation</td>
+                        <td>Relasi</td>
                         <td>
                         <div class="select">
-                          <select v-model="relation_emergency">
+                          <select v-model="relasi_darurat">
                             <option value="Mother">Mother</option>
                             <option value="Father">Father</option>
                             <option value="Brother">Brother</option>
@@ -452,14 +452,14 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Joining Date :</td>
-                    <td><input type="date" class="input" v-model="joining_date"></td>
+                    <td>Tanggal Masuk :</td>
+                    <td><input type="date" class="input" v-model="tanggal_masuk"></td>
                   </tr>
                   <tr>
-                    <td>Position :</td>
+                    <td>Posisi :</td>
                     <td>
                     <div class="select">
-                      <select v-model="emp_position">
+                      <select v-model="posisi_karyawan">
                         <option value="Office Boy">Office Boy</option>
                         <option value="Driver">Driver</option>
                         <option value="Messenger">Messenger</option>
@@ -481,19 +481,19 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Health Insurance :</td>
+                    <td>Asuransi Kesehatan :</td>
                     <td>
                       <input
                       class="input"
                       type="text"
-                      v-model="health_insurance">
+                      v-model="asuransi_kesehatan">
                     </td>
                   </tr>
                   <tr>
-                    <td>Employment Status :</td>
+                    <td>Status Karyawan :</td>
                     <td>
                       <div class="select">
-                      <select v-model="employee_status">
+                      <select v-model="status_karyawan">
                         <option value="Percobaan 1 Bulan">Percobaan 1 Bulan </option>
                         <option value="Percobaan 2 Bulan">Percobaan 2 Bulan</option>
                         <option value="Percobaan 3 Bulan">Percobaan 3 Bulan</option>
@@ -545,13 +545,13 @@ export default{
   data() {
     return{
       activetab: 1,
-      name: '', sex: '', dob_place: '', dob: '', blood_tipe: '', religion: '', home_phone: '', mobile_phone: '', other_phone: '',
-      email_address: '', address: '', bank: '', account_number: '', branch: '', ktp: '', ktp_number: '', valid_through: '',
-      ktp_address: '', kk: '', degree_certificate: '', school: '', major: '', certificate: '', date_issuance: '',
-      marital_status: '', spouse_name: '', spouse_dob: '', mother_maiden: '', child_name1: '',
-      child_sex1: '', child_dob1: '', emergency_name: '', emergency_number: '', relation_emergency: '',
-      nik: '', koperasi: '', DPLK: '', joining_date: '', emp_position: '', BPJS: '', health_insurance: '', employee_status: '',
-      code_name:'', issued_by:''
+      nama: '', jenis_kelamin: '', tempat_lahir: '', tgl_lahir: '', golongan_darah: '', agama: '', telepon_rumah: '', no_telepon: '', no_telepon_lainnya: '',
+      email: '', alamat: '', bank: '', no_rekening: '', cabang: '', ktp: '', nomor_ktp: '', masa_berlaku: '',
+      alamat_ktp: '', kk: '', gelar: '', pendidikan: '', jurusan: '', ijazah: '', tanggal_pengesahan: '',
+      status_pernikahan: '', nama_pasangan: '', tgl_lahir_pasangan: '', ibu_kandung: '', nama_anak1: '',
+      jenis_kelamin_anak1: '', tgl_lahir_anak1: '', nama_darurat: '', no_darurat: '', relasi_darurat: '',
+      nik: '', koperasi: '', DPLK: '', tanggal_masuk: '', posisi_karyawan: '', BPJS: '', asuransi_kesehatan: '', status_karyawan: '',
+      inisial:'', disahkan_oleh:''
     }
   },
   methods: {
@@ -563,24 +563,24 @@ export default{
         try{
           var self = this
           const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/${this.$store.state.user}/profiles?access_token=`+this.$store.state.auth, {
-              email_address: this.email_address, nik: this.nik, name: this.name,
-              code_name: this.code_name,  sex: this.sex, emp_position: this.emp_position,
-              office: this.emp_position, dob: this.dob, dob_place: this.dob_place,
-              address: this.address, home_phone: this.home_phone,
-              mobile_phone: this.mobile_phone, other_phone: this.other_phone, mother_maiden: this.mother_maiden,
-              joining_date: this.joining_date, employee_status: this.employee_status, religion: this.religion, marital_status: this.marital_status,
-              blood_tipe: this.blood_tipe, bank: this.bank, account_number: this.account_number,
-              branch: this.branch, BPJS: this.BPJS, DPLK: this.DPLK,
-              koperasi: this.koperasi, health_insurance: this.health_insurance, emergency_name: this.emergency_name,
-              emergency_number: this.emergency_number, relation_emergency: this.relation_emergency, spouse_name: this.spouse_name,
-              spouse_dob: this.spouse_dob, child_name1: this.child_name1, child_name2: this.child_name2,
-              child_name3: this.child_name3, child_sex1: this.child_sex1, child_sex2: this.child_sex2,
-              child_sex3: this.child_sex3, child_dob1: this.child_dob1, child_dob2: this.child_dob2,
-              child_dob3: this.child_dob3, ktp: this.ktp, ktp_number: this.ktp_number,
-              kk: this.kk, valid_through: this.valid_through, ktp_address: this.ktp_address,
-              npwp: this.npwp, major: this.major, school: this.school,
-              certificate: this.certificate, issued_by: this.issued_by, date_issuance: this.date_issuance,
-              degree_certificate: this.degree_certificate, reference: this.reference, team_project: this.team_project,
+              email: this.email, nik: this.nik, nama: this.nama,
+              inisial: this.inisial,  jenis_kelamin: this.jenis_kelamin, posisi_karyawan: this.posisi_karyawan,
+              office: this.posisi_karyawan, tgl_lahir: this.tgl_lahir, tempat_lahir: this.tempat_lahir,
+              alamat: this.alamat, telepon_rumah: this.telepon_rumah,
+              no_telepon: this.no_telepon, no_telepon_lainnya: this.no_telepon_lainnya, ibu_kandung: this.ibu_kandung,
+              tanggal_masuk: this.tanggal_masuk, status_karyawan: this.status_karyawan, agama: this.agama, status_pernikahan: this.status_pernikahan,
+              golongan_darah: this.golongan_darah, bank: this.bank, no_rekening: this.no_rekening,
+              cabang: this.cabang, BPJS: this.BPJS, DPLK: this.DPLK,
+              koperasi: this.koperasi, asuransi_kesehatan: this.asuransi_kesehatan, nama_darurat: this.nama_darurat,
+              no_darurat: this.no_darurat, relasi_darurat: this.relasi_darurat, nama_pasangan: this.nama_pasangan,
+              tgl_lahir_pasangan: this.tgl_lahir_pasangan, nama_anak1: this.nama_anak1, child_nama2: this.child_nama2,
+              child_nama3: this.child_nama3, jenis_kelamin_anak1: this.jenis_kelamin_anak1, child_jenis_kelamin2: this.child_jenis_kelamin2,
+              child_jenis_kelamin3: this.child_jenis_kelamin3, tgl_lahir_anak1: this.tgl_lahir_anak1, child_tgl_lahir2: this.child_tgl_lahir2,
+              child_tgl_lahir3: this.child_tgl_lahir3, ktp: this.ktp, nomor_ktp: this.nomor_ktp,
+              kk: this.kk, masa_berlaku: this.masa_berlaku, alamat_ktp: this.alamat_ktp,
+              npwp: this.npwp, jurusan: this.jurusan, pendidikan: this.pendidikan,
+              ijazah: this.ijazah, disahkan_oleh: this.disahkan_oleh, tanggal_pengesahan: this.tanggal_pengesahan,
+              gelar: this.gelar, reference: this.reference, team_project: this.team_project,
           })
 
           const datauser = data

@@ -39,60 +39,60 @@
                         <div v-show="pribadi"><hr>
                             <table class=" table is-borderless is-fullwidth">
                                     <tr>
-                                      <td width="200px">Name :</td>
+                                      <td width="200px">Nama :</td>
                                       <td>
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="name"
-                                        v-model="name_edit">
+                                        name="nama"
+                                        v-model="nama_edit">
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Code Name :</td>
+                                      <td>Inisial :</td>
                                       <td>
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="code_name"
-                                        v-model="code_name_edit">
+                                        name="inisial"
+                                        v-model="inisial_edit">
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Sex :</td>
+                                      <td>Jenis Kelamin :</td>
                                       <td>
                                         <div class="select">
-                                          <select name="sex" v-model="sex_edit">
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
+                                          <select name="jenis_kelamin" v-model="jenis_kelamin_edit">
+                                            <option value="Laki">Laki-laki</option>
+                                            <option value="Perempuan">Perempuan</option>
                                           </select>
                                         </div>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Date Of Birth :</td>
+                                      <td>Tempat, Tanggal Lahir :</td>
                                       <td>
                                       <tr>
-                                        <td width="150px">Place</td>
+                                        <td width="150px">Tempat</td>
                                         <td>
                                           <input
                                           class="input"
                                           type="text"
-                                          name="dob_place"
-                                          v-model="dob_place_edit">
+                                          name="tempat_lahir"
+                                          v-model="tempat_lahir_edit">
                                         </td>
                                       </tr>
                                       <tr>
-                                        <td>Date</td>
-                                        <td><input type="date" class="input" v-model="dob"></td>
+                                        <td>Tanggal Lahir</td>
+                                        <td><input type="date" class="input" v-model="tgl_lahir"></td>
                                       </tr>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Blood Type :</td>
+                                      <td>Golongan Darah :</td>
                                       <td>
                                         <div class="select">
-                                        <select name="blood_tipe" v-model="blood_tipe_edit">
+                                        <select name="golongan_darah" v-model="golongan_darah_edit">
                                           <option value="A">A</option>
                                           <option value="B">B</option>
                                           <option value="AB">AB</option>
@@ -103,10 +103,10 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Religion :</td>
+                                      <td>Agama :</td>
                                       <td>
                                         <div class="select">
-                                        <select name="religion" v-model="religion_edit">
+                                        <select name="agama" v-model="agama_edit">
                                           <option value="Islam">Islam</option>
                                           <option value="Kristen">Kristen</option>
                                           <option value="Katolik">Katolik</option>
@@ -117,36 +117,36 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Phone Number :</td>
+                                      <td>Nomor Telepon :</td>
                                       <td>
                                       <tr>
-                                        <td width="150px">Home</td>
+                                        <td width="150px">Rumah</td>
                                         <td>
                                           <input 
                                           class="input"
                                           type="text"
-                                          name="home_phone"
-                                          v-model="home_phone_edit">
+                                          name="telepon_rumah"
+                                          v-model="telepon_rumah_edit">
                                         </td>
                                       </tr>
                                       <tr>
-                                        <td>Mobile Phone</td>
+                                        <td>Handphone</td>
                                         <td>
                                           <input 
                                           class="input"
                                           type="text"
-                                          name="mobile_phone"
-                                          v-model="mobile_phone_edit">
+                                          name="no_telepon"
+                                          v-model="no_telepon_edit">
                                         </td>
                                       </tr>
                                       <tr>
-                                        <td>Other</td>
+                                        <td>Lainnya</td>
                                         <td>
                                           <input 
                                           class="input"
                                           type="text"
-                                          name="other_phone"
-                                          v-model="other_phone_edit">
+                                          name="no_telepon_lainnya"
+                                          v-model="no_telepon_lainnya_edit">
                                         </td>
                                       </tr>
                                       </td>
@@ -157,22 +157,22 @@
                                         <input 
                                         class="input"
                                         type="email"
-                                        name="email_address"
-                                        v-model="email_address_edit">
+                                        name="email"
+                                        v-model="email_edit">
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Residential Address :</td>
+                                      <td>Alamat Rumah :</td>
                                       <td>
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="address"
-                                        v-model="address_edit">
+                                        name="alamat"
+                                        v-model="alamat_edit">
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Bank Account :</td>
+                                      <td>Akun Bank :</td>
                                       <td>
                                     <tr>
                                       <td width="150px">Bank</td>
@@ -185,23 +185,23 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Account Number</td>
+                                      <td>Nomor Rekening</td>
                                       <td>
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="account_number"
-                                        v-model="account_number_edit">
+                                        name="no_rekening"
+                                        v-model="no_rekening_edit">
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Branch</td>
+                                      <td>Cabang</td>
                                       <td>
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="branch"
-                                        v-model="branch_edit">
+                                        name="cabang"
+                                        v-model="cabang_edit">
                                       </td>
                                     </tr>
                                     </td>
@@ -218,29 +218,29 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>KTP Number :</td>
+                                      <td>Nomor KTP :</td>
                                       <td>
                                         <input
                                         class="input"
                                         type="text"
-                                        name="ktp_number"
-                                        v-model="ktp_number_edit">
+                                        name="no_ktp"
+                                        v-model="no_ktp_edit">
                                       </td>
                                     </tr>
                                     <tr>
-                                    <td>KTP Valid Trough :</td>
+                                    <td>Masa Berlaku KTP :</td>
                                     <td>
-                                      <input class="input" name="valid_through" v-model="valid_through_edit">
+                                      <input class="input" name="masa_berlaku" v-model="masa_berlaku_edit">
                                     </td>
                                   </tr>
                                   <tr>
-                                    <td>KTP Address :</td>
+                                    <td>Alamat KTP :</td>
                                     <td>
                                       <input
                                       class="input"
                                       type="text"
-                                      name="ktp_address"
-                                      v-model="ktp_address_edit">
+                                      name="alamat_ktp"
+                                      v-model="alamat_ktp_edit">
                                     </td>
                                   </tr>
                                   <tr>
@@ -255,13 +255,13 @@
                                       </td>
                                   </tr>
                                     <tr>
-                                      <td>Educational Background:</td>
+                                      <td>Pendidikan :</td>
                                       <td>
                                         <tr>
-                                        <td>Degree</td>
+                                        <td>Gelar</td>
                                         <td>
                                           <div class="select">
-                                          <select name="degree_certificate"v-model="degree_certificate_edit">
+                                          <select name="gelar"v-model="gelar_edit">
                                             <option value="SMU">SMU</option>
                                             <option value="D1">D1</option>
                                             <option value="D2">D2</option>
@@ -274,22 +274,22 @@
                                         </td>
                                         </tr>
                                         <tr>
-                                        <td>Major</td>
+                                        <td>Jurusan</td>
                                         <td>
                                           <div class="select">
-                                          <select name="major" v-model="major_edit">
+                                          <select name="jurusan" v-model="jurusan_edit">
                                             <option value="Teknik Informatika">Teknik Informatika</option>
                                             <option value="Management Informatika">Management Informatika</option>
-                                            <option value="Teknik KOmputer dan Jaringan">Teknik KOmputer dan Jaringan</option>
+                                            <option value="Teknik Komputer dan Jaringan">Teknik Komputer dan Jaringan</option>
                                             <option value="Others">Others</option>
                                           </select></div>
                                         </td>
                                         </tr>
                                         <tr>
-                                        <td>School / University</td>
+                                        <td>Pendidikan</td>
                                         <td>
                                           <div class="select">
-                                          <select name="school" v-model="school_edit">
+                                          <select name="pendidikan" v-model="pendidikan_edit">
                                             <option value="Universitas Indonesia">Universitas Indonesia</option>
                                             <option value="Others">Others</option>
                                           </select></div>
@@ -298,29 +298,29 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Certificate :</td>
+                                      <td>Ijazah :</td>
                                       <td>
                                       <tr>
                                         <div class="select">
-                                          <select name="certificate" v-model="certificate_edit">
+                                          <select name="ijazah" v-model="ijazah_edit">
                                             <option value="COPY">COPY</option>
                                             <option value="NONE">NONE</option>
                                           </select></div>
                                       </tr>
                                       <tr>
-                                        <td>Issued By</td>
+                                        <td>Disahkan Oleh </td>
                                         <td>
                                           <div class="select">
-                                          <select name="issued_by" v-model="issued_by_edit">
+                                          <select name="disahkan_oleh" v-model="disahkan_oleh_edit">
                                             <option value="Universitas Indonesia">Universitas Indonesia</option>
                                             <option value="Others">Others</option>
                                           </select></div>
                                         </td>
                                       </tr>
                                       <tr>
-                                        <td>Date Of Issuance</td>
+                                        <td>Tanggal Pengesahan</td>
                                         <td>
-                                          <input class="input" name="date_issuance" v-model="date_issuance_edit">
+                                          <input class="input" name="tanggal_pengesahan" v-model="tanggal_pengesahan_edit">
                                         </td>
                                       </tr>
                                       
@@ -336,10 +336,10 @@
                         <div v-show="keluarga"> <hr>
                             <table class="table is-borderless is-fullwidth">
                                     <tr>
-                                      <td width="200px" class=" is-borderless"> Marital Status :</td>
+                                      <td width="200px" class=" is-borderless"> Status Pernikahan :</td>
                                       <td class=" is-borderless">
                                         <div class="select">
-                                        <select name="martial_status" v-model="marital_status_edit">
+                                        <select name="status_pernikahan" v-model="status_pernikahan_edit">
                                           <option value="S"> S </option>
                                           <option value="M0"> M0 </option>
                                           <option value="M1"> M1 </option>
@@ -352,92 +352,92 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td> Spouse :</td>
+                                      <td> Nama Pasangan :</td>
                                       <td>
                                       <tr>
                                         <td width="150px">Name</td>
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="spouse_name"
-                                        v-model="spouse_name_edit">
+                                        name="nama_pasangan"
+                                        v-model="nama_pasangan_edit">
                                       </tr>
                                       <tr>
-                                        <td>Date Of Birth</td>
-                                        <input class="input" name="spouse_dob" v-model="spouse_dob_edit">
+                                        <td>Tanggal Lahir</td>
+                                        <input class="input" name="tgl_lahir_pasangan" v-model="tgl_lahir_pasangan_edit">
                                       </tr>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Mother's Maiden :</td>
+                                      <td> Ibu Kandung :</td>
                                       <td>
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="mother_maiden"
-                                        v-model="mother_maiden_edit">
+                                        name="ibu_kandung"
+                                        v-model="ibu_kandung_edit">
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Children :</td>
+                                      <td>Anak :</td>
                                       <td>
                                       <tr>
-                                        <td width="150px">First Child</td>
+                                        <td width="150px">Anak Pertama</td>
                                         <td>
                                           <input 
                                           class="input"
                                           type="text"
-                                          name="child_name1"
-                                          v-model="child_name1_edit">
+                                          name="nama_anak1"
+                                          v-model="nama_anak1_edit">
                                         </td>
                                       </tr>
                                       <tr>
-                                        <td>Sex</td>
+                                        <td>Jenis Kelamin</td>
                                         <td>
                                           <div class="select">
-                                          <select name="child_sex1" v-model="child_sex1_edit">
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
+                                          <select name="jenis_kelamin_anak1" v-model="jenis_kelamin_anak1_edit">
+                                            <option value="Laki">Laki-laki</option>
+                                            <option value="Perempuan">Perempuan</option>
                                           </select>
                                           </div>
                                         </td>
                                       </tr>
                                       <tr>
-                                        <td>Date Of Birth</td>
+                                        <td>Tanggal Lahir</td>
                                         <td>
-                                          <input class="input" name="child_dob1" v-model="child_dob1_edit">
+                                          <input class="input" name="tgl_lahir_anak1" v-model="tgl_lahir_anak1_edit">
                                         </td>
                                       </tr>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Emegency Number :</td>
+                                      <td> Nomor Darurat :</td>
                                       <td>
                                       <tr>
-                                        <td width="150px">Name</td>
+                                        <td width="150px">Nama</td>
                                         <td>
                                           <input 
                                           class="input"
                                           type="text"
-                                          name="emergency_name"
-                                          v-model="emergency_name_edit">
+                                          name="nama_darurat"
+                                          v-model="nama_darurat_edit">
                                         </td>
                                       </tr>
                                       <tr>
-                                        <td>Phone Number</td>
+                                        <td> NO. Telepon Darurat </td>
                                         <td>
                                           <input 
                                           class="input"
                                           type="text"
-                                          name="emergency_number"
-                                          v-model="emergency_number_edit">
+                                          name="no_darurat"
+                                          v-model="no_darurat_edit">
                                         </td>
                                       </tr>
                                       <tr>
-                                        <td>Relation</td>
+                                        <td>Relasi</td>
                                         <td>
                                         <div class="select">
-                                          <select name="relation_emergency" v-model="relation_emergency_edit">
+                                          <select name="relasi_darurat" v-model="relasi_darurat_edit">
                                             <option value="Mother">Mother</option>
                                             <option value="Father">Father</option>
                                             <option value="Brother">Brother</option>
@@ -490,14 +490,14 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Joining Date :</td>
-                                      <td><input class="input" name="joining_date" v-model="joining_date_edit"></td>
+                                      <td> Tanggal Masuk :</td>
+                                      <td><input class="input" name="tgl_masuk" v-model="tgl_masuk_edit"></td>
                                     </tr>
                                     <tr>
-                                      <td>Position :</td>
+                                      <td> Posisi Karyawan :</td>
                                       <td>
                                       <div class="select">
-                                        <select name="emp_position" v-model="emp_position_edit">
+                                        <select name="posisi_karyawan" v-model="posisi_karyawan_edit">
                                           <option value="Office Boy">Office Boy</option>
                                           <option value="Driver">Driver</option>
                                           <option value="Messenger">Messenger</option>
@@ -520,20 +520,20 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Health Insurance :</td>
+                                      <td> Asuransi kesehatan :</td>
                                       <td>
                                         <input
                                         class="input"
                                         type="text"
-                                        name="health_insurance"
-                                        v-model="health_insurance_edit">
+                                        name="asuransi_kesehatan"
+                                        v-model="asuransi_kesehatan_edit">
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>Employment Status :</td>
+                                      <td> Status Karyawan :</td>
                                       <td>
                                         <div class="select">
-                                        <select name="employee_status" v-model="employee_status_edit">
+                                        <select name="status_karyawan" v-model="status_karyawan_edit">
                                           <option value="Percobaan 1 Bulan">Percobaan 1 Bulan </option>
                                           <option value="Percobaan 2 Bulan">Percobaan 2 Bulan</option>
                                           <option value="Percobaan 3 Bulan">Percobaan 3 Bulan</option>
@@ -641,22 +641,23 @@ export default{
           keluarga : false,
           perusahaan : false,
 
-          name: this.$store.state.data.name, sex: this.$store.state.data.sex, dob_place: this.$store.state.data.dob_place, dob: this.$store.state.data.dob, blood_tipe: this.$store.state.data.blood_tipe,
-          religion: this.$store.state.data.raligion, home_phone: this.$store.state.data.home_phone, mobile_phone: this.$store.state.data.mobile_phone, other_phone: this.$store.state.data.other_phone,
-          email_address: this.$store.state.data.email_address, address: this.$store.state.data.address, bank: this.$store.state.data.bank, account_number: this.$store.state.data.account_number, branch: this.$store.state.data.branch, 
-          ktp: this.$store.state.data.ktp, ktp_number: this.$store.state.data.ktp_number, valid_through: this.$store.state.data.valid_through, ktp_address: this.$store.state.data.ktp_address, kk: this.$store.state.data.kk,
-          degree_certificate: this.$store.state.data.degree_certificate, school: this.$store.state.data.school, major: this.$store.state.data.major, certificate: this.$store.state.data.certificate, date_issuance: this.$store.state.data.date_issuance,
-          child_sex1: this.$store.state.data.child_sex1, child_dob1: this.$store.state.data.child_dob1, emergency_name: this.$store.state.data.emergency_name, emergency_number: this.$store.state.data.emergency_number, relation_emergency: this.$store.state.data.relation_emergency,
-          nik: this.$store.state.data.nik, koperasi: this.$store.state.data.koperasi, DPLK: this.$store.state.data.DPLK, joining_date: this.$store.state.data.joining_date, emp_position: this.$store.state.data.emp_position, BPJS: this.$store.state.data.BPJS, health_insurance: this.$store.state.data.health_insurance,
-          employee_status: this.$store.state.data.employee_status, code_name: this.$store.state.data.code_name, issued_by: this.$store.state.data.issued_by,
+          nama: this.$store.state.data.nama, jenis_kelamin: this.$store.state.data.jenis_kelamin, tempat_lahir: this.$store.state.data.tempat_lahir, tgl_lahir: this.$store.state.data.tgl_lahir, golongan_darah: this.$store.state.data.golongan_darah,
+          agama: this.$store.state.data.raligion, telepon_rumah: this.$store.state.data.telepon_rumah, no_telepon: this.$store.state.data.no_telepon, no_telepon_lainnya: this.$store.state.data.no_telepon_lainnya,
+          email: this.$store.state.data.email, alamat: this.$store.state.data.alamat, bank: this.$store.state.data.bank, no_rekening: this.$store.state.data.no_rekening, cabang: this.$store.state.data.cabang, 
+          ktp: this.$store.state.data.ktp, no_ktp: this.$store.state.data.no_ktp, masa_berlaku: this.$store.state.data.masa_berlaku, alamat_ktp: this.$store.state.data.alamat_ktp, kk: this.$store.state.data.kk,
+          gelar: this.$store.state.data.gelar, pendidikan: this.$store.state.data.pendidikan, jurusan: this.$store.state.data.jurusan, ijazah: this.$store.state.data.ijazah, tanggal_pengesahan: this.$store.state.data.tanggal_pengesahan,
+          status_pernikahan: this.$store.state.data.status_pernikahan, nama_pasangan: this.$store.state.data.nama_pasangan, tgl_lahir_pasangan: this.$store.state.data.tgl_lahir_pasangan, ibu_kandung: this.$store.state.data.ibu_kandung, nama_anak1: this.$store.state.data.nama_anak1,
+          jenis_kelamin_anak1: this.$store.state.data.jenis_kelamin_anak1, tgl_lahir_anak1: this.$store.state.data.tgl_lahir_anak1, nama_darurat: this.$store.state.data.nama_darurat, no_darurat: this.$store.state.data.no_darurat, relasi_darurat: this.$store.state.data.relasi_darurat,
+          nik: this.$store.state.data.nik, koperasi: this.$store.state.data.koperasi, DPLK: this.$store.state.data.DPLK, tgl_masuk: this.$store.state.data.tgl_masuk, posisi_karyawan: this.$store.state.data.posisi_karyawan, BPJS: this.$store.state.data.BPJS, asuransi_kesehatan: this.$store.state.data.asuransi_kesehatan,
+          status_karyawan: this.$store.state.data.status_karyawan, inisial: this.$store.state.data.inisial, disahkan_oleh: this.$store.state.data.disahkan_oleh,
 
-          name_edit: '', sex_edit: '', dob_place_edit: '', dob_edit: '', blood_tipe_edit: '', religion_edit: '', home_phone_edit: '', mobile_phone_edit: '', other_phone_edit: '',
-          email_address_edit: '', address_edit: '', bank_edit: '', account_number_edit: '', branch_edit: '', ktp_edit: '', ktp_number_edit: '', valid_through_edit: '',
-          ktp_address_edit: '', kk_edit: '', degree_certificate_edit: '', school_edit: '', major_edit: '', certificate_edit: '', date_issuance_edit: '',
-          marital_status_edit: '', spouse_name_edit: '', spouse_dob_edit: '', mother_maiden_edit: '', child_name1_edit: '',
-          child_sex1_edit: '', child_dob1_edit: '', emergency_name_edit: '', emergency_number_edit: '', relation_emergency_edit: '',
-          nik_edit: '', koperasi_edit: '', DPLK_edit: '', joining_date_edit: '', emp_position_edit: '', BPJS_edit: '', health_insurance_edit: '', employee_status_edit: '',
-          code_name_edit:'', issued_by_edit:''
+          nama_edit: '', jenis_kelamin_edit: '', lahir_place_edit: '', lahir_edit: '', golongan_darah_edit: '', agama_edit: '', telepon_rumah_edit: '', no_telepon_edit: '', no_telepon_lainnya_edit: '',
+          email_edit: '', alamat_edit: '', bank_edit: '', no_rekening_edit: '', cabang_edit: '', ktp_edit: '', no_ktp_edit: '', masa_berlaku_edit: '',
+          alamat_ktp_edit: '', kk_edit: '', gelar_edit: '', pendidikan_edit: '', jurusan_edit: '', ijazah_edit: '', tanggal_pengesahan_edit: '',
+          status_pernikahan_edit: '', nama_pasangan_edit: '', tgl_lahir_pasangan_edit: '', ibu_kandung_edit: '', nama_anak1_edit: '',
+          jenis_kelamin_anak1_edit: '', tgl_lahir_anak1_edit: '', nama_darurat_edit: '', no_darurat_edit: '', relasi_darurat_edit: '',
+          nik_edit: '', koperasi_edit: '', DPLK_edit: '', tgl_masuk_edit: '', posisi_karyawan_edit: '', BPJS_edit: '', asuransi_kesehatan_edit: '', status_karyawan_edit: '',
+          inisial_edit:'', disahkan_oleh_edit:''
         }
     },
     components:{
@@ -668,14 +669,14 @@ export default{
         try{
           var self = this
           const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/${this.$store.state.user}/profiles?access_token=`+this.$store.state.auth, {
-              name: this.name_edit, sex: this.sex_edit, dob_place: this.dob_place_edit, dob: this.dob_edit, blood_tipe: this.blood_tipe_edit, religion: this.religion_edit,
-              home_phone: this.home_phone_edit, mobile_phone: this.mobile_phone_edit, other_phone: this.other_phone_edit, email_address: this.email_address_edit, 
-              address: this.address_edit, bank: this.bank_edit, account_number: this.account_number_edit,  branch: this.branch_edit, ktp: this.ktp_edit, ktp_number: this.ktp_number_edit, valid_through: this.valid_through_edit,
-              ktp_address: this.ktp_address_edit, kk: this.kk_edit, degree_certificate: this.degree_certificate_edit, school: this.school_edit, major: this.major_edit, certificate: this.certificate,
-              date_issuance: this.date_issuance_edit, marital_status: this.marital_status_edit, spouse_name: this.spouse_name_edit, spouse_dob: this.spouse_dob_edit, mother_maiden: this.mother_maiden_edit,
-              child_name1: this.child_name1_edit, child_sex1: this.child_sex1_edit, child_dob1: this.child_dob1_edit, emergency_name: this.emergency_name_edit, emergency_number: this.emergency_number_edit, relation_emergency: this.relation_emergency_edit,
-              nik: this.nik_edit, koperasi: this.koperasi_edit, DPLK: this.DPLK_edit, joining_date: this.joining_date_edit, emp_position: this.emp_position_edit, BPJS: this.BPJS_edit, health_insurance: this.health_insurance_edit,
-              employee_status: this.employee_status_edit, code_name: this.code_name_edit, issued_by: this.issued_by_edit,
+              nama: this.nama_edit, jenis_kelamin: this.jenis_kelamin_edit, lahir_place: this.lahir_place_edit, lahir: this.lahir_edit, golongan_darah: this.golongan_darah_edit, agama: this.agama_edit,
+              telepon_rumah: this.telepon_rumah_edit, no_telepon: this.no_telepon_edit, no_telepon_lainnya: this.no_telepon_lainnya_edit, email: this.email_edit, 
+              alamat: this.alamat_edit, bank: this.bank_edit, no_rekening: this.no_rekening_edit,  cabang: this.cabang_edit, ktp: this.ktp_edit, no_ktp: this.no_ktp_edit, masa_berlaku: this.masa_berlaku_edit,
+              alamat_ktp: this.alamat_ktp_edit, kk: this.kk_edit, gelar: this.gelar_edit, pendidikan: this.pendidikan_edit, jurusan: this.jurusan_edit, ijazah: this.ijazah,
+              tanggal_pengesahan: this.tanggal_pengesahan_edit, status_pernikahan: this.status_pernikahan_edit, nama_pasangan: this.nama_pasangan_edit, tgl_lahir_pasangan: this.tgl_lahir_pasangan_edit, ibu_kandung: this.ibu_kandung_edit,
+              nama_anak1: this.nama_anak1_edit, jenis_kelamin_anak1: this.jenis_kelamin_anak1_edit, tgl_lahir_anak1: this.tgl_lahir_anak1_edit, nama_darurat: this.nama_darurat_edit, no_darurat: this.no_darurat_edit, relasi_darurat: this.relasi_darurat_edit,
+              nik: this.nik_edit, koperasi: this.koperasi_edit, DPLK: this.DPLK_edit, tgl_masuk: this.tgl_masuk_edit, posisi_karyawan: this.posisi_karyawan_edit, BPJS: this.BPJS_edit, asuransi_kesehatan: this.asuransi_kesehatan_edit,
+              status_karyawan: this.status_karyawan_edit, inisial: this.inisial_edit, disahkan_oleh: this.disahkan_oleh_edit,
           })
         }
         catch (e){

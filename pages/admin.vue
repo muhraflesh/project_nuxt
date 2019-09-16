@@ -116,28 +116,6 @@
                                     <br>
                                     </p>
                                 </div>
-<<<<<<< HEAD
-                                <nav class="level is-mobile">
-                                    <div class="level-left">
-                                        <a class="level-item" aria-label="reply">
-                                            <span class="icon is-small">
-                                            <i class="fa fa-edit" aria-hidden="true"></i>
-                                            </span>
-                                        </a>
-                                        <a class="level-item" aria-label="retweet">
-                                            <span class="icon is-small">
-                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                            </span>
-                                        </a>
-                                        <a class="level-item" aria-label="like">
-                                            <span class="icon is-small">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </nav>
-=======
->>>>>>> origin
                                 </div>
                             </article>
                         </div>

@@ -14,11 +14,12 @@
               {{this.$store.state.data.name}}
             </a>
             <div class="navbar-dropdown is-right">
-                <a class="navbar-item">
+               <hr class="navbar-divider">
+                <a class="navbar-item" @click="setting">
                   <span class="icon is-small">
-                    <i class="fa fa-user-o"></i>
+                    <i class="fa fa-cog"></i>
                   </span>
-                  &nbsp; Profile
+                  &nbsp; Settings
                 </a>
                 <hr class="navbar-divider">
                 <a class="navbar-item" @click="logout">
@@ -26,13 +27,6 @@
                     <i class="fa fa-power-off"></i>
                   </span>
                   &nbsp; Logout
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item" @click="setting">
-                  <span class="icon is-small">
-                    <i class="fa fa-cog"></i>
-                  </span>
-                  &nbsp; Setting
                 </a>
             </div>
           </div>
@@ -48,9 +42,11 @@ export default {
             Cookies.remove('auth')
             Cookies.remove('user')
             Cookies.remove('datauser')
+            Cookies.remove('team')
             this.$store.commit('setAuth', null)
             this.$store.commit('setUser', null)
             this.$store.commit('setData', null)
+            this.$store.commit('setTeam', null)
             this.$router.push('/')
         }
     },

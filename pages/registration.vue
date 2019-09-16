@@ -4,6 +4,7 @@
     <div class="columns page is-centered">
         <div class="column is-10 card" style="margin-top: 5%;margin-bottom:5%">
             <h1 class="heading"> Registration Form</h1>
+            
             <div class="tabs">
                 <a v-bind:class="[ activetab === 1 ? 'active' : '' ]" @click="activetab=1">Data Pribadi</a>
                 <a v-bind:class="[ activetab === 2 ? 'active' : '' ]" @click="activetab=2">Data Keluarga</a>
@@ -20,18 +21,20 @@
                       <td width="200px">Name :</td>
                       <td>
                         <input 
-                        class="input"
+                        class="input is-danger"
                         type="text"
                         v-model="name">
+                        <p class="help is-danger">Is Required</p>
                       </td>
                     </tr>
                     <tr>
                       <td>Code Name :</td>
                       <td>
                         <input 
-                        class="input"
+                        class="input is-danger"
                         type="text"
                         v-model="code_name">
+                        <p class="help is-danger">Is Required</p>
                       </td>
                     </tr>
                     <tr>
@@ -59,7 +62,7 @@
                       </tr>
                       <tr>
                         <td>Date :</td>
-                        <td><input type="text" class="input" v-model="dob"></td>
+                        <td><input type="date" class="input" v-model="dob"></td>
                       </tr>
                       </td>
                     </tr>
@@ -268,8 +271,8 @@
                       <tr>
                         <div class="select">
                           <select v-model="certificate">
-                            <option value="1">COPY</option>
-                            <option value="2">NONE</option>
+                            <option value="COPY">COPY</option>
+                            <option value="NONE">NONE</option>
                           </select></div>
                       </tr>
                       <tr>
@@ -277,8 +280,8 @@
                         <td>
                           <div class="select">
                           <select v-model="issued_by">
-                            <option value="1">Universitas Indonesia</option>
-                            <option value="2">Others</option>
+                            <option value="Universitas Indonesia">Universitas Indonesia</option>
+                            <option value="Others">Others</option>
                           </select></div>
                         </td>
                       </tr>
@@ -291,7 +294,12 @@
                       
                       </td>
                     </tr>
+                    
                   </table>
+                  <div class="is-pulled-right">
+                    <a v-bind:class="[ activetab === 2 ? 'active' : '' ]" class="button is-primary" @click="activetab=2">Next</a>
+                  </div>
+                  
               </div>
 
               <!-- Data Keluarga -->
@@ -302,13 +310,13 @@
                       <td class=" is-borderless">
                         <div class="select">
                         <select v-model="marital_status">
-                          <option value="1"> S </option>
-                          <option value="2"> M0 </option>
-                          <option value="3"> M1 </option>
-                          <option value="4"> M2 </option>
-                          <option value="5"> M3 </option>
-                          <option value="6"> M4 </option>
-                          <option value="7"> M5 </option>
+                          <option value="S"> S </option>
+                          <option value="M0"> M0 </option>
+                          <option value="M1"> M1 </option>
+                          <option value="M2"> M2 </option>
+                          <option value="M3"> M3 </option>
+                          <option value="M4"> M4 </option>
+                          <option value="M5"> M5 </option>
                         </select>
                         </div>
                       </td>
@@ -325,7 +333,7 @@
                       </tr>
                       <tr>
                         <td>Date Of Birth</td>
-                        <input class="input" v-model="spouse_dob">
+                        <input type="date" class="input" v-model="spouse_dob">
                       </tr>
                       </td>
                     </tr>
@@ -355,8 +363,8 @@
                         <td>
                           <div class="select">
                           <select v-model="child_sex1">
-                            <option value="1">Male</option>
-                            <option value="2">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                           </select>
                           </div>
                         </td>
@@ -364,7 +372,7 @@
                       <tr>
                         <td>Date Of Birth</td>
                         <td>
-                          <input class="input" v-model="child_dob1">
+                          <input type="date" class="input" v-model="child_dob1">
                         </td>
                       </tr>
                       </td>
@@ -395,12 +403,12 @@
                         <td>
                         <div class="select">
                           <select v-model="relation_emergency">
-                            <option value="1">Mother</option>
-                            <option value="2">Father</option>
-                            <option value="3">Brother</option>
-                            <option value="4">Sister</option>
-                            <option value="5">Family</option>
-                            <option value="6">Friend</option>
+                            <option value="Mother">Mother</option>
+                            <option value="Father">Father</option>
+                            <option value="Brother">Brother</option>
+                            <option value="Sister">Sister</option>
+                            <option value="Family">Family</option>
+                            <option value="Friend">Friend</option>
                           </select>
                           </div>
                         </td>
@@ -408,6 +416,9 @@
                       </td>
                     </tr>
                   </table>
+                  <div class="is-pulled-right">
+                    <a v-bind:class="[ activetab === 3 ? 'active' : '' ]" class="button is-primary" @click="activetab=3">Next</a>
+                  </div>
               </div>
 
               <!-- Data Perusahaan -->
@@ -442,20 +453,20 @@
                   </tr>
                   <tr>
                     <td>Joining Date :</td>
-                    <td><input class="input" v-model="joining_date"></td>
+                    <td><input type="date" class="input" v-model="joining_date"></td>
                   </tr>
                   <tr>
                     <td>Position :</td>
                     <td>
                     <div class="select">
                       <select v-model="emp_position">
-                        <option value="1">Office Boy</option>
-                        <option value="2">Driver</option>
-                        <option value="3">Messenger</option>
-                        <option value="4">Officer</option>
-                        <option value="5">Receptionist</option>
-                        <option value="6">Secretary</option>
-                        <option value="7">Others</option>
+                        <option value="Office Boy">Office Boy</option>
+                        <option value="Driver">Driver</option>
+                        <option value="Messenger">Messenger</option>
+                        <option value="Officer">Officer</option>
+                        <option value="Receptionist">Receptionist</option>
+                        <option value="Secretary">Secretary</option>
+                        <option value="Others">Others</option>
                       </select>
                     </div>
                     </td>
@@ -483,27 +494,56 @@
                     <td>
                       <div class="select">
                       <select v-model="employee_status">
-                        <option value="1">Percobaan 1 Bulan </option>
-                        <option value="2">Percobaan 2 Bulan</option>
-                        <option value="3">Percobaan 3 Bulan</option>
+                        <option value="Percobaan 1 Bulan">Percobaan 1 Bulan </option>
+                        <option value="Percobaan 2 Bulan">Percobaan 2 Bulan</option>
+                        <option value="Percobaan 3 Bulan">Percobaan 3 Bulan</option>
                       </select></div>
                     </td>
                   </tr>
                 </table>
                 <div class="control buttons is-right">
-                  <button class="button is-link"> Submit </button>
+                  <button class="button is-success"> Submit </button>
                 </div>
               </div>
             </div>
             </form>
+
+              
+
+
         </div>
+
+        
+
     </div>
+          <div class="modal" id="modal">
+               <div class="modal-background" ></div>
+                   <div class="modal-card modcard">
+                                    <!-- MODAL CONTENT-->
+                           <div class="notification is-paddingless">
+                              <div class="notification is-success has-text-centered">
+                                <br/>
+                                <div class="img image is-128x128">
+                                  <img src="checked.png">
+                                </div>
+                              </div>
+                              <div class="notification has-text-centered">
+                                <strong class="title">Success!</strong> <br/>
+                                <p class="subtitle">Your Account has been created Successfully!</p> <br/>
+                                 <button class="button is-primary" @click="success">
+                                     Go To Profile
+                                 </button>
+                              </div>
+                           </div>
+               </div>
+          </div>
     </div>
 </section>
 </template>
 
 <script>
-
+const Cookies = process.client ? require('js-cookie') : undefined
+import axios from 'axios'
 export default{
   data() {
     return{
@@ -514,10 +554,14 @@ export default{
       marital_status: '', spouse_name: '', spouse_dob: '', mother_maiden: '', child_name1: '',
       child_sex1: '', child_dob1: '', emergency_name: '', emergency_number: '', relation_emergency: '',
       nik: '', koperasi: '', DPLK: '', joining_date: '', emp_position: '', BPJS: '', health_insurance: '', employee_status: '',
-      code_name:'',
+      code_name:'', issued_by:''
     }
   },
   methods: {
+      success() {
+        this.$router.push('/profile')
+      },
+
       async insert_profile(){
         try{
           var self = this
@@ -542,7 +586,13 @@ export default{
               degree_certificate: this.degree_certificate, reference: this.reference, team_project: this.team_project,
           })
 
-        self.$router.push('/welcome')
+          const datauser = data
+          this.$store.commit('setData', datauser)
+          Cookies.set('datauser', datauser);
+        
+          console.log(this.$store.state.data);
+
+          document.getElementById('modal').classList.add('is-active');
         }
 
         catch (e) {
@@ -551,12 +601,19 @@ export default{
             this.pesan="Invalid Email or Password"
           }
         }
-      }
+      },
+
     }
 }
 </script>
 
 <style>
+.img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+  width: 500px
+  } 
 .span{
   margin-right: 20%;
 }

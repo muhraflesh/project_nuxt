@@ -7,7 +7,7 @@
             <div class="column is-12 field-box is-centered">
                 <div class="has-text-centered form" style="padding-top: 20%">
                     <h1 class="reset-heading">Reset Your Password</h1>
-                    <p class="reset-subheading" >Please Fill The Form to Reset Your Password</p>
+                    <p class="reset-subheading" >Please Fill The Form to Reset Your Password</p> <br/>
                 <div class="notification is-info">
                   Check your email to get your <strong>Token</strong>
                 </div> 

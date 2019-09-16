@@ -89,20 +89,25 @@ import axios from 'axios'
       async login(){
         try{
           var self = this
-          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/login`, {
+          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/login?include=user`, {
               email: this.email,
               password: this.password
           })
         const auth = data.id
         const user = data.userId
+        const team = data.user.team_name_id
         console.log(auth)
         console.log(user)
+        console.log(team)
 
         self.$store.commit('setAuth', auth)
         Cookies.set('auth', auth);
 
         self.$store.commit('setUser', user)
         Cookies.set('user', user);
+
+        self.$store.commit('setTeam', team)
+        Cookies.set('team', team);
 
         window.localStorage.setItem('userid', user);
         
@@ -114,7 +119,6 @@ import axios from 'axios'
         
           console.log(this.$store.state.data);
         })
-    
     
         self.$router.push('/profile')
         }

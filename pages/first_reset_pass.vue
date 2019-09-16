@@ -6,9 +6,8 @@
             <div class="column is-7 reset-form-wrapper">
             <div class="column is-12 field-box is-centered">
                 <div class="has-text-centered form" style="padding-top: 20%">
-                    <h1 class="reset-heading">Reset Your Password</h1>
-                    <p class="reset-subheading" >Please Enter Your Email Address</p> <br> 
-                
+                    <h1 class="reset-heading">Reset Your Password</h1> <br/>
+                    <p class="reset-subheading" >Please Enter Your Correct Email Address <br/> to Get your Access Token</p>
                 <form method="post" @submit.prevent="reset_email">
                   <Notification :message="pesan" v-if="pesan" />
                     <div class="field" style="margin-bottom: 3em">
@@ -67,14 +66,10 @@ const Cookie = process.client ? require('js-cookie') : undefined
             const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/reset`, {
              email: this.email
             })
-            this.pesan = data.code
-            if (this.pesan = 200){
-              self.$router.push('/first_reset_pass2')
-              
-            }
-            this.pesan = "Invalid Email Address"
+          self.$router.push('/first_reset_pass2')
           }
-            catch (e) {       
+          catch (e) {
+          this.pesan = e.response.data.error.statusCode
           }
       }
     }

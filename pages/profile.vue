@@ -9,7 +9,7 @@
                             <li class="is-active"><a href="#" aria-current="page">Data Profile</a></li>
                         </ul>
                     </td>
-                    <td width="200px"></td>
+                    <td width="500\px"></td>
                     <td width="600px">
                         <Navbar/>
                     </td>
@@ -300,7 +300,7 @@ export default {
 
 /* Styling for active tab */
 .tabs a.active {
-  background-color: rgb(204, 34, 48);
+  background-color: rgb(117, 117, 117);
   color: #b91876;
   border-bottom: 2px solid #fff;
   cursor: default;

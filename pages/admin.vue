@@ -3,68 +3,41 @@
         <Sidebar/>
            <div class="column is-10">
                <nav class="breadcrumb" aria-label="breadcrumbs">
-                <td width="500px">
-                <ul>
-                    <li><a href="/">Solusi</a></li>
-                    <li class="is-active"><a href="#" aria-current="page">Admin Panel</a></li>
-                </ul>
-                </td>
-                <td width="200px"></td>
-                <td width="600px">
-                <Navbar/>
-                </td>
+                    <td width="500px">
+                        <ul>
+                            <li><a href="/">Solusi</a></li>
+                            <li class="is-active"><a href="#" aria-current="page">Admin Panel</a></li>
+                        </ul>
+                    </td>
+                    <td width="500px"></td>
+                    <td width="600px">
+                        <Navbar/>
+                    </td>
                 </nav>
-                <hr>
+                <br>
+
+                <!-- BUTTON USER -->
                 <section class="info-tiles">
                     <div class="tile is-ancestor has-text-left">
                         <div class="tile is-parent" >
                             <article class="tile is-child box has-background-primary" @click="member = !member">
-                                <p class="subtitle has-text-white has-text-weight-medium">Manajemen Member</p>
+                                <p class="subtitle has-text-white has-text-weight-medium">Manajemen User</p>
                             </article>
                         </div>
                     </div>
                 </section>
                 <br/>
-                <!-- Data Pribadi -->
+
+                <!-- DATA USER -->
                 <div v-show="member">
-                    <table>
-                            <tr><td><b>FRONT END</b></td></tr><br/>
-                    </table>
-                    <div  class="row columns" >
-                        <div class="column is-1">
-                        <figure class="image is-86x86">
-                            <img class="is-rounded" src="user1.jpg">
-                        </figure>
-                        </div>
-                        <div class="column is-4">
-                        <tr><b>Leader</b></tr>
-                        <tr>Muhammad Rafli Sh</tr>
-                        </div>
-                        <div class="column is-1">
-                        <figure class="image is-86x86">
-                            <img class="is-rounded" src="team.jpg">
-                        </figure>
-                        </div>
-                        <div class="column is-4">
-                        <tr><b>Member</b></tr>
-                        <tr>Salma Faiqah A</tr>
-                        <tr>Dewi Ambarwati</tr>
-                        </div>
-                    </div>
-                    <hr/>
                     <div class="columns">
-                    <div class="column is-4">
+                    <div class="column is-8">
                             <tr>
-                                <td><b>MEMBER DETAILS</b></td>
+                                <td><b>USER LIST</b></td>
                             </tr>
                     </div>
                     <div class="column is-4">
-                            <tr>
-                                
-                            </tr>
-                    </div>
-                    <div class="column is-4">
-                            <a class="button is-success is-outlined" @click="showmodal">Add Member</a>
+                            <a class="button is-success is-outlined" @click="showmodal">Add User</a>
                             <div class="modal" id="modal">
                                 <div class="modal-background" @click="closemodal"></div>
                                 <div class="modal-card modcard">
@@ -121,9 +94,9 @@
                         </div>
                     </div>
                     </div>
-                    <div class="columns">
-                    <div class="column is-4">
-                        <div class="box">
+                    <div class="">
+                    <div class="card-columns">
+                        <div class="box" v-for="item in posts" v-bind:key="item.key">
                             <article class="media">
                                 <div class="media-left">
                                 <figure class="image is-64x64">
@@ -133,47 +106,41 @@
                                 <div class="media-content">
                                 <div class="content">
                                     <p>
-                                    <strong>John Smith</strong> <small>@johnsmith</small> <small></small>
+                                    <strong>{{item.email}}</strong>
                                     <br>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                                    ID         : {{item.id}}
+                                    <br>
+                                    Username  : {{item.username}}
+                                    <br>
+                                    Team : {{item.team_name_id}}
+                                    <br>
                                     </p>
                                 </div>
-                                <nav class="level is-mobile">
-                                    <div class="level-left">
-                                        <a class="level-item" aria-label="reply">
-                                            <span class="icon is-small">
-                                            <i class="fas fa-edit" aria-hidden="true"></i>
-                                            </span>
-                                        </a>
-                                        <a class="level-item" aria-label="retweet">
-                                            <span class="icon is-small">
-                                            <i class="fas fa-trash" aria-hidden="true"></i>
-                                            </span>
-                                        </a>
-                                        <a class="level-item" aria-label="like">
-                                            <span class="icon is-small">
-                                            <i class="fas fa-heart" aria-hidden="true"></i>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </nav>
                                 </div>
                             </article>
                         </div>
+                    </div><br/>
+                    <div style="padding-left:40%">
+                        <button class="button btn-more is-rounded" @click="loadMore">Load More</button>
                     </div>
-                    <div class="column is-4">
-                        
                     </div>
-                    <div class="column is-4">
-                        
-                    
-                    </div>
-                </div>
+                  </div>
                   </div>
                   <br/>
 
-                  <!-- Data Keluarga -->
-                  <div v-show="keluarga">
+                  <!-- BUTTON NOTIFIKASI -->
+                  <section class="info-tiles">
+                    <div class="tile is-ancestor has-text-left">
+                        <div class="tile is-parent" >
+                            <article class="tile is-child box has-background-primary" @click="notif = !notif">
+                                <p class="subtitle has-text-white has-text-weight-medium">Notifikasi</p>
+                            </article>
+                        </div>
+                    </div>
+                  </section>
+                  <br/>
+                  <!-- DATA NOTIFIKASI -->
+                  <div v-show="notif">
                     <div class="card ">
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped ">
@@ -270,38 +237,29 @@
                   </div>
                   </div>
 
-                </div>
     </section>
 </template>
 
-<style>
-.user{
-    height: 100%;
-    width: 100%
-}
-.is-horizontal-center {
-  justify-content: center;
-}
-.is-rounded{
-    border-radius: 50%
-}
-</style>
-
 <script>
 const Cookies = process.client ? require('js-cookie') : undefined
+import axios from 'axios'
 import Sidebar from "../components/Sidebarpublic"
 import Navbar from "../components/Navbar"
 export default {
-    middleware : 'authenticated',
+    middleware : '',
     data() {
       return {
         member : true,
+        notif : false,
         project : false,
         perusahaan : false,
         username: '',
         email: '',
+        allPost: [],
+        posts: [],
+        current: 6,
       }
-    },
+    }, 
     components: {
         Sidebar,
         Navbar
@@ -314,8 +272,10 @@ export default {
         closemodal() {
           document.getElementById('modal').classList.remove('is-active');
         },
-        cek(){
-            console.log(this.$store.state.auth)
+        loadMore () {
+            this.posts = []
+            this.current += 6
+            this.allPost.map((item, key) => item.email !== null && this.posts.length < this.current ? this.posts.push(item) : '')
         },
         async adduser(){
         try{
@@ -328,7 +288,45 @@ export default {
         catch (e) {
         }
         },
-    }
+    },
+
+    mounted () {
+    axios(`${this.$axios.defaults.baseURL}/user`, {
+      crossDomain: true
+    }).then( ({ data }) => {
+      this.allPost = data
+      data.map((item, key) => {
+        if (item.email !== null && this.posts.length < 6) {
+          this.posts.push(item)
+        }
+      })
+    })
+    }  
    
 }
 </script>
+
+<style>
+.user{
+    height: 100%;
+    width: 100%
+}
+.is-horizontal-center {
+  justify-content: center;
+}
+.is-rounded{
+    border-radius: 50%
+}
+@media (min-width: 768px) {  
+  .card-columns {column-count: 3;}
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+ .card-columns {column-count: 3;}
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+   .card-columns {column-count: 3;} 
+}
+</style>

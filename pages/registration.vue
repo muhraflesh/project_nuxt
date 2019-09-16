@@ -4,6 +4,7 @@
     <div class="columns page is-centered">
         <div class="column is-10 card" style="margin-top: 5%;margin-bottom:5%">
             <h1 class="heading"> Registration Form</h1>
+            
             <div class="tabs">
                 <a v-bind:class="[ activetab === 1 ? 'active' : '' ]" @click="activetab=1">Data Pribadi</a>
                 <a v-bind:class="[ activetab === 2 ? 'active' : '' ]" @click="activetab=2">Data Keluarga</a>
@@ -20,18 +21,20 @@
                       <td width="200px">Name :</td>
                       <td>
                         <input 
-                        class="input"
+                        class="input is-danger"
                         type="text"
                         v-model="name">
+                        <p class="help is-danger">Is Required</p>
                       </td>
                     </tr>
                     <tr>
                       <td>Code Name :</td>
                       <td>
                         <input 
-                        class="input"
+                        class="input is-danger"
                         type="text"
                         v-model="code_name">
+                        <p class="help is-danger">Is Required</p>
                       </td>
                     </tr>
                     <tr>
@@ -291,7 +294,12 @@
                       
                       </td>
                     </tr>
+                    
                   </table>
+                  <div class="is-pulled-right">
+                    <a v-bind:class="[ activetab === 2 ? 'active' : '' ]" class="button is-primary" @click="activetab=2">Next</a>
+                  </div>
+                  
               </div>
 
               <!-- Data Keluarga -->
@@ -325,7 +333,7 @@
                       </tr>
                       <tr>
                         <td>Date Of Birth</td>
-                        <input class="input" v-model="spouse_dob">
+                        <input type="date" class="input" v-model="spouse_dob">
                       </tr>
                       </td>
                     </tr>
@@ -364,7 +372,7 @@
                       <tr>
                         <td>Date Of Birth</td>
                         <td>
-                          <input class="input" v-model="child_dob1">
+                          <input type="date" class="input" v-model="child_dob1">
                         </td>
                       </tr>
                       </td>
@@ -408,6 +416,9 @@
                       </td>
                     </tr>
                   </table>
+                  <div class="is-pulled-right">
+                    <a v-bind:class="[ activetab === 3 ? 'active' : '' ]" class="button is-primary" @click="activetab=3">Next</a>
+                  </div>
               </div>
 
               <!-- Data Perusahaan -->
@@ -442,7 +453,7 @@
                   </tr>
                   <tr>
                     <td>Joining Date :</td>
-                    <td><input class="input" v-model="joining_date"></td>
+                    <td><input type="date" class="input" v-model="joining_date"></td>
                   </tr>
                   <tr>
                     <td>Position :</td>
@@ -491,7 +502,7 @@
                   </tr>
                 </table>
                 <div class="control buttons is-right">
-                  <button class="button is-link"> Submit </button>
+                  <button class="button is-success"> Submit </button>
                 </div>
               </div>
             </div>
@@ -503,43 +514,26 @@
 
     </div>
           <div class="modal" id="modal">
-                                <div class="modal-background" ></div>
-                                <div class="modal-card modcard">
-                                    <header class="modal-card-head">
-                                    <p class="modal-card-title">WELCOME</p>
-                                    <button class="delete" aria-label="close"></button>
-                                    </header>
-                                    <section class="modal-card-body">
+               <div class="modal-background" ></div>
+                   <div class="modal-card modcard">
                                     <!-- MODAL CONTENT-->
-                                    
-                                    <div class="field is-horizontal">
-                                        <div class="field-label is-normal">
-                                            <p class="subtitle">
-                                                WELCOME!
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="field is-horizontal">
-                                        <div class="field-label">
-                                            <!-- Left empty for spacing -->
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                
-                                                <a href="/profile">
-                                                <button class="button is-primary">
-                                                Profile
-                                                </button>
-                                                </a>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </section>
-                                    <footer class="modal-card-foot">
-                                    </footer>
+                           <div class="notification is-paddingless">
+                              <div class="notification is-success has-text-centered">
+                                <br/>
+                                <div class="img image is-128x128">
+                                  <img src="checked.png">
                                 </div>
-                        </div>
+                              </div>
+                              <div class="notification has-text-centered">
+                                <strong class="title">Success!</strong> <br/>
+                                <p class="subtitle">Your Account has been created Successfully!</p> <br/>
+                                 <button class="button is-primary" @click="success">
+                                     Go To Profile
+                                 </button>
+                              </div>
+                           </div>
+               </div>
+          </div>
     </div>
 </section>
 </template>
@@ -561,6 +555,10 @@ export default{
     }
   },
   methods: {
+      success() {
+        this.$router.push('/profile')
+      },
+
       async insert_profile(){
         try{
           var self = this
@@ -591,7 +589,7 @@ export default{
         
           console.log(this.$store.state.data);
 
-        document.getElementById('modal').classList.add('is-active');
+          document.getElementById('modal').classList.add('is-active');
         }
 
         catch (e) {
@@ -600,12 +598,19 @@ export default{
             this.pesan="Invalid Email or Password"
           }
         }
-      }
+      },
+
     }
 }
 </script>
 
 <style>
+.img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+  width: 500px
+  } 
 .span{
   margin-right: 20%;
 }

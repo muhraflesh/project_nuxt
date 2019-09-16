@@ -30,13 +30,16 @@
                     </div>
                     <div class="field">
                       <p class="control has-icons-left has-icons-right">
-                        <input class="input" 
-                        type="password" 
-                        placeholder="Password" 
-                        v-model="password" required>
-                        <span class="icon is-medium is-left">
-                          <i class="fa fa-lock"></i>
-                        </span>
+                        <input 
+                        class="input"
+                        placeholder="password"
+                        :type="showPassword ? 'text' : 'password'" 
+                        label="Password"
+                        prepend-icon="mdi-lock"
+                        :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-slash'"
+                        @click:append="showPassword = !showPassword">
+                        
+                          
                       </p>
                     </div>
                     <div class="field is-grouped is-grouped-centered">
@@ -57,6 +60,9 @@
 
 </template>
 <script>
+
+const passwordField = document.querySelector('#password')
+
 const Cookies = process.client ? require('js-cookie') : undefined
 import axios from 'axios'
   import Notification from '../components/Notification'
@@ -69,28 +75,39 @@ import axios from 'axios'
       return{
         email: '',
         password:'',
-        pesan: null
+        pesan: null,
+        passwordFieldType: 'password',
+        showPassword: false,
+        
+        
       }
     },
     methods: {
+      switchVisibility() {
+     this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
+    },
       async login(){
         try{
           var self = this
-          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/login`, {
+          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/login?include=user`, {
               email: this.email,
               password: this.password
           })
-
         const auth = data.id
         const user = data.userId
+        const team = data.user.team_name_id
         console.log(auth)
         console.log(user)
+        console.log(team)
 
         self.$store.commit('setAuth', auth)
         Cookies.set('auth', auth);
 
         self.$store.commit('setUser', user)
         Cookies.set('user', user);
+
+        self.$store.commit('setTeam', team)
+        Cookies.set('team', team);
 
         window.localStorage.setItem('userid', user);
         
@@ -105,14 +122,14 @@ import axios from 'axios'
     
         self.$router.push('/profile')
         }
-
         catch (e) {
           this.pesan = e.response.data.error.statusCode
           if (this.pesan = 401){
             this.pesan="Invalid Email or Password"
           }
         }
-      }
+      },
+    
     }
   }
 </script>

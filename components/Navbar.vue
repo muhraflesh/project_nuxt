@@ -6,22 +6,19 @@
                 <i class="fa fa-search"></i>
             </span>
         </div>
-        <div class="column is-2 is-right has-text-right">
-            <font size="5px"></font>
-        </div>
         <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               <figure class="image is-32x32" style="margin-right:.5em;">
                 <img src="~assets/images/icons8-male-user-50.png">
               </figure>
             </a>
-
             <div class="navbar-dropdown is-right">
-                <a class="navbar-item">
+               <hr class="navbar-divider">
+                <a class="navbar-item" @click="setting">
                   <span class="icon is-small">
-                    <i class="fa fa-user-o"></i>
+                    <i class="fa fa-cog"></i>
                   </span>
-                  &nbsp; Profile
+                  &nbsp; Settings
                 </a>
                 <hr class="navbar-divider">
                 <a class="navbar-item" @click="logout">
@@ -44,9 +41,11 @@ export default {
             Cookies.remove('auth')
             Cookies.remove('user')
             Cookies.remove('datauser')
+            Cookies.remove('team')
             this.$store.commit('setAuth', null)
             this.$store.commit('setUser', null)
             this.$store.commit('setData', null)
+            this.$store.commit('setTeam', null)
             this.$router.push('/')
         }
     },

@@ -3,13 +3,18 @@
         <Sidebar/>
            <div class="column is-10">
                <nav class="breadcrumb" aria-label="breadcrumbs">
-                    <ul>
-                        <li><a href="/">Solusi</a></li>
-                        <li class="is-active"><a href="#" aria-current="page">Admin Panel</a></li>
-                    </ul>
+                <td width="500px">
+                <ul>
+                    <li><a href="/">Solusi</a></li>
+                    <li class="is-active"><a href="#" aria-current="page">Admin Panel</a></li>
+                </ul>
+                </td>
+                <td width="200px"></td>
+                <td width="600px">
+                <Navbar/>
+                </td>
                 </nav>
-                <Hello/>
-                <br>
+                <hr>
                 <section class="info-tiles">
                     <div class="tile is-ancestor has-text-left">
                         <div class="tile is-parent" >
@@ -285,9 +290,9 @@
 <script>
 const Cookies = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
-import Hello from "../components/Hello"
+import Navbar from "../components/Navbar"
 export default {
-    middleware : 'admin',
+    middleware : 'authenticated',
     data() {
       return {
         member : true,
@@ -299,7 +304,7 @@ export default {
     },
     components: {
         Sidebar,
-        Hello,
+        Navbar
     },
     
     methods: {

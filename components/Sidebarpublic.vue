@@ -40,8 +40,9 @@
             <li><a href="/bon"><span class="icon is-small"><i class="fa fa-suitcase"></i></span> Bon Barang</a></li>
             <li><a href="/keuangan"><span class="icon is-small"><i class="fa fa-money"></i></span> Keuangan </a></li>
             <li><a href="/admin"><span class="icon is-small"><i class="fa fa-admin"></i></span> Admin Panel</a></li>
-            
-              <a class=""><i class="fa fa-cog"></i> Settings</a>
+            <li>
+              <a href="/settings"><span class="icon is-small"><i class="fa fa-cog"></i></span> Settings </a>
+            </li>
               <ul>
                 <li><a v-if="$store.state.auth" @click="logout">Logout</a></li>
                 <li><a v-if="!$store.state.auth">Login</a></li>

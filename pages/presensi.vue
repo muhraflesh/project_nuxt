@@ -1,8 +1,9 @@
 <template>
  <section class="section main-content columns is-fullheight">
-  
     <Sidebar/>
     <div class="column is-10 is-centered">
+
+      <!-- NAVBAR & BREADCUMBS -->
       <nav class="breadcrumb" aria-label="breadcrumbs">
         <td width="500px">
           <ul>
@@ -16,7 +17,10 @@
         </td>
       </nav>
       <hr/>
-          <div class="columns">
+
+        <!-- CONTENT ATAS (PRESENSI DAN CUTI) -->
+        <div class="columns">
+            <!-- CARD PRESENSI -->
             <div class="column is-6">
                <div class="card">
                    <header class="card-header has-background-info">
@@ -34,22 +38,23 @@
                           Check In </a>
                         <a type="checkout" class="button is-danger has-text-white" style="padding-left: 25px; padding-right: 25px">
                           Check Out </a>
-                      </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- CARD CUTI -->
             <div class="column is-6">
                 <div class="card">
-                   <header class="card-header has-background-info">
-                        <p class="card-header-title has-text-light">
-                        Cuti
-                        </p>
-                        <a href="/presensi" class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                            <i class="fa fa-calendar" ></i>
-                        </span>
-                        </a>
-                    </header>
+                    <header class="card-header has-background-info">
+                          <p class="card-header-title has-text-light">
+                          Cuti
+                          </p>
+                          <a href="/presensi" class="card-header-icon" aria-label="more options">
+                          <span class="icon">
+                              <i class="fa fa-calendar" ></i>
+                          </span>
+                          </a>
+                      </header>
 
                     <div  class="row columns" >
                         <div class="column is-8">
@@ -69,7 +74,7 @@
                           </div>
                         </div>
 
-                        <!-- MODAL -->
+                        <!-- MODAL PENGAJUAN CUTI -->
                         <div class="modal" id="modal-cuti">
                           <div class="modal-background" @click="closemodal"></div>
                           <div class="modal-card modcard">
@@ -79,29 +84,17 @@
                             </header>
                             <section class="modal-card-body">
                               <!-- MODAL CONTENT-->
+                            <form method="post" @submit.prevent="cuti">
                               <div class="field is-horizontal">
                                   <div class="field-label is-normal">
-                                    <label class="label">Jumlah Hari</label>
-                                  </div>
-                                  <div class="field-body">
-                                    <div class="field">
-                                      <div class="control">
-                                        <input class="input" type="number" placeholder="">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-
-                              <div class="field is-horizontal">
-                                  <div class="field-label is-normal">
-                                    <label class="label">Tanggal</label>
+                                    <label class="label">Mulai Tanggal</label>
                                   </div>
                                   <div class="field-body">
                                     <div class="field">
                                       <p class="control is-expanded has-icons-left">
-                                        <input class="input" type="text">
-                                        <span class="icon is-small is-left">
-                                          <i class="fas fa-calendar"></i>
+                                        <input class="input" type="date">
+                                        <span class="icon is-medium is-left">
+                                          <i class="fa fa-calendar"></i>
                                         </span>
                                       </p>
                                     </div>
@@ -110,14 +103,14 @@
                                     </div>
                                     <div class="field">
                                       <p class="control is-expanded has-icons-left has-icons-right">
-                                        <input class="input" type="text">
-                                        <span class="icon is-small is-left">
-                                          <i class="fas fa-calendar"></i>
+                                        <input class="input" type="date">
+                                        <span class="icon is-medium is-left">
+                                          <i class="fa fa-calendar"></i>
                                         </span>
                                       </p>
                                     </div>
                                   </div>
-                                </div>
+                              </div>
 
                                 <div class="field is-horizontal">
                                   <div class="field-label is-normal">
@@ -265,6 +258,22 @@
                                 </div> 
 
                                 <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="label">Tipe Cuti</label>
+                                  </div>
+                                  <div class="field-body is-normal" style="padding-top:1%">
+                                        <label class="radio">
+                                          <input type="radio" name="answer">
+                                          Yes
+                                        </label>
+                                        <label class="radio">
+                                          <input type="radio" name="answer">
+                                          No
+                                        </label>
+                                  </div>
+                                </div>
+
+                                <div class="field is-horizontal">
                                   <div class="field-label">
                                     <!-- Left empty for spacing -->
                                   </div>
@@ -278,6 +287,7 @@
                                     </div>
                                   </div>
                                 </div>
+                              </form>
                             </section>
                             <footer class="modal-card-foot">
                             </footer>
@@ -285,10 +295,60 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div><hr/>
 
-           </div>
-
-    </div>
+        <!-- CONTENT BAWAH (TABEL) -->
+        <div>
+            <table class="table">
+                  <thead>
+                        <tr>
+                            <th><abbr title="Position">ID.</abbr></th>
+                            <th>Tgl Pengajuan</th>
+                            <th><abbr title="Played">Tgl Mulai</abbr></th>
+                            <th><abbr title="Won">Tgl Selesai</abbr></th>
+                            <th><abbr title="Drawn">Handover</abbr></th>
+                            <th><abbr title="Lost">Keperluan</abbr></th>
+                            <th><abbr title="Goals for">Tipe Cuti</abbr></th>
+                            <th><abbr title="Goals against">Action</abbr></th>
+                        </tr>
+                  </thead>
+                  <tfoot>
+                        <tr>
+                            <th><abbr title="Position">ID.</abbr></th>
+                            <th>Tgl Pengajuan</th>
+                            <th><abbr title="Played">Tgl Mulai</abbr></th>
+                            <th><abbr title="Won">Tgl Selesai</abbr></th>
+                            <th><abbr title="Drawn">Handover</abbr></th>
+                            <th><abbr title="Lost">Keperluan</abbr></th>
+                            <th><abbr title="Goals for">Tipe Cuti</abbr></th>
+                            <th><abbr title="Goals against">Action</abbr></th>
+                        </tr>
+                  </tfoot>
+                  <tbody>
+                        <tr v-for="item in posts" v-bind:key="item.key">
+                                <th>{{item.id}}</th>
+                                <td><a><strong>{{item.id_pengguna}}</strong></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a class="button is-info">Detail</a> 
+                                    <a class="button is-danger" @click="deleteLog">Delete</a>
+                                </td>
+                            </tr>
+                        <tr>
+                                <td>
+                                    <div style="padding-left:420%">
+                                        <button class="button btn-more is-rounded is-info is-outlined" @click="loadMore">Load More</button>
+                                    </div>
+                                </td>
+                        </tr>
+                  </tbody>
+            </table>
+        </div>
   </div>
 
     
@@ -302,7 +362,6 @@ import axios from 'axios'
 import moment from 'moment'
 import BarChart from '~/components/bar-chart'
 import Sidebar from "../components/Sidebarpublic"
-import Hello from "../components/Hello"
 import DoughnutChart from '~/components/doughnut-chart'
 import Navbar from '~/components/Navbar'
 
@@ -317,10 +376,16 @@ function getRandomColor () {
 
 export default {
   middleware: '',
+  data() {
+      return {
+        allPost: [],
+        posts: [],
+        current: 2,
+      }
+  },
   components: {
     BarChart,
     Sidebar,
-    Hello,
     DoughnutChart,
     Navbar,
   },
@@ -331,30 +396,35 @@ export default {
         closemodal() {
           document.getElementById('modal-cuti').classList.remove('is-active');
         },
-        auth ({store}){
-            console.log (store.state.auth)
-        },
-        logout () {
-            Cookie.remove('auth')
-            this.$store.commit('setAuth', null)
-            this.$router.push('/')
+  },
+
+  mounted () {
+    axios(`${this.$axios.defaults.baseURL}/pengguna/${this.$store.state.user}/cuti?access_token=`+this.$store.state.auth, {
+      crossDomain: true
+    }).then( ({ data }) => {
+      this.allPost = data
+      data.map((item, key) => {
+        if (item.id_pengguna !== null && this.posts.length < 2) {
+          this.posts.push(item)
         }
-    },
+      })
+    })
+  },
 
   async asyncData ({ env }) {
-    const res = await axios.get(`https://api.github.com/repos/nuxt/nuxt.js/stats/contributors?access_token=${env.githubToken}`)
-    return {
-      doughnutChartData: {
-        labels: res.data.map(stat => stat.author.login),
-        datasets: [
-          {
-            label: 'Nuxt.js Contributors',
-            backgroundColor: res.data.map(getRandomColor),
-            data: res.data.map(() => 1)
-          }
-        ]
+      const res = await axios.get(`https://api.github.com/repos/nuxt/nuxt.js/stats/contributors?access_token=${env.githubToken}`)
+      return {
+        doughnutChartData: {
+          labels: res.data.map(stat => stat.author.login),
+          datasets: [
+            {
+              label: 'Nuxt.js Contributors',
+              backgroundColor: res.data.map(getRandomColor),
+              data: res.data.map(() => 1)
+            }
+          ]
+        }
       }
-    }
   },
 }
 </script>

@@ -182,7 +182,10 @@
                                 <td>{{item.posisi_karyawan}}</td>
                                 <td>{{item.tgl_masuk}}</td>
                                 <td>{{item.status_karyawan}}</td>
-                                <td></td>
+                                <td>
+                                    <a class="button is-info">Detail</a> 
+                                    <a class="button is-danger" @click="deleteUser">Delete</a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -191,9 +194,6 @@
                                     </div>
                                 </td>
                             </tr>
-                        </tbody>
-                        <tbody>
-                            
                         </tbody>
                     </table>
                 </div>
@@ -340,29 +340,32 @@ export default {
             this.allPost.map((item, key) => item.email !== null && this.posts.length < this.current ? this.posts.push(item) : '')
         },
         async adduser(){
-        try{
-          var self = this
-          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/pengguna?access_token=`+this.$store.state.auth, {
-              email: this.email,
-              username: this.username
-          })
-        }
-        catch (e) {
-        }
+            try{
+            var self = this
+            const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/pengguna?access_token=`+this.$store.state.auth, {
+                email: this.email,
+                username: this.username
+            })
+            }
+            catch (e) {
+            }
         },
+        deleteUser() {
+
+        }
     },
 
     mounted () {
-    axios(`${this.$axios.defaults.baseURL}/profil?access_token=`+this.$store.state.auth, {
-      crossDomain: true
-    }).then( ({ data }) => {
-      this.allPost = data
-      data.map((item, key) => {
-        if (item.username !== null && this.posts.length < 6) {
-          this.posts.push(item)
-        }
-      })
-    })
+        axios(`${this.$axios.defaults.baseURL}/profil?access_token=`+this.$store.state.auth, {
+            crossDomain: true
+        }).then( ({ data }) => {
+            this.allPost = data
+            data.map((item, key) => {
+              if (item.username !== null && this.posts.length < 6) {
+                this.posts.push(item)
+              }
+            })
+        })
     }
 }
 </script>

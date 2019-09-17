@@ -30,7 +30,7 @@
           </div>
         </div>        
       </div> <br>
-      <div style="padding-left:30%">
+      <div style="padding-left:35%">
         <button class="button btn-more is-rounded" @click="loadMore">Load More</button>
       </div>
       </div>

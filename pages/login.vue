@@ -102,10 +102,10 @@ import axios from 'axios'
         console.log(team)
         console.log(role)
 
-        if(role === "admin") {
-          var admin = role
-          self.$store.commit('setAdmin', admin)
-          Cookies.set('admin', admin);
+        if(role === "HRD") {
+          var hrd = role
+          self.$store.commit('setHrd', hrd)
+          Cookies.set('hrd', hrd);
         } else if (role === "leader") {
           var leader = role
           self.$store.commit('setLeader', leader)

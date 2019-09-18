@@ -15,7 +15,7 @@
             </a>
             <div class="navbar-dropdown is-right">
                <hr class="navbar-divider">
-                <a class="navbar-item" @click="setting">
+                <a class="navbar-item" href="/settings">
                   <span class="icon is-small">
                     <i class="fa fa-cog"></i>
                   </span>
@@ -43,13 +43,13 @@ export default {
             Cookies.remove('user')
             Cookies.remove('datauser')
             Cookies.remove('team')
-            Cookies.remove('admin')
+            Cookies.remove('hrd')
             Cookies.remove('leader')
             this.$store.commit('setAuth', null)
             this.$store.commit('setUser', null)
             this.$store.commit('setData', null)
             this.$store.commit('setTeam', null)
-            this.$store.commit('setAdmin', null)
+            this.$store.commit('setHrd', null)
             this.$store.commit('setLeader', null)
             this.$router.push('/')
         }

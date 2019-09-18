@@ -48,8 +48,8 @@ export const mutations = {
   setTeam (state, team) {
     state.team = team
   },
-  setAdmin (state, admin) {
-    state.admin = admin
+  setHrd (state, hrd) {
+    state.hrd = hrd
   },
   setLeader (state, leader) {
     state.leader = leader

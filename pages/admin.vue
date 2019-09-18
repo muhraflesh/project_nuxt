@@ -2,23 +2,34 @@
     <section class="section main-content columns is-fullheight">
         <Sidebar/>
            <div class="column is-10">
-               <nav class="breadcrumb" aria-label="breadcrumbs">
-                    <td width="500px">
-                        <ul>
-                            <li><a href="/">Solusi</a></li>
-                            <li class="is-active"><a href="#" aria-current="page">Admin Panel</a></li>
-                        </ul>
-                    </td>
-                    <td width="500px"></td>
-                    <td width="600px">
-                        <Navbar/>
-                    </td>
-                </nav>
-                <br>
+                <!-- NAVBAR & BREADCRUMBS -->
+                    <nav class="breadcrumb" aria-label="breadcrumbs">
+                        <td width="500px">
+                            <ul>
+                                <li><a href="/">Solusi</a></li>
+                                <li class="is-active"><a href="#" aria-current="page">Admin Panel</a></li>
+                            </ul>
+                        </td>
+                        <td width="500px"></td>
+                        <td width="600px">
+                            <Navbar/>
+                        </td>
+                    </nav>
+                    <br>
 
                 <!-- BUTTON USER -->
                 <section class="info-tiles">
                     <div class="tile is-ancestor has-text-left">
+                        <div class="tile is-parent" >
+                            <article class="tile is-child box has-background-primary" @click="member = !member">
+                                <p class="subtitle has-text-white has-text-weight-medium">Manajemen User</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent" >
+                            <article class="tile is-child box has-background-primary" @click="member = !member">
+                                <p class="subtitle has-text-white has-text-weight-medium">Manajemen User</p>
+                            </article>
+                        </div>
                         <div class="tile is-parent" >
                             <article class="tile is-child box has-background-primary" @click="member = !member">
                                 <p class="subtitle has-text-white has-text-weight-medium">Manajemen User</p>
@@ -31,11 +42,21 @@
                 <!-- DATA USER -->
                 <div v-show="member">
                     <div class="columns">
-                    <div class="column is-8">
+                    <div class="column is-1">
                             <tr>
                                 <td><b>USER LIST</b></td>
                             </tr>
                     </div>
+                    <div class="column is-7">
+                            <tr>
+                                <td><b>
+                                <a v-bind:class="[ activetab === 1 ? 'active' : '' ]" @click="activetab=1">Card</a>
+                                /
+                                <a v-bind:class="[ activetab === 2 ? 'active' : '' ]" @click="activetab=2">Tabel</a>
+                                </b></td>
+                            </tr>
+                    </div>
+                    <!-- MODAL ADD USER -->
                     <div class="column is-4">
                             <a class="button is-success is-outlined" @click="showmodal">Add User</a>
                             <div class="modal" id="modal">
@@ -91,54 +112,94 @@
                                     <footer class="modal-card-foot">
                                     </footer>
                                 </div>
+                            </div>
+                    </div>
+                    </div>
+                    <!-- DATA CARD -->
+                    <div class="container" v-if="activetab === 1">
+                        <div class="card-columns">
+                            <div class="box" v-for="item in posts" v-bind:key="item.key">
+                                <article class="media">
+                                    <div class="media-left">
+                                    <figure class="image is-64x64">
+                                        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                                    </figure>
+                                    </div>
+                                    <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                        <strong>{{item.nama}}</strong>
+                                        <br>
+                                        Email         : {{item.email}}
+                                        <br>
+                                        ID  : {{item.id_pengguna}}
+                                        <br>
+                                        Agama : {{item.agama}}
+                                        <br>
+                                        </p>
+                                    </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div><br/>
+                        <div style="padding-left:40%">
+                            <button class="button btn-more is-rounded is-info is-outlined" @click="loadMore">Load More</button>
                         </div>
                     </div>
-                    </div>
-                    <div class="">
-                    <div class="card-columns">
-                        <div class="box" v-for="item in posts" v-bind:key="item.key">
-                            <article class="media">
-                                <div class="media-left">
-                                <figure class="image is-64x64">
-                                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-                                </figure>
-                                </div>
-                                <div class="media-content">
-                                <div class="content">
-                                    <p>
-                                    <strong>{{item.email}}</strong>
-                                    <br>
-                                    ID         : {{item.id}}
-                                    <br>
-                                    Username  : {{item.username}}
-                                    <br>
-                                    Team : {{item.team_name_id}}
-                                    <br>
-                                    </p>
-                                </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div><br/>
-                    <div style="padding-left:40%">
-                        <button class="button btn-more is-rounded" @click="loadMore">Load More</button>
-                    </div>
-                    </div>
-                  </div>
-                  </div>
+                    
+                    <!-- DATA TABEL -->
+                    <table class="table"  v-if="activetab === 2">
+                        <thead>
+                            <tr>
+                            <th><abbr title="Position">ID.</abbr></th>
+                            <th>Nama</th>
+                            <th><abbr title="Played">Email</abbr></th>
+                            <th><abbr title="Won">Alamat</abbr></th>
+                            <th><abbr title="Drawn">Posisi</abbr></th>
+                            <th><abbr title="Lost">Tanggal Gabung</abbr></th>
+                            <th><abbr title="Goals for">Status Karyawan</abbr></th>
+                            <th><abbr title="Goals against">Action</abbr></th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                            <th><abbr title="Position">ID.</abbr></th>
+                            <th>Nama</th>
+                            <th><abbr title="Played">Email</abbr></th>
+                            <th><abbr title="Won">Alamat</abbr></th>
+                            <th><abbr title="Drawn">Posisi</abbr></th>
+                            <th><abbr title="Lost">Tanggal Gabung</abbr></th>
+                            <th><abbr title="Goals for">Status Karyawan</abbr></th>
+                            <th><abbr title="Goals against">Action</abbr></th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr v-for="item in posts" v-bind:key="item.key">
+                                <th>{{item.id_pengguna}}</th>
+                                <td><a><strong>{{item.nama}}</strong></a></td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.alamat}}</td>
+                                <td>{{item.posisi_karyawan}}</td>
+                                <td>{{item.tgl_masuk}}</td>
+                                <td>{{item.status_karyawan}}</td>
+                                <td>
+                                    <a class="button is-info">Detail</a> 
+                                    <a class="button is-danger" @click="deleteUser">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="padding-left:420%">
+                                        <button class="button btn-more is-rounded is-info is-outlined" @click="loadMore">Load More</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
                   <br/>
 
-                  <!-- BUTTON NOTIFIKASI -->
-                  <section class="info-tiles">
-                    <div class="tile is-ancestor has-text-left">
-                        <div class="tile is-parent" >
-                            <article class="tile is-child box has-background-primary" @click="notif = !notif">
-                                <p class="subtitle has-text-white has-text-weight-medium">Notifikasi</p>
-                            </article>
-                        </div>
-                    </div>
-                  </section>
-                  <br/>
                   <!-- DATA NOTIFIKASI -->
                   <div v-show="notif">
                     <div class="card ">
@@ -236,7 +297,7 @@
                   </div>
                   </div>
                   </div>
-
+            </div>
     </section>
 </template>
 
@@ -249,6 +310,7 @@ export default {
     middleware : 'admin',
     data() {
       return {
+        activetab: 1,
         member : true,
         notif : false,
         project : false,
@@ -278,31 +340,33 @@ export default {
             this.allPost.map((item, key) => item.email !== null && this.posts.length < this.current ? this.posts.push(item) : '')
         },
         async adduser(){
-        try{
-          var self = this
-          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/pengguna?access_token=`+this.$store.state.auth, {
-              email: this.email,
-              username: this.username
-          })
-        }
-        catch (e) {
-        }
+            try{
+            var self = this
+            const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/pengguna?access_token=`+this.$store.state.auth, {
+                email: this.email,
+                username: this.username
+            })
+            }
+            catch (e) {
+            }
         },
+        deleteUser() {
+
+        }
     },
 
     mounted () {
-    axios(`${this.$axios.defaults.baseURL}/pengguna`, {
-      crossDomain: true
-    }).then( ({ data }) => {
-      this.allPost = data
-      data.map((item, key) => {
-        if (item.email !== null && this.posts.length < 6) {
-          this.posts.push(item)
-        }
-      })
-    })
-    }  
-   
+        axios(`${this.$axios.defaults.baseURL}/profil?access_token=`+this.$store.state.auth, {
+            crossDomain: true
+        }).then( ({ data }) => {
+            this.allPost = data
+            data.map((item, key) => {
+              if (item.username !== null && this.posts.length < 6) {
+                this.posts.push(item)
+              }
+            })
+        })
+    }
 }
 </script>
 

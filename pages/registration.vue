@@ -23,7 +23,8 @@
                         <input 
                         class="input is-danger"
                         type="text"
-                        v-model="nama">
+                        v-model="nama"
+                        required>
                         <p class="help is-danger">Is Required</p>
                       </td>
                     </tr>
@@ -33,7 +34,8 @@
                         <input 
                         class="input is-danger"
                         type="text"
-                        v-model="inisial">
+                        v-model="inisial"
+                        required>
                         <p class="help is-danger">Is Required</p>
                       </td>
                     </tr>
@@ -41,7 +43,7 @@
                       <td>Jenis Kelamin :</td>
                       <td>
                         <div class="select">
-                          <select v-model="jenis_kelamin">
+                          <select v-model="jenis_kelamin" required>
                             <option value="Laki-laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
                           </select>
@@ -57,7 +59,8 @@
                           <input
                           class="input"
                           type="text"
-                          v-model="tempat_lahir">
+                          v-model="tempat_lahir"
+                          required>
                         </td>
                       </tr>
                       <tr>
@@ -513,6 +516,7 @@
         
 
     </div>
+          <!-- MODAL SUCCESS -->
           <div class="modal" id="modal">
                <div class="modal-background" ></div>
                    <div class="modal-card modcard">

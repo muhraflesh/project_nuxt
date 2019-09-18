@@ -28,18 +28,20 @@
                         </span>
                       </p>
                     </div>
-                    <div class="field">
-                      <p class="control has-icons-left has-icons-right">
+                    <div class="field has-addons">
+                      <p class="control is-expanded has-icons-left">
                         <input 
+                        :type="passwordType" id="password"
                         class="input"
-                        placeholder="Password"
-                        v-model="password"
-                        :type="showPassword ? 'text' : 'password'" 
-                        label="Password"
-                        prepend-icon="mdi-lock"
-                        :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-slash'"
-                        @click:append="showPassword = !showPassword" required>
-                          
+                        placeholder="password"
+                        v-model="password">
+                        <span class="icon is-medium is-left">
+                          <i class="fa fa-lock"></i>
+                        </span>
+                      </p>
+                      <p class="control box">
+                        <span><i class="fa fa-eye" :class="[passwordIcon]" @click="hidePassword = !hidePassword" toggle="#password-field"></i></span>
+
                       </p>
                     </div>
                     <div class="field is-grouped is-grouped-centered">
@@ -74,18 +76,20 @@ import axios from 'axios'
     data() {
       return{
         email: '',
-        password:'',
         pesan: null,
-        passwordFieldType: 'password',
-        showPassword: false,
-        
-        
+        password: '',
+        hidePassword: true
+      }
+    },
+    computed: {
+      passwordType() {
+        return this.hidePassword ? 'password' : 'text'
+      },
+      passwordIcon() {
+        return this.hidePassword ? 'fa-eye' : 'fa-eye-slash'
       }
     },
     methods: {
-      switchVisibility() {
-        this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
-      },
       async login(){
         try{
           var self = this
@@ -200,6 +204,13 @@ import axios from 'axios'
 .image{
   height: 350px;
   width: 350px
+}
+.box {
+     border-radius: 2px;
+    color: #2b2929;
+    padding: 1.1rem;
+    height: 20px;
+    align-content: center;
 }
 </style>
 

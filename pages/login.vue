@@ -39,9 +39,8 @@
                           <i class="fa fa-lock"></i>
                         </span>
                       </p>
-                      <p class="control box">
-                        <span><i class="fa fa-eye" :class="[passwordIcon]" @click="hidePassword = !hidePassword" toggle="#password-field"></i></span>
-
+                      <p class="control">
+                        <span><i class="" :class="[passwordIcon]" @click="hidePassword = !hidePassword"></i></span>
                       </p>
                     </div>
                     <div class="field is-grouped is-grouped-centered">
@@ -86,7 +85,7 @@ import axios from 'axios'
         return this.hidePassword ? 'password' : 'text'
       },
       passwordIcon() {
-        return this.hidePassword ? 'fa-eye' : 'fa-eye-slash'
+        return this.hidePassword ? 'fa fa-eye' : 'fa fa-eye-slash'
       }
     },
     methods: {

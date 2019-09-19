@@ -44,7 +44,8 @@
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="nama"
+                                        name="nama"  
+                                        v-show="nama"
                                         v-model="nama_edit">
                                       </td>
                                     </tr>

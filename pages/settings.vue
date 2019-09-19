@@ -563,7 +563,6 @@
                 </div>
             </div>
             </div>
-            <button class="button is-fullwidth is-dark">Save Changes</button>
             </div>
             </div><br>
 

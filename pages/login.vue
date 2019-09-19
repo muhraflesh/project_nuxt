@@ -40,8 +40,7 @@
                         </span>
                       </p>
                       <p class="control box">
-                        <span><i class="fa fa-eye" :class="[passwordIcon]" @click="hidePassword = !hidePassword" toggle="#password-field"></i></span>
-
+                        <span><i class="fa fa-eye" :class="[passwordIcon]" @click="hidePassword = !hidePassword"></i></span>
                       </p>
                     </div>
                     <div class="field is-grouped is-grouped-centered">

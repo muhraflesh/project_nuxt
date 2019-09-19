@@ -653,7 +653,7 @@ export default{
           nik: this.$store.state.data.nik, koperasi: this.$store.state.data.koperasi, DPLK: this.$store.state.data.DPLK, tgl_masuk: this.$store.state.data.tgl_masuk, posisi_karyawan: this.$store.state.data.posisi_karyawan, BPJS: this.$store.state.data.BPJS, asuransi_kesehatan: this.$store.state.data.asuransi_kesehatan,
           status_karyawan: this.$store.state.data.status_karyawan, inisial: this.$store.state.data.inisial, disahkan_oleh: this.$store.state.data.disahkan_oleh,
 
-          nama_edit: '', jenis_kelamin_edit: '', lahir_place_edit: '', lahir_edit: '', golongan_darah_edit: '', agama_edit: '', telepon_rumah_edit: '', no_telepon_edit: '', no_telepon_lainnya_edit: '',
+          nama_edit: '', jenis_kelamin_edit: '', tempat_lahir_edit: '', lahir_edit: '', golongan_darah_edit: '', agama_edit: '', telepon_rumah_edit: '', no_telepon_edit: '', no_telepon_lainnya_edit: '',
           email_edit: '', alamat_edit: '', bank_edit: '', no_rekening_edit: '', cabang_edit: '', ktp_edit: '', no_ktp_edit: '', masa_berlaku_edit: '',
           alamat_ktp_edit: '', kk_edit: '', gelar_edit: '', pendidikan_edit: '', jurusan_edit: '', ijazah_edit: '', tanggal_pengesahan_edit: '',
           status_pernikahan_edit: '', nama_pasangan_edit: '', tgl_lahir_pasangan_edit: '', ibu_kandung_edit: '', nama_anak1_edit: '',
@@ -671,7 +671,7 @@ export default{
         try{
           var self = this
           const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/${this.$store.state.user}/profiles?access_token=`+this.$store.state.auth, {
-              nama: this.nama_edit, jenis_kelamin: this.jenis_kelamin_edit, lahir_place: this.lahir_place_edit, lahir: this.lahir_edit, golongan_darah: this.golongan_darah_edit, agama: this.agama_edit,
+              nama: this.nama_edit, jenis_kelamin: this.jenis_kelamin_edit, tempat_lahir: this.tempat_lahir_edit, lahir: this.lahir_edit, golongan_darah: this.golongan_darah_edit, agama: this.agama_edit,
               telepon_rumah: this.telepon_rumah_edit, no_telepon: this.no_telepon_edit, no_telepon_lainnya: this.no_telepon_lainnya_edit, email: this.email_edit, 
               alamat: this.alamat_edit, bank: this.bank_edit, no_rekening: this.no_rekening_edit,  cabang: this.cabang_edit, ktp: this.ktp_edit, no_ktp: this.no_ktp_edit, masa_berlaku: this.masa_berlaku_edit,
               alamat_ktp: this.alamat_ktp_edit, kk: this.kk_edit, gelar: this.gelar_edit, pendidikan: this.pendidikan_edit, jurusan: this.jurusan_edit, ijazah: this.ijazah,

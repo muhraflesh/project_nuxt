@@ -44,7 +44,6 @@
                           <i class="fa fa-eye" :class="[passwordIcon]" @click="hidePassword = !hidePassword" toggle="#password-field"></i>
                         </span>
                       </div>
-
                     </div>
                     <div class="field is-grouped is-grouped-centered">
                       <div class="control">

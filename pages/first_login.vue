@@ -31,13 +31,18 @@
                     </div>
                     <div class="field">
                       <p class="control has-icons-left has-icons-right">
-                        <input class="input" 
-                        type="password" 
-                        placeholder="Password" 
-                        v-model="password" required>
+                        <input 
+                        :type="passwordType" id="password"
+                        class="input"
+                        placeholder="password"
+                        v-model="password">
                         <span class="icon is-medium is-left">
                           <i class="fa fa-lock"></i>
                         </span>
+                      </p>
+                      <p class="control">
+                        <i class="" :class="[passwordIcon]" @click="hidePassword = !hidePassword"></i>
+                        
                       </p>
                     </div>
                     <div class="field is-grouped is-grouped-centered">
@@ -70,7 +75,16 @@ const Cookies = process.client ? require('js-cookie') : undefined
       return{
         email: '',
         password:'',
-        pesan: null
+        pesan: null,
+        hidePassword: true
+      }
+    },
+    computed: {
+      passwordType() {
+        return this.hidePassword ? 'password' : 'text'
+      },
+      passwordIcon() {
+        return this.hidePassword ? 'fa fa-eye' : 'fa fa-eye-slash'
       }
     },
     methods: {

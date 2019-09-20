@@ -31,7 +31,7 @@
                     <div class="field has-addons">
                       <p class="control is-expanded has-icons-left">
                         <input 
-                        :type="passwordType" id="password"
+                        :type="passwordType"
                         class="input"
                         placeholder="Password"
                         v-model="password">

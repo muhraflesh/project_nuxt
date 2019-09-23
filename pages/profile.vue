@@ -231,6 +231,10 @@
                                 <td width="150px"><b>Shift Karyawan</b></td>
                                 <td width="200px">{{this.$store.state.data.status_karyawan}}</td>
                             </tr>
+                            <tr>
+                                <td width="150px"><b>Nama Tim</b></td>
+                                <td width="200px">{{this.$store.state.data.tim}}</td>
+                            </tr>
                         </td>
                   </tabel>
                   </div>

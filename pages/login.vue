@@ -20,6 +20,7 @@
                     <div class="field">
                       <p class="control has-icons-left has-icons-right">
                         <input class="input"
+                         type="email"
                          placeholder="Email" 
                          v-model="email"
                          required>
@@ -60,14 +61,12 @@
       </div>
     </div>
   </section>
-
 </template>
+
 <script>
-
-const passwordField = document.querySelector('#password')
-
-const Cookies = process.client ? require('js-cookie') : undefined
-import axios from 'axios'
+  const passwordField = document.querySelector('#password')
+  const Cookies = process.client ? require('js-cookie') : undefined
+  import axios from 'axios'
   import Notification from '../components/Notification'
   export default { 
     middleware: 'notAuthenticated',
@@ -100,7 +99,7 @@ import axios from 'axios'
           })
         const auth = data.id
         const user = data.userId
-        const team = data.user.team_name_id
+        const team = data.user.nama_tim
         const role = data.user.role
         console.log(auth)
         console.log(user)

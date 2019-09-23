@@ -85,7 +85,7 @@
         return this.hidePassword ? 'password' : 'text'
       },
       passwordIcon() {
-        return this.hidePassword ? 'fa-eye' : 'fa-eye-slash'
+        return this.hidePassword ? 'fa fa-eye' : 'fa fa-eye-slash'
       }
     },
     methods: {

@@ -32,7 +32,7 @@
                     <div class="field has-addons">
                       <p class="control is-expanded has-icons-left">
                         <input 
-                        :type="passwordType" id="password"
+                        :type="passwordType"
                         class="input"
                         placeholder="Password"
                         v-model="password">
@@ -86,7 +86,7 @@
         return this.hidePassword ? 'password' : 'text'
       },
       passwordIcon() {
-        return this.hidePassword ? 'fa-eye' : 'fa-eye-slash'
+        return this.hidePassword ? 'fa fa-eye' : 'fa fa-eye-slash'
       }
     },
     methods: {

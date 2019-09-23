@@ -29,12 +29,12 @@
             
             <div class="columns">
             <div class="column is-8">
-            <form method="post" @submit.prevent="editProfile" class="control" >
+            <form @submit.prevent="updatePost" class="control" >
             <div class="tile is-ancestor">
                 <div class="tile is-vertical is-parent">
                     <div class="tile is-child box">
                         <p class="has-text-weight-medium">Data Pribadi
-                        <button class="button is-primary is-small"  @click="pribadi = !pribadi">Edit</button>
+                        <a class="button btn-rgt is-primary is-small"  @click="pribadi = !pribadi">Edit</a>
                         </p>
                         <div v-show="pribadi"><hr>
                             <table class=" table is-borderless is-fullwidth">
@@ -44,8 +44,8 @@
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="nama"
-                                        v-model="nama_edit">
+                                        name="nama"  
+                                        v-model="post.nama">
                                       </td>
                                     </tr>
                                     <tr>
@@ -55,14 +55,14 @@
                                         class="input"
                                         type="text"
                                         name="inisial"
-                                        v-model="inisial_edit">
+                                        v-model="post.inisial">
                                       </td>
                                     </tr>
                                     <tr>
                                       <td>Jenis Kelamin :</td>
                                       <td>
                                         <div class="select">
-                                          <select name="jenis_kelamin" v-model="jenis_kelamin_edit">
+                                          <select v-model="post.jenis_kelamin">
                                             <option value="Laki">Laki-laki</option>
                                             <option value="Perempuan">Perempuan</option>
                                           </select>
@@ -78,13 +78,12 @@
                                           <input
                                           class="input"
                                           type="text"
-                                          name="tempat_lahir"
-                                          v-model="tempat_lahir_edit">
+                                          v-model="post.tempat_lahir">
                                         </td>
                                       </tr>
                                       <tr>
                                         <td>Tanggal Lahir</td>
-                                        <td><input type="date" class="input" v-model="tgl_lahir"></td>
+                                        <td><input type="date" class="input" v-model="post.tgl_lahir"></td>
                                       </tr>
                                       </td>
                                     </tr>
@@ -92,7 +91,7 @@
                                       <td>Golongan Darah :</td>
                                       <td>
                                         <div class="select">
-                                        <select name="golongan_darah" v-model="golongan_darah_edit">
+                                        <select v-model="post.golongan_darah">
                                           <option value="A">A</option>
                                           <option value="B">B</option>
                                           <option value="AB">AB</option>
@@ -106,7 +105,7 @@
                                       <td>Agama :</td>
                                       <td>
                                         <div class="select">
-                                        <select name="agama" v-model="agama_edit">
+                                        <select v-model="post.agama">
                                           <option value="Islam">Islam</option>
                                           <option value="Kristen">Kristen</option>
                                           <option value="Katolik">Katolik</option>
@@ -125,8 +124,7 @@
                                           <input 
                                           class="input"
                                           type="text"
-                                          name="telepon_rumah"
-                                          v-model="telepon_rumah_edit">
+                                          v-model="post.telepon_rumah">
                                         </td>
                                       </tr>
                                       <tr>
@@ -135,8 +133,7 @@
                                           <input 
                                           class="input"
                                           type="text"
-                                          name="no_telepon"
-                                          v-model="no_telepon_edit">
+                                          v-model="post.no_telepon">
                                         </td>
                                       </tr>
                                       <tr>
@@ -145,8 +142,7 @@
                                           <input 
                                           class="input"
                                           type="text"
-                                          name="no_telepon_lainnya"
-                                          v-model="no_telepon_lainnya_edit">
+                                          v-model="post.no_telepon_lainnya">
                                         </td>
                                       </tr>
                                       </td>
@@ -157,8 +153,7 @@
                                         <input 
                                         class="input"
                                         type="email"
-                                        name="email"
-                                        v-model="email_edit">
+                                        v-model="post.email">
                                       </td>
                                     </tr>
                                     <tr>
@@ -167,8 +162,7 @@
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="alamat"
-                                        v-model="alamat_edit">
+                                        v-model="post.alamat">
                                       </td>
                                     </tr>
                                     <tr>
@@ -180,8 +174,7 @@
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="bank"
-                                        v-model="bank_edit">
+                                        v-model="post.bank">
                                       </td>
                                     </tr>
                                     <tr>
@@ -190,8 +183,7 @@
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="no_rekening"
-                                        v-model="no_rekening_edit">
+                                        v-model="post.no_rekening">
                                       </td>
                                     </tr>
                                     <tr>
@@ -200,8 +192,7 @@
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="cabang"
-                                        v-model="cabang_edit">
+                                        v-model="post.cabang">
                                       </td>
                                     </tr>
                                     </td>
@@ -210,7 +201,7 @@
                                       <td>KTP :</td>
                                       <td>
                                         <div class="select">
-                                          <select name="ktp" v-model="ktp_edit">
+                                          <select v-model="post.ktp">
                                             <option value="COPY">COPY</option>
                                             <option value="NONE">NONE</option>
                                           </select>
@@ -223,14 +214,13 @@
                                         <input
                                         class="input"
                                         type="text"
-                                        name="no_ktp"
-                                        v-model="no_ktp_edit">
+                                        v-model="post.no_ktp">
                                       </td>
                                     </tr>
                                     <tr>
                                     <td>Masa Berlaku KTP :</td>
                                     <td>
-                                      <input class="input" name="masa_berlaku" v-model="masa_berlaku_edit">
+                                      <input class="input" type="date" v-model="post.masa_berlaku">
                                     </td>
                                   </tr>
                                   <tr>
@@ -239,15 +229,14 @@
                                       <input
                                       class="input"
                                       type="text"
-                                      name="alamat_ktp"
-                                      v-model="alamat_ktp_edit">
+                                      v-model="post.alamat_ktp">
                                     </td>
                                   </tr>
                                   <tr>
                                       <td>KK :</td>
                                       <td>
                                         <div class="select">
-                                          <select name="kk" v-model="kk_edit">
+                                          <select v-model="post.kk">
                                             <option value="COPY">COPY</option>
                                             <option value="NONE">NONE</option>
                                           </select>
@@ -261,7 +250,7 @@
                                         <td>Gelar</td>
                                         <td>
                                           <div class="select">
-                                          <select name="gelar" v-model="gelar_edit">
+                                          <select v-model="post.gelar">
                                             <option value="SMU">SMU</option>
                                             <option value="D1">D1</option>
                                             <option value="D2">D2</option>
@@ -277,7 +266,7 @@
                                         <td>Jurusan</td>
                                         <td>
                                           <div class="select">
-                                          <select name="jurusan" v-model="jurusan_edit">
+                                          <select v-model="post.jurusan">
                                             <option value="Teknik Informatika">Teknik Informatika</option>
                                             <option value="Management Informatika">Management Informatika</option>
                                             <option value="Teknik Komputer dan Jaringan">Teknik Komputer dan Jaringan</option>
@@ -289,7 +278,7 @@
                                         <td>Pendidikan</td>
                                         <td>
                                           <div class="select">
-                                          <select name="pendidikan" v-model="pendidikan_edit">
+                                          <select  v-model="post.pendidikan">
                                             <option value="Universitas Indonesia">Universitas Indonesia</option>
                                             <option value="Others">Others</option>
                                           </select></div>
@@ -302,7 +291,7 @@
                                       <td>
                                       <tr>
                                         <div class="select">
-                                          <select name="ijazah" v-model="ijazah_edit">
+                                          <select v-model="post.ijazah">
                                             <option value="COPY">COPY</option>
                                             <option value="NONE">NONE</option>
                                           </select></div>
@@ -311,7 +300,7 @@
                                         <td>Disahkan Oleh </td>
                                         <td>
                                           <div class="select">
-                                          <select name="disahkan_oleh" v-model="disahkan_oleh_edit">
+                                          <select v-model="post.disahkan_oleh">
                                             <option value="Universitas Indonesia">Universitas Indonesia</option>
                                             <option value="Others">Others</option>
                                           </select></div>
@@ -320,7 +309,7 @@
                                       <tr>
                                         <td>Tanggal Pengesahan</td>
                                         <td>
-                                          <input class="input" name="tanggal_pengesahan" v-model="tanggal_pengesahan_edit">
+                                          <input class="input" type="date" v-model="post.tanggal_pengesahan">
                                         </td>
                                       </tr>
                                       
@@ -331,7 +320,7 @@
                     </div>
                     <div class="tile is-child box">
                         <p class="has-text-weight-medium">Data Keluarga
-                        <button class="button is-primary is-small" @click="keluarga = !keluarga">Edit</button>
+                        <a class="button btn-rgt is-primary is-small" @click="keluarga = !keluarga">Edit</a>
                         </p>
                         <div v-show="keluarga"> <hr>
                             <table class="table is-borderless is-fullwidth">
@@ -339,7 +328,7 @@
                                       <td width="200px" class=" is-borderless"> Status Pernikahan :</td>
                                       <td class=" is-borderless">
                                         <div class="select">
-                                        <select name="status_pernikahan" v-model="status_pernikahan_edit">
+                                        <select v-model="post.status_pernikahan">
                                           <option value="S"> S </option>
                                           <option value="M0"> M0 </option>
                                           <option value="M1"> M1 </option>
@@ -359,12 +348,11 @@
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="nama_pasangan"
-                                        v-model="nama_pasangan_edit">
+                                        v-model="post.nama_pasangan">
                                       </tr>
                                       <tr>
                                         <td>Tanggal Lahir</td>
-                                        <input class="input" name="tgl_lahir_pasangan" v-model="tgl_lahir_pasangan_edit">
+                                        <input class="input" type="date" v-model="post.tgl_lahir_pasangan">
                                       </tr>
                                       </td>
                                     </tr>
@@ -374,8 +362,7 @@
                                         <input 
                                         class="input"
                                         type="text"
-                                        name="ibu_kandung"
-                                        v-model="ibu_kandung_edit">
+                                        v-model="post.ibu_kandung">
                                       </td>
                                     </tr>
                                     <tr>
@@ -387,15 +374,14 @@
                                           <input 
                                           class="input"
                                           type="text"
-                                          name="nama_anak1"
-                                          v-model="nama_anak1_edit">
+                                          v-model="post.nama_anak1">
                                         </td>
                                       </tr>
                                       <tr>
                                         <td>Jenis Kelamin</td>
                                         <td>
                                           <div class="select">
-                                          <select name="jenis_kelamin_anak1" v-model="jenis_kelamin_anak1_edit">
+                                          <select v-model="post.jenis_kelamin_anak1">
                                             <option value="Laki">Laki-laki</option>
                                             <option value="Perempuan">Perempuan</option>
                                           </select>
@@ -405,7 +391,7 @@
                                       <tr>
                                         <td>Tanggal Lahir</td>
                                         <td>
-                                          <input class="input" name="tgl_lahir_anak1" v-model="tgl_lahir_anak1_edit">
+                                          <input class="input" type="date" v-model="post.tgl_lahir_anak1">
                                         </td>
                                       </tr>
                                       </td>
@@ -419,25 +405,23 @@
                                           <input 
                                           class="input"
                                           type="text"
-                                          name="nama_darurat"
-                                          v-model="nama_darurat_edit">
+                                          v-model="post.nama_darurat">
                                         </td>
                                       </tr>
                                       <tr>
-                                        <td> NO. Telepon Darurat </td>
+                                        <td> No. Telepon Darurat </td>
                                         <td>
                                           <input 
                                           class="input"
                                           type="text"
-                                          name="no_darurat"
-                                          v-model="no_darurat_edit">
+                                          v-model="post.no_darurat">
                                         </td>
                                       </tr>
                                       <tr>
                                         <td>Relasi</td>
                                         <td>
                                         <div class="select">
-                                          <select name="relasi_darurat" v-model="relasi_darurat_edit">
+                                          <select v-model="post.relasi_darurat">
                                             <option value="Mother">Mother</option>
                                             <option value="Father">Father</option>
                                             <option value="Brother">Brother</option>
@@ -455,7 +439,7 @@
                     </div>
                     <div class="tile is-child box">
                         <p class="has-text-weight-medium">Data Perusahaan
-                        <button class="button is-primary is-small" @click="perusahaan = !perusahaan">Edit</button>
+                        <a class="button btn-rgt is-primary is-small" @click="perusahaan = !perusahaan">Edit</a>
                         </p>
                         <div v-show="perusahaan"> <hr>
                             <table class="table is-borderless is-fullwidth">
@@ -465,8 +449,7 @@
                                         <input
                                         class="input"
                                         type="text"
-                                        name="nik"
-                                        v-model="nik_edit">
+                                        v-model="post.nik">
                                       </td>
                                     </tr>
                                     <tr>
@@ -475,8 +458,7 @@
                                         <input
                                         class="input"
                                         type="text"
-                                        name="koperasi"
-                                        v-model="koperasi_edit">
+                                        v-model="post.koperasi">
                                       </td>
                                     </tr>
                                     <tr>
@@ -485,19 +467,18 @@
                                         <input
                                         class="input"
                                         type="text"
-                                        name="DPLK"
-                                        v-model="DPLK_edit">
+                                        v-model="post.DPLK">
                                       </td>
                                     </tr>
                                     <tr>
                                       <td> Tanggal Masuk :</td>
-                                      <td><input class="input" name="tgl_masuk" v-model="tgl_masuk_edit"></td>
+                                      <td><input class="input" type="date" v-model="post.tgl_masuk"></td>
                                     </tr>
                                     <tr>
                                       <td> Posisi Karyawan :</td>
                                       <td>
                                       <div class="select">
-                                        <select name="posisi_karyawan" v-model="posisi_karyawan_edit">
+                                        <select v-model="post.posisi_karyawan">
                                           <option value="Office Boy">Office Boy</option>
                                           <option value="Driver">Driver</option>
                                           <option value="Messenger">Messenger</option>
@@ -515,8 +496,7 @@
                                         <input
                                         class="input"
                                         type="text"
-                                        name="BPJS"
-                                        v-model="BPJS_edit">
+                                        v-model="post.BPJS">
                                       </td>
                                     </tr>
                                     <tr>
@@ -525,15 +505,14 @@
                                         <input
                                         class="input"
                                         type="text"
-                                        name="asuransi_kesehatan"
-                                        v-model="asuransi_kesehatan_edit">
+                                        v-model="post.asuransi_kesehatan">
                                       </td>
                                     </tr>
                                     <tr>
                                       <td> Status Karyawan :</td>
                                       <td>
                                         <div class="select">
-                                        <select name="status_karyawan" v-model="status_karyawan_edit">
+                                        <select v-model="post.status_karyawan">
                                           <option value="Percobaan 1 Bulan">Percobaan 1 Bulan </option>
                                           <option value="Percobaan 2 Bulan">Percobaan 2 Bulan</option>
                                           <option value="Percobaan 3 Bulan">Percobaan 3 Bulan</option>
@@ -546,7 +525,7 @@
                 </div>
             </div>
             <div class="control">
-              <button class="button is-dark">Save Changes</button>
+              <button class="button btn-rgt is-dark">Save Changes</button>
             </div>
             </form>
             </div>
@@ -563,11 +542,10 @@
                 </div>
             </div>
             </div>
-            <button class="button is-fullwidth is-dark">Save Changes</button>
             </div>
             </div><br>
 
-
+            
 
             <section class="hero is-light is-small card is-12" style="margin-bottom: 1%">
                 <div class="container" style="margin: 10px">
@@ -644,47 +622,31 @@ export default{
           keluarga : false,
           perusahaan : false,
 
-          nama: this.$store.state.data.nama, jenis_kelamin: this.$store.state.data.jenis_kelamin, tempat_lahir: this.$store.state.data.tempat_lahir, tgl_lahir: this.$store.state.data.tgl_lahir, golongan_darah: this.$store.state.data.golongan_darah,
-          agama: this.$store.state.data.raligion, telepon_rumah: this.$store.state.data.telepon_rumah, no_telepon: this.$store.state.data.no_telepon, no_telepon_lainnya: this.$store.state.data.no_telepon_lainnya,
-          email: this.$store.state.data.email, alamat: this.$store.state.data.alamat, bank: this.$store.state.data.bank, no_rekening: this.$store.state.data.no_rekening, cabang: this.$store.state.data.cabang, 
-          ktp: this.$store.state.data.ktp, no_ktp: this.$store.state.data.no_ktp, masa_berlaku: this.$store.state.data.masa_berlaku, alamat_ktp: this.$store.state.data.alamat_ktp, kk: this.$store.state.data.kk,
-          gelar: this.$store.state.data.gelar, pendidikan: this.$store.state.data.pendidikan, jurusan: this.$store.state.data.jurusan, ijazah: this.$store.state.data.ijazah, tanggal_pengesahan: this.$store.state.data.tanggal_pengesahan,
-          status_pernikahan: this.$store.state.data.status_pernikahan, nama_pasangan: this.$store.state.data.nama_pasangan, tgl_lahir_pasangan: this.$store.state.data.tgl_lahir_pasangan, ibu_kandung: this.$store.state.data.ibu_kandung, nama_anak1: this.$store.state.data.nama_anak1,
-          jenis_kelamin_anak1: this.$store.state.data.jenis_kelamin_anak1, tgl_lahir_anak1: this.$store.state.data.tgl_lahir_anak1, nama_darurat: this.$store.state.data.nama_darurat, no_darurat: this.$store.state.data.no_darurat, relasi_darurat: this.$store.state.data.relasi_darurat,
-          nik: this.$store.state.data.nik, koperasi: this.$store.state.data.koperasi, DPLK: this.$store.state.data.DPLK, tgl_masuk: this.$store.state.data.tgl_masuk, posisi_karyawan: this.$store.state.data.posisi_karyawan, BPJS: this.$store.state.data.BPJS, asuransi_kesehatan: this.$store.state.data.asuransi_kesehatan,
-          status_karyawan: this.$store.state.data.status_karyawan, inisial: this.$store.state.data.inisial, disahkan_oleh: this.$store.state.data.disahkan_oleh,
-
-          nama_edit: '', jenis_kelamin_edit: '', lahir_place_edit: '', lahir_edit: '', golongan_darah_edit: '', agama_edit: '', telepon_rumah_edit: '', no_telepon_edit: '', no_telepon_lainnya_edit: '',
-          email_edit: '', alamat_edit: '', bank_edit: '', no_rekening_edit: '', cabang_edit: '', ktp_edit: '', no_ktp_edit: '', masa_berlaku_edit: '',
-          alamat_ktp_edit: '', kk_edit: '', gelar_edit: '', pendidikan_edit: '', jurusan_edit: '', ijazah_edit: '', tanggal_pengesahan_edit: '',
-          status_pernikahan_edit: '', nama_pasangan_edit: '', tgl_lahir_pasangan_edit: '', ibu_kandung_edit: '', nama_anak1_edit: '',
-          jenis_kelamin_anak1_edit: '', tgl_lahir_anak1_edit: '', nama_darurat_edit: '', no_darurat_edit: '', relasi_darurat_edit: '',
-          nik_edit: '', koperasi_edit: '', DPLK_edit: '', tgl_masuk_edit: '', posisi_karyawan_edit: '', BPJS_edit: '', asuransi_kesehatan_edit: '', status_karyawan_edit: '',
-          inisial_edit:'', disahkan_oleh_edit:''
+          post: {}
         }
     },
     components:{
         Sidebar,
         Navbar,
     },
+    created(){
+      this.$axios.get(`${this.$axios.defaults.baseURL}/pengguna/${this.$store.state.user}/profil`).then((response) => {
+        this.post = response.data;
+      });
+    },
     methods: {
-      async editProfile(){
-        try{
-          var self = this
-          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/${this.$store.state.user}/profiles?access_token=`+this.$store.state.auth, {
-              nama: this.nama_edit, jenis_kelamin: this.jenis_kelamin_edit, lahir_place: this.lahir_place_edit, lahir: this.lahir_edit, golongan_darah: this.golongan_darah_edit, agama: this.agama_edit,
-              telepon_rumah: this.telepon_rumah_edit, no_telepon: this.no_telepon_edit, no_telepon_lainnya: this.no_telepon_lainnya_edit, email: this.email_edit, 
-              alamat: this.alamat_edit, bank: this.bank_edit, no_rekening: this.no_rekening_edit,  cabang: this.cabang_edit, ktp: this.ktp_edit, no_ktp: this.no_ktp_edit, masa_berlaku: this.masa_berlaku_edit,
-              alamat_ktp: this.alamat_ktp_edit, kk: this.kk_edit, gelar: this.gelar_edit, pendidikan: this.pendidikan_edit, jurusan: this.jurusan_edit, ijazah: this.ijazah,
-              tanggal_pengesahan: this.tanggal_pengesahan_edit, status_pernikahan: this.status_pernikahan_edit, nama_pasangan: this.nama_pasangan_edit, tgl_lahir_pasangan: this.tgl_lahir_pasangan_edit, ibu_kandung: this.ibu_kandung_edit,
-              nama_anak1: this.nama_anak1_edit, jenis_kelamin_anak1: this.jenis_kelamin_anak1_edit, tgl_lahir_anak1: this.tgl_lahir_anak1_edit, nama_darurat: this.nama_darurat_edit, no_darurat: this.no_darurat_edit, relasi_darurat: this.relasi_darurat_edit,
-              nik: this.nik_edit, koperasi: this.koperasi_edit, DPLK: this.DPLK_edit, tgl_masuk: this.tgl_masuk_edit, posisi_karyawan: this.posisi_karyawan_edit, BPJS: this.BPJS_edit, asuransi_kesehatan: this.asuransi_kesehatan_edit,
-              status_karyawan: this.status_karyawan_edit, inisial: this.inisial_edit, disahkan_oleh: this.disahkan_oleh_edit,
-          })
-        }
-        catch (e){
-          
-        }
+      updatePost(){
+        this.$axios.put(`${this.$axios.defaults.baseURL}/pengguna/${this.$store.state.user}/profil?access_token=`+this.$store.state.auth, this.post).then(() => {
+          this.$router.put({name: 'posts'});
+        });
+        this.$axios.get(`${this.$axios.defaults.baseURL}/pengguna/${this.$store.state.user}/profil?access_token=`+this.$store.state.auth)
+        .then(resp => {
+          const datauser = resp.data
+          this.$store.commit('setData', datauser)
+          Cookies.set('datauser', datauser);
+        
+          console.log(this.$store.state.data);
+        })
       }
     }
 
@@ -702,7 +664,7 @@ export default{
 .table.is-borderless td {
   border-bottom: 0;
 }
-.button{
+.btn-rgt{
   float: right;
 }
 .is-fullwidth{
@@ -720,4 +682,10 @@ export default{
   margin-right: auto;
   margin-left: auto;
 }
+.img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+  width: 500px
+} 
 </style>

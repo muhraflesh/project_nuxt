@@ -46,7 +46,7 @@
   methods: {
     loadMore () {
       this.posts = []
-      this.current += 15
+      this.current += 30
       this.allPost.map((item, key) => item.description !== null && this.posts.length < this.current ? this.posts.push(item) : '')
     }
   },
@@ -55,7 +55,7 @@
     return {
       allPost: [],
       posts: [],
-      current: 15,
+      current: 30,
     }
   },
   mounted () {

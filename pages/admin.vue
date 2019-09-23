@@ -63,13 +63,16 @@
                                 <div class="modal-background" @click="closemodal"></div>
                                 <div class="modal-card modcard">
                                     <header class="modal-card-head">
-                                    <p class="modal-card-title">Add Member</p>
+                                    <p class="modal-card-title">Add User</p>
                                     <button class="delete" aria-label="close" @click="closemodal"></button>
                                     </header>
                                     <form method="post" @submit.prevent="adduser">
                                     <section class="modal-card-body">
                                     <!-- MODAL CONTENT-->
+                                    <Notification :message="pesan" v-if="pesan"/>
+                                    <AdduserSuccess :message="success" v-if="success"/>
                                     <div class="field is-horizontal">
+                                        
                                         <div class="field-label is-normal">
                                             <label class="label">Username</label>
                                         </div>
@@ -142,35 +145,35 @@
                                 </article>
                             </div>
                         </div><br/>
-                        <div style="padding-left:40%">
+                        <div style="padding-left:46%">
                             <button class="button btn-more is-rounded is-info is-outlined" @click="loadMore">Load More</button>
                         </div>
                     </div>
                     
                     <!-- DATA TABEL -->
-                    <table class="table"  v-if="activetab === 2">
+                    <table class="table is-striped"  v-if="activetab === 2">
                         <thead>
                             <tr>
-                            <th><abbr title="Position">ID.</abbr></th>
-                            <th>Nama</th>
-                            <th><abbr title="Played">Email</abbr></th>
-                            <th><abbr title="Won">Alamat</abbr></th>
-                            <th><abbr title="Drawn">Posisi</abbr></th>
-                            <th><abbr title="Lost">Tanggal Gabung</abbr></th>
-                            <th><abbr title="Goals for">Status Karyawan</abbr></th>
-                            <th><abbr title="Goals against">Action</abbr></th>
+                            <th class="has-text-centered">ID.</th>
+                            <th class="has-text-centered">Nama</th>
+                            <th class="has-text-centered">Email</th>
+                            <th class="has-text-centered">Alamat</th>
+                            <th class="has-text-centered">Posisi</th>
+                            <th class="has-text-centered">Tanggal Gabung</th>
+                            <th class="has-text-centered">Status Karyawan</th>
+                            <th class="has-text-centered">Action</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                            <th><abbr title="Position">ID.</abbr></th>
-                            <th>Nama</th>
-                            <th><abbr title="Played">Email</abbr></th>
-                            <th><abbr title="Won">Alamat</abbr></th>
-                            <th><abbr title="Drawn">Posisi</abbr></th>
-                            <th><abbr title="Lost">Tanggal Gabung</abbr></th>
-                            <th><abbr title="Goals for">Status Karyawan</abbr></th>
-                            <th><abbr title="Goals against">Action</abbr></th>
+                            <th class="has-text-centered">ID.</th>
+                            <th class="has-text-centered">Nama</th>
+                            <th class="has-text-centered">Email</th>
+                            <th class="has-text-centered">Alamat</th>
+                            <th class="has-text-centered">Posisi</th>
+                            <th class="has-text-centered">Tanggal Gabung</th>
+                            <th class="has-text-centered">Status Karyawan</th>
+                            <th class="has-text-centered">Action</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -183,14 +186,17 @@
                                 <td>{{item.tgl_masuk}}</td>
                                 <td>{{item.status_karyawan}}</td>
                                 <td>
-                                    <a class="button is-info">Detail</a> 
-                                    <a class="button is-danger" @click="deleteUser">Delete</a>
+                                    <tr>
+                                        <td><a class="button is-info" style="padding-bottom:5%">Detail</a></td>
+                                        <td><a class="button is-warning  has-text-white" @click="modalEdit">Edit</a></td>
+                                        <td><a class="button is-danger" @click="deleteUser">Delete</a></td>
+                                    </tr>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <div style="padding-left:420%">
-                                        <button class="button btn-more is-rounded is-info is-outlined" @click="loadMore">Load More</button>
+                                    <div style="padding-left:450%">
+                                        <button class="button btn-more is-rounded is-info is-outlined" @click="loadMore">Show More</button>
                                     </div>
                                 </td>
                             </tr>
@@ -306,6 +312,8 @@ const Cookies = process.client ? require('js-cookie') : undefined
 import axios from 'axios'
 import Sidebar from "../components/Sidebarpublic"
 import Navbar from "../components/Navbar"
+import Notification from '../components/Notification'
+import AdduserSuccess from '../components/AdduserSuccess'
 export default {
     middleware : 'admin',
     data() {
@@ -319,12 +327,16 @@ export default {
         email: '',
         allPost: [],
         posts: [],
-        current: 6,
+        current: 5,
+        pesan: null,
+        success: null,
       }
     }, 
     components: {
         Sidebar,
-        Navbar
+        Navbar,
+        Notification,
+        AdduserSuccess,
     },
     
     methods: {
@@ -336,7 +348,7 @@ export default {
         },
         loadMore () {
             this.posts = []
-            this.current += 6
+            this.current += 5
             this.allPost.map((item, key) => item.email !== null && this.posts.length < this.current ? this.posts.push(item) : '')
         },
         async adduser(){
@@ -346,22 +358,40 @@ export default {
                 email: this.email,
                 username: this.username
             })
+            if (data.email != null) {
+                this.success = "User Sukses Ditambahkan"
+            }
             }
             catch (e) {
+                this.pesan = e.response.data.error.statusCode
+                if (this.pesan = 422){
+                    this.pesan="Username or Email Already Exists"
+                } else if (this.pesan = 500) {
+                    this.pesan="Internal Server Error"
+                } else {
+                    this.pesan = "Error. Please Check Your Connections"
+                }
             }
         },
-        deleteUser() {
+        async deleteUser() {
+            try{
+            await this.$axios.delete(`${this.$axios.defaults.baseURL}/pengguna/`, {
 
+            })
+            }
+            catch (e) {
+
+            }
         }
     },
 
     mounted () {
-        axios(`${this.$axios.defaults.baseURL}/profil?access_token=`+this.$store.state.auth, {
+        axios(`${this.$axios.defaults.baseURL}/pengguna/profil/getAll`, {
             crossDomain: true
         }).then( ({ data }) => {
             this.allPost = data
             data.map((item, key) => {
-              if (item.username !== null && this.posts.length < 6) {
+              if (item.username !== null && this.posts.length < 5) {
                 this.posts.push(item)
               }
             })
@@ -393,4 +423,5 @@ export default {
 @media (min-width: 1200px) {  
    .card-columns {column-count: 3;} 
 }
+
 </style>

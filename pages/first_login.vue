@@ -20,7 +20,7 @@
                     <div class="field">
                       <p class="control has-icons-left has-icons-right">
                         <input class="input"
-                         type="email" 
+                         type="email"
                          placeholder="Email" 
                          v-model="email"
                          required>
@@ -29,21 +29,22 @@
                         </span>
                       </p>
                     </div>
-                    <div class="field">
-                      <p class="control has-icons-left has-icons-right">
+                    <div class="field has-addons">
+                      <p class="control is-expanded has-icons-left">
                         <input 
                         :type="passwordType" id="password"
                         class="input"
-                        placeholder="password"
+                        placeholder="Password"
                         v-model="password">
                         <span class="icon is-medium is-left">
                           <i class="fa fa-lock"></i>
                         </span>
                       </p>
-                      <p class="control">
-                        <i class="" :class="[passwordIcon]" @click="hidePassword = !hidePassword"></i>
-                        
-                      </p>
+                      <div class="control box icon is-medium is-left">
+                        <span style="padding-bottom:1%">
+                          <i class="fa fa-eye" :class="[passwordIcon]" @click="hidePassword = !hidePassword" toggle="#password-field"></i>
+                        </span>
+                      </div>
                     </div>
                     <div class="field is-grouped is-grouped-centered">
                       <div class="control">
@@ -60,11 +61,11 @@
       </div>
     </div>
   </section>
-
 </template>
-<script>
-const Cookies = process.client ? require('js-cookie') : undefined
 
+<script>
+  const Cookies = process.client ? require('js-cookie') : undefined
+  const passwordField = document.querySelector('#password')
   import Notification from '../components/Notification'
   export default { 
     middleware: 'notAuthenticated',
@@ -98,22 +99,8 @@ const Cookies = process.client ? require('js-cookie') : undefined
 
         const auth = data.id
         const user = data.userId
-        const team = data.user.team_name_id
-        const role = data.user.role
         console.log(auth)
         console.log(user)
-        console.log(team)
-        console.log(role)
-
-        if(role === "HRD") {
-          var hrd = role
-          self.$store.commit('setHrd', hrd)
-          Cookies.set('hrd', hrd);
-        } else if (role === "leader") {
-          var leader = role
-          self.$store.commit('setLeader', leader)
-          Cookies.set('leader', leader);
-        }
 
         self.$store.commit('setAuth', auth)
         Cookies.set('auth', auth);
@@ -121,9 +108,6 @@ const Cookies = process.client ? require('js-cookie') : undefined
         self.$store.commit('setUser', user)
         Cookies.set('user', user);
 
-        self.$store.commit('setTeam', team)
-        Cookies.set('team', team);
-        
         self.$router.push('/registration')
         }
 
@@ -194,6 +178,13 @@ const Cookies = process.client ? require('js-cookie') : undefined
 .image{
   height: 350px;
   width: 350px
+}
+.box {
+     border-radius: 2px;
+    color: #2b2929;
+    padding: 1.1rem;
+    height: 20px;
+    align-content: center;
 }
 </style>
 

@@ -164,18 +164,6 @@
                             <th class="has-text-centered">Action</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                            <th class="has-text-centered">ID.</th>
-                            <th class="has-text-centered">Nama</th>
-                            <th class="has-text-centered">Email</th>
-                            <th class="has-text-centered">Alamat</th>
-                            <th class="has-text-centered">Posisi</th>
-                            <th class="has-text-centered">Tanggal Gabung</th>
-                            <th class="has-text-centered">Status Karyawan</th>
-                            <th class="has-text-centered">Action</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                             <tr v-for="item in posts" v-bind:key="item.key">
                                 <th class="has-text-centered">{{item.id_pengguna}}</th>

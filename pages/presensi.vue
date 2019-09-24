@@ -84,7 +84,7 @@
                             </header>
                             <section class="modal-card-body">
                               <!-- MODAL CONTENT-->
-                            <form method="post" @submit.prevent="cuti">
+                            <form method="post" @submit.prevent="cutiPost">
                               <div class="field is-horizontal">
                                   <div class="field-label is-normal">
                                     <label class="label">Mulai Tanggal</label>
@@ -92,7 +92,7 @@
                                   <div class="field-body">
                                     <div class="field">
                                       <p class="control is-expanded has-icons-left">
-                                        <input class="input" type="date">
+                                        <input class="input" type="date" v-model="cuti.mulai_cuti">
                                         <span class="icon is-medium is-left">
                                           <i class="fa fa-calendar"></i>
                                         </span>
@@ -103,7 +103,7 @@
                                     </div>
                                     <div class="field">
                                       <p class="control is-expanded has-icons-left has-icons-right">
-                                        <input class="input" type="date">
+                                        <input class="input" type="date" v-model="cuti.selesai_cuti">
                                         <span class="icon is-medium is-left">
                                           <i class="fa fa-calendar"></i>
                                         </span>
@@ -119,7 +119,7 @@
                                   <div class="field-body">
                                     <div class="field">
                                       <div class="control">
-                                        <textarea class="textarea is-danger" placeholder="Explain your reason"></textarea>
+                                        <textarea class="textarea is-danger" placeholder="Explain your reason" v-model="cuti.keperluan"></textarea>
                                       </div>
                                       <p class="help is-danger">
                                         This field is required
@@ -147,7 +147,7 @@
                                   <div class="field-body">
                                     <div class="field">
                                       <div class="control">
-                                        <input class="input" type="text" placeholder="">
+                                        <input class="input" type="text" v-model="cuti.tugas_selesai1" placeholder="">
                                       </div>
                                     </div>
                                   </div>
@@ -159,7 +159,7 @@
                                   <div class="field-body">
                                     <div class="field">
                                       <div class="control">
-                                        <input class="input" type="text" placeholder="">
+                                        <input class="input" type="text" v-model="cuti.tugas_selesai2" placeholder="">
                                       </div>
                                     </div>
                                   </div>
@@ -172,7 +172,22 @@
                                   <div class="field-body">
                                     <div class="field">
                                       <div class="control">
-                                        <input class="input" type="text" placeholder="">
+                                        <input class="input is-danger" type="text" v-model="cuti.tugas_berjalan1" placeholder="">
+                                      </div>
+                                      <p class="help is-danger">
+                                        This field is required
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class=""></label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <input class="input" type="text" v-model="cuti.tugas_berjalan2" placeholder="">
                                       </div>
                                     </div>
                                   </div>
@@ -184,7 +199,7 @@
                                   <div class="field-body">
                                     <div class="field">
                                       <div class="control">
-                                        <input class="input" type="text" placeholder="">
+                                        <input class="input" type="text" v-model="cuti.tugas_berjalan3" placeholder="">
                                       </div>
                                     </div>
                                   </div>
@@ -221,10 +236,11 @@
                                     <div class="field is-narrow">
                                       <div class="control">
                                         <div class="select is-fullwidth">
-                                          <select>
-                                            <option>Paksi</option>
-                                            <option>Baid</option>
-                                            <option>Salma</option>
+                                          <select v-model="cuti.alih_tangan">
+                                            <option value="Paksi" >Paksi</option>
+                                            <option value="Baid" >Baid</option>
+                                            <option value="Salma" >Salma</option>
+                                            <option value="Raflish"> Rafli SH</option>
                                           </select>
                                         </div>
                                       </div>
@@ -239,7 +255,7 @@
                                   <div class="field-body">
                                     <div class="field">
                                       <div class="control">
-                                        <input class="input" type="text" placeholder="">
+                                        <input class="input" type="text" v-model="cuti.tugas_alihan1" placeholder="">
                                       </div>
                                     </div>
                                   </div>
@@ -251,7 +267,7 @@
                                   <div class="field-body">
                                     <div class="field">
                                       <div class="control">
-                                        <input class="input" type="text" placeholder="">
+                                        <input class="input" type="text" v-model="cuti.tugas_alihan2" placeholder="">
                                       </div>
                                     </div>
                                   </div>
@@ -263,12 +279,12 @@
                                   </div>
                                   <div class="field-body is-normal" style="padding-top:1%">
                                         <label class="radio">
-                                          <input type="radio" name="answer">
-                                          Yes
+                                          <input v-model="cuti.tipe_cuti" type="radio" value="reg-first">
+                                          Regular
                                         </label>
                                         <label class="radio">
-                                          <input type="radio" name="answer">
-                                          No
+                                          <input v-model="cuti.tipe_cuti" type="radio" value="bonus-first">
+                                          Bonus
                                         </label>
                                   </div>
                                 </div>
@@ -303,40 +319,28 @@
             <table class="table">
                   <thead>
                         <tr>
-                            <th><abbr title="Position">ID.</abbr></th>
-                            <th>Tgl Pengajuan</th>
-                            <th><abbr title="Played">Tgl Mulai</abbr></th>
-                            <th><abbr title="Won">Tgl Selesai</abbr></th>
-                            <th><abbr title="Drawn">Handover</abbr></th>
-                            <th><abbr title="Lost">Keperluan</abbr></th>
-                            <th><abbr title="Goals for">Tipe Cuti</abbr></th>
-                            <th><abbr title="Goals against">Action</abbr></th>
+                            <th>ID</th>
+                            <th>Tanggal Pengajuan</th>
+                            <th>Tanggal Mulai</th>
+                            <th>Tanggal Selesai</th>
+                            <th>Handover</th>
+                            <th>Keperluan</th>
+                            <th>Tipe Cuti</th>
+                            <th>Action</th>
                         </tr>
                   </thead>
-                  <tfoot>
-                        <tr>
-                            <th><abbr title="Position">ID.</abbr></th>
-                            <th>Tgl Pengajuan</th>
-                            <th><abbr title="Played">Tgl Mulai</abbr></th>
-                            <th><abbr title="Won">Tgl Selesai</abbr></th>
-                            <th><abbr title="Drawn">Handover</abbr></th>
-                            <th><abbr title="Lost">Keperluan</abbr></th>
-                            <th><abbr title="Goals for">Tipe Cuti</abbr></th>
-                            <th><abbr title="Goals against">Action</abbr></th>
-                        </tr>
-                  </tfoot>
                   <tbody>
                         <tr v-for="item in posts" v-bind:key="item.key">
-                                <th>{{item.id}}</th>
-                                <td><a><strong>{{item.id_pengguna}}</strong></a></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{item.id}}</td>
+                                <td>{{item.tgl_pengajuan}}</td>
+                                <td>{{item.mulai_cuti}}</td>
+                                <td>{{item.selesai_cuti}}</td>
+                                <td>{{item.alih_tangan}}</td>
+                                <td>{{item.keperluan}}</td>
+                                <td>{{item.tipe_cuti}}</td>
                                 <td>
                                     <a class="button is-info">Detail</a> 
-                                    <a class="button is-danger" @click="deleteLog">Delete</a>
+                                    <a class="button is-danger">Delete</a>
                                 </td>
                             </tr>
                         <tr>
@@ -380,7 +384,7 @@ export default {
       return {
         allPost: [],
         posts: [],
-        current: 2,
+        cuti: {},
       }
   },
   components: {
@@ -396,6 +400,16 @@ export default {
         closemodal() {
           document.getElementById('modal-cuti').classList.remove('is-active');
         },
+        cutiPost() {
+          this.$axios.post(`${this.$axios.defaults.baseURL}/pengguna/${this.$store.state.user}/cuti?access_token=`+this.$store.state.auth, this.cuti).then(() => {
+            this.$router.post({name:'cutis'})
+          });
+        },
+        loadMore() {
+            this.posts = []
+            this.current += 6
+            this.allPost.map((item, key) => item.email !== null && this.posts.length < this.current ? this.posts.push(item) : '')
+        },
   },
 
   mounted () {
@@ -404,7 +418,7 @@ export default {
     }).then( ({ data }) => {
       this.allPost = data
       data.map((item, key) => {
-        if (item.id_pengguna !== null && this.posts.length < 2) {
+        if (item.id_pengguna !== null && this.posts.length < 5) {
           this.posts.push(item)
         }
       })

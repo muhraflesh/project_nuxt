@@ -32,6 +32,7 @@
             <form @submit.prevent="updatePost" class="control" >
             <div class="tile is-ancestor">
                 <div class="tile is-vertical is-parent">
+                    <!--EDIT DATA PROFIL-->
                     <div class="tile is-child box">
                         <p class="has-text-weight-medium">Data Pribadi
                         <a class="button btn-rgt is-primary is-small"  @click="pribadi = !pribadi">Edit</a>
@@ -318,6 +319,8 @@
                             </table>
                         </div>
                     </div>
+                    
+                    <!--EDIT DATA KELUARGA-->
                     <div class="tile is-child box">
                         <p class="has-text-weight-medium">Data Keluarga
                         <a class="button btn-rgt is-primary is-small" @click="keluarga = !keluarga">Edit</a>
@@ -437,6 +440,8 @@
                             </table>
                         </div>
                     </div>
+
+                    <!--EDIT DATA PERUSAHAAN-->
                     <div class="tile is-child box">
                         <p class="has-text-weight-medium">Data Perusahaan
                         <a class="button btn-rgt is-primary is-small" @click="perusahaan = !perusahaan">Edit</a>
@@ -621,7 +626,6 @@ export default{
           pribadi : false,
           keluarga : false,
           perusahaan : false,
-
           post: {}
         }
     },

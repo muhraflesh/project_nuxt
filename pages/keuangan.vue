@@ -3,11 +3,18 @@
     <Sidebar/>
     <div class="column is-10">
         <nav class="breadcrumb" aria-label="breadcrumbs">
-            <ul>
-                <li><a href="/">Solusi</a></li>
-                <li class="is-active"><a href="#" aria-current="page"> Keuangan </a></li>
-            </ul> <hr>
+            <td width="500px">
+                <ul>
+                    <li><a href="/">Solusi</a></li>
+                    <li class="is-active"><a href="#" aria-current="page"> Keuangan </a></li>
+                </ul>    
+            </td>
+            <td width="500px"></td>
+            <td width="600px">
+            <Navbar/>
+            </td>
         </nav>
+        <hr>
         <div class="columns id-multiline">
         <div class="column">
             <div class="box notification is-white">
@@ -105,9 +112,11 @@
 <script>
 const Cookies = process.client ? require('js-cookie') : undefined
 import Sidebar from "../components/Sidebarpublic"
+import Navbar from "../components/Navbar"
 export default {
     components: {
         Sidebar,
+        Navbar,
     },       
 }
 </script>

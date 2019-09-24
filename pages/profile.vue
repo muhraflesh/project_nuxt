@@ -31,9 +31,10 @@
                 </section>
                 <br/>
 
-                <!-- Data Pribadi -->
+                
                 <div class="content" style="margin-top:3%">
-                <div v-if="activetab === 1" >
+                  <!-- DATA PRIBADI -->
+                  <div v-if="activetab === 1" >
                     <div class="card ">
                     <div class="card-content">
                     <tabel class="table is-fullwidth is-striped">
@@ -132,12 +133,12 @@
                             </tr>
                         </td>
                         </tr>
-                  </tabel>
+                    </tabel>
+                    </div>
+                    </div>
                   </div>
-                  </div>
-                </div>
                   
-                   <!-- Data Keluarga -->
+                   <!-- DATA KELUARGA -->
                   <div v-if="activetab === 2">
                     <div class="card ">
                     <div class="card-content">
@@ -183,7 +184,7 @@
                   </div>
                   </div>
                   
-                  <!-- Data Perusahaan -->
+                  <!-- DATA PERUSAHAAN -->
                   <div v-if="activetab === 3">
                     <div class="card ">
                     <div class="card-content">
@@ -236,9 +237,9 @@
                                 <td width="200px">{{this.$store.state.data.tim}}</td>
                             </tr>
                         </td>
-                  </tabel>
-                  </div>
-                  </div>
+                    </tabel>
+                    </div>
+                    </div>
                   </div>
                 </div>
                 </div>

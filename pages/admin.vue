@@ -61,7 +61,7 @@
                             <a class="button is-success is-outlined" @click="showmodal">Add User</a>
                             <div class="modal" id="modal">
                                 <div class="modal-background" @click="closemodal"></div>
-                                <div class="modal-card modcard">
+                                <div class="modal-card ">
                                     <header class="modal-card-head">
                                     <p class="modal-card-title">Add User</p>
                                     <button class="delete" aria-label="close" @click="closemodal"></button>
@@ -178,7 +178,7 @@
                         </tfoot>
                         <tbody>
                             <tr v-for="item in posts" v-bind:key="item.key">
-                                <th>{{item.id_pengguna}}</th>
+                                <th class="has-text-centered">{{item.id_pengguna}}</th>
                                 <td><a><strong>{{item.nama}}</strong></a></td>
                                 <td>{{item.email}}</td>
                                 <td>{{item.alamat}}</td>
@@ -187,8 +187,8 @@
                                 <td>{{item.status_karyawan}}</td>
                                 <td>
                                     <tr>
-                                        <td><a class="button is-info" style="padding-bottom:5%">Detail</a></td>
-                                        <td><a class="button is-warning  has-text-white" @click="modalEdit">Edit</a></td>
+                                        <td><a class="button is-info" @click="showDetail(item)">Detail</a></td>
+                                        <td><a class="button is-warning  has-text-white" @click="showEdit(user)">Edit</a></td>
                                         <td><a class="button is-danger" @click="deleteUser">Delete</a></td>
                                     </tr>
                                 </td>
@@ -202,6 +202,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    
                 </div>
                 
                   <br/>
@@ -318,7 +319,7 @@ export default {
     middleware : 'admin',
     data() {
       return {
-        activetab: 1,
+        activetab: 2,
         member : true,
         notif : false,
         project : false,
@@ -330,6 +331,9 @@ export default {
         current: 5,
         pesan: null,
         success: null,
+        post: {},
+        allUser: [],
+        users: [],
       }
     }, 
     components: {
@@ -338,13 +342,45 @@ export default {
         Notification,
         AdduserSuccess,
     },
-    
+    created(){
+        axios(`${this.$axios.defaults.baseURL}/pengguna?access_token=${this.$store.state.auth}`, {
+            crossDomain: true
+        }).then( ({ data }) => {
+            this.allUser = data
+            data.map((user, key) => {
+              if (user.id !== null && this.users.length < 5) {
+                this.users.push(user)
+              }
+            })
+        })
+        
+    },
+    mounted () {
+        axios(`${this.$axios.defaults.baseURL}/pengguna/profil/getAll`, {
+            crossDomain: true
+        }).then( ({ data }) => {
+            this.allPost = data
+            data.map((item, key) => {
+              if (item.username !== null && this.posts.length < 5) {
+                this.posts.push(item)
+              }
+            })
+        })
+    },
     methods: {
         showmodal() {
           document.getElementById('modal').classList.add('is-active');
         },
         closemodal() {
           document.getElementById('modal').classList.remove('is-active');
+        },
+        showEdit(data) {
+          this.$store.commit('setAlluser', data)
+          this.$router.replace({ 'path': '/edituser' })
+        },
+        showDetail(data) {
+          this.$store.commit('setAllprofile', data)
+          this.$router.replace({ 'path': '/detailuser' })
         },
         loadMore () {
             this.posts = []
@@ -382,21 +418,15 @@ export default {
             catch (e) {
 
             }
+        },
+        async editUser() {
+          this.$axios.patch(`${this.$axios.defaults.baseURL}/pengguna/${this.$store.state.user}?access_token=`+this.$store.state.auth, this.post).then(() => {
+                this.$router.patch({name: 'posts'});
+          });
         }
     },
-
-    mounted () {
-        axios(`${this.$axios.defaults.baseURL}/pengguna/profil/getAll`, {
-            crossDomain: true
-        }).then( ({ data }) => {
-            this.allPost = data
-            data.map((item, key) => {
-              if (item.username !== null && this.posts.length < 5) {
-                this.posts.push(item)
-              }
-            })
-        })
-    }
+    
+    
 }
 </script>
 

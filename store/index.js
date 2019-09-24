@@ -36,9 +36,6 @@ export const mutations = {
   setAuth (state, auth) {
     state.auth = auth 
   },
-  setArticle (state, data) {
-    state.article = data
-  },
   setUser (state, user) {
     state.user = user
   },
@@ -53,6 +50,12 @@ export const mutations = {
   },
   setLeader (state, leader) {
     state.leader = leader
+  },
+  setAllprofile (state, data) {
+    state.allprofile = data
+  },
+  setAlluser (state, data) {
+    state.alluser = data
   },
 }
 

@@ -33,12 +33,12 @@
                         </span>
                         </a>
                     </header>
-                    <div class="buttons is-centered" style="margin: 50px">
+                    <div class="buttons is-centered" style="margin-top: 50px">
                         <a type="checkin" class="button is-info has-text-white" style="padding-left: 30px; padding-right: 30px">
                           Check In </a>
                         <a type="checkout" class="button is-danger has-text-white" style="padding-left: 25px; padding-right: 25px">
                           Check Out </a>
-                    </div>
+                    </div><br/>
                 </div>
             </div>
 
@@ -312,9 +312,79 @@
                     </div>
                 </div>
             </div>
-        </div><hr/>
+        </div>
 
-        <!-- CONTENT BAWAH (TABEL) -->
+        <!-- RIWAYAT CUTI (TABEL) -->
+        <section class="info-tiles">
+            <div class="tile is-ancestor has-text-left">
+                <div class="tile is-parent" >
+                    <article class="tile is-child box has-background-primary" @click="member = !member">
+                      <p class="subtitle has-text-white has-text-weight-medium">Riwayat Cuti</p>
+                    </article>
+                 </div>
+            </div>
+        </section> <br/>
+        <div>
+            <table class="table">
+                  <thead>
+                        <tr>
+                            <th><abbr title="Position">ID.</abbr></th>
+                            <th>Tgl Pengajuan</th>
+                            <th><abbr title="Played">Tgl Mulai</abbr></th>
+                            <th><abbr title="Won">Tgl Selesai</abbr></th>
+                            <th><abbr title="Drawn">Handover</abbr></th>
+                            <th><abbr title="Lost">Keperluan</abbr></th>
+                            <th><abbr title="Goals for">Tipe Cuti</abbr></th>
+                            <th><abbr title="Goals against">Action</abbr></th>
+                        </tr>
+                  </thead>
+                  <tfoot>
+                        <tr>
+                            <th><abbr title="Position">ID.</abbr></th>
+                            <th>Tgl Pengajuan</th>
+                            <th><abbr title="Played">Tgl Mulai</abbr></th>
+                            <th><abbr title="Won">Tgl Selesai</abbr></th>
+                            <th><abbr title="Drawn">Handover</abbr></th>
+                            <th><abbr title="Lost">Keperluan</abbr></th>
+                            <th><abbr title="Goals for">Tipe Cuti</abbr></th>
+                            <th><abbr title="Goals against">Action</abbr></th>
+                        </tr>
+                  </tfoot>
+                  <tbody>
+                        <tr v-for="item in posts" v-bind:key="item.key">
+                                <th>{{item.id}}</th>
+                                <td><a><strong>{{item.id_pengguna}}</strong></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a class="button is-info">Detail</a> 
+                                    <a class="button is-danger" @click="deleteLog">Delete</a>
+                                </td>
+                            </tr>
+                        <tr>
+                                <td>
+                                    <div style="padding-left:420%">
+                                        <button class="button btn-more is-rounded is-info is-outlined" @click="loadMore">Load More</button>
+                                    </div>
+                                </td>
+                        </tr>
+                  </tbody>
+            </table>
+        </div><br/>
+
+        <!-- RIWAYAT KEHADIRAN (TABEL) -->
+        <section class="info-tiles">
+            <div class="tile is-ancestor has-text-left">
+                <div class="tile is-parent" >
+                    <article class="tile is-child box has-background-primary" @click="member = !member">
+                      <p class="subtitle has-text-white has-text-weight-medium">Riwayat Kehadiran</p>
+                    </article>
+                 </div>
+            </div>
+        </section> <br/>
         <div>
             <table class="table">
                   <thead>
@@ -353,6 +423,7 @@
                   </tbody>
             </table>
         </div>
+
   </div>
 
     

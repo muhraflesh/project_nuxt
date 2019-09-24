@@ -1,12 +1,12 @@
 <template>
-    <div class="notification is-danger is-centered notif has-text-centered">
+    <div class="notification is-success is-centered notif has-text-centered">
         {{ message }}
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Notification',
+    name: 'AdduserSuccess',
     props: ['message']
 }
 </script>

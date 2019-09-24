@@ -44,7 +44,7 @@
                       <td>
                         <div class="select">
                           <select v-model="jenis_kelamin" required>
-                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
                           </select>
                         </div>
@@ -503,6 +503,16 @@
                       </select></div>
                     </td>
                   </tr>
+                  <tr>
+                    <td>Nama Divisi :</td>
+                    <td>
+                      <div class="select">
+                      <select v-model="tim">
+                        <option value="Backend">Backend</option>
+                        <option value="Frontend">Front End</option>
+                      </select></div>
+                    </td>
+                  </tr>
                 </table>
                 <div class="control buttons is-right">
                   <button class="button is-success"> Submit </button>
@@ -510,17 +520,13 @@
               </div>
             </div>
             </form>
-
         </div>
-
-        
-
     </div>
           <!-- MODAL SUCCESS -->
           <div class="modal" id="modal">
                <div class="modal-background" ></div>
                    <div class="modal-card modcard">
-                                    <!-- MODAL CONTENT-->
+                           <!-- MODAL CONTENT-->
                            <div class="notification is-paddingless">
                               <div class="notification is-success has-text-centered">
                                 <br/>
@@ -534,8 +540,8 @@
                                  <button class="button is-primary" @click="success">
                                      Go To Profile
                                  </button>
-                              </div>
                            </div>
+                   </div>
                </div>
           </div>
     </div>
@@ -555,7 +561,7 @@ export default{
       status_pernikahan: '', nama_pasangan: '', tgl_lahir_pasangan: '', ibu_kandung: '', nama_anak1: '',
       jenis_kelamin_anak1: '', tgl_lahir_anak1: '', nama_darurat: '', no_darurat: '', relasi_darurat: '',
       nik: '', koperasi: '', DPLK: '', tanggal_masuk: '', posisi_karyawan: '', BPJS: '', asuransi_kesehatan: '', status_karyawan: '',
-      inisial:'', disahkan_oleh:''
+      inisial:'', disahkan_oleh:'', tim:''
     }
   },
   methods: {
@@ -566,7 +572,7 @@ export default{
       async insert_profile(){
         try{
           var self = this
-          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/user/${this.$store.state.user}/profiles?access_token=`+this.$store.state.auth, {
+          const {data} = await this.$axios.post(`${this.$axios.defaults.baseURL}/pengguna/${this.$store.state.user}/profil?access_token=`+this.$store.state.auth, {
               email: this.email, nik: this.nik, nama: this.nama,
               inisial: this.inisial,  jenis_kelamin: this.jenis_kelamin, posisi_karyawan: this.posisi_karyawan,
               office: this.posisi_karyawan, tgl_lahir: this.tgl_lahir, tempat_lahir: this.tempat_lahir,
@@ -584,7 +590,7 @@ export default{
               kk: this.kk, masa_berlaku: this.masa_berlaku, alamat_ktp: this.alamat_ktp,
               npwp: this.npwp, jurusan: this.jurusan, pendidikan: this.pendidikan,
               ijazah: this.ijazah, disahkan_oleh: this.disahkan_oleh, tanggal_pengesahan: this.tanggal_pengesahan,
-              gelar: this.gelar, reference: this.reference, team_project: this.team_project,
+              gelar: this.gelar, reference: this.reference, tim: this.tim,
           })
 
           const datauser = data

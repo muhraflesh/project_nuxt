@@ -56,7 +56,7 @@ export default {
     
   ],
   axios: {
-    baseURL: 'https://6cfb5fa3.ngrok.io/api'
+    baseURL: 'https://2d493cca.ngrok.io/api'
   },
   /* auth: {
     strategies: {

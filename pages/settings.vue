@@ -635,7 +635,6 @@ export default{
           pribadi : false,
           keluarga : false,
           perusahaan : false,
-
           post: {}
         }
     },

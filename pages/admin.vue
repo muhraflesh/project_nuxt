@@ -15,7 +15,7 @@
                             <Navbar/>
                         </td>
                     </nav>
-                    <br>
+                    <hr>
 
                 <!-- BUTTON USER -->
                 <section class="info-tiles">

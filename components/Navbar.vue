@@ -1,10 +1,6 @@
 <template>
     <div class="columns ">
-        <div class="column control has-icons-left"  style="padding-top: 15px;">
-            <input class="input" type="text" placeholder="">
-            <span class="icon is-left" style="padding-top:25px;">
-                <i class="fa fa-search"></i>
-            </span>
+        <div class="column">
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
